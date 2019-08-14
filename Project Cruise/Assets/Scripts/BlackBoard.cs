@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// A script to keep all the important references in one place
+/// </summary>
 public class BlackBoard : MonoBehaviour
 {
     private Joystick joystick;
