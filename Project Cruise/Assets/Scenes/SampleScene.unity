@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 469525968}
   - component: {fileID: 469525967}
   m_Layer: 0
-  m_Name: BlackBoard
+  m_Name: Blackboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
