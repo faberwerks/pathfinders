@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         if(joystick == null)
         {
-            joystick = BlackBoard.instance.Joystick;
+            joystick = Blackboard.instance.Joystick;
         }
 
         //direction of the character movement from the joystick

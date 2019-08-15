@@ -5,16 +5,16 @@ using UnityEngine;
 /// <summary>
 /// A script to keep all the important references in one place
 /// </summary>
-public class BlackBoard : MonoBehaviour
+public class Blackboard : MonoBehaviour
 {
     private Joystick joystick;
     private LevelManager levelManager;
 
-    public static BlackBoard instance;
+    public static Blackboard instance;
 
     private void Awake()
     {
-        instance = new BlackBoard();
+        instance = new Blackboard();
     }
 
     /////// PROPERTIES ///////
