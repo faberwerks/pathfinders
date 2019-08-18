@@ -1,44 +1,44 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class LevelTimer : MonoBehaviour
 {
-    public bool gameState;
-    public float timer;
+    //public bool gameHasEnded;
+    private float timer;
     public GameObject endPanel;
-    public Text timerText;
-    public Text finalTime;
+    public TMP_Text timerText;
+    public TMP_Text finalTime;
     // Start is called before the first frame update
     void Start()
     {
         timer = 0f;
-        gameState = true;
+        //gameHasEnded = true; //Determines whether the game ends. True = start, False = end
     }
 
     // Update is called once per frame
     void Update()
     {
         IncrementTimer();
-        if(!gameState)
-        {
-            EndGame();
-        }
+        //if(!gameHasEnded)
+        //{
+        //    EndGame();
+        //}
     }
 
-    public void IncrementTimer()
+    private void IncrementTimer()
     {
-        timer += 1 * Time.deltaTime;
-        timerText.text = "Timer: " + Mathf.Round(timer).ToString();
+        timer += Time.deltaTime;
+        timerText.text = timer.ToString("F2");
     }
 
-    public void SetState()
+    public void SetGameEnd() //For button use. sets gameState to false to end the game
     {
-        gameState = false;
+        //gameHasEnded = false;
     }
 
-    public void EndGame()
+    private void EndGame()
     {
         Time.timeScale = 0;
         endPanel.SetActive(true);
