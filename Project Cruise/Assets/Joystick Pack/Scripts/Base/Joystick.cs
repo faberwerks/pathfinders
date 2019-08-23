@@ -55,6 +55,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         handle.anchorMax = center;
         handle.pivot = center;
         handle.anchoredPosition = Vector2.zero;
+        Blackboard.instance.Joystick = this;
     }
 
     public virtual void OnPointerDown(PointerEventData eventData)

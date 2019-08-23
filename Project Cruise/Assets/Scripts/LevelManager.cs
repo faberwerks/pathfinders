@@ -4,15 +4,39 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        Blackboard.instance.LevelManager = this;
-    }
+    //private int treasureCollected;
 
-    // Update is called once per frame
-    void Update()
+    private bool hasRelic;
+
+    //private bool relicCollected;
+
+    private float levelTimer;
+
+    /////// PROPERTIES ///////
+    public int TreasureCollected { get; set; }
+    public bool RelicCollected { get; set; }
+
+    //Awake is called before Start
+    private void Awake()
     {
         
     }
+
+    // Start is called before the first frame update
+    private void Start()
+    {
+        Blackboard.instance.LevelManager = this;
+        TreasureCollected = 0;
+        RelicCollected = false;
+    }
+
+    
+
+    
+
+    //// Update is called once per frame
+    //void Update()
+    //{
+        
+    //}
 }
