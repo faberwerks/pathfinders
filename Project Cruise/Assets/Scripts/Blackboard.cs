@@ -14,8 +14,6 @@ public class Blackboard : MonoBehaviour
 
     /////// PROPERTIES ///////
     public Joystick Joystick { get; set; }
-
-    /////// PROPERTIES ///////
     public LevelManager LevelManager { get; set; }
 
     private void Awake()

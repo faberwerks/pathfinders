@@ -14,8 +14,6 @@ public class LevelManager : MonoBehaviour
 
     /////// PROPERTIES ///////
     public int TreasureCollected { get; set; }
-
-    /////// PROPERTIES ///////
     public bool RelicCollected { get; set; }
 
     //Awake is called before Start
