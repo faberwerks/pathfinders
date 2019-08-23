@@ -7,42 +7,24 @@ using UnityEngine;
 /// </summary>
 public class Blackboard : MonoBehaviour
 {
-    private Joystick joystick;
-    private LevelManager levelManager;
+    //private Joystick joystick;
+    //private LevelManager levelManager;
 
     public static Blackboard instance;
+
+    /////// PROPERTIES ///////
+    public Joystick Joystick { get; set; }
+
+    /////// PROPERTIES ///////
+    public LevelManager LevelManager { get; set; }
 
     private void Awake()
     {
         instance = new Blackboard();
     }
 
-    /////// PROPERTIES ///////
-    public Joystick Joystick
-    {
-        get
-        {
-            return joystick;
-        }
-        set
-        {
-            if(joystick == null)
-                joystick = value;
-        }
-    }
+    
 
-    /////// PROPERTIES ///////
-    public LevelManager LevelManager
-    {
-        get
-        {
-            return levelManager;
-        }
-        set
-        {
-            if (levelManager == null)
-                levelManager = value;
-        }
-    }
+    
     
 }
