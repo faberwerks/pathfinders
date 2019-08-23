@@ -34,6 +34,14 @@ public class SceneTransition : MonoBehaviour
     }
 
     /// <summary>
+    /// Reloads the open scene.
+    /// </summary>
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    /// <summary>
     /// Loads a scene when the specified key is pressed.
     /// </summary>
     /// <returns></returns>
