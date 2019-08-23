@@ -18,7 +18,14 @@ public class Blackboard : MonoBehaviour
 
     private void Awake()
     {
-        instance = new Blackboard();
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
     }
 
     
