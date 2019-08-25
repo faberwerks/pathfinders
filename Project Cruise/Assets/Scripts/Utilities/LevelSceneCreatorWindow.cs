@@ -49,7 +49,11 @@ public class LevelSceneCreatorWindow : EditorWindow
                 // checks if scene is dirty and whether user wants to save first
                 if (EditorSceneManager.GetActiveScene().isDirty)
                 {
-                    EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
+                    // cancels create new level if pop-up to save is cancelled
+                    if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+                    {
+                        return;
+                    }
                 }
 
                 // creates new scene with Scene Setup prefab and saves it
@@ -59,10 +63,6 @@ public class LevelSceneCreatorWindow : EditorWindow
 
                 sceneSetupPrefab.name = PREFAB_INSTANCE_NAME;
 
-                if (Selection.activeTransform != null)
-                {
-                    sceneSetupPrefab.transform.SetParent(Selection.activeTransform, false);
-                }
                 sceneSetupPrefab.transform.localPosition = Vector3.zero;
                 sceneSetupPrefab.transform.localEulerAngles = Vector3.zero;
                 sceneSetupPrefab.transform.localScale = Vector3.one;
