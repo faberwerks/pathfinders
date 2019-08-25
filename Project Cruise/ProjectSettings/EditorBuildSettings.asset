@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels.unity
     guid: 237b5b0da4ea67c4dac4fdd15e24122e
   - enabled: 1
-    path: Assets/Scenes/DummyLevel.unity
+    path: Assets/Scenes/Levels/DummyLevel.unity
     guid: 47d6c02843c249c4392736bc1d375771
   - enabled: 1
     path: Assets/Scenes/PostLevel.unity

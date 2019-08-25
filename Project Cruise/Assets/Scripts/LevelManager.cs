@@ -17,10 +17,10 @@ public class LevelManager : MonoBehaviour
     public bool RelicCollected { get; set; }
 
     //Awake is called before Start
-    private void Awake()
-    {
+    //private void Awake()
+    //{
         
-    }
+    //}
 
     // Start is called before the first frame update
     private void Start()
