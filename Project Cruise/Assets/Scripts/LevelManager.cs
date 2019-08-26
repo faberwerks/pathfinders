@@ -16,10 +16,13 @@ public class LevelManager : MonoBehaviour
     public int TreasureCollected { get; set; }
     public bool RelicCollected { get; set; }
 
+    //Public list of goals
+    public List<Goal> goals = new List<Goal>();
+
     //Awake is called before Start
     //private void Awake()
     //{
-        
+
     //}
 
     // Start is called before the first frame update
@@ -30,8 +33,21 @@ public class LevelManager : MonoBehaviour
         RelicCollected = false;
     }
 
-    
+    public void CheckGoals()
+    {
+        foreach(Goal goal in goals)
+        {
+            if (goal.IsPressed == false)
+                return;
+        }
+        Win();
+    }
 
+    private void Win()
+    {
+        
+            Debug.Log("win");
+    }
     
 
     //// Update is called once per frame
