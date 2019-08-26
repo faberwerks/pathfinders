@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoalHandler : MonoBehaviour
+public class Goal : MonoBehaviour
 {
     /////// PROPERTIES ///////
     public bool IsPressed { get; set; }
