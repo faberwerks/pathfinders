@@ -17,7 +17,7 @@ public class LevelManager : MonoBehaviour
     public bool RelicCollected { get; set; }
 
     //Public list of goals
-    public List<Goal> goals;
+    public List<Goal> goals = new List<Goal>();
 
     //Awake is called before Start
     //private void Awake()
@@ -29,7 +29,6 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         Blackboard.instance.LevelManager = this;
-        Blackboard.instance.LevelManager.goals = new List<Goal>();
         TreasureCollected = 0;
         RelicCollected = false;
     }

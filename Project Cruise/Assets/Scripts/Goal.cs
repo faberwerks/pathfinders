@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// A script to define what the goal must do 
+/// </summary>
 public class Goal : MonoBehaviour
 {
     /////// PROPERTIES ///////
@@ -11,7 +14,7 @@ public class Goal : MonoBehaviour
     void Start()
     {
         IsPressed = false;
-        Invoke("AddGoal", 0.1f);
+        Blackboard.instance.LevelManager.goals.Add(this);
     }
 
     //// Update is called once per frame
@@ -20,6 +23,7 @@ public class Goal : MonoBehaviour
 
     //}
 
+    //Method CheckGoals is called here so there is no need for this method called in update function 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
@@ -35,10 +39,5 @@ public class Goal : MonoBehaviour
         {
             IsPressed = false;
         }
-    }
-
-    private void AddGoal()
-    {
-        Blackboard.instance.LevelManager.goals.Add(this);
     }
 }
