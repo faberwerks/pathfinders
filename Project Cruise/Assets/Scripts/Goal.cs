@@ -14,7 +14,7 @@ public class Goal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        IsPressed = false;
+        //IsPressed = false;
         Blackboard.instance.LevelManager.goals.Add(this);
         Blackboard.instance.LevelManager.TotalGoal +=1;
     }
@@ -37,7 +37,8 @@ public class Goal : MonoBehaviour
          if(collision.CompareTag("Player"))
          {
             Blackboard.instance.LevelManager.Goal += 1;
-         }
+            Blackboard.instance.LevelManager.CheckGoals();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
