@@ -34,6 +34,9 @@ public class LevelManager : MonoBehaviour
         Blackboard.instance.LevelManager = this;
         TreasureCollected = 0;
         RelicCollected = false;
+        //Samuel 29 August 2019 - Add
+        TotalGoal = 0;
+        Goal = 0;
     }
 
     public void CheckGoals()
