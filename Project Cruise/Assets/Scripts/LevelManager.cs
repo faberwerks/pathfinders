@@ -14,9 +14,6 @@ public class LevelManager : MonoBehaviour
 
     /////// PROPERTIES ///////
     public int TreasureCollected { get; set; }
-    //Samuel 29 August 2019 - Add
-    public int TotalGoal { get; set; }
-    public int Goal { get; set; }
     public bool RelicCollected { get; set; }
 
     //Public list of goals
@@ -34,21 +31,15 @@ public class LevelManager : MonoBehaviour
         Blackboard.instance.LevelManager = this;
         TreasureCollected = 0;
         RelicCollected = false;
-        //Samuel 29 August 2019 - Add
-        TotalGoal = 0;
-        Goal = 0;
     }
 
     public void CheckGoals()
     {
-    //Commented By Samuel 29 August 2019 - Change Algorithm
-//         foreach(Goal goal in goals)
-//         {
-//             if (goal.IsPressed == false)
-//                 return;
-//         }
-          if (TotalGoal != Goal)
+        foreach(Goal goal in goals)
+        {
+            if (goal.IsPressed == false)
                 return;
+        }
         Win();
     }
 
