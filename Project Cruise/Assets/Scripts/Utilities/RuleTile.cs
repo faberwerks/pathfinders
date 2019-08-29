@@ -19,7 +19,6 @@ public class RuleTile : TileBase
     [Serializable]
     public class TilingRule
     {
-        //public enum TransformRule { Fixed, Rotated, MirrorX, MirrorY }
         /// <summary>
         /// Determines whether to take into account the presence of a Neighbouring tile or not.
         /// </summary>
@@ -32,7 +31,6 @@ public class RuleTile : TileBase
         public Neighbour[] neighbours;          // surrounding tiles
         public Sprite[] sprites;                // output sprites
         public float perlinScale;               // degree of noise (randomness)
-        //public TransformRule transformRule;
         public OutputSprite output;
         public Tile.ColliderType colliderType;
 
@@ -122,43 +120,6 @@ public class RuleTile : TileBase
     public bool RuleMatches(TilingRule rule, Vector3Int position, ITilemap tilemap, ref Matrix4x4 transform)
     {
         // check rule
-        if (RuleMatches(rule, position, tilemap))
-        {
-            transform = Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(0.0f, 0.0f, 0.0f), Vector3.one);
-            return true;
-        }
-
-        #region UNNECESSARY
-        // check rule against rotations of 0, 90, 180, 270
-        //for (int angle = 0; angle <= (rule.transformRule == TilingRule.TransformRule.Rotated ? 270 : 0); angle += 90)
-        //{
-        //    if (RuleMatches(rule, position, tilemap, angle))
-        //    {
-        //        transform = Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(0.0f, 0.0f, -angle), Vector3.one);
-        //        return true;
-        //    }
-        //}
-
-        //// check rule against x-axis mirror
-        //if ((rule.transformRule == TilingRule.TransformRule.MirrorX) && RuleMatches(rule, position, tilemap, true, false))
-        //{
-        //    transform = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, new Vector3(-1.0f, 1.0f, 1.0f));
-        //    return true;
-        //}
-
-        //// check rule against y-axis mirror
-        //if ((rule.transformRule == TilingRule.TransformRule.MirrorY) && RuleMatches(rule, position, tilemap, false, true))
-        //{
-        //    transform = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, new Vector3(1.0f, -1.0f, 1.0f));
-        //    return true;
-        //}
-        #endregion
-
-        return false;
-    }
-
-    public bool RuleMatches(TilingRule rule, Vector3Int position, ITilemap tilemap)
-    {
         for (int y = -1; y <= 1; y++)
         {
             for (int x = -1; x <= 1; x++)
@@ -168,6 +129,7 @@ public class RuleTile : TileBase
                     Vector3Int offset = new Vector3Int(x, y, 0);
                     int index = GetIndexOfOffset(offset);
                     TileBase tile = tilemap.GetTile(position + offset);
+                    // check whether the currently checked tile is taken into account and whether it is a rule tile
                     if (rule.neighbours[index] == TilingRule.Neighbour.This && tile != this || rule.neighbours[index] == TilingRule.Neighbour.NotThis && tile == this)
                     {
                         return false;
@@ -176,82 +138,12 @@ public class RuleTile : TileBase
             }
         }
 
+        transform = Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(0.0f, 0.0f, 0.0f), Vector3.one);
         return true;
     }
 
-    // TO-DO: DETERMINE DELETE OR NOT
-    #region UNNECESSARY METHODS
-    public bool RuleMatches(TilingRule rule, Vector3Int position, ITilemap tilemap, int angle)
-    {
-        for (int y = -1; y <= 1; y++)
-        {
-            for (int x = -1; x <= 1; x++)
-            {
-                if (x != 0 || y != 0)
-                {
-                    Vector3Int offset = new Vector3Int(x, y, 0);
-                    Vector3Int rotated = GetRotatedPos(offset, angle);
-                    int index = GetIndexOfOffset(rotated);
-                    TileBase tile = tilemap.GetTile(position + offset);
-                    if (rule.neighbours[index] == TilingRule.Neighbour.This && tile != this || rule.neighbours[index] == TilingRule.Neighbour.NotThis && tile == this)
-                    {
-                        return false;
-                    }
-                }
-            }
-        }
-
-        return true;
-    }
-
-    public bool RuleMatches(TilingRule rule, Vector3Int position, ITilemap tilemap, bool mirrorX, bool mirrorY)
-    {
-        for (int y = -1; y <= 1; y++)
-        {
-            for (int x = -1; x <= 1; x++)
-            {
-                if (x != 0 || y != 0)
-                {
-                    Vector3Int offset = new Vector3Int(x, y, 0);
-                    Vector3Int mirrored = GetMirroredPos(offset, mirrorX, mirrorY);
-                    int index = GetIndexOfOffset(mirrored);
-                    TileBase tile = tilemap.GetTile(position + offset);
-                    if (rule.neighbours[index] == TilingRule.Neighbour.This && tile != this || rule.neighbours[index] == TilingRule.Neighbour.NotThis && tile == this)
-                    {
-                        return false;
-                    }
-                }
-            }
-        }
-
-        return true;
-    }
-
-    public Vector3Int GetRotatedPos(Vector3Int original, int rotation)
-    {
-        switch (rotation)
-        {
-            case 0:
-                return original;
-            case 90:
-                return new Vector3Int(-original.y, original.x, original.z);
-            case 180:
-                return new Vector3Int(-original.x, -original.y, original.z);
-            case 270:
-                return new Vector3Int(original.y, -original.x, original.z);
-        }
-        return original;
-    }
-
-    public Vector3Int GetMirroredPos(Vector3Int original, bool mirrorX, bool mirrorY)
-    {
-        return new Vector3Int(original.x * (mirrorX ? -1 : 1), original.y * (mirrorY ? -1 : 1), original.z);
-    }
-    #endregion
-
-    // TO-DO: IMPROVE SUMMARY
     /// <summary>
-    /// Gets the index of a tile of a given offset.
+    /// Gets the index of a tile at an offset from the current tile.
     /// </summary>
     /// <param name="offset">Offset position of the given tile.</param>
     /// <returns></returns>
