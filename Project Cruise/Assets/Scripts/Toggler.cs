@@ -3,9 +3,9 @@ using UnityEngine;
 
 
 /// <summary>
-/// A script to manage toogle-able objects.
+/// A script to manage toggle-able objects.
 /// </summary>
-/// Do not forget to determine size Object that need to be toogled and put GameObjects in inspector.
+/// Do not forget to determine size Object that need to be toggled and put GameObjects in inspector.
 public class Toggler : MonoBehaviour
 {
     public enum TogglerType
@@ -28,7 +28,7 @@ public class Toggler : MonoBehaviour
     }
 
     /// <summary>
-    /// A method to change toogle-able objects state to active / inactive. 
+    /// A method to change toggle-able objects state to active / inactive. 
     /// </summary>
     public void ToggleObjects()
     {
