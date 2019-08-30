@@ -36,5 +36,6 @@ public class Toggler : MonoBehaviour
         {
             toggledObjects[i].SetActive(!toggledObjects[i].activeInHierarchy);
         }
+        Debug.Log("Works");
     }
 }
