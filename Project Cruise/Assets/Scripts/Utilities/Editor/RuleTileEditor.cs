@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
-using UnityEngine;
-using UnityEngine.Tilemaps;
-using UnityEngine.Networking;
 using UnityEditor;
 using UnityEditorInternal;
-using UnityEditor.Sprites;
-using Object = UnityEngine.Object;
+using UnityEngine;
+using UnityEngine.Tilemaps;
 
+/// <summary>
+/// Custom editor for Rule Tiles.
+/// </summary>
 [CustomEditor(typeof(RuleTile))]
 [CanEditMultipleObjects]
 public class RuleTileEditor : Editor
@@ -36,24 +34,17 @@ public class RuleTileEditor : Editor
         reorderableList.onReorderCallback = ListUpdated;
     }
 
-    private void ListUpdated(ReorderableList list)
+    /// <summary>
+    /// Method to draw custom editor header.
+    /// </summary>
+    private void OnDrawHeader(Rect rect)
     {
-        SaveTile();
+        GUI.Label(rect, "Tiling Rules");
     }
 
-    private float GetElementHeight(int index)
-    {
-        if (tile.tilingRules != null && tile.tilingRules.Count > 0)
-        {
-            if (tile.tilingRules[index].output == RuleTile.TilingRule.OutputSprite.Random)
-            {
-                return defaultElementHeight + singleLineHeight * (tile.tilingRules[index].sprites.Length + 2) + paddingBetweenRules;
-            }
-        }
-
-        return defaultElementHeight + paddingBetweenRules;
-    }
-
+    /// <summary>
+    /// Method to draw custom editor body.
+    /// </summary>
     private void OnDrawElement(Rect rect, int index, bool isActive, bool isFocused)
     {
         RuleTile.TilingRule rule = tile.tilingRules[index];
@@ -67,6 +58,7 @@ public class RuleTileEditor : Editor
         Rect spriteRect = new Rect(rect.xMax - matrixWidth - 5.0f, yPos, matrixWidth, defaultElementHeight);
 
         EditorGUI.BeginChangeCheck();
+        // draw rule tile editor GUI
         RuleInspectorOnGUI(inspectorRect, rule);
         RuleMatrixOnGUI(matrixRect, rule);
         SpriteOnGUI(spriteRect, rule);
@@ -76,17 +68,30 @@ public class RuleTileEditor : Editor
         }
     }
 
-    private void SaveTile()
+    /// <summary>
+    /// A method to get the height of the body.
+    /// </summary>
+    /// <returns>Height of the body.</returns>
+    private float GetElementHeight(int index)
     {
-        EditorUtility.SetDirty(target);
-        SceneView.RepaintAll();
+        // body height if there are tiling rules
+        if (tile.tilingRules != null && tile.tilingRules.Count > 0)
+        {
+            if (tile.tilingRules[index].output == RuleTile.TilingRule.OutputSprite.Random)
+            {
+                return defaultElementHeight + singleLineHeight * (tile.tilingRules[index].sprites.Length + 2) + paddingBetweenRules;
+            }
+        }
+
+        return defaultElementHeight + paddingBetweenRules;
     }
 
-
-
-    private void OnDrawHeader(Rect rect)
+    /// <summary>
+    /// A method called every time the tiling rules list is updated.
+    /// </summary>
+    private void ListUpdated(ReorderableList list)
     {
-        GUI.Label(rect, "Tiling Rules");
+        SaveTile();
     }
 
     public override void OnInspectorGUI()
@@ -101,24 +106,27 @@ public class RuleTileEditor : Editor
         }
     }
 
-
-
-
-
-
+    /// <summary>
+    /// A method to draw the rule inspector GUI.
+    /// </summary>
+    /// <param name="tilingRule">The rule being drawn.</param>
     private static void RuleInspectorOnGUI(Rect rect, RuleTile.TilingRule tilingRule)
     {
         float y = rect.yMin;
         EditorGUI.BeginChangeCheck();
+        // draw collider field
+        // TO-DO: fix minor bug default collider is not default
         GUI.Label(new Rect(rect.xMin, y, labelWidth, singleLineHeight), "Collider");
         tilingRule.colliderType = (Tile.ColliderType)EditorGUI.EnumPopup(new Rect(rect.xMin + labelWidth, y, rect.width - labelWidth, singleLineHeight), tilingRule.colliderType);
         y += singleLineHeight;
+        // draw output field
         GUI.Label(new Rect(rect.xMin, y, labelWidth, singleLineHeight), "Output");
         tilingRule.output = (RuleTile.TilingRule.OutputSprite)EditorGUI.EnumPopup(new Rect(rect.xMin + labelWidth, y, rect.width - labelWidth, singleLineHeight), tilingRule.output);
         y += singleLineHeight;
 
         if (tilingRule.output == RuleTile.TilingRule.OutputSprite.Random)
         {
+            // draw noise slider
             GUI.Label(new Rect(rect.xMin, y, labelWidth, singleLineHeight), "Noise");
             tilingRule.perlinScale = EditorGUI.Slider(new Rect(rect.xMin + labelWidth, y, rect.width - labelWidth, singleLineHeight), tilingRule.perlinScale, 0.001f, 0.999f);
             y += singleLineHeight;
@@ -146,6 +154,10 @@ public class RuleTileEditor : Editor
 
     }
 
+    /// <summary>
+    /// A method to draw the rule matrix GUI.
+    /// </summary>
+    /// <param name="tilingRule">The rule being drawn.</param>
     private static void RuleMatrixOnGUI(Rect rect, RuleTile.TilingRule tilingRule)
     {
         Handles.color = new Color(0.0f, 0.0f, 0.0f, 0.2f);
@@ -153,6 +165,7 @@ public class RuleTileEditor : Editor
         float w = rect.width / 3.0f;
         float h = rect.height / 3.0f;
 
+        // draws matrix
         for (int y = 0; y <= 3; y++)
         {
             float top = rect.yMin + y * h;
@@ -166,6 +179,7 @@ public class RuleTileEditor : Editor
 
         Handles.color = Color.white;
 
+        // draws inside matrix
         for (int y = 0; y <= 2; y++)
         {
             for (int x = 0; x <= 2; x++)
@@ -176,7 +190,7 @@ public class RuleTileEditor : Editor
                     switch (tilingRule.neighbours[index])
                     {
                         case RuleTile.TilingRule.Neighbour.This:
-                            // draw arrow texture
+                            // draw tick texture
                             break;
                         case RuleTile.TilingRule.Neighbour.NotThis:
                             // draw x texture
@@ -200,8 +214,21 @@ public class RuleTileEditor : Editor
         }
     }
 
+    /// <summary>
+    /// A method to draw the sprite field GUI.
+    /// </summary>
+    /// <param name="tilingRule">The rule being drawn.</param>
     private void SpriteOnGUI(Rect rect, RuleTile.TilingRule tilingRule)
     {
         tilingRule.sprites[0] = EditorGUI.ObjectField(new Rect(rect.xMax - rect.height, rect.yMin, rect.height, rect.height), tilingRule.sprites[0], typeof(Sprite), false) as Sprite;
+    }
+
+    /// <summary>
+    /// A method to save tiling rule changes to disk and repaints scene.
+    /// </summary>
+    private void SaveTile()
+    {
+        EditorUtility.SetDirty(target);     // marks rule tile as dirty (needs to be saved to disk)
+        SceneView.RepaintAll();
     }
 }

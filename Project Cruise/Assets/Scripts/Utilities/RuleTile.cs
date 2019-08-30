@@ -108,8 +108,6 @@ public class RuleTile : TileBase
         }
     }
 
-    // TO-DO: REFACTOR TWO RULEMATCHES METHOD OVERLOADS INTO ONE RULEMATCHES METHOD
-
     /// <summary>
     /// Checks whether the tile matches a given rule.
     /// </summary>
