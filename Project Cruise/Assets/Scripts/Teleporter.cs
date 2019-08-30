@@ -8,28 +8,23 @@ public class Teleporter : MonoBehaviour
     [SerializeField]
     private Transform target;
 
+    //list of characters in one teleporter
     [SerializeField]
-    private Queue<Transform> Characters;
+    private List<Transform> Characters;
 
     // Start is called before the first frame update
     void Start()
     {
-        Characters = new Queue<Transform>();
+        Characters = new List<Transform>();
     }
 
     // Update is called once per frame
     private void Update()
     {
-        //teleport player when interact button clicked
-        if(Blackboard.instance.LevelManager.IsInteracting)
+        //only called when button is clicked
+        if(Blackboard.instance.LevelManager.IsInteracting && Characters.Count != 0)
         {
-            //foreach(Transform character in Characters)
-            //{
-            //    character.position = target.position;
-            //    Debug.Log("tele");
-            //}
-            Characters.Dequeue().transform.position = target.position;
-            Blackboard.instance.LevelManager.IsInteracting = false;
+            Teleport();
         }
     }
 
@@ -37,7 +32,7 @@ public class Teleporter : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            Characters.Enqueue(collision.transform);
+            Characters.Add(collision.transform);
         }
     }
 
@@ -45,9 +40,19 @@ public class Teleporter : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Characters.Dequeue();
+            Characters.Remove(collision.transform);
         }
     }
-    
 
+    //teleport player when interact button clicked
+    private void Teleport()
+    {
+        foreach (Transform character in Characters)
+        {
+            character.position = target.position;
+            //Debug.Log("tele");
+        }
+        //Characters.Dequeue().transform.position = target.position;
+        Blackboard.instance.LevelManager.IsInteracting = false;
+    }
 }
