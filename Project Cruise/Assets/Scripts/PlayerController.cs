@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Movement or control of the player to the character
@@ -9,7 +10,9 @@ public class PlayerController : MonoBehaviour
 {
     private Joystick joystick;
     private Toggler currentPressurePlate;
+    private Toggler currentLever;
     public float speed = 5.0f;
+    public Button button;
 
     // cached variables
     private Vector2 dir;
@@ -34,6 +37,25 @@ public class PlayerController : MonoBehaviour
         translation.Set(dir.x, dir.y, translation.z);
 
         transform.Translate(translation * speed * Time.deltaTime);
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Lever"))
+        {
+            currentLever = collision.gameObject.GetComponent<Toggler>();
+            button.onClick.AddListener(currentLever.ToggleObjects);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Lever"))
+        {
+            button.onClick.RemoveListener(currentLever.ToggleObjects);
+            currentLever = null;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
