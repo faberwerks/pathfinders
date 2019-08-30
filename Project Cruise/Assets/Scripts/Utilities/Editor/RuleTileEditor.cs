@@ -58,12 +58,10 @@ public class RuleTileEditor : Editor
     {
         RuleTile.TilingRule rule = tile.tilingRules[index];
 
-        Debug.Log("OnDrawElement yMin:" + rect.yMin);
         float yPos = rect.yMin + 2.0f;
         float height = rect.height - paddingBetweenRules;
         float matrixWidth = defaultElementHeight;
 
-        Debug.Log("OnDrawElement yPos:" + yPos);
         Rect inspectorRect = new Rect(rect.xMin, yPos, rect.width - matrixWidth * 2.0f - 20.0f, height);
         Rect matrixRect = new Rect(rect.xMax - matrixWidth * 2.0f - 10.0f, yPos, matrixWidth, defaultElementHeight);
         Rect spriteRect = new Rect(rect.xMax - matrixWidth - 5.0f, yPos, matrixWidth, defaultElementHeight);
@@ -110,7 +108,6 @@ public class RuleTileEditor : Editor
 
     private static void RuleInspectorOnGUI(Rect rect, RuleTile.TilingRule tilingRule)
     {
-        Debug.Log("Current yMin:" + rect.yMin);
         float y = rect.yMin;
         EditorGUI.BeginChangeCheck();
         GUI.Label(new Rect(rect.xMin, y, labelWidth, singleLineHeight), "Collider");
@@ -120,7 +117,6 @@ public class RuleTileEditor : Editor
         tilingRule.output = (RuleTile.TilingRule.OutputSprite)EditorGUI.EnumPopup(new Rect(rect.xMin + labelWidth, y, rect.width - labelWidth, singleLineHeight), tilingRule.output);
         y += singleLineHeight;
 
-        Debug.Log("Current y:" + y);
         if (tilingRule.output == RuleTile.TilingRule.OutputSprite.Random)
         {
             GUI.Label(new Rect(rect.xMin, y, labelWidth, singleLineHeight), "Noise");
@@ -128,7 +124,7 @@ public class RuleTileEditor : Editor
             y += singleLineHeight;
         }
 
-        if (tilingRule.output == RuleTile.TilingRule.OutputSprite.Single)
+        if (tilingRule.output != RuleTile.TilingRule.OutputSprite.Single)
         {
             GUI.Label(new Rect(rect.xMin, y, labelWidth, singleLineHeight), "Size");
             EditorGUI.BeginChangeCheck();
@@ -145,10 +141,7 @@ public class RuleTileEditor : Editor
             {
                 tilingRule.sprites[i] = EditorGUI.ObjectField(new Rect(rect.xMin + labelWidth, y, rect.width - labelWidth, singleLineHeight), tilingRule.sprites[i], typeof(Sprite), false) as Sprite;
                 y += singleLineHeight;
-                y += singleLineHeight;
             }
-
-            Debug.Log("Current y at end:" + y);
         }
 
     }
