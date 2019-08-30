@@ -3,30 +3,35 @@ using UnityEngine;
 
 
 /// <summary>
-/// A script to manage toogleObjects
-/// Do not forget to determine size Object that need to be toogled and put GameObjects in inspector
+/// A script to manage toogle-able objects.
+/// Do not forget to determine size Object that need to be toogled and put GameObjects in inspector.
 /// </summary>
 public class Toggler : MonoBehaviour
 {
     public enum TogglerType
     {
-        NORMAL
+        Normal
     }
 
     public List<GameObject> toggledObjects;
 
-    public TogglerType togglerType = TogglerType.NORMAL;
+    public TogglerType togglerType = TogglerType.Normal;
 
-   // private bool hasBeenToggled;
+    // Variable used for checking "Triggered-timer" trigger object.
+    private bool hasBeenToggled;
+   
 
     private void Start()
     {
-        //hasBeenToggled = false;
+        // Variable used for checking "Triggered-timer" trigger object.
+        hasBeenToggled = false;
     }
 
+    /// <summary>
+    /// A method to change toogle-able objects state to active / inactive. 
+    /// </summary>
     public void ToggleObjects()
     {
-        Debug.Log("Lever: ToggleObjects called.");
         for (int i = 0; i < toggledObjects.Count; i++)
         {
             toggledObjects[i].SetActive(!toggledObjects[i].activeInHierarchy);
