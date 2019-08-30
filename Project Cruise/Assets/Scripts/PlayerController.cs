@@ -8,6 +8,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Joystick joystick;
+    private Toggler currentPressurePlate;
     public float speed = 5.0f;
 
     // cached variables
@@ -34,6 +35,21 @@ public class PlayerController : MonoBehaviour
 
         transform.Translate(translation * speed * Time.deltaTime);
     }
-    
-    
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PressurePlate")){
+            currentPressurePlate = collision.gameObject.GetComponent<Toggler>();
+            currentPressurePlate.ToggleObjects();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PressurePlate"))
+        {
+            currentPressurePlate.ToggleObjects();
+            currentPressurePlate = null;
+        }
+    }
 }
