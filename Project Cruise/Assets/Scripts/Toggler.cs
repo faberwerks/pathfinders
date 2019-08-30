@@ -10,7 +10,8 @@ public class Toggler : MonoBehaviour
 {
     public enum TogglerType
     {
-        Normal
+        Normal,
+        triggerTime
     }
 
     public List<GameObject> toggledObjects;
@@ -19,6 +20,8 @@ public class Toggler : MonoBehaviour
 
     // Variable used for checking "Triggered-timer" trigger object.
     private bool hasBeenToggled;
+
+    public TriggeredTimer timer;
    
 
     private void Start()
@@ -37,5 +40,15 @@ public class Toggler : MonoBehaviour
             toggledObjects[i].SetActive(!toggledObjects[i].activeInHierarchy);
         }
         Debug.Log("Works");
+    }
+
+    //To check if preasure plate have been pressed or not
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(!hasBeenToggled && togglerType == TogglerType.triggerTime)
+        {
+            timer.IsActivating();
+            hasBeenToggled = true;
+        }
     }
 }
