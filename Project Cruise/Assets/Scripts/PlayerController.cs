@@ -11,8 +11,9 @@ public class PlayerController : MonoBehaviour
     private Joystick joystick;
     private Toggler currentPressurePlate;
     private Toggler currentLever;
+    private Button button;
     public float speed = 5.0f;
-    public Button button;
+    
 
     // cached variables
     private Vector2 dir;
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        button = Blackboard.instance.button;
         translation = Vector3.zero;
     }
 
