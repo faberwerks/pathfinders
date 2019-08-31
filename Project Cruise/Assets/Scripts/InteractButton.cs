@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ClickButton : Button
+public class InteractButton : Button
 {
     private new void Start()
     {

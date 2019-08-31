@@ -8,7 +8,7 @@ using UnityEngine.UI;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
-    private GameObject key;
+    private GameObject gate;
     private Joystick joystick;
     private Toggler currentPressurePlate;
     private Toggler currentLever;
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Obstacle") && key == collision.gameObject)
+        if(collision.gameObject.CompareTag("Obstacle") && gate == collision.gameObject)
         {
             button.onClick.AddListener(() => collision.gameObject.SetActive(false));
         }
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.CompareTag("Key") && !hasKey)
         {
-            key = collision.gameObject.GetComponent<KeyMapping>().gate;
+            gate = collision.gameObject.GetComponent<KeyMapping>().gate;
             hasKey = true;
             Destroy(collision.gameObject);
             Debug.Log(hasKey);
