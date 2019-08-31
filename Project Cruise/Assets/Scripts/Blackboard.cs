@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// A script to keep all the important references in one place
@@ -15,6 +16,7 @@ public class Blackboard : MonoBehaviour
     /////// PROPERTIES ///////
     public Joystick Joystick { get; set; }
     public LevelManager LevelManager { get; set; }
+    public Button Button { get; set; } 
 
     private void Awake()
     {

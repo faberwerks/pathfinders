@@ -8,20 +8,26 @@ using UnityEngine.UI;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
+    private GameObject key;
     private Joystick joystick;
     private Toggler currentPressurePlate;
     private Toggler currentLever;
-    public float speed = 5.0f;
     public Button button;
+    public bool hasKey;
+    public float speed = 5.0f;
+    
 
     // cached variables
     private Vector2 dir;
     private Vector3 translation;
 
+
     // Start is called before the first frame update
     void Start()
     {
+        
         translation = Vector3.zero;
+        hasKey = false;
     }
 
     // Update is called once per frame
@@ -30,6 +36,7 @@ public class PlayerController : MonoBehaviour
         if(joystick == null)
         {
             joystick = Blackboard.instance.Joystick;
+            button = Blackboard.instance.Button;
         }
 
         //direction of the character movement from the joystick
@@ -38,6 +45,22 @@ public class PlayerController : MonoBehaviour
 
         transform.Translate(translation * speed * Time.deltaTime);
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Obstacle") && key == collision.gameObject)
+        {
+            button.onClick.AddListener(() => collision.gameObject.SetActive(false));
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            button.onClick.RemoveListener(() => collision.gameObject.SetActive(false));
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -51,6 +74,14 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("PressurePlate")){
             currentPressurePlate = collision.gameObject.GetComponent<Toggler>();
             currentPressurePlate.ToggleObjects();
+        }
+
+        if (collision.CompareTag("Key") && !hasKey)
+        {
+            key = collision.gameObject.GetComponent<KeyMapping>().gate;
+            hasKey = true;
+            Destroy(collision.gameObject);
+            Debug.Log(hasKey);
         }
     }
 
