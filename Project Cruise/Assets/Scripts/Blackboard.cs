@@ -16,7 +16,7 @@ public class Blackboard : MonoBehaviour
     /////// PROPERTIES ///////
     public Joystick Joystick { get; set; }
     public LevelManager LevelManager { get; set; }
-    public Button Button { get; set; } 
+    public Button Button { get; set; }
 
     private void Awake()
     {
@@ -30,8 +30,8 @@ public class Blackboard : MonoBehaviour
         }
     }
 
-    
 
-    
-    
+
+
+
 }

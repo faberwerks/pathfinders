@@ -7,6 +7,6 @@ public class ClickButton : Button
 {
     private new void Start()
     {
-        Blackboard.instance.Button = this;   
+        Blackboard.instance.Button = this;
     }
 }
