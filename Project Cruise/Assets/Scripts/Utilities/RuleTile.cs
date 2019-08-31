@@ -25,7 +25,7 @@ public class RuleTile : TileBase
         /// DontCare    -> don't take into account
         /// This        -> take into account that it's there
         /// NotThis     -> take into account that it's not there
-        public enum Neighbour { DontCare, This, NotThis }   
+        public enum Neighbour { DontCare, This, NotThis }
         public enum OutputSprite { Single, Random }         // determines how output sprite is chosen
 
         public Neighbour[] neighbours;          // surrounding tiles

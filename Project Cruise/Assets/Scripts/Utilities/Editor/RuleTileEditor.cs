@@ -12,6 +12,10 @@ using UnityEngine.Tilemaps;
 [CanEditMultipleObjects]
 public class RuleTileEditor : Editor
 {
+    private static Texture blackCircle;
+    private static Texture greenCheckmark;
+    private static Texture redX;
+
     private ReorderableList reorderableList;
     public RuleTile tile { get { return (target as RuleTile); } }
 
@@ -20,8 +24,16 @@ public class RuleTileEditor : Editor
     private const float singleLineHeight = 16.0f;
     private const float labelWidth = 53.0f;
 
+    private const string blackCirclePath = "Assets/Sprites/Editor/rule-tile.png";
+    private const string greenCheckmarkPath = "Assets/Sprites/Editor/rule-tile-this.png";
+    private const string redXPath = "Assets/Sprites/Editor/rule-tile-not_this.png";
+
     public void OnEnable()
     {
+        blackCircle = (Texture) AssetDatabase.LoadAssetAtPath(blackCirclePath, typeof (Texture));
+        greenCheckmark = (Texture)AssetDatabase.LoadAssetAtPath(greenCheckmarkPath, typeof(Texture));
+        redX = (Texture)AssetDatabase.LoadAssetAtPath(redXPath, typeof(Texture));
+
         if (tile.tilingRules == null)
         {
             tile.tilingRules = new List<RuleTile.TilingRule>();
@@ -190,10 +202,10 @@ public class RuleTileEditor : Editor
                     switch (tilingRule.neighbours[index])
                     {
                         case RuleTile.TilingRule.Neighbour.This:
-                            // draw tick texture
+                            GUI.DrawTexture(r, greenCheckmark);
                             break;
                         case RuleTile.TilingRule.Neighbour.NotThis:
-                            // draw x texture
+                            GUI.DrawTexture(r, redX);
                             break;
                     }
 
@@ -208,7 +220,7 @@ public class RuleTileEditor : Editor
                 }
                 else
                 {
-                    // draw transform rule texture
+                    GUI.DrawTexture(r, blackCircle);
                 }
             }
         }
