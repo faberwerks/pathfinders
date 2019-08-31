@@ -45,10 +45,16 @@ public class LevelManager : MonoBehaviour
 
     private void Win()
     {
-        
-            Debug.Log("win");
+        Debug.Log("win");
     }
     
+    /// <summary>
+    /// A method to handle losing a level.
+    /// </summary>
+    public void Lose()
+    {
+        Debug.Log("Lose");
+    }
 
     //// Update is called once per frame
     //void Update()
