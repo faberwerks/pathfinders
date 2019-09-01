@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +15,8 @@ public class LevelManager : MonoBehaviour
     /////// PROPERTIES ///////
     public int TreasureCollected { get; set; }
     public bool RelicCollected { get; set; }
+    //check when button is pressed
+    public bool IsInteracting { get; set; }
 
     //Public list of goals
     public List<Goal> goals = new List<Goal>();
@@ -31,6 +33,7 @@ public class LevelManager : MonoBehaviour
         Blackboard.instance.LevelManager = this;
         TreasureCollected = 0;
         RelicCollected = false;
+        IsInteracting = false;
     }
 
     public void CheckGoals()
@@ -45,8 +48,12 @@ public class LevelManager : MonoBehaviour
 
     private void Win()
     {
-        
             Debug.Log("win");
+    }
+
+    public void Lose()
+    {
+        Debug.Log("lose");
     }
     
 
