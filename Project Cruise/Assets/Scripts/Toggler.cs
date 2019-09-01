@@ -1,41 +1,80 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-
 /// <summary>
-/// A script to manage toggle-able objects.
+/// A component handling toggling obstacles.
 /// </summary>
-/// Do not forget to determine size Object that need to be toggled and put GameObjects in inspector.
-public class Toggler : MonoBehaviour
+/// Don't forget to set the size (i.e. number of objects) to be toggled in the inspector!
+public class Toggler : Interactable
 {
     public enum TogglerType
     {
-        Normal
+        PressurePlate,
+        Lever,
+        Timer
     }
 
     public List<GameObject> toggledObjects;
 
-    public TogglerType togglerType = TogglerType.Normal;
+    public TogglerType togglerType;
 
-    // Variable used for checking "Triggered-timer" trigger object.
-    private bool hasBeenToggled;
-   
+    private TriggeredTimer timer = null;
+    private bool hasBeenTriggered;  // used to check state of triggered timer
 
     private void Start()
     {
-        // Variable used for checking "Triggered-timer" trigger object.
-        hasBeenToggled = false;
+        hasBeenTriggered = false;
+
+        if (togglerType == TogglerType.Timer)
+        {
+            timer = gameObject.GetComponent<TriggeredTimer>();
+        }   
+    }
+
+    // only used for LEVERS
+    public override void Interact()
+    {
+        if (togglerType == TogglerType.Lever)
+        {
+            ToggleObjects();
+        }
     }
 
     /// <summary>
-    /// A method to change toggle-able objects state to active / inactive. 
+    /// A method to toggle the state of the toggled objects (active / inactive).
     /// </summary>
     public void ToggleObjects()
     {
-        for (int i = 0; i < toggledObjects.Count; i++)
+        foreach (GameObject toggledObject in toggledObjects)
         {
-            toggledObjects[i].SetActive(!toggledObjects[i].activeInHierarchy);
+            toggledObject.SetActive(!toggledObject.activeInHierarchy);
         }
-        Debug.Log("Works");
+    }
+
+    // only used for PRESSURE PLATES and TIMERS
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        switch (togglerType)
+        {
+            case TogglerType.PressurePlate:
+                ToggleObjects();
+                break;
+            case TogglerType.Timer:
+                if (!hasBeenTriggered)
+                {
+                    timer.StartTimer();
+                    hasBeenTriggered = true;
+                }
+                break;
+        }
+    }
+
+    // only used for LEVERS
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (togglerType == TogglerType.PressurePlate)
+        {
+            ToggleObjects();
+        }
     }
 }

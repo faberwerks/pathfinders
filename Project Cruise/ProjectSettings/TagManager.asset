@@ -8,6 +8,7 @@ TagManager:
   - Lever
   - Key
   - Obstacle
+  - Interactable
   layers:
   - Default
   - TransparentFX

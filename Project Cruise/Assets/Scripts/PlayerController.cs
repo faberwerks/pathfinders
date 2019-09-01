@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,15 +12,14 @@ public class PlayerController : MonoBehaviour
     private Joystick joystick;
     private Toggler currentPressurePlate;
     private Toggler currentLever;
-    private Button button;
-    public bool hasKey;
+    private Interactable interactableObject;
     public float speed = 5.0f;
-
+    public Button button;
+    private bool hasKey;
 
     // cached variables
     private Vector2 dir;
     private Vector3 translation;
-
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +34,6 @@ public class PlayerController : MonoBehaviour
         if(joystick == null)
         {
             joystick = Blackboard.instance.Joystick;
-            button = Blackboard.instance.Button;
         }
 
         //direction of the character movement from the joystick
@@ -45,7 +43,8 @@ public class PlayerController : MonoBehaviour
         transform.Translate(translation * speed * Time.deltaTime);
 
     }
-
+    
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Obstacle") && gate == collision.gameObject)
@@ -64,17 +63,23 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Lever"))
+        //if (collision.CompareTag("Lever"))
+        //{
+        //    currentLever = collision.gameObject.GetComponent<Toggler>();
+        //    button.onClick.AddListener(currentLever.ToggleObjects);
+        //}
+
+        //if (collision.CompareTag("PressurePlate")){
+        //    currentPressurePlate = collision.gameObject.GetComponent<Toggler>();
+        //    currentPressurePlate.ToggleObjects();
+        //}
+
+        if (collision.CompareTag("Interactable"))
         {
-            currentLever = collision.gameObject.GetComponent<Toggler>();
-            button.onClick.AddListener(currentLever.ToggleObjects);
+            interactableObject = collision.gameObject.GetComponent<Interactable>();
+            button.onClick.AddListener(interactableObject.Interact);
         }
-
-        if (collision.CompareTag("PressurePlate")){
-            currentPressurePlate = collision.gameObject.GetComponent<Toggler>();
-            currentPressurePlate.ToggleObjects();
-        }
-
+        
         if (collision.CompareTag("Key") && !hasKey)
         {
             gate = collision.gameObject.GetComponent<KeyMapping>().gate;
@@ -86,15 +91,21 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Lever"))
+        //if (collision.CompareTag("Lever"))
+        //{
+        //    button.onClick.RemoveListener(currentLever.ToggleObjects);
+        //    currentLever = null;
+        //}
+        //if (collision.CompareTag("PressurePlate"))
+        //{
+        //    currentPressurePlate.ToggleObjects();
+        //    currentPressurePlate = null;
+        //}
+
+        if (collision.CompareTag("Interactable"))
         {
-            button.onClick.RemoveListener(currentLever.ToggleObjects);
-            currentLever = null;
-        }
-        if (collision.CompareTag("PressurePlate"))
-        {
-            currentPressurePlate.ToggleObjects();
-            currentPressurePlate = null;
+            button.onClick.RemoveListener(interactableObject.Interact);
+            interactableObject = null;
         }
     }
 }
