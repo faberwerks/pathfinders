@@ -50,7 +50,6 @@ public class Teleporter : Interactable
         {
             character.position = target.position;
         }
-        Debug.Log("All characters sent.");
     }
 
 }

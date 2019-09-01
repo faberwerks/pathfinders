@@ -48,8 +48,12 @@ public class LevelManager : MonoBehaviour
 
     private void Win()
     {
-        
             Debug.Log("win");
+    }
+
+    public void Lose()
+    {
+        Debug.Log("lose");
     }
     
 
