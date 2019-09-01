@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,12 +8,14 @@ using UnityEngine.UI;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
+    private GameObject gate;
     private Joystick joystick;
     private Toggler currentPressurePlate;
     private Toggler currentLever;
     private Interactable interactableObject;
     public float speed = 5.0f;
     public Button button;
+    private bool hasKey;
 
     // cached variables
     private Vector2 dir;
@@ -23,6 +25,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         translation = Vector3.zero;
+        hasKey = false;
     }
 
     // Update is called once per frame
@@ -39,6 +42,23 @@ public class PlayerController : MonoBehaviour
 
         transform.Translate(translation * speed * Time.deltaTime);
 
+    }
+    
+    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Obstacle") && gate == collision.gameObject)
+        {
+            button.onClick.AddListener(() => collision.gameObject.SetActive(false));
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            button.onClick.RemoveListener(() => collision.gameObject.SetActive(false));
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -58,6 +78,14 @@ public class PlayerController : MonoBehaviour
         {
             interactableObject = collision.gameObject.GetComponent<Interactable>();
             button.onClick.AddListener(interactableObject.Interact);
+        }
+        
+        if (collision.CompareTag("Key") && !hasKey)
+        {
+            gate = collision.gameObject.GetComponent<KeyMapping>().gate;
+            hasKey = true;
+            Destroy(collision.gameObject);
+            Debug.Log(hasKey);
         }
     }
 
