@@ -31,12 +31,26 @@ public class Toggler : Interactable
         }   
     }
 
-    // only used for LEVERS
+    // only used for LEVERS and TRIGGERED TIMERS
     public override void Interact()
     {
         if (togglerType == TogglerType.Lever)
         {
             ToggleObjects();
+        }
+
+        switch (togglerType)
+        {
+            case TogglerType.Lever:
+                ToggleObjects();
+                break;
+            case TogglerType.Timer:
+                if (!hasBeenTriggered)
+                {
+                    timer.StartTimer();
+                    hasBeenTriggered = true;
+                }
+                break;
         }
     }
 
@@ -51,7 +65,7 @@ public class Toggler : Interactable
         }
     }
 
-    // only used for PRESSURE PLATES and TIMERS
+    // only used for PRESSURE PLATES
     private void OnTriggerEnter2D(Collider2D collision)
     {
         switch (togglerType)
@@ -59,17 +73,10 @@ public class Toggler : Interactable
             case TogglerType.PressurePlate:
                 ToggleObjects();
                 break;
-            case TogglerType.Timer:
-                if (!hasBeenTriggered)
-                {
-                    timer.StartTimer();
-                    hasBeenTriggered = true;
-                }
-                break;
         }
     }
 
-    // only used for LEVERS
+    // only used for PRESSURE PLATES
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (togglerType == TogglerType.PressurePlate)
