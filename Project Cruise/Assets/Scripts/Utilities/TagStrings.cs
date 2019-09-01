@@ -1,26 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEditorInternal;
-
-public class TagStrings
+﻿/// <summary>
+/// A static class to hold all tag strings.
+/// </summary>
+public static class TagStrings
 {
-    private static TagStrings instance = null;
-
-    public static TagStrings Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = new TagStrings();
-            }
-            return instance;
-        }
-    }
-
-    private TagStrings()
-    {
-        
-    }
+    public const string PLAYER_TAG = "Player";
+    public const string PRESSURE_PLATE_TAG = "PressurePlate";
+    public const string LEVER_TAG = "Lever";
+    public const string INTERACTABLE_TAG = "Interactable";
+    public const string OBSTACLE_TAG = "Obstacle";
 }
