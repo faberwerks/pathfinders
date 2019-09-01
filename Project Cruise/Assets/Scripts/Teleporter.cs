@@ -2,27 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Teleporter : MonoBehaviour
+/// <summary>
+/// Component to handle teleportation.
+/// </summary>
+public class Teleporter : Interactable
 {
+    private List<Transform> characters; // characters to be teleported
 
-    [SerializeField]
-    private Transform target;
-
-    //list of characters in one teleporter
-    [SerializeField]
-    private List<Transform> characters;
+    public Transform target;            // target to teleport characters to
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         characters = new List<Transform>();
     }
 
-    // Update is called once per frame
-    private void Update()
+    public override void Interact()
     {
-        //only called when button is clicked
-        if(Blackboard.instance.LevelManager.IsInteracting && characters.Count != 0)
+        if (target && characters.Count > 0)
         {
             Teleport();
         }
@@ -30,7 +27,7 @@ public class Teleporter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             characters.Add(collision.transform);
         }
@@ -44,15 +41,15 @@ public class Teleporter : MonoBehaviour
         }
     }
 
-    //teleport player when interact button clicked
+    /// <summary>
+    /// Teleports all detected characters to target position.
+    /// </summary>
     private void Teleport()
     {
         foreach (Transform character in characters)
         {
             character.position = target.position;
-            //Debug.Log("tele");
         }
-        //characters.Dequeue().transform.position = target.position;
-        Blackboard.instance.LevelManager.IsInteracting = false;
     }
+
 }
