@@ -10,7 +10,7 @@ public class Collectible : MonoBehaviour
     //Called when Player touch the collectible
     protected void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag(TagStrings.PLAYER_TAG))
         {
             OnCollected();
             Destroy(gameObject);
@@ -18,8 +18,5 @@ public class Collectible : MonoBehaviour
     }
 
     //What the collected give when it touch by the Player
-    protected virtual void OnCollected()
-    {
-
-    }
+    protected virtual void OnCollected() { }
 }

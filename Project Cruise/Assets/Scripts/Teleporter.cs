@@ -27,7 +27,7 @@ public class Teleporter : Interactable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag(TagStrings.PLAYER_TAG))
         {
             characters.Add(collision.transform);
         }
@@ -35,7 +35,7 @@ public class Teleporter : Interactable
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag(TagStrings.PLAYER_TAG))
         {
             characters.Remove(collision.transform);
         }

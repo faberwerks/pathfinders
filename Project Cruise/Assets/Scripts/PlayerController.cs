@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private Interactable interactableObject;
     public float speed = 5.0f;
     public Button button;
-    private bool hasKey;
+    public bool hasKey;
 
     // cached variables
     private Vector2 dir;
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Obstacle") && gate == collision.gameObject)
+        if(collision.gameObject.CompareTag(TagStrings.OBSTACLE_TAG) && gate == collision.gameObject)
         {
             button.onClick.AddListener(() => collision.gameObject.SetActive(false));
         }
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag(TagStrings.OBSTACLE_TAG))
         {
             button.onClick.RemoveListener(() => collision.gameObject.SetActive(false));
         }
@@ -74,13 +74,13 @@ public class PlayerController : MonoBehaviour
         //    currentPressurePlate.ToggleObjects();
         //}
 
-        if (collision.CompareTag("Interactable"))
+        if (collision.CompareTag(TagStrings.INTERACTABLE_TAG))
         {
             interactableObject = collision.gameObject.GetComponent<Interactable>();
             button.onClick.AddListener(interactableObject.Interact);
         }
         
-        if (collision.CompareTag("Key") && !hasKey)
+        if (collision.CompareTag(TagStrings.KEY_TAG) && !hasKey)
         {
             gate = collision.gameObject.GetComponent<KeyMapping>().gate;
             hasKey = true;
@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
         //    currentPressurePlate = null;
         //}
 
-        if (collision.CompareTag("Interactable"))
+        if (collision.CompareTag(TagStrings.INTERACTABLE_TAG))
         {
             button.onClick.RemoveListener(interactableObject.Interact);
             interactableObject = null;
