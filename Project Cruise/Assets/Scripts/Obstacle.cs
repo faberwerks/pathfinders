@@ -1,26 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// A component handling Obstacle behaviour.
+/// </summary>
 public class Obstacle : MonoBehaviour
 {
-    private GameObject player;
+    private PlayerController player;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            player = collision.gameObject;
-            Debug.Log(player);
+            player = collision.gameObject.GetComponent<PlayerController>();
         }
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
-        if(player != null)
+        if (player != null)
         {
-            player.GetComponent<PlayerController>().hasKey = false;
-            Debug.Log(player.GetComponent<PlayerController>().hasKey);
+            player.hasKey = false;
         }
     }
 }

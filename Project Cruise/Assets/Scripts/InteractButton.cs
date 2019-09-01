@@ -1,12 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class InteractButton : Button
+/// <summary>
+/// A component to assign the InteractButton to the Blackboard.
+/// </summary>
+public class InteractButton : MonoBehaviour
 {
-    private new void Start()
+    private void Start()
     {
-        Blackboard.instance.Button = this;
+        Blackboard.instance.Button = gameObject.GetComponent<Button>();
     }
 }

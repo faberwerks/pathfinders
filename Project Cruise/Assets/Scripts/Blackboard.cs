@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
@@ -8,9 +6,6 @@ using UnityEngine.UI;
 /// </summary>
 public class Blackboard : MonoBehaviour
 {
-    //private Joystick joystick;
-    //private LevelManager levelManager;
-
     public static Blackboard instance;
 
     /////// PROPERTIES ///////
@@ -29,9 +24,4 @@ public class Blackboard : MonoBehaviour
             Destroy(this);
         }
     }
-
-
-
-
-
 }
