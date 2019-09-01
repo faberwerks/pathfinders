@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -6055643985896265924}
   m_Layer: 0
   m_Name: Lever
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toggledObjects:
   - {fileID: 0}
-  togglerType: 0
+  togglerType: 1
 --- !u!61 &-6055643985896265924
 BoxCollider2D:
   m_ObjectHideFlags: 0

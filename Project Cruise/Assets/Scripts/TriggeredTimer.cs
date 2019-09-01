@@ -3,34 +3,53 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// A Script to manage triggered time and what path it opens when preasure plate is pressed
+/// A component to handle triggered timers.
 /// </summary>
 public class TriggeredTimer : MonoBehaviour
 {
-    public GameObject path;
+    public List<GameObject> pathObjects;
 
-    public float countdownTime;
+    public float countdownTime = 5.0f;
+    private float countdownTimer;
+    private bool timerIsActive;
 
-    public bool timeActive;
-    
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        if(timeActive)
+        pathObjects = new List<GameObject>();
+
+        countdownTimer = countdownTime;
+
+        timerIsActive = false;
+    }
+
+    // Update is called once per frame
+    private void Update()
+    {
+        if (timerIsActive && countdownTimer > 0)
         {
-            countdownTime -= Time.deltaTime;
-            if(countdownTime <= 0)
+            countdownTimer -= Time.deltaTime;
+
+            if (countdownTimer <= 0)
             {
                 Blackboard.instance.LevelManager.Lose();
             }
         }
     }
 
-    //Activate time and open path to escape
-    public void IsActivating()
+    /// <summary>
+    /// Destroys path objects and starts timer.
+    /// </summary>
+    public void StartTimer()
     {
-        if(path != null)
-        Destroy(path);
-        timeActive = true;
+        if (pathObjects.Count > 0)
+        {
+            foreach (GameObject pathObject in pathObjects)
+            {
+                pathObjects.Remove(pathObject);
+                Destroy(pathObject);
+            }
+        }
+
+        timerIsActive = true;
     }
 }

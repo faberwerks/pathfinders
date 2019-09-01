@@ -43,16 +43,16 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Lever"))
-        {
-            currentLever = collision.gameObject.GetComponent<Toggler>();
-            button.onClick.AddListener(currentLever.ToggleObjects);
-        }
+        //if (collision.CompareTag("Lever"))
+        //{
+        //    currentLever = collision.gameObject.GetComponent<Toggler>();
+        //    button.onClick.AddListener(currentLever.ToggleObjects);
+        //}
 
-        if (collision.CompareTag("PressurePlate")){
-            currentPressurePlate = collision.gameObject.GetComponent<Toggler>();
-            currentPressurePlate.ToggleObjects();
-        }
+        //if (collision.CompareTag("PressurePlate")){
+        //    currentPressurePlate = collision.gameObject.GetComponent<Toggler>();
+        //    currentPressurePlate.ToggleObjects();
+        //}
 
         if (collision.CompareTag("Interactable"))
         {
@@ -63,16 +63,16 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Lever"))
-        {
-            button.onClick.RemoveListener(currentLever.ToggleObjects);
-            currentLever = null;
-        }
-        if (collision.CompareTag("PressurePlate"))
-        {
-            currentPressurePlate.ToggleObjects();
-            currentPressurePlate = null;
-        }
+        //if (collision.CompareTag("Lever"))
+        //{
+        //    button.onClick.RemoveListener(currentLever.ToggleObjects);
+        //    currentLever = null;
+        //}
+        //if (collision.CompareTag("PressurePlate"))
+        //{
+        //    currentPressurePlate.ToggleObjects();
+        //    currentPressurePlate = null;
+        //}
 
         if (collision.CompareTag("Interactable"))
         {
