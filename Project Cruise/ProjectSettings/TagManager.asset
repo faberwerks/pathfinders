@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PressurePlate
   - Lever
+  - Key
+  - Obstacle
   - Interactable
   layers:
   - Default

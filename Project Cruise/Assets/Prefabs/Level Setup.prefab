@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1127568639077011361}
   - component: {fileID: 1127568639077009500}
   - component: {fileID: 1127568639077009503}
-  - component: {fileID: 1127568639077009502}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -84,21 +83,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1127568639077011360}
   m_Enabled: 1
---- !u!114 &1127568639077009502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1127568639077011360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b2073db66c43a64fac8bad0ac1fabae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transitionType: 1
-  keyToPress: 27
-  targetScene: 
 --- !u!1 &1127568639232256266
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,7 +94,7 @@ GameObject:
   - component: {fileID: 1127568639232256264}
   - component: {fileID: 1127568639232256267}
   m_Layer: 0
-  m_Name: Scene Setup
+  m_Name: Level Setup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c6dccf94f0cb3644b87236f84aafd04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goals: []
 --- !u!1 &1127568639471975971
 GameObject:
   m_ObjectHideFlags: 0
@@ -1145,7 +1130,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -14.700073, y: -14.399963}
+  m_AnchoredPosition: {x: -14.699951, y: -14.399963}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &1127568640388815748
@@ -2059,6 +2044,7 @@ GameObject:
   - component: {fileID: 1127568641208498385}
   - component: {fileID: 1127568641208498384}
   - component: {fileID: 1127568641208498387}
+  - component: {fileID: 1546449727827052979}
   m_Layer: 5
   m_Name: Interact Button
   m_TagString: Untagged
@@ -2167,3 +2153,15 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1546449727827052979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127568641208498389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc30343e1ce0525418e56ffc2cb60b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4676182314296635106}
   - component: {fileID: 4676182314296635119}
   - component: {fileID: 4676182314296635116}
-  - component: {fileID: 4676182314296635117}
+  - component: {fileID: 963380594094108891}
+  - component: {fileID: 1775300951990565413}
   m_Layer: 5
   m_Name: Interact Button
   m_TagString: Untagged
@@ -75,7 +76,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
---- !u!114 &4676182314296635117
+--- !u!114 &963380594094108891
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,6 +121,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1775300951990565413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4676182314296635107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc30343e1ce0525418e56ffc2cb60b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4676182314359487518
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +263,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -14.700012, y: -14.399994}
+  m_AnchoredPosition: {x: -14.699951, y: -14.399963}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &4676182315018535639
@@ -433,7 +446,7 @@ GameObject:
   - component: {fileID: 4676182315317305572}
   - component: {fileID: 4676182315317305573}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: In-Game Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
