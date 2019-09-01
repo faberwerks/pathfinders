@@ -26,7 +26,7 @@ public class Goal : MonoBehaviour
     //Method CheckGoals is called here so there is no need for this method called in update function 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if(collision.CompareTag(TagStrings.PLAYER_TAG))
         {
             IsPressed = true;
             Blackboard.instance.LevelManager.CheckGoals();
@@ -35,7 +35,7 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag(TagStrings.PLAYER_TAG))
         {
             IsPressed = false;
         }
