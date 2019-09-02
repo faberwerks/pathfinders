@@ -11,7 +11,7 @@ public class LevelSceneCreatorWindow : EditorWindow
     private const string TEXT_FIELD_LABEL = "Level Name";
     private const string HELP_BOX_MESSAGE = "Level name cannot be null or empty!";
     private const string BUTTON_LABEL = "Create Level";
-    private const string PREFAB_PATH = "Assets/Prefabs/Level Setup.prefab";
+    private const string PREFAB_PATH = "Assets/Prefabs/Level/Level Setup.prefab";
     private const string PREFAB_INSTANCE_NAME = "Level Setup";
     private const string SCENE_SAVE_PATH = "Assets/Scenes/Levels/{0}.unity";
     #endregion
