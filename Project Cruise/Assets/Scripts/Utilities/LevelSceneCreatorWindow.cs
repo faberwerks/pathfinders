@@ -11,13 +11,16 @@ public class LevelSceneCreatorWindow : EditorWindow
     private const string TEXT_FIELD_LABEL = "Level Name";
     private const string HELP_BOX_MESSAGE = "Level name cannot be null or empty!";
     private const string BUTTON_LABEL = "Create Level";
-    private const string PREFAB_PATH = "Assets/Prefabs/Level/Level Setup.prefab";
-    private const string PREFAB_INSTANCE_NAME = "Level Setup";
+    private const string LEVEL_SETUP_PREFAB_PATH = "Assets/Prefabs/Level/Level Setup.prefab";
+    private const string GRID_PREFAB_PATH = "Assets/Prefabs/Level/Level Grid.prefab";
+    private const string LEVEL_SETUP_PREFAB_INSTANCE_NAME = "Level Setup";
+    private const string GRID_PREFAB_INSTANCE_NAME = "Level Grid";
     private const string SCENE_SAVE_PATH = "Assets/Scenes/Levels/{0}.unity";
     #endregion
 
     // cached variables
     private GameObject sceneSetupPrefab = null;
+    private GameObject sceneGridPrefab = null;
     private string levelName = "";
     private string path = null;
     private bool isNameNullOrEmpty = true;
@@ -59,13 +62,19 @@ public class LevelSceneCreatorWindow : EditorWindow
                 // creates new scene with Scene Setup prefab and saves it
                 EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
 
-                sceneSetupPrefab = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<Object>(PREFAB_PATH));
+                sceneSetupPrefab = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<Object>(LEVEL_SETUP_PREFAB_PATH));
+                sceneGridPrefab = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<Object>(GRID_PREFAB_PATH));
 
-                sceneSetupPrefab.name = PREFAB_INSTANCE_NAME;
+                sceneSetupPrefab.name = LEVEL_SETUP_PREFAB_INSTANCE_NAME;
+                sceneGridPrefab.name = GRID_PREFAB_INSTANCE_NAME;
 
                 sceneSetupPrefab.transform.localPosition = Vector3.zero;
                 sceneSetupPrefab.transform.localEulerAngles = Vector3.zero;
                 sceneSetupPrefab.transform.localScale = Vector3.one;
+
+                sceneGridPrefab.transform.localPosition = Vector3.zero;
+                sceneGridPrefab.transform.localEulerAngles = Vector3.zero;
+                sceneGridPrefab.transform.localScale = Vector3.one;
 
                 path = string.Format(SCENE_SAVE_PATH, levelName);
                 EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(), path);
