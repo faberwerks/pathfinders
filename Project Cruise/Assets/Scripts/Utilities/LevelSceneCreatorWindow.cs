@@ -10,6 +10,7 @@ public class LevelSceneCreatorWindow : EditorWindow
     #region STRING CONSTANTS
     private const string TEXT_FIELD_LABEL = "Level Name";
     private const string HELP_BOX_MESSAGE = "Level name cannot be null or empty!";
+    private const string WARNING_BOX_MESSAGE = "A level with the same name already exists!";
     private const string BUTTON_LABEL = "Create Level";
     private const string LEVEL_SETUP_PREFAB_PATH = "Assets/Prefabs/Level/Level Setup.prefab";
     private const string GRID_PREFAB_PATH = "Assets/Prefabs/Level/Level Grid.prefab";
@@ -19,11 +20,13 @@ public class LevelSceneCreatorWindow : EditorWindow
     #endregion
 
     // cached variables
+    private Object tempObj = null;
     private GameObject sceneSetupPrefab = null;
     private GameObject sceneGridPrefab = null;
     private string levelName = "";
     private string path = null;
     private bool isNameNullOrEmpty = true;
+    private bool levelNameExists = false;
 
     // add menu named "Level Scene Creator" to "Tools" menu
     [MenuItem("Tools/Create New Level")]
@@ -44,7 +47,20 @@ public class LevelSceneCreatorWindow : EditorWindow
         {
             EditorGUILayout.HelpBox(HELP_BOX_MESSAGE, MessageType.Warning);
         }
+        else
+        {
+            if (AssetDatabase.LoadAssetAtPath<Object>(string.Format(SCENE_SAVE_PATH, levelName)) != null)
+            {
+                levelNameExists = true;
+                EditorGUILayout.HelpBox(WARNING_BOX_MESSAGE, MessageType.Error);
+            }
+            else
+            {
+                levelNameExists = false;
+            }
+        }
 
+        EditorGUI.BeginDisabledGroup(levelNameExists);
         if (GUILayout.Button(BUTTON_LABEL))
         {
             if (!isNameNullOrEmpty)
@@ -80,5 +96,6 @@ public class LevelSceneCreatorWindow : EditorWindow
                 EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(), path);
             }
         }
+        EditorGUI.EndDisabledGroup();
     }
 }
