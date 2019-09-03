@@ -19,18 +19,17 @@ public class LevelManager : MonoBehaviour
     public bool IsInteracting { get; set; }
 
     //Public list of goals
-    public List<Goal> goals = new List<Goal>();
+    public List<Goal> goals;
 
     //Awake is called before Start
-    //private void Awake()
-    //{
-
-    //}
-
-    // Start is called before the first frame update
-    private void Start()
+    private void Awake()
     {
         Blackboard.instance.LevelManager = this;
+    }
+
+    private void Start()
+    {
+       
         TreasureCollected = 0;
         RelicCollected = false;
         IsInteracting = false;
