@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     {
         translation = Vector3.zero;
         hasKey = false;
+        button = Blackboard.instance.Button;
     }
 
     // Update is called once per frame
@@ -34,6 +35,10 @@ public class PlayerController : MonoBehaviour
         if(joystick == null)
         {
             joystick = Blackboard.instance.Joystick;
+        }
+        if(button == null)
+        {
+            button = Blackboard.instance.Button;
         }
 
         //direction of the character movement from the joystick
