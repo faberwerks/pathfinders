@@ -49,6 +49,7 @@ public class LevelSceneCreatorWindow : EditorWindow
         }
         else
         {
+            // check if level with the same name exists
             if (AssetDatabase.LoadAssetAtPath<Object>(string.Format(SCENE_SAVE_PATH, levelName)) != null)
             {
                 levelNameExists = true;
