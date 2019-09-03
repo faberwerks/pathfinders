@@ -116,6 +116,8 @@ public class RuleTileEditor : Editor
         {
             reorderableList.DoLayoutList();
         }
+
+        SaveTile();
     }
 
     /// <summary>
