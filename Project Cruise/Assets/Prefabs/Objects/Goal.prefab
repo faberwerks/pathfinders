@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5545150721532215007}
   - component: {fileID: 1522648866443610896}
   - component: {fileID: 5491664404500319153}
-  - component: {fileID: 2523036622239459075}
+  - component: {fileID: 3433765504162014114}
   m_Layer: 0
-  m_Name: GoalDummy
+  m_Name: Goal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8b853433279e96c4a83e9d94513d56fb, type: 3}
-  m_Color: {r: 0.0567091, g: 0.990566, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b58269033c8c01343b5f1949475ff408, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eaac46a9257740469a41b682a44f7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &2523036622239459075
-CircleCollider2D:
+--- !u!70 &3433765504162014114
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -106,6 +106,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Offset: {x: -0.0019507408, y: -0.25952637}
+  m_Size: {x: 0.5658722, y: 0.5658722}
+  m_Direction: 0
