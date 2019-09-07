@@ -63,6 +63,7 @@ public class LevelManager : MonoBehaviour
     public void Lose()
     {
         Debug.Log("lose");
+        //TO-DO: add LOSE PANEL
     }
     
     /// <summary>
