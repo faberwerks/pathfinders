@@ -20,7 +20,6 @@ public class LevelSceneCreatorWindow : EditorWindow
     #endregion
 
     // cached variables
-    private Object tempObj = null;
     private GameObject sceneSetupPrefab = null;
     private GameObject sceneGridPrefab = null;
     private string levelName = "";

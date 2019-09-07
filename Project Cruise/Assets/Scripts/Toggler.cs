@@ -18,7 +18,12 @@ public class Toggler : Interactable
 
     public TogglerType togglerType;
 
+    public List<Sprite> toggleSprites;
+
     private TriggeredTimer timer = null;
+    private SpriteRenderer sprRend = null;
+    private int maxIndex = 0;
+    private int spriteIndex;
     private bool hasBeenTriggered;  // used to check state of triggered timer
 
     private void Start()
@@ -28,7 +33,12 @@ public class Toggler : Interactable
         if (togglerType == TogglerType.Timer)
         {
             timer = gameObject.GetComponent<TriggeredTimer>();
-        }   
+        }
+
+        sprRend = GetComponent<SpriteRenderer>();
+
+        maxIndex = toggleSprites.Count;
+        spriteIndex = 0;
     }
 
     // only used for LEVERS and TRIGGERED TIMERS
@@ -57,6 +67,11 @@ public class Toggler : Interactable
         foreach (GameObject toggledObject in toggledObjects)
         {
             toggledObject.SetActive(!toggledObject.activeInHierarchy);
+        }
+
+        if (maxIndex > 0)
+        {
+            sprRend.sprite = toggleSprites[++spriteIndex % maxIndex];
         }
     }
 
