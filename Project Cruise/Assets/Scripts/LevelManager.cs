@@ -55,6 +55,10 @@ public class LevelManager : MonoBehaviour
         Debug.Log("lose");
     }
     
+    public void Pause(bool pause)
+    {
+        Time.timeScale = pause ? 0.0f : 1.0f;
+    }
 
     //// Update is called once per frame
     //void Update()
