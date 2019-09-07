@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    #region STRING CONSTANTS
+    private string POST_LEVEL_SCENE_NAME = "PostLevel";
+    #endregion
+
     //private int treasureCollected;
-
     private bool hasRelic;
-
     //private bool relicCollected;
-
     private float levelTimer;
 
     /////// PROPERTIES ///////
@@ -20,6 +22,8 @@ public class LevelManager : MonoBehaviour
 
     //Public list of goals
     public List<Goal> goals;
+    public GameObject winCanvas;
+    public float postLevelDelay = 2.0f;
 
     //Awake is called before Start
     private void Awake()
@@ -29,7 +33,6 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-       
         TreasureCollected = 0;
         RelicCollected = false;
         IsInteracting = false;
@@ -45,9 +48,16 @@ public class LevelManager : MonoBehaviour
         Win();
     }
 
+    /// <summary>
+    /// A method to handle player victory.
+    /// </summary>
     private void Win()
     {
-            Debug.Log("win");
+        GameData.Instance.treasuresCollected = TreasureCollected;
+        GameData.Instance.isRelicCollected = RelicCollected;
+        //GameData.Instance.levelTime
+        GameData.Instance.lastSceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
+        Invoke("LoadPostLevel", postLevelDelay);
     }
 
     public void Lose()
@@ -55,6 +65,10 @@ public class LevelManager : MonoBehaviour
         Debug.Log("lose");
     }
     
+    /// <summary>
+    /// A method to pause the game.
+    /// </summary>
+    /// <param name="pause">To pause or not to pause.</param>
     public void Pause(bool pause)
     {
         Time.timeScale = pause ? 0.0f : 1.0f;
@@ -65,4 +79,12 @@ public class LevelManager : MonoBehaviour
     //{
         
     //}
+
+    /// <summary>
+    /// A method to load the Post Level scene.
+    /// </summary>
+    private void LoadPostLevel()
+    {
+        SceneManager.LoadScene(POST_LEVEL_SCENE_NAME);
+    }
 }
