@@ -42,6 +42,22 @@ public class SceneTransition : MonoBehaviour
     }
 
     /// <summary>
+    /// Loads previous level scene that was played.
+    /// </summary>
+    public void LoadPreviousLevelScene()
+    {
+        SceneManager.LoadScene(GameData.Instance.lastSceneBuildIndex);
+    }
+
+    /// <summary>
+    /// Loads the next level scene.
+    /// </summary>
+    public void LoadNextLevelScene()
+    {
+        SceneManager.LoadScene(GameData.Instance.lastSceneBuildIndex+1);
+    }
+
+    /// <summary>
     /// Loads a scene when the specified key is pressed.
     /// </summary>
     /// <returns></returns>

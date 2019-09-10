@@ -23,6 +23,7 @@ public class LevelManager : MonoBehaviour
     //Public list of goals
     public List<Goal> goals;
     public GameObject winCanvas;
+    public GameObject loseCanvas;
     public float postLevelDelay = 2.0f;
 
     //Awake is called before Start
@@ -33,6 +34,7 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1.0f;
         TreasureCollected = 0;
         RelicCollected = false;
         IsInteracting = false;
@@ -59,11 +61,14 @@ public class LevelManager : MonoBehaviour
         GameData.Instance.lastSceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
         Invoke("LoadPostLevel", postLevelDelay);
     }
-
+    /// <summary>
+    /// A method to handle player defeat.
+    /// </summary>
     public void Lose()
     {
         Debug.Log("lose");
-        //TO-DO: add LOSE PANEL
+        loseCanvas.SetActive(true);
+        Time.timeScale = 0.0f;
     }
     
     /// <summary>
@@ -75,10 +80,10 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = pause ? 0.0f : 1.0f;
     }
 
-    //// Update is called once per frame
+    //// update is called once per frame
     //void Update()
     //{
-        
+    
     //}
 
     /// <summary>
