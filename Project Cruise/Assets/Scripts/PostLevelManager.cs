@@ -9,6 +9,7 @@ public class PostLevelManager : MonoBehaviour
     private string TREASURE_RESULT = " Treasures collected!";
     private string TARGET_TIME = "Target time: ";
     private string PLAYER_TIME = "Your time: ";
+    private string RATING_0 = "Not bad!";
     private string RATING_1 = "Nice!";
     private string RATING_2 = "Great!";
     private string RATING_3 = "Perfect!";
@@ -34,6 +35,9 @@ public class PostLevelManager : MonoBehaviour
         ActivateTreasureIcon(_treasuresCollected);
         switch (_treasuresCollected)
         {
+            case 0:
+                rating.text = RATING_0;
+                break;
             case 1:
                 rating.text = RATING_1;
                 break;
