@@ -66,7 +66,7 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void Lose()
     {
-        Debug.Log("lose");
+        //Debug.Log("lose");
         loseCanvas.SetActive(true);
         Time.timeScale = 0.0f;
     }

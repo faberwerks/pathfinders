@@ -54,6 +54,7 @@ public class SceneTransition : MonoBehaviour
     /// </summary>
     public void LoadNextLevelScene()
     {
+        // TEMPORARY
         if (GameData.Instance.lastSceneBuildIndex == 18) SceneManager.LoadScene("MainMenu");
         SceneManager.LoadScene(GameData.Instance.lastSceneBuildIndex+1);
     }
