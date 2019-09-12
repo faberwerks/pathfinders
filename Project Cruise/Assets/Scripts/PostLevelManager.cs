@@ -66,7 +66,7 @@ public class PostLevelManager : MonoBehaviour
         foreach(GameObject icon in treasureIcon)
         {
             if (_treasure-- <= 0) break;
-            Debug.Log("set icon");
+            //Debug.Log("set icon");
             icon.SetActive(true);
         }
     }
