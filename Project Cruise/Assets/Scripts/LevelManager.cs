@@ -40,6 +40,14 @@ public class LevelManager : MonoBehaviour
         IsInteracting = false;
     }
 
+    private void Update()
+    {
+        if (Blackboard.instance.LevelManager == null)
+        {
+            Blackboard.instance.LevelManager = this;
+        }
+    }
+
     public void CheckGoals()
     {
         foreach(Goal goal in goals)
