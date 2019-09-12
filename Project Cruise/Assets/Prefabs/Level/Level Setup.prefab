@@ -376,6 +376,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1127568639392276347}
   - component: {fileID: 1127568639392276344}
+  - component: {fileID: 4876187472796362768}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -412,7 +413,19 @@ MonoBehaviour:
   goals: []
   winCanvas: {fileID: 0}
   loseCanvas: {fileID: 8352090391729929033}
-  postLevelDelay: 2
+  postLevelDelay: 1
+--- !u!114 &4876187472796362768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127568639392276346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7539c4985ed949c42a389e1ba3c51e69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1127568639471975971
 GameObject:
   m_ObjectHideFlags: 0
