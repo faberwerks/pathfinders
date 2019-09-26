@@ -1,20 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using TMPro;
 using UnityEngine;
-using TMPro;
 
 public class PostLevelManager : MonoBehaviour
 {
     #region STRING CONSTANTS
-    private string TREASURE_RESULT = " Treasures collected!";
-    private string TARGET_TIME = "Target time: ";
-    private string PLAYER_TIME = "Your time: ";
-    private string RATING_0 = "Not bad!";
-    private string RATING_1 = "Nice!";
-    private string RATING_2 = "Great!";
-    private string RATING_3 = "Perfect!";
-    private string TIME_PASS = "Great job!\nFaster than the light!";
-    private string TIME_FAIL = "Better luck next time!";
+    private const string TREASURE_RESULT = " Treasures collected!";
+    private const string TARGET_TIME = "Target time: ";
+    private const string PLAYER_TIME = "Your time: ";
+    private const string RATING_0 = "Not bad!";
+    private const string RATING_1 = "Nice!";
+    private const string RATING_2 = "Great!";
+    private const string RATING_3 = "Perfect!";
+    private const string TIME_PASS = "Great job!\nFaster than the light!";
+    private const string TIME_FAIL = "Better luck next time!";
     #endregion
 
     public TextMeshProUGUI rating;
@@ -63,7 +61,7 @@ public class PostLevelManager : MonoBehaviour
     /// <param name="_treasure">Number of collected treasure</param>
     private void ActivateTreasureIcon(short _treasure)
     {
-        foreach(GameObject icon in treasureIcon)
+        foreach (GameObject icon in treasureIcon)
         {
             if (_treasure-- <= 0) break;
             //Debug.Log("set icon");

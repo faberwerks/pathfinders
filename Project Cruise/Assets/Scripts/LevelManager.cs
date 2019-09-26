@@ -12,7 +12,7 @@ public class LevelManager : MonoBehaviour
     //private int treasureCollected;
     private bool hasRelic;
     //private bool relicCollected;
-    private float levelTimer;
+    //private float levelTimer;
 
     /////// PROPERTIES ///////
     public int TreasureCollected { get; set; }
@@ -21,15 +21,19 @@ public class LevelManager : MonoBehaviour
     public bool IsInteracting { get; set; }
 
     //Public list of goals
-    public List<Goal> goals;
+    public List<Goal> goals = new List<Goal>();
     public GameObject winCanvas;
     public GameObject loseCanvas;
     public float postLevelDelay = 2.0f;
+
+    private LevelTimer levelTimer;
 
     //Awake is called before Start
     private void Awake()
     {
         Blackboard.instance.LevelManager = this;
+
+        levelTimer = GetComponent<LevelTimer>();
     }
 
     private void Start()
@@ -38,6 +42,14 @@ public class LevelManager : MonoBehaviour
         TreasureCollected = 0;
         RelicCollected = false;
         IsInteracting = false;
+    }
+
+    private void Update()
+    {
+        if (Blackboard.instance.LevelManager == null)
+        {
+            Blackboard.instance.LevelManager = this;
+        }
     }
 
     public void CheckGoals()
@@ -55,6 +67,7 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     private void Win()
     {
+        levelTimer.EndTimer();
         GameData.Instance.treasuresCollected = TreasureCollected;
         GameData.Instance.isRelicCollected = RelicCollected;
         //GameData.Instance.levelTime
