@@ -14,14 +14,17 @@ public class Goal : MonoBehaviour
     void Start()
     {
         IsPressed = false;
-        Blackboard.instance.LevelManager.goals.Add(this);
+        //Blackboard.instance.LevelManager.goals.Add(this);
     }
 
-    //// Update is called once per frame
-    //void Update()
-    //{
-
-    //}
+    // Update is called once per frame
+    void Update()
+    {
+        if (!Blackboard.instance.LevelManager.goals.Contains(this))
+        {
+            Blackboard.instance.LevelManager.goals.Add(this);
+        }
+    }
 
     //Method CheckGoals is called here so there is no need for this method called in update function 
     private void OnTriggerEnter2D(Collider2D collision)

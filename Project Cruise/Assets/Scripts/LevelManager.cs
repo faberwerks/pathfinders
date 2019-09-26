@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour
     public bool IsInteracting { get; set; }
 
     //Public list of goals
-    public List<Goal> goals;
+    public List<Goal> goals = new List<Goal>();
     public GameObject winCanvas;
     public GameObject loseCanvas;
     public float postLevelDelay = 2.0f;
