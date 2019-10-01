@@ -28,20 +28,21 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         translation = Vector3.zero;
         hasKey = false;
-        button = Blackboard.instance.Button;
+        button = Blackboard.Instance.Button;
+        joystick = Blackboard.Instance.Joystick;
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if(joystick == null)
-        {
-            joystick = Blackboard.instance.Joystick;
-        }
-        if(button == null)
-        {
-            button = Blackboard.instance.Button;
-        }
+        //if(joystick == null)
+        //{
+        //    joystick = Blackboard.Instance.Joystick;
+        //}
+        //if(button == null)
+        //{
+        //    button = Blackboard.Instance.Button;
+        //}
 
         //direction of the character movement from the joystick
         //dir = joystick.Direction;

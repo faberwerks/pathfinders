@@ -10,20 +10,23 @@ public class Goal : MonoBehaviour
     /////// PROPERTIES ///////
     public bool IsPressed { get; set; }
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
         IsPressed = false;
+        Blackboard.Instance.LevelManager.goals.Add(this);
         //Blackboard.instance.LevelManager.goals.Add(this);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!Blackboard.instance.LevelManager.goals.Contains(this))
-        {
-            Blackboard.instance.LevelManager.goals.Add(this);
-        }
+        //if (!Blackboard.instance.LevelManager.goals.Contains(this))
+        //{
+        //    Blackboard.instance.LevelManager.goals.Add(this);
+        //}
     }
 
     //Method CheckGoals is called here so there is no need for this method called in update function 
@@ -32,7 +35,7 @@ public class Goal : MonoBehaviour
         if(collision.CompareTag(TagStrings.PLAYER_TAG))
         {
             IsPressed = true;
-            Blackboard.instance.LevelManager.CheckGoals();
+            Blackboard.Instance.LevelManager.CheckGoals();
         }
     }
 
