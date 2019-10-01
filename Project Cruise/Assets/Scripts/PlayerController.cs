@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //direction of the character movement from the joystick
         dir = joystick.Direction;
         translation.Set(dir.x, dir.y, translation.z);
 
