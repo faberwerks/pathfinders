@@ -40,6 +40,11 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     protected Vector2 input = Vector2.zero;
 
+    protected virtual void Awake()
+    {
+        Blackboard.Instance.Joystick = this;
+    }
+
     protected virtual void Start()
     {
         HandleRange = handleRange;
@@ -55,7 +60,6 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         handle.anchorMax = center;
         handle.pivot = center;
         handle.anchoredPosition = Vector2.zero;
-        Blackboard.instance.Joystick = this;
     }
 
     public virtual void OnPointerDown(PointerEventData eventData)

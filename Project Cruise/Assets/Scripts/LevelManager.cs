@@ -31,7 +31,7 @@ public class LevelManager : MonoBehaviour
     //Awake is called before Start
     private void Awake()
     {
-        Blackboard.instance.LevelManager = this;
+        Blackboard.Instance.LevelManager = this;
 
         levelTimer = GetComponent<LevelTimer>();
     }
@@ -46,10 +46,10 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-        if (Blackboard.instance.LevelManager == null)
-        {
-            Blackboard.instance.LevelManager = this;
-        }
+        //if (Blackboard.instance.LevelManager == null)
+        //{
+        //    Blackboard.instance.LevelManager = this;
+        //}
     }
 
     public void CheckGoals()

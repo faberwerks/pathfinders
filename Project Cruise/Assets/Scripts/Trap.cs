@@ -6,7 +6,7 @@ public class Trap : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(TagStrings.PLAYER_TAG))
         {
-            Blackboard.instance.LevelManager.Lose();
+            Blackboard.Instance.LevelManager.Lose();
         }
     }
 }

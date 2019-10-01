@@ -6,8 +6,8 @@ using UnityEngine.UI;
 /// </summary>
 public class InteractButton : MonoBehaviour
 {
-    private void Start()
+    private void Awake()
     {
-        Blackboard.instance.Button = gameObject.GetComponent<Button>();
+        Blackboard.Instance.Button = gameObject.GetComponent<Button>();
     }
 }
