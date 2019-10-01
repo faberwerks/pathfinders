@@ -27,10 +27,12 @@ public class JoystickArrowHandler : MonoBehaviour
         {
             image.enabled = !image.enabled;
         }
-        else if(joystick.Horizontal != 0 && joystick.Vertical != 0 && !image.enabled)
+        else if((joystick.Horizontal != 0 || joystick.Vertical != 0) && !image.enabled)
         {
             image.enabled = !image.enabled;
         }
+
+        #region COMMENTED
         //if (joystick.Horizontal == 0 && joystick.Vertical == 1)
         //{
         //    transform.SetPositionAndRotation(transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
@@ -63,11 +65,16 @@ public class JoystickArrowHandler : MonoBehaviour
         //{
         //    transform.SetPositionAndRotation(transform.position, Quaternion.Euler(new Vector3(0, 0, 315)));
         //}
+        #endregion
 
-        if(joystick.Horizontal != 0 && joystick.Vertical != 0)
+        if (joystick.Horizontal != 0 && joystick.Vertical != 0)
         {
-            Debug.Log(Mathf.Atan2(joystick.Vertical, joystick.Horizontal));
-            transform.SetPositionAndRotation(transform.position, Quaternion.Euler(new Vector3(0, 0, (Mathf.Atan2( joystick.Vertical,joystick.Horizontal)*180/Mathf.PI))));
+            //Debug.Log(Mathf.Atan2(joystick.Vertical, joystick.Horizontal) * 180 / Mathf.PI - 90);
+            transform.SetPositionAndRotation(transform.position, Quaternion.Euler(0, 0, (Mathf.Atan2(joystick.Vertical,joystick.Horizontal)*180/Mathf.PI - 90)));
+        }
+        else
+        {
+            transform.SetPositionAndRotation(transform.position, Quaternion.Euler(0, 0, ((joystick.Vertical < 0 ? 180f : 0) + -joystick.Horizontal * 90)));
         }
     }
 }
