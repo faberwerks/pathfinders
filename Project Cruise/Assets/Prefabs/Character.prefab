@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55a54a361fec2ff448ab9e468de93957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   button: {fileID: 0}
   hasKey: 0
 --- !u!50 &4618176180374074337
