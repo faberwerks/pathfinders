@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private Toggler currentPressurePlate;
     private Toggler currentLever;
     private Interactable interactableObject;
+    private Rigidbody2D rb;
     public float speed = 5.0f;
     public Button button;
     public bool hasKey;
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         translation = Vector3.zero;
         hasKey = false;
         button = Blackboard.instance.Button;
@@ -42,14 +44,24 @@ public class PlayerController : MonoBehaviour
         }
 
         //direction of the character movement from the joystick
+        //dir = joystick.Direction;
+        //translation.Set(dir.x, dir.y, translation.z);
+
+        //transform.Translate(translation * speed * Time.deltaTime);
+
+    }
+
+    private void FixedUpdate()
+    {
+        //direction of the character movement from the joystick
         dir = joystick.Direction;
         translation.Set(dir.x, dir.y, translation.z);
 
-        transform.Translate(translation * speed * Time.deltaTime);
-
+        translation = translation.normalized * speed * Time.deltaTime;
+        rb.MovePosition(rb.transform.position + translation);
     }
-    
-    
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag(TagStrings.OBSTACLE_TAG) && gate == collision.gameObject)
