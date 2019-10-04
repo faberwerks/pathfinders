@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[CreateAssetMenu(menuName = "Tools/Hi")]
+[CreateAssetMenu(menuName = "Tools/Level Directory")]
 public class LevelDirectory : ScriptableObject
 {
     private static LevelDirectory instance = null;
@@ -22,7 +22,7 @@ public class LevelDirectory : ScriptableObject
     }
 
     public LevelData[] levelDirectory;
-    public string mamen;
+    //public string mamen;
 
     public string GetLevelID(int index)
     {
