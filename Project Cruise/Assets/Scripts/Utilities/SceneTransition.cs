@@ -73,8 +73,13 @@ public class SceneTransition : MonoBehaviour
         SceneManager.LoadScene(targetScene);
     }
 
+    /// <summary>
+    /// Loads a level with the specified index.
+    /// </summary>
+    /// <param name="index">Level index.</param>
     public void LoadLevel(int index)
     {
-        SceneManager.LoadScene(LevelDirectory.Instance.GetLevelID(index));
+        SceneManager.LoadScene(LevelDirectory.Instance.GetLevelData(index).levelID);
+        Blackboard.Instance.CurrentLevelIndex = index;
     }
 }

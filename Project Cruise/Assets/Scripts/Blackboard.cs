@@ -23,4 +23,5 @@ public class Blackboard
     public Joystick Joystick { get; set; }
     public LevelManager LevelManager { get; set; }
     public Button Button { get; set; }
+    public int CurrentLevelIndex { get; set;}
 }

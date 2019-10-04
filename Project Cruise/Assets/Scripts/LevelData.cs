@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// A Scriptable Object to hold level metadata.
+/// </summary>
 public class LevelData : ScriptableObject
 {
-    [SerializeField] public string levelID = "";
-    [SerializeField] private float targetTime = 0.0f;
-    [SerializeField] private bool hasRelic = false;
+    public string levelID = "";
+    public float targetTime = 0.0f;
+    public bool hasRelic = false;
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class LevelManager : MonoBehaviour
     public List<Goal> goals = new List<Goal>();
     public GameObject winCanvas;
     public GameObject loseCanvas;
+    public TMP_Text targetTime;
     public float postLevelDelay = 2.0f;
 
     private LevelTimer levelTimer;
@@ -39,6 +41,9 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = 1.0f;
         TreasureCollected = 0;
         RelicCollected = false;
+        LevelData currLevelData = LevelDirectory.Instance.GetLevelData(Blackboard.Instance.CurrentLevelIndex);
+        targetTime.text = "Target time: " + currLevelData.targetTime;
+        hasRelic = currLevelData.hasRelic;
     }
 
     private void Update()

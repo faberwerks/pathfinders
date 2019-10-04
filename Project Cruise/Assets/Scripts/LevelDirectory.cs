@@ -1,8 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
+/// <summary>
+/// A Scriptable Object holding references to all level metadata.
+/// </summary>
 [CreateAssetMenu(menuName = "Tools/Level Directory")]
 public class LevelDirectory : ScriptableObject
 {
@@ -22,10 +22,14 @@ public class LevelDirectory : ScriptableObject
     }
 
     public LevelData[] levelDirectory;
-    //public string mamen;
 
-    public string GetLevelID(int index)
+    /// <summary>
+    /// A method to get the level data at the specified index.
+    /// </summary>
+    /// <param name="index">Level index.</param>
+    /// <returns>Level data.</returns>
+    public LevelData GetLevelData(int index)
     {
-        return levelDirectory[index - 1].levelID;
+        return levelDirectory[index - 1];
     }
 }

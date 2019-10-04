@@ -17,6 +17,7 @@ public class LevelSceneCreatorWindow : EditorWindow
     private const string LEVEL_SETUP_PREFAB_INSTANCE_NAME = "Level Setup";
     private const string GRID_PREFAB_INSTANCE_NAME = "Level Grid";
     private const string SCENE_SAVE_PATH = "Assets/Scenes/Levels/{0}.unity";
+    private const string LEVEL_DATA_SAVE_PATH = "Assets/Scenes/Levels/{0}.asset";
     #endregion
 
     // cached variables
@@ -32,7 +33,7 @@ public class LevelSceneCreatorWindow : EditorWindow
     public static void Init()
     {
         // get existing open window or if none, make new one
-        LevelSceneCreatorWindow window = (LevelSceneCreatorWindow)EditorWindow.GetWindow(typeof(LevelSceneCreatorWindow));
+        LevelSceneCreatorWindow window = (LevelSceneCreatorWindow)EditorWindow.GetWindow(typeof(LevelSceneCreatorWindow), false, "Level Scene Creator");
         window.Show();
     }
 
@@ -94,8 +95,32 @@ public class LevelSceneCreatorWindow : EditorWindow
 
                 path = string.Format(SCENE_SAVE_PATH, levelName);
                 EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(), path);
+
+                // create level data scriptable object
+                LevelData asset = ScriptableObject.CreateInstance<LevelData>();
+                asset.levelID = levelName;
+
+                AssetDatabase.CreateAsset(asset, string.Format(LEVEL_DATA_SAVE_PATH, levelName));
+                AssetDatabase.SaveAssets();
+
+                EditorUtility.FocusProjectWindow();
+
+                Selection.activeObject = asset;
             }
         }
         EditorGUI.EndDisabledGroup();
+    }
+
+    [MenuItem("Tools/Nani Nani")]
+    public static void Nani()
+    {
+        LevelData asset = ScriptableObject.CreateInstance<LevelData>();
+
+        AssetDatabase.CreateAsset(asset, "Assets/Test.asset");
+        AssetDatabase.SaveAssets();
+
+        EditorUtility.FocusProjectWindow();
+
+        Selection.activeObject = asset;
     }
 }
