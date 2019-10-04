@@ -72,4 +72,9 @@ public class SceneTransition : MonoBehaviour
 
         SceneManager.LoadScene(targetScene);
     }
+
+    public void LoadLevel(int index)
+    {
+        SceneManager.LoadScene(LevelDirectory.Instance.GetLevelID(index));
+    }
 }
