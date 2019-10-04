@@ -7,7 +7,7 @@ public class Treasure : Collectible
     //It add point to the treasure collected
     protected override void OnCollected()
     {
-        Blackboard.instance.LevelManager.TreasureCollected += 1;
-        Debug.Log(Blackboard.instance.LevelManager.TreasureCollected);
+        Blackboard.Instance.LevelManager.TreasureCollected += 1;
+        Debug.Log(Blackboard.Instance.LevelManager.TreasureCollected);
     }
 }

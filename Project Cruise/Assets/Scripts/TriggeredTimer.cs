@@ -31,7 +31,7 @@ public class TriggeredTimer : MonoBehaviour
 
             if (countdownTimer <= 0)
             {
-                Blackboard.instance.LevelManager.Lose();
+                Blackboard.Instance.LevelManager.Lose();
             }
         }
     }
