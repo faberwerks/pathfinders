@@ -14,14 +14,14 @@ public class LevelDirectory : ScriptableObject
         {
             if (instance == null)
             {
-                instance = Resources.Load<LevelDirectory>("New Level Directory");
+                instance = Resources.Load<LevelDirectory>("Level Directory");
             }
 
             return instance;
         }
     }
 
-    public LevelData[] levelDirectory;
+    public LevelData[] levels;
 
     /// <summary>
     /// A method to get the level data at the specified index.
@@ -30,6 +30,6 @@ public class LevelDirectory : ScriptableObject
     /// <returns>Level data.</returns>
     public LevelData GetLevelData(int index)
     {
-        return levelDirectory[index - 1];
+        return levels[index - 1];
     }
 }
