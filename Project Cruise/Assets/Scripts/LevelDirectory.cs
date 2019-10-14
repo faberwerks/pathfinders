@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 /// <summary>
 /// A Scriptable Object holding references to all level metadata.
@@ -21,7 +22,7 @@ public class LevelDirectory : ScriptableObject
         }
     }
 
-    public LevelData[] levels;
+    public List<LevelData> levels;
 
     /// <summary>
     /// A method to get the level data at the specified index.
