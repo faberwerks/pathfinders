@@ -97,7 +97,6 @@ public class LevelSceneCreatorWindow : EditorWindow
                 EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(), path);
 
                 // create level data scriptable object
-                LevelData asset = ScriptableObject.CreateInstance<LevelData>();
                 CreateLevelData();
             }
         }
