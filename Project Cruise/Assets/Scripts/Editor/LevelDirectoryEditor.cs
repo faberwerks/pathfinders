@@ -14,16 +14,13 @@ public class LevelDirectoryEditor : Editor
     private ReorderableList reorderableList;
     public LevelDirectory levelDir { get { return (target as LevelDirectory); } }
 
-    // CACHED VARIABLES
-    private Object element = null;
-
     private void OnEnable()
     {
         reorderableList = new ReorderableList(levelDir.levels, typeof(LevelData), true, true, true, true);
         reorderableList.drawHeaderCallback = OnDrawHeader;
         reorderableList.drawElementCallback = OnDrawElement;
         reorderableList.onAddCallback = OnAdd;
-        reorderableList.onChangedCallback = OnChanged;
+        reorderableList.onReorderCallback = OnReorder;
     }
 
     /// <summary>
@@ -48,9 +45,6 @@ public class LevelDirectoryEditor : Editor
     /// <param name="isFocused"></param>
     private void OnDrawElement(Rect rect, int index, bool isActive, bool isFocused)
     {
-        // get level data if not null
-        element = levelDir.levels[index];
-
         rect.y += 2;
         Rect _rect = new Rect(rect.x, rect.y, 100, EditorGUIUtility.singleLineHeight);
 
@@ -59,7 +53,7 @@ public class LevelDirectoryEditor : Editor
         _rect.x += 100;
         _rect.width = 150;
         // display level data asset
-        element = EditorGUI.ObjectField(_rect, element, typeof(LevelData), false);
+        levelDir.levels[index] = (LevelData) EditorGUI.ObjectField(_rect, levelDir.levels[index], typeof(LevelData), false);
     }
 
     /// <summary>
@@ -71,17 +65,21 @@ public class LevelDirectoryEditor : Editor
         levelDir.levels.Add(null);
     }
 
-    private void OnChanged(ReorderableList list)
+    private void OnReorder(ReorderableList list)
     {
         EditorUtility.SetDirty(target);
     }
 
     public override void OnInspectorGUI()
     {
+        base.OnInspectorGUI();
+
         EditorGUILayout.LabelField(levelDirectoryLabel);
 
         EditorGUILayout.Space();
 
         reorderableList.DoLayoutList();
+
+        EditorUtility.SetDirty(target);
     }
 }

@@ -22,6 +22,7 @@ public class LevelDirectory : ScriptableObject
         }
     }
 
+    [HideInInspector]
     public List<LevelData> levels;
 
     /// <summary>
