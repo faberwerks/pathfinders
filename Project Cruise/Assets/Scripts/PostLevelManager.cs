@@ -47,9 +47,18 @@ public class PostLevelManager : MonoBehaviour
                 break;
         }
 
-        playerTime.text = PLAYER_TIME + GameData.Instance.levelTime + "s";
+        targetTime.text = TARGET_TIME + LevelDirectory.Instance.GetLevelData(GameData.Instance.lastLevelIndex).targetTime + "s";
+        playerTime.text = PLAYER_TIME + GameData.Instance.levelTime.ToString("#.##") + "s";
         //TO DO: Compare target time with player time
         //       then show the result
+        if (GameData.Instance.levelTime <= LevelDirectory.Instance.GetLevelData(GameData.Instance.lastLevelIndex).targetTime)
+        {
+            timeResult.text = TIME_PASS;
+        }
+        else
+        {
+            timeResult.text = TIME_FAIL;
+        }
 
         relicCanvas.SetActive(GameData.Instance.isRelicCollected ? true : false);
 

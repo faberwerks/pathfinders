@@ -46,7 +46,7 @@ public class SceneTransition : MonoBehaviour
     /// </summary>
     public void LoadPreviousLevelScene()
     {
-        SceneManager.LoadScene(GameData.Instance.lastSceneBuildIndex);
+        SceneManager.LoadScene(LevelDirectory.Instance.GetLevelData(GameData.Instance.lastLevelIndex).levelID);
     }
 
     /// <summary>
@@ -55,8 +55,8 @@ public class SceneTransition : MonoBehaviour
     public void LoadNextLevelScene()
     {
         // TEMPORARY
-        if (GameData.Instance.lastSceneBuildIndex == 18) SceneManager.LoadScene("MainMenu");
-        SceneManager.LoadScene(GameData.Instance.lastSceneBuildIndex+1);
+        // if (GameData.Instance.lastSceneBuildIndex == 18) SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(LevelDirectory.Instance.GetLevelData(GameData.Instance.lastLevelIndex + 1).levelID);
     }
 
     /// <summary>
@@ -80,6 +80,6 @@ public class SceneTransition : MonoBehaviour
     public void LoadLevel(int index)
     {
         SceneManager.LoadScene(LevelDirectory.Instance.GetLevelData(index).levelID);
-        Blackboard.Instance.CurrentLevelIndex = index;
+        GameData.Instance.lastLevelIndex = index;
     }
 }

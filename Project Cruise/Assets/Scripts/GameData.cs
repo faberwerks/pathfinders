@@ -20,5 +20,5 @@ public class GameData
     public int treasuresCollected = 0;
     public bool isRelicCollected = false;
     public float levelTime = 0.0f;
-    public int lastSceneBuildIndex = 0;
+    public int lastLevelIndex = 0;
 }

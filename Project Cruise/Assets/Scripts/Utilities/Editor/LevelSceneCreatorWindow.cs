@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using System.IO;
+using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
@@ -18,6 +19,17 @@ public class LevelSceneCreatorWindow : EditorWindow
     private const string GRID_PREFAB_INSTANCE_NAME = "Level Grid";
     private const string SCENE_SAVE_PATH = "Assets/Scenes/Levels/{0}.unity";
     private const string LEVEL_DATA_SAVE_PATH = "Assets/Scenes/Levels/{0}.asset";
+    private readonly string[] LEVEL_TYPE_OPTIONS =
+    {
+        "Movement",
+        "Trap",
+        "Lever",
+        "Key",
+        "Pressure Plate",
+        "Unproportional Level",
+        "Trigger Timer",
+        "Teleporter"
+    };
     #endregion
 
     // cached variables
@@ -27,6 +39,7 @@ public class LevelSceneCreatorWindow : EditorWindow
     private string path = null;
     private bool isNameNullOrEmpty = true;
     private bool levelNameExists = false;
+    private int levelTypeIndex = 0;
 
     // add menu named "Create New Level" to "Tools" menu
     [MenuItem("Tools/Create New Level")]
@@ -40,6 +53,8 @@ public class LevelSceneCreatorWindow : EditorWindow
     private void OnGUI()
     {
         levelName = EditorGUILayout.TextField(TEXT_FIELD_LABEL, levelName);
+
+        levelTypeIndex = EditorGUILayout.Popup("Level Type", levelTypeIndex, LEVEL_TYPE_OPTIONS);
 
         isNameNullOrEmpty = string.IsNullOrEmpty(levelName);
 
@@ -117,5 +132,14 @@ public class LevelSceneCreatorWindow : EditorWindow
         EditorUtility.FocusProjectWindow();
 
         Selection.activeObject = asset;
+    }
+
+    [MenuItem("Tools/Generate Level Name")]
+    private static void GenerateLevelName()
+    {
+        foreach (LevelData levelData in LevelDirectory.Instance.levels)
+        {
+
+        }
     }
 }
