@@ -15,11 +15,11 @@ public class Obstacle : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        if (player != null)
-        {
-            player.hasKey = false;
-        }
-    }
+    //private void OnDestroy()
+    //{
+    //    if (player != null)
+    //    {
+    //        player.hasKey = false;
+    //    }
+    //}
 }

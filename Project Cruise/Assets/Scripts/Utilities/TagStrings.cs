@@ -9,4 +9,5 @@ public static class TagStrings
     public const string INTERACTABLE_TAG = "Interactable";
     public const string OBSTACLE_TAG = "Obstacle";
     public const string KEY_TAG = "Key";
+    public const string DOOR_TAG = "Door";
 }

@@ -9,6 +9,7 @@ TagManager:
   - Key
   - Obstacle
   - Interactable
+  - Door
   layers:
   - Default
   - TransparentFX
