@@ -28,7 +28,7 @@ public class LevelSceneCreatorWindow : EditorWindow
     private bool isNameNullOrEmpty = true;
     private bool levelNameExists = false;
 
-    // add menu named "Level Scene Creator" to "Tools" menu
+    // add menu named "Create New Level" to "Tools" menu
     [MenuItem("Tools/Create New Level")]
     public static void Init()
     {
@@ -98,25 +98,21 @@ public class LevelSceneCreatorWindow : EditorWindow
 
                 // create level data scriptable object
                 LevelData asset = ScriptableObject.CreateInstance<LevelData>();
-                asset.levelID = levelName;
-
-                AssetDatabase.CreateAsset(asset, string.Format(LEVEL_DATA_SAVE_PATH, levelName));
-                AssetDatabase.SaveAssets();
-
-                EditorUtility.FocusProjectWindow();
-
-                Selection.activeObject = asset;
+                CreateLevelData();
             }
         }
         EditorGUI.EndDisabledGroup();
     }
 
-    [MenuItem("Tools/Nani Nani")]
-    public static void Nani()
+    /// <summary>
+    /// Creates Level Data for new level.
+    /// </summary>
+    private void CreateLevelData ()
     {
         LevelData asset = ScriptableObject.CreateInstance<LevelData>();
+        asset.levelID = levelName;
 
-        AssetDatabase.CreateAsset(asset, "Assets/Test.asset");
+        AssetDatabase.CreateAsset(asset, string.Format(LEVEL_DATA_SAVE_PATH, levelName));
         AssetDatabase.SaveAssets();
 
         EditorUtility.FocusProjectWindow();

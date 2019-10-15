@@ -5,14 +5,24 @@ using UnityEngine;
 [CustomEditor(typeof(LevelDirectory))]
 public class LevelDirectoryEditor : Editor
 {
-    #region CONST STRINGS
-    private const string levelNumberLabel = "Level No.";
-    private const string levelIDLabel = "Level ID";
-    private const string levelDirectoryLabel = "Level Directory";
+    #region STRING CONSTANTS
+    private const string LEVEL_NUM_LABEL = "Level No.";
+    private const string LEVEL_ID_LABEL = "Level ID";
+    private const string LEVEL_DIR_LABEL = "Level Directory";
+    private const string LEVEL_DIR_PATH = "Level Directory";
     #endregion
 
     private ReorderableList reorderableList;
     public LevelDirectory levelDir { get { return (target as LevelDirectory); } }
+
+    /// <summary>
+    /// A menu item to automatically select the Level Directory and display the inspector.
+    /// </summary>
+    [MenuItem("Tools/Level Directory")]
+    public static void SelectLevelDirectory()
+    {
+        Selection.activeObject = Resources.Load<LevelDirectory>(LEVEL_DIR_PATH);
+    }
 
     private void OnEnable()
     {
@@ -31,9 +41,9 @@ public class LevelDirectoryEditor : Editor
     {
         Rect _rect = new Rect(rect.x, rect.y, 100, EditorGUIUtility.singleLineHeight);
 
-        GUI.Label(_rect, levelNumberLabel);
+        GUI.Label(_rect, LEVEL_NUM_LABEL);
         _rect.x += 100;
-        GUI.Label(_rect, levelIDLabel);
+        GUI.Label(_rect, LEVEL_ID_LABEL);
     }
 
     /// <summary>
@@ -65,7 +75,19 @@ public class LevelDirectoryEditor : Editor
         levelDir.levels.Add(null);
     }
 
+    /// <summary>
+    /// Defines what to do when the list is reordered.
+    /// </summary>
+    /// <param name="list"></param>
     private void OnReorder(ReorderableList list)
+    {
+        SaveList();
+    }
+
+    /// <summary>
+    /// Saves the list.
+    /// </summary>
+    private void SaveList()
     {
         EditorUtility.SetDirty(target);
     }
@@ -74,12 +96,12 @@ public class LevelDirectoryEditor : Editor
     {
         base.OnInspectorGUI();
 
-        EditorGUILayout.LabelField(levelDirectoryLabel);
+        EditorGUILayout.LabelField(LEVEL_DIR_LABEL);
 
         EditorGUILayout.Space();
 
         reorderableList.DoLayoutList();
 
-        EditorUtility.SetDirty(target);
+        SaveList();
     }
 }
