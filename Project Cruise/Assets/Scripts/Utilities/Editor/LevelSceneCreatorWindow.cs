@@ -40,7 +40,9 @@ public class LevelSceneCreatorWindow : EditorWindow
     private string path = null;
     //private bool isNameNullOrEmpty = true;
     //private bool levelNameExists = false;
+    private bool canCreateLevel = true;
     private int levelTypeIndex = 0;
+    private int levelIndex = 0;
 
     // add menu named "Create New Level" to "Tools" menu
     [MenuItem("Tools/Create New Level")]
@@ -51,11 +53,26 @@ public class LevelSceneCreatorWindow : EditorWindow
         window.Show();
     }
 
+    private void OnEnable()
+    {
+        levelIndex = LevelDirectory.Instance.levels.Count + 1;
+    }
+
     private void OnGUI()
     {
         //levelName = EditorGUILayout.TextField(TEXT_FIELD_LABEL, levelName);
 
         levelTypeIndex = EditorGUILayout.Popup("Level Type", levelTypeIndex, LEVEL_TYPE_OPTIONS);
+        levelIndex = EditorGUILayout.IntField("Level Index", levelIndex);
+
+        if (levelIndex > LevelDirectory.Instance.levels.Count + 1 || levelIndex < 1)
+        {
+            canCreateLevel = false;
+        }
+        else
+        {
+            canCreateLevel = true;
+        }
 
         //isNameNullOrEmpty = string.IsNullOrEmpty(levelName);
 
@@ -77,7 +94,7 @@ public class LevelSceneCreatorWindow : EditorWindow
         //    }
         //}
 
-        //EditorGUI.BeginDisabledGroup(levelNameExists);
+        EditorGUI.BeginDisabledGroup(!canCreateLevel);
         if (GUILayout.Button(BUTTON_LABEL))
         {
             //if (!isNameNullOrEmpty)
@@ -147,21 +164,28 @@ public class LevelSceneCreatorWindow : EditorWindow
             EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(), path);
 
             // create level data scriptable object
-            CreateLevelData(levelName);
+            CreateLevelData(levelName, levelIndex);
         }
-        //EditorGUI.EndDisabledGroup();
+        EditorGUI.EndDisabledGroup();
     }
 
     /// <summary>
     /// Creates Level Data for new level.
     /// </summary>
-    private void CreateLevelData (string levelName)
+    private void CreateLevelData (string levelName, int index)
     {
         LevelData asset = ScriptableObject.CreateInstance<LevelData>();
         asset.levelID = levelName;
 
         AssetDatabase.CreateAsset(asset, string.Format(LEVEL_DATA_SAVE_PATH, levelName));
-        LevelDirectory.Instance.levels.Add(asset);
+        if (index == LevelDirectory.Instance.levels.Count + 1)
+        {
+            LevelDirectory.Instance.levels.Add(asset);
+        }
+        else
+        {
+            LevelDirectory.Instance.levels.Insert(index - 1, asset);
+        }
         AssetDatabase.SaveAssets();
 
         EditorUtility.FocusProjectWindow();
