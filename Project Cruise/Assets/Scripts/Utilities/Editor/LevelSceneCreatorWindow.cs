@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -37,8 +38,8 @@ public class LevelSceneCreatorWindow : EditorWindow
     private GameObject sceneGridPrefab = null;
     private string levelName = "";
     private string path = null;
-    private bool isNameNullOrEmpty = true;
-    private bool levelNameExists = false;
+    //private bool isNameNullOrEmpty = true;
+    //private bool levelNameExists = false;
     private int levelTypeIndex = 0;
 
     // add menu named "Create New Level" to "Tools" menu
@@ -52,81 +53,115 @@ public class LevelSceneCreatorWindow : EditorWindow
 
     private void OnGUI()
     {
-        levelName = EditorGUILayout.TextField(TEXT_FIELD_LABEL, levelName);
+        //levelName = EditorGUILayout.TextField(TEXT_FIELD_LABEL, levelName);
 
         levelTypeIndex = EditorGUILayout.Popup("Level Type", levelTypeIndex, LEVEL_TYPE_OPTIONS);
 
-        isNameNullOrEmpty = string.IsNullOrEmpty(levelName);
+        //isNameNullOrEmpty = string.IsNullOrEmpty(levelName);
 
-        if (isNameNullOrEmpty)
-        {
-            EditorGUILayout.HelpBox(HELP_BOX_MESSAGE, MessageType.Warning);
-        }
-        else
-        {
-            // check if level with the same name exists
-            if (AssetDatabase.LoadAssetAtPath<Object>(string.Format(SCENE_SAVE_PATH, levelName)) != null)
-            {
-                levelNameExists = true;
-                EditorGUILayout.HelpBox(WARNING_BOX_MESSAGE, MessageType.Error);
-            }
-            else
-            {
-                levelNameExists = false;
-            }
-        }
+        //if (isNameNullOrEmpty)
+        //{
+        //    EditorGUILayout.HelpBox(HELP_BOX_MESSAGE, MessageType.Warning);
+        //}
+        //else
+        //{
+        //    // check if level with the same name exists
+        //    if (AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(string.Format(SCENE_SAVE_PATH, levelName)) != null)
+        //    {
+        //        levelNameExists = true;
+        //        EditorGUILayout.HelpBox(WARNING_BOX_MESSAGE, MessageType.Error);
+        //    }
+        //    else
+        //    {
+        //        levelNameExists = false;
+        //    }
+        //}
 
-        EditorGUI.BeginDisabledGroup(levelNameExists);
+        //EditorGUI.BeginDisabledGroup(levelNameExists);
         if (GUILayout.Button(BUTTON_LABEL))
         {
-            if (!isNameNullOrEmpty)
+            //if (!isNameNullOrEmpty)
+            //{
+            //    // checks if scene is dirty and whether user wants to save first
+            //    if (EditorSceneManager.GetActiveScene().isDirty)
+            //    {
+            //        // cancels create new level if pop-up to save is cancelled
+            //        if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+            //        {
+            //            return;
+            //        }
+            //    }
+
+            //    // creates new scene with Scene Setup prefab and saves it
+            //    EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
+
+            //    sceneSetupPrefab = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(LEVEL_SETUP_PREFAB_PATH));
+            //    sceneGridPrefab = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(GRID_PREFAB_PATH));
+
+            //    sceneSetupPrefab.name = LEVEL_SETUP_PREFAB_INSTANCE_NAME;
+            //    sceneGridPrefab.name = GRID_PREFAB_INSTANCE_NAME;
+
+            //    sceneSetupPrefab.transform.localPosition = Vector3.zero;
+            //    sceneSetupPrefab.transform.localEulerAngles = Vector3.zero;
+            //    sceneSetupPrefab.transform.localScale = Vector3.one;
+
+            //    sceneGridPrefab.transform.localPosition = Vector3.zero;
+            //    sceneGridPrefab.transform.localEulerAngles = Vector3.zero;
+            //    sceneGridPrefab.transform.localScale = Vector3.one;
+
+            //    path = string.Format(SCENE_SAVE_PATH, levelName);
+            //    EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(), path);
+
+            //    // create level data scriptable object
+            //    CreateLevelData();
+            //}
+
+            if (EditorSceneManager.GetActiveScene().isDirty)
             {
-                // checks if scene is dirty and whether user wants to save first
-                if (EditorSceneManager.GetActiveScene().isDirty)
+                // cancels create new level if pop-up to save is cancelled
+                if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
                 {
-                    // cancels create new level if pop-up to save is cancelled
-                    if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
-                    {
-                        return;
-                    }
+                    return;
                 }
-
-                // creates new scene with Scene Setup prefab and saves it
-                EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
-
-                sceneSetupPrefab = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<Object>(LEVEL_SETUP_PREFAB_PATH));
-                sceneGridPrefab = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<Object>(GRID_PREFAB_PATH));
-
-                sceneSetupPrefab.name = LEVEL_SETUP_PREFAB_INSTANCE_NAME;
-                sceneGridPrefab.name = GRID_PREFAB_INSTANCE_NAME;
-
-                sceneSetupPrefab.transform.localPosition = Vector3.zero;
-                sceneSetupPrefab.transform.localEulerAngles = Vector3.zero;
-                sceneSetupPrefab.transform.localScale = Vector3.one;
-
-                sceneGridPrefab.transform.localPosition = Vector3.zero;
-                sceneGridPrefab.transform.localEulerAngles = Vector3.zero;
-                sceneGridPrefab.transform.localScale = Vector3.one;
-
-                path = string.Format(SCENE_SAVE_PATH, levelName);
-                EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(), path);
-
-                // create level data scriptable object
-                CreateLevelData();
             }
+
+            // creates new scene with Scene Setup prefab and saves it
+            EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
+
+            sceneSetupPrefab = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(LEVEL_SETUP_PREFAB_PATH));
+            sceneGridPrefab = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(GRID_PREFAB_PATH));
+
+            sceneSetupPrefab.name = LEVEL_SETUP_PREFAB_INSTANCE_NAME;
+            sceneGridPrefab.name = GRID_PREFAB_INSTANCE_NAME;
+
+            sceneSetupPrefab.transform.localPosition = Vector3.zero;
+            sceneSetupPrefab.transform.localEulerAngles = Vector3.zero;
+            sceneSetupPrefab.transform.localScale = Vector3.one;
+
+            sceneGridPrefab.transform.localPosition = Vector3.zero;
+            sceneGridPrefab.transform.localEulerAngles = Vector3.zero;
+            sceneGridPrefab.transform.localScale = Vector3.one;
+
+            levelName = GenerateLevelName(levelTypeIndex);
+            path = string.Format(SCENE_SAVE_PATH, levelName);
+            EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(), path);
+
+            // create level data scriptable object
+            CreateLevelData(levelName);
         }
-        EditorGUI.EndDisabledGroup();
+        //EditorGUI.EndDisabledGroup();
     }
 
     /// <summary>
     /// Creates Level Data for new level.
     /// </summary>
-    private void CreateLevelData ()
+    private void CreateLevelData (string levelName)
     {
         LevelData asset = ScriptableObject.CreateInstance<LevelData>();
         asset.levelID = levelName;
 
         AssetDatabase.CreateAsset(asset, string.Format(LEVEL_DATA_SAVE_PATH, levelName));
+        LevelDirectory.Instance.levels.Add(asset);
         AssetDatabase.SaveAssets();
 
         EditorUtility.FocusProjectWindow();
@@ -134,12 +169,86 @@ public class LevelSceneCreatorWindow : EditorWindow
         Selection.activeObject = asset;
     }
 
-    [MenuItem("Tools/Generate Level Name")]
-    private static void GenerateLevelName()
+    /// <summary>
+    /// A method to generate the level name.
+    /// </summary>
+    /// <param name="levelTypeIndex"></param>
+    /// <returns></returns>
+    private string GenerateLevelName(int levelTypeIndex)
     {
+        string levelName = "";
+        int levelNum = 1;
+
+        switch (levelTypeIndex)
+        {
+            case 0:
+                levelName = "M";
+                break;
+            case 1:
+                levelName = "T";
+                break;
+            case 2:
+                levelName = "L";
+                break;
+            case 3:
+                levelName = "K";
+                break;
+            case 4:
+                levelName = "P";
+                break;
+            case 5:
+                levelName = "U";
+                break;
+            case 6:
+                levelName = "TR";
+                break;
+            case 7:
+                levelName = "TL";
+                break;
+        }
+
+        List<string> levelNames = new List<string>();
+        string substring = "";
+        int tempLevelNum = 0;
+        int highestLevelNum = 0;
+
         foreach (LevelData levelData in LevelDirectory.Instance.levels)
         {
+            if (levelData.levelID.StartsWith(levelName))
+            {
+                substring = levelData.levelID.Substring((levelData.levelID.Length - 1) - 1);
+                tempLevelNum = Int32.Parse(substring);
 
+                if (tempLevelNum >= highestLevelNum)
+                {
+                    highestLevelNum = tempLevelNum;
+                }
+            }
         }
+
+        if (highestLevelNum > 0)
+        {
+            levelNum = highestLevelNum + 1;
+        }
+        else
+        {
+            levelNum = 1;
+        }
+
+        string levelNumString = "";
+
+        if (levelNum < 10)
+        {
+            levelNumString = levelNum.ToString();
+            levelNumString = String.Concat("0", levelNumString);
+        }
+        else
+        {
+            levelNumString = levelNum.ToString();
+        }
+
+        levelName = String.Concat(levelName, levelNumString);
+
+        return levelName;
     }
 }
