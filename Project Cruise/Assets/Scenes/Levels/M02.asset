@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1267d72b055eda40bf43b9a0b7580b6, type: 3}
   m_Name: M02
   m_EditorClassIdentifier: 
-  levelID: 
+  levelID: M02
   targetTime: 0
   hasRelic: 0
