@@ -20,7 +20,7 @@ public class TestADs : MonoBehaviour
         String interstisial_ID = "ca-app-pub-3940256099942544/1033173712";
         interstisialAd = new InterstitialAd(interstisial_ID);
 
-        AdRequest adRequest = new AdRequest.Builder().AddTestDevice("077ef9a63d2b398840261c8221a0c9b").Build();
+        AdRequest adRequest = new AdRequest.Builder().AddTestDevice("2077ef9a63d2b398840261c8221a0c9b").Build();
         interstisialAd.LoadAd(adRequest);
     }
 
