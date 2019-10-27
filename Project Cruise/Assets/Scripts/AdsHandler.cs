@@ -3,7 +3,7 @@ using UnityEngine;
 using GoogleMobileAds.Api;
 
 // Example script showing how to invoke the Google Mobile Ads Unity plugin.
-public class TestADs : MonoBehaviour
+public class AdsHandler : MonoBehaviour
 {
     //To fill your APP ID
     private String AppID = "";
@@ -12,7 +12,7 @@ public class TestADs : MonoBehaviour
 
     private void Start()
     {
-        
+        DisplayInterstitialAD();
     }
 
     public void RequestInterstitialAD()
@@ -29,6 +29,10 @@ public class TestADs : MonoBehaviour
         if(interstisialAd.IsLoaded())
         {
             interstisialAd.Show();
+        }else
+        {
+            RequestInterstitialAD();
+            DisplayInterstitialAD();
         }
     }
 
