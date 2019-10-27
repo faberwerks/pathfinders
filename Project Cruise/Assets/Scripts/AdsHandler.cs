@@ -8,7 +8,7 @@ public class AdsHandler : MonoBehaviour
     //To fill your APP ID
     private String AppID = "";
 
-    private InterstitialAd interstitialAd;
+    public InterstitialAd interstitialAd;
 
     private void Start()
     {
@@ -32,12 +32,40 @@ public class AdsHandler : MonoBehaviour
         {
             Debug.Log("Ads Appear");
             interstitialAd.Show();
-        }else
-        {
-            RequestInterstitialAD();
-            DisplayInterstitialAD();
         }
     }
+
+
+    //public void HandleInterstitialADEvent(bool subscribe)
+    //{
+    //    if (subscribe)
+    //    {
+    //        // Called when an ad request has successfully loaded.
+    //        interstitialAd.OnAdLoaded += HandleOnAdLoaded;
+    //        // Called when an ad request failed to load.
+    //        interstitialAd.OnAdFailedToLoad += HandleOnAdFailedToLoad;
+    //        // Called when an ad is shown.
+    //        interstitialAd.OnAdOpening += HandleOnAdOpened;
+    //        // Called when the ad is closed.
+    //        interstitialAd.OnAdClosed += HandleOnAdClosed;
+    //        // Called when the ad click caused the user to leave the application.
+    //        interstitialAd.OnAdLeavingApplication += HandleOnAdLeavingApplication;
+    //    }
+    //    else
+    //    {
+    //        // Called when an ad request has successfully loaded.
+    //        interstitialAd.OnAdLoaded -= HandleOnAdLoaded;
+    //        // Called when an ad request failed to load.
+    //        interstitialAd.OnAdFailedToLoad -= HandleOnAdFailedToLoad;
+    //        // Called when an ad is shown.
+    //        interstitialAd.OnAdOpening -= HandleOnAdOpened;
+    //        // Called when the ad is closed.
+    //        interstitialAd.OnAdClosed -= HandleOnAdClosed;
+    //        // Called when the ad click caused the user to leave the application.
+    //        interstitialAd.OnAdLeavingApplication -= HandleOnAdLeavingApplication;
+    //    }
+    //}
+
 
     //public void HandleOnAdLoaded(object sender, EventArgs args)
     //{
@@ -64,43 +92,13 @@ public class AdsHandler : MonoBehaviour
     //    MonoBehaviour.print("HandleAdLeavingApplication event received");
     //}
 
-    //public void HandleInterstitialAD(bool subscribe)
+    //public void OnEnable()
     //{
-    //    if (subscribe)
-    //    {
-    //        // Called when an ad request has successfully loaded.
-    //        this.interstitialAd.OnAdLoaded += HandleOnAdLoaded;
-    //        // Called when an ad request failed to load.
-    //        this.interstitialAd.OnAdFailedToLoad += HandleOnAdFailedToLoad;
-    //        // Called when an ad is shown.
-    //        this.interstitialAd.OnAdOpening += HandleOnAdOpened;
-    //        // Called when the ad is closed.
-    //        this.interstitialAd.OnAdClosed += HandleOnAdClosed;
-    //        // Called when the ad click caused the user to leave the application.
-    //        this.interstitialAd.OnAdLeavingApplication += HandleOnAdLeavingApplication;
-    //    }
-    //    else
-    //    {
-    //        // Called when an ad request has successfully loaded.
-    //        this.interstitialAd.OnAdLoaded -= HandleOnAdLoaded;
-    //        // Called when an ad request failed to load.
-    //        this.interstitialAd.OnAdFailedToLoad -= HandleOnAdFailedToLoad;
-    //        // Called when an ad is shown.
-    //        this.interstitialAd.OnAdOpening -= HandleOnAdOpened;
-    //        // Called when the ad is closed.
-    //        this.interstitialAd.OnAdClosed -= HandleOnAdClosed;
-    //        // Called when the ad click caused the user to leave the application.
-    //        this.interstitialAd.OnAdLeavingApplication -= HandleOnAdLeavingApplication;
-    //    }
+    //    HandleInterstitialADEvent(true);
     //}
 
-    //private void OnEnable()
+    //public void OnDisable()
     //{
-    //    HandleInterstitialAD(true);
-    //}
-
-    //private void OnDisable()
-    //{
-    //    HandleInterstitialAD(false);
+    //    HandleInterstitialADEvent(false);
     //}
 }
