@@ -22,12 +22,14 @@ public class AdsHandler : MonoBehaviour
 
         AdRequest adRequest = new AdRequest.Builder().AddTestDevice("2077ef9a63d2b398840261c8221a0c9b").Build();
         interstisialAd.LoadAd(adRequest);
+        Debug.Log("Ads Loaded");
     }
 
     public void DisplayInterstitialAD()
     {
         if(interstisialAd.IsLoaded())
         {
+            Debug.Log("Ads Appear");
             interstisialAd.Show();
         }else
         {
