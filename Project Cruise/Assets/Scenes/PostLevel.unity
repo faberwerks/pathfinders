@@ -1648,7 +1648,7 @@ GameObject:
   - component: {fileID: 924388353}
   - component: {fileID: 924388352}
   m_Layer: 0
-  m_Name: TestADs
+  m_Name: AdsHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
