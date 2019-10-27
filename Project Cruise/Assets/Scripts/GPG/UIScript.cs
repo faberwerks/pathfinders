@@ -13,6 +13,8 @@ public class UIScript : MonoBehaviour
 
     [SerializeField]
     private TMP_Text pointsTxt;
+    [SerializeField]
+    private TMP_Text highscoreTxt;
 
     public void GetPoint()
     {
@@ -47,5 +49,10 @@ public class UIScript : MonoBehaviour
     public void UpdatePointsText()
     {
         pointsTxt.text = ManagerScript.Counter.ToString();
+    }
+
+    public void UpdateHighscoreText()
+    {
+        highscoreTxt.text = CloudVariables.Highscore.ToString();
     }
 }

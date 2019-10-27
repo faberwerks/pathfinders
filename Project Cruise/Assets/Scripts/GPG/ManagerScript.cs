@@ -9,6 +9,7 @@ public class ManagerScript : MonoBehaviour
     private void Start()
     {
         Instance = this;
+        UIScript.Instance.UpdateHighscoreText();
     }
 
     public void IncrementCounter()
@@ -20,6 +21,14 @@ public class ManagerScript : MonoBehaviour
     public void RestartGame()
     {
         PlayGamesScript.AddScoreToLeaderboard(GPGSIds.leaderboard_test_leaderboard, Counter);
+
+        if (Counter > CloudVariables.Highscore)
+        {
+            CloudVariables.Highscore = Counter;
+            PlayGamesScript.Instance.SaveData();
+            UIScript.Instance.UpdateHighscoreText();
+        }
+
         Counter = 0;
         UIScript.Instance.UpdatePointsText();
     }

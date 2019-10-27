@@ -36,7 +36,7 @@ public class PlayGamesScript : MonoBehaviour
 
     private void SignIn()
     {
-        Social.localUser.Authenticate(success => { });
+        Social.localUser.Authenticate(success => { LoadData(); });
     }
 
     #region SavedGames
