@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 350534698}
   - component: {fileID: 350534697}
   m_Layer: 5
-  m_Name: In-Game Currency
+  m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -334,7 +334,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: IGC | 5000
+  m_text: 'Coin: 5000'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -405,7 +405,7 @@ MonoBehaviour:
     textComponent: {fileID: 350534697}
     characterCount: 10
     spriteCount: 0
-    spaceCount: 2
+    spaceCount: 1
     wordCount: 2
     linkCount: 0
     lineCount: 1
@@ -742,7 +742,7 @@ GameObject:
   - component: {fileID: 700092120}
   - component: {fileID: 700092119}
   m_Layer: 5
-  m_Name: Buy IGN Button
+  m_Name: Buy Coin Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

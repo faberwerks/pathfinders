@@ -12,6 +12,5 @@ public class CoinShow : MonoBehaviour
     void Update()
     {
         text.text = "Coin: " + GameData.Instance.coin;
-
     }
 }
