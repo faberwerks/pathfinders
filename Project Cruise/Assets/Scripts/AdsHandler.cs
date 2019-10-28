@@ -5,23 +5,23 @@ using GoogleMobileAds.Api;
 // Example script showing how to invoke the Google Mobile Ads Unity plugin.
 public class AdsHandler : MonoBehaviour
 {
-    //To fill your APP ID
-    private String AppID = "";
 
     public InterstitialAd interstitialAd;
+    public RewardBasedVideoAd rewardedVideoAd;
 
     private void Start()
     {
+        MobileAds.Initialize(initStatus => { });
         RequestInterstitialAD();
         DisplayInterstitialAD();
     }
 
     public void RequestInterstitialAD()
     {
-        String interstitial_ID = "ca-app-pub-3940256099942544/1033173712";
+        String interstitial_ID = "ca-app-pub-7623091422700152/2521661296";
         interstitialAd = new InterstitialAd(interstitial_ID);
 
-        AdRequest adRequest = new AdRequest.Builder().AddTestDevice("2077ef9a63d2b398840261c8221a0c9b").Build();
+        AdRequest adRequest = new AdRequest.Builder().Build();
         interstitialAd.LoadAd(adRequest);
         Debug.Log("Ads Loaded");
     }
@@ -34,6 +34,25 @@ public class AdsHandler : MonoBehaviour
             interstitialAd.Show();
         }
     }
+
+    public void RequestRewardedVideoAD()
+    {
+        String video_ID = "ca-app-pub-7623091422700152/3124296527";
+
+        AdRequest adRequest = new AdRequest.Builder().Build();
+        rewardedVideoAd.LoadAd(adRequest,video_ID);
+        Debug.Log("Ads Loaded");
+    }
+
+    public void DisplayRewardedVideoAD()
+    {
+        if (rewardedVideoAd.IsLoaded())
+        {
+            Debug.Log("Ads Appear");
+            rewardedVideoAd.Show();
+        }
+    }
+
 
 
     //public void HandleInterstitialADEvent(bool subscribe)
@@ -97,8 +116,8 @@ public class AdsHandler : MonoBehaviour
     //    HandleInterstitialADEvent(true);
     //}
 
-    //public void OnDisable()
-    //{
-    //    HandleInterstitialADEvent(false);
-    //}
+    public void OnDisable()
+    {
+        interstitialAd.Destroy();
+    }
 }
