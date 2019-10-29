@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1267d72b055eda40bf43b9a0b7580b6, type: 3}
-  m_Name: Level 1
+  m_Name: L01
   m_EditorClassIdentifier: 
-  levelID: 
+  levelID: L01
   targetTime: 0
   hasRelic: 0
