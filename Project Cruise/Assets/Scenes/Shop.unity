@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -220.00003}
+  m_AnchoredPosition: {x: 0, y: -220.00006}
   m_SizeDelta: {x: 0, y: 452.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &171235047
@@ -2291,6 +2291,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493313401498772213, guid: d0ecfc275373111439b2c10825ca2a7e,
+        type: 3}
+      propertyPath: onPurchaseComplete.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493313401498772213, guid: d0ecfc275373111439b2c10825ca2a7e,
+        type: 3}
+      propertyPath: productId
+      value: noads
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493313401498772213, guid: d0ecfc275373111439b2c10825ca2a7e,
+        type: 3}
+      propertyPath: onPurchaseComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493313401498772213, guid: d0ecfc275373111439b2c10825ca2a7e,
+        type: 3}
+      propertyPath: onPurchaseComplete.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493313401498772213, guid: d0ecfc275373111439b2c10825ca2a7e,
+        type: 3}
+      propertyPath: onPurchaseComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2141943053}
+    - target: {fileID: 1493313401498772213, guid: d0ecfc275373111439b2c10825ca2a7e,
+        type: 3}
+      propertyPath: onPurchaseComplete.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetNoAds
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493313401498772213, guid: d0ecfc275373111439b2c10825ca2a7e,
+        type: 3}
+      propertyPath: onPurchaseComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1493313401618982812, guid: d0ecfc275373111439b2c10825ca2a7e,
         type: 3}

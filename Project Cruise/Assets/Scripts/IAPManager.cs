@@ -11,4 +11,9 @@ public class IAPManager : MonoBehaviour
     {
         GameData.Instance.coin += (int)bought.definition.payout.quantity;
     }
+
+    public void SetNoAds(Product bought)
+    {
+        //TO-DO: set trigger to stop ads
+    }
 }
