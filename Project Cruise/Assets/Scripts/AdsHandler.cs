@@ -3,35 +3,35 @@ using UnityEngine;
 using GoogleMobileAds.Api;
 
 // Example script showing how to invoke the Google Mobile Ads Unity plugin.
-public class AdsHandler
+public class AdsHandler : MonoBehaviour
 {
 
     private InterstitialAd interstitial;
-    private static AdsHandler instance;
-    public static AdsHandler Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = new AdsHandler();
-            }
-            return instance;
-        }
-    }
-    
-
-    //private void Awake()
+    public static AdsHandler instance;
+    //public static AdsHandler Instance
     //{
-    //    if(instance == null)
+    //    get
     //    {
-    //        instance = this;
-    //    }
-    //    else
-    //    {
-    //        Destroy(this);
+    //        if (instance == null)
+    //        {
+    //            instance = new AdsHandler();
+    //        }
+    //        return instance;
     //    }
     //}
+
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
 
     //public void Start()
     //{
@@ -55,7 +55,7 @@ public class AdsHandler
         this.interstitial.OnAdLeavingApplication += HandleOnAdLeavingApplication;
 
         // Create an empty ad request.
-        AdRequest request = new AdRequest.Builder().Build();
+        AdRequest request = new AdRequest.Builder().AddTestDevice("2B14A1568BC5F0CD5FE89A0505F28B39").Build();
         // Load the interstitial with the request.
         this.interstitial.LoadAd(request);
         
@@ -93,6 +93,10 @@ public class AdsHandler
         if (this.interstitial.IsLoaded())
         {
             this.interstitial.Show();
+        }
+        else
+        {
+            Debug.Log("Interstitial Ad is not loaded.");
         }
     }
 }

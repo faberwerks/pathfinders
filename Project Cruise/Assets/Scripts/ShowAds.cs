@@ -11,8 +11,8 @@ public class ShowAds : MonoBehaviour
     void Start()
     {
         MobileAds.Initialize(AppID);
-        AdsHandler.Instance.RequestInterstitialAD();
-        AdsHandler.Instance.ShowInterstitialAD();
+        AdsHandler.instance.RequestInterstitialAD();
+        //AdsHandler.instance.ShowInterstitialAD();
     }
     
 }
