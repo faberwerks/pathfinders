@@ -1,0 +1,7 @@
+Product ID,Published State,Purchase Type,Auto Translate,Locale; Title; Description,Auto Fill Prices,Price,Pricing Template ID
+coins50,published,managed_by_android,FALSE,en_US;50 Coins;Get more coins!,FALSE,12000000000,
+coins100,published,managed_by_android,FALSE,en_US;100 coins;Get more coins!,FALSE,24000000000,
+coins250,published,managed_by_android,FALSE,en_US;250 Coins;Get more coins!,FALSE,49000000000,
+coins500,published,managed_by_android,FALSE,en_US;500 Coins;Get more coins!,FALSE,74000000000,
+coins1100,published,managed_by_android,FALSE,en_US;1100 Coins;Get more coins!,FALSE,149000000000,
+noads,published,managed_by_android,FALSE,en_US;No Ads;Remove Ads forever,FALSE,49000000000,
