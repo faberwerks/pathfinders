@@ -452,7 +452,7 @@ PrefabInstance:
     - target: {fileID: 1493313401498772213, guid: d0ecfc275373111439b2c10825ca2a7e,
         type: 3}
       propertyPath: productId
-      value: coins100
+      value: coinsget100
       objectReference: {fileID: 0}
     - target: {fileID: 1493313401498772213, guid: d0ecfc275373111439b2c10825ca2a7e,
         type: 3}
@@ -677,7 +677,7 @@ PrefabInstance:
     - target: {fileID: 1493313401498772213, guid: d0ecfc275373111439b2c10825ca2a7e,
         type: 3}
       propertyPath: productId
-      value: coins500
+      value: coinsget500
       objectReference: {fileID: 0}
     - target: {fileID: 1493313401498772213, guid: d0ecfc275373111439b2c10825ca2a7e,
         type: 3}
@@ -1148,7 +1148,7 @@ PrefabInstance:
     - target: {fileID: 1493313401498772213, guid: d0ecfc275373111439b2c10825ca2a7e,
         type: 3}
       propertyPath: productId
-      value: coins250
+      value: coinsget250
       objectReference: {fileID: 0}
     - target: {fileID: 1493313401498772213, guid: d0ecfc275373111439b2c10825ca2a7e,
         type: 3}
@@ -1766,7 +1766,7 @@ PrefabInstance:
     - target: {fileID: 1493313401498772213, guid: d0ecfc275373111439b2c10825ca2a7e,
         type: 3}
       propertyPath: productId
-      value: coins1100
+      value: coinsget1100
       objectReference: {fileID: 0}
     - target: {fileID: 1493313401498772213, guid: d0ecfc275373111439b2c10825ca2a7e,
         type: 3}
@@ -1941,8 +1941,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -17.875, y: -0.025043}
-  m_SizeDelta: {x: 35.75, y: 803.85}
+  m_AnchoredPosition: {x: -17.875, y: 0.16}
+  m_SizeDelta: {x: 35.75, y: 797.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &908885910
 MonoBehaviour:
@@ -1986,8 +1986,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 826809264}
   m_HandleRect: {fileID: 826809263}
   m_Direction: 2
-  m_Value: 0.98608047
-  m_Size: 0.63878983
+  m_Value: 0.9860806
+  m_Size: 0.6387899
   m_NumberOfSteps: 1
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3968,7 +3968,7 @@ PrefabInstance:
     - target: {fileID: 1493313401498772213, guid: d0ecfc275373111439b2c10825ca2a7e,
         type: 3}
       propertyPath: productId
-      value: coins50
+      value: coinsget50
       objectReference: {fileID: 0}
     - target: {fileID: 1493313401498772213, guid: d0ecfc275373111439b2c10825ca2a7e,
         type: 3}
