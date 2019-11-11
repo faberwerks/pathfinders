@@ -1,6 +1,7 @@
 #if UNITY_PURCHASING
 using UnityEngine.Events;
 using UnityEngine.UI;
+using TMPro;
 using System.IO;
 using System.Collections.Generic;
 
@@ -43,13 +44,13 @@ namespace UnityEngine.Purchasing
         public OnPurchaseFailedEvent onPurchaseFailed;
 
         [Tooltip("[Optional] Displays the localized title from the app store")]
-        public Text titleText;
+        public TMP_Text titleText;
 
         [Tooltip("[Optional] Displays the localized description from the app store")]
-        public Text descriptionText;
+        public TMP_Text descriptionText;
 
         [Tooltip("[Optional] Displays the localized price from the app store")]
-        public Text priceText;
+        public TMP_Text priceText;
 
         void Start()
         {
