@@ -63,13 +63,12 @@ public class AdsHandler : MonoBehaviour
 
     public void HandleOnAdLoaded(object sender, EventArgs args)
     {
-        MonoBehaviour.print("HandleAdLoaded event received");
+        ShowInterstitialAD();
     }
 
     public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
     {
-        MonoBehaviour.print("HandleFailedToReceiveAd event received with message: "
-                            + args.Message);
+        RequestInterstitialAD();
     }
 
     public void HandleOnAdOpened(object sender, EventArgs args)
