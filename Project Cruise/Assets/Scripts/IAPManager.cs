@@ -10,6 +10,7 @@ public class IAPManager : MonoBehaviour
     public void AddCoinPurchase(Product bought)
     {
         GameData.Instance.coin += (int)bought.definition.payout.quantity;
+        Debug.Log("[IAP] Product ID: " + bought.definition.id);
     }
 
     public void SetNoAds(Product bought)
