@@ -6,118 +6,164 @@ using GoogleMobileAds.Api;
 public class AdsHandler : MonoBehaviour
 {
 
-    public InterstitialAd interstitialAd;
-    public RewardBasedVideoAd rewardedVideoAd;
+    private InterstitialAd interstitial;
+    private RewardBasedVideoAd rewardedVideo;
+    public static AdsHandler instance;
+    //public static AdsHandler Instance
+    //{
+    //    get
+    //    {
+    //        if (instance == null)
+    //        {
+    //            instance = new AdsHandler();
+    //        }
+    //        return instance;
+    //    }
+    //}
 
-    private void Start()
+
+    private void Awake()
     {
-        MobileAds.Initialize(initStatus => { });
-        RequestInterstitialAD();
-        DisplayInterstitialAD();
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
     }
+
+    //public void Start()
+    //{
+    //    MobileAds.Initialize(AppID);
+    //}
 
     public void RequestInterstitialAD()
     {
-        String interstitial_ID = "ca-app-pub-7623091422700152/2521661296";
-        interstitialAd = new InterstitialAd(interstitial_ID);
+        string adUnitId = "ca-app-pub-3940256099942544/1033173712";
+        this.interstitial = new InterstitialAd(adUnitId);
 
-        AdRequest adRequest = new AdRequest.Builder().Build();
-        interstitialAd.LoadAd(adRequest);
-        Debug.Log("Ads Loaded");
-    }
+        // Called when an ad request has successfully loaded.
+        this.interstitial.OnAdLoaded += HandleOnAdLoaded;
+        // Called when an ad request failed to load.
+        this.interstitial.OnAdFailedToLoad += HandleOnAdFailedToLoad;
+        // Called when an ad is shown.
+        this.interstitial.OnAdOpening += HandleOnAdOpened;
+        // Called when the ad is closed.
+        this.interstitial.OnAdClosed += HandleOnAdClosed;
+        // Called when the ad click caused the user to leave the application.
+        this.interstitial.OnAdLeavingApplication += HandleOnAdLeavingApplication;
 
-    public void DisplayInterstitialAD()
-    {
-        if(interstitialAd.IsLoaded())
-        {
-            Debug.Log("Ads Appear");
-            interstitialAd.Show();
-        }
+        // Create an empty ad request.
+        AdRequest request = new AdRequest.Builder().AddTestDevice("2B14A1568BC5F0CD5FE89A0505F28B39").Build();
+        // Load the interstitial with the request.
+        this.interstitial.LoadAd(request);
+        
     }
 
     public void RequestRewardedVideoAD()
     {
-        String video_ID = "ca-app-pub-7623091422700152/3124296527";
+        string adUnitId = "ca-app-pub-3940256099942544/5224354917";
+        this.rewardedVideo = RewardBasedVideoAd.Instance;
 
-        AdRequest adRequest = new AdRequest.Builder().Build();
-        rewardedVideoAd.LoadAd(adRequest,video_ID);
-        Debug.Log("Ads Loaded");
+        // Called when an ad request has successfully loaded.
+        this.rewardedVideo.OnAdLoaded += HandleOnVideoAdLoaded;
+        // Called when an ad request failed to load.
+        this.rewardedVideo.OnAdFailedToLoad += HandleOnVideoAdFailedToLoad;
+        // Called when an ad is shown.
+        this.rewardedVideo.OnAdOpening += HandleOnVideoAdOpened;
+        // Called when the ad is closed.
+        this.rewardedVideo.OnAdClosed += HandleOnVideoAdClosed;
+        // Called when the ad click caused the user to leave the application.
+        this.rewardedVideo.OnAdLeavingApplication += HandleOnVideoAdLeavingApplication;
+
+        // Create an empty ad request.
+        AdRequest request = new AdRequest.Builder().AddTestDevice("2B14A1568BC5F0CD5FE89A0505F28B39").Build();
+        // Load the interstitial with the request.
+        this.rewardedVideo.LoadAd(request,adUnitId);
+
     }
 
-    public void DisplayRewardedVideoAD()
+    //Interstitial Event
+    #region
+    public void HandleOnAdLoaded(object sender, EventArgs args)
     {
-        if (rewardedVideoAd.IsLoaded())
+        ShowInterstitialAD();
+    }
+
+    public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
+    {
+        RequestInterstitialAD();
+    }
+
+    public void HandleOnAdOpened(object sender, EventArgs args)
+    {
+        MonoBehaviour.print("HandleAdOpened event received");
+    }
+
+    public void HandleOnAdClosed(object sender, EventArgs args)
+    {
+        MonoBehaviour.print("HandleAdClosed event received");
+        this.interstitial.Destroy();
+    }
+
+    public void HandleOnAdLeavingApplication(object sender, EventArgs args)
+    {
+        MonoBehaviour.print("HandleAdLeavingApplication event received");
+    }
+    #endregion
+
+    //Video Event
+    #region
+    public void HandleOnVideoAdLoaded(object sender, EventArgs args)
+    {
+        //ShowInterstitialAD();
+    }
+
+    public void HandleOnVideoAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
+    {
+        RequestRewardedVideoAD();
+    }
+
+    public void HandleOnVideoAdOpened(object sender, EventArgs args)
+    {
+        MonoBehaviour.print("HandleAdOpened event received");
+    }
+
+    public void HandleOnVideoAdClosed(object sender, EventArgs args)
+    {
+        MonoBehaviour.print("HandleAdClosed event received");
+        //Double coins here
+    }
+
+    public void HandleOnVideoAdLeavingApplication(object sender, EventArgs args)
+    {
+        MonoBehaviour.print("HandleAdLeavingApplication event received");
+    }
+    #endregion
+
+    public void ShowVideoAD()
+    {
+        if (this.rewardedVideo.IsLoaded())
         {
-            Debug.Log("Ads Appear");
-            rewardedVideoAd.Show();
+            this.rewardedVideo.Show();
+        }
+        else
+        {
+            Debug.Log("Video Ad is not loaded.");
         }
     }
 
-
-
-    //public void HandleInterstitialADEvent(bool subscribe)
-    //{
-    //    if (subscribe)
-    //    {
-    //        // Called when an ad request has successfully loaded.
-    //        interstitialAd.OnAdLoaded += HandleOnAdLoaded;
-    //        // Called when an ad request failed to load.
-    //        interstitialAd.OnAdFailedToLoad += HandleOnAdFailedToLoad;
-    //        // Called when an ad is shown.
-    //        interstitialAd.OnAdOpening += HandleOnAdOpened;
-    //        // Called when the ad is closed.
-    //        interstitialAd.OnAdClosed += HandleOnAdClosed;
-    //        // Called when the ad click caused the user to leave the application.
-    //        interstitialAd.OnAdLeavingApplication += HandleOnAdLeavingApplication;
-    //    }
-    //    else
-    //    {
-    //        // Called when an ad request has successfully loaded.
-    //        interstitialAd.OnAdLoaded -= HandleOnAdLoaded;
-    //        // Called when an ad request failed to load.
-    //        interstitialAd.OnAdFailedToLoad -= HandleOnAdFailedToLoad;
-    //        // Called when an ad is shown.
-    //        interstitialAd.OnAdOpening -= HandleOnAdOpened;
-    //        // Called when the ad is closed.
-    //        interstitialAd.OnAdClosed -= HandleOnAdClosed;
-    //        // Called when the ad click caused the user to leave the application.
-    //        interstitialAd.OnAdLeavingApplication -= HandleOnAdLeavingApplication;
-    //    }
-    //}
-
-
-    //public void HandleOnAdLoaded(object sender, EventArgs args)
-    //{
-    //    DisplayInterstitialAD();
-    //}
-
-    //public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
-    //{
-    //    RequestInterstitialAD();
-    //}
-
-    //public void HandleOnAdOpened(object sender, EventArgs args)
-    //{
-    //    MonoBehaviour.print("HandleAdOpened event received");
-    //}
-
-    //public void HandleOnAdClosed(object sender, EventArgs args)
-    //{
-    //    MonoBehaviour.print("HandleAdClosed event received");
-    //}
-
-    //public void HandleOnAdLeavingApplication(object sender, EventArgs args)
-    //{
-    //    MonoBehaviour.print("HandleAdLeavingApplication event received");
-    //}
-
-    //public void OnEnable()
-    //{
-    //    HandleInterstitialADEvent(true);
-    //}
-
-    public void OnDisable()
+    public void ShowInterstitialAD()
     {
-        interstitialAd.Destroy();
+        if (this.interstitial.IsLoaded())
+        {
+            this.interstitial.Show();
+        }
+        else
+        {
+            Debug.Log("Interstitial Ad is not loaded.");
+        }
     }
 }
