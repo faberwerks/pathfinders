@@ -12,6 +12,7 @@ public class ShowAds : MonoBehaviour
     {
         MobileAds.Initialize(AppID);
         AdsHandler.instance.RequestInterstitialAD();
+        AdsHandler.instance.RequestRewardedVideoAD();
         //AdsHandler.instance.ShowInterstitialAD();
     }
     
