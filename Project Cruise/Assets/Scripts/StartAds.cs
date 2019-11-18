@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using GoogleMobileAds.Api;
 
-public class ShowAds : MonoBehaviour
+public class StartAds : MonoBehaviour
 {
-
+    private string AppID = "ca-app-pub-7623091422700152~9683332999";
     // Start is called before the first frame update
     void Start()
     {
-        AdsHandler.instance.RequestInterstitialAD();
-        AdsHandler.instance.RequestRewardedVideoAD();
-        //AdsHandler.instance.ShowInterstitialAD();
+        MobileAds.Initialize(AppID);
     }
     
 }
