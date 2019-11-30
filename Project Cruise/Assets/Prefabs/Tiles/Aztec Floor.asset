@@ -12,6 +12,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 735179a033f144f4697ae3d17e7a0dc0, type: 3}
   m_Name: Aztec Floor
   m_EditorClassIdentifier: 
-  defaultSprite: {fileID: 21300000, guid: 2d0e8877cc3334a4a8468eabbe03ce2f, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 908e8bc8e2df8ea479b024f51ad2e1be, type: 3}
   defaultColliderType: 1
-  tilingRules: []
+  tilingRules:
+  - neighbours: 0200000002000000000000000200000001000000000000000100000000000000
+    sprites:
+    - {fileID: 21300000, guid: 3dd2d9ca13fdbfc43aff85f921b22f1b, type: 3}
+    perlinScale: 0.5
+    output: 0
+    colliderType: 1
+  - neighbours: 0000000002000000020000000100000002000000000000000100000000000000
+    sprites:
+    - {fileID: 21300000, guid: 8b71e98eff8a97343bb7508171849ba1, type: 3}
+    perlinScale: 0.5
+    output: 0
+    colliderType: 0
+  - neighbours: 0000000001000000000000000200000001000000020000000200000000000000
+    sprites:
+    - {fileID: 21300000, guid: 09d024ac4452e6b40a45a791fdc7f6d8, type: 3}
+    perlinScale: 0.5
+    output: 0
+    colliderType: 0
+  - neighbours: 0000000001000000000000000100000002000000000000000200000002000000
+    sprites:
+    - {fileID: 21300000, guid: b5f7d0557896201459918bdcc0ae1cdc, type: 3}
+    perlinScale: 0.5
+    output: 0
+    colliderType: 0
+  - neighbours: 0000000002000000000000000000000000000000000000000100000000000000
+    sprites:
+    - {fileID: 21300000, guid: 139cbb8111672dd44b3b09b5d44243fe, type: 3}
+    perlinScale: 0.5
+    output: 0
+    colliderType: 0
+  - neighbours: 0000000001000000000000000000000000000000000000000200000000000000
+    sprites:
+    - {fileID: 21300000, guid: 47c41623466986d45b75f581d9cec34f, type: 3}
+    perlinScale: 0.5
+    output: 0
+    colliderType: 0
+  - neighbours: 0000000000000000000000000200000001000000000000000000000000000000
+    sprites:
+    - {fileID: 21300000, guid: 2da56b5c96c43cd4ba29a67c49b258af, type: 3}
+    perlinScale: 0.5
+    output: 0
+    colliderType: 0
+  - neighbours: 0000000000000000000000000100000002000000000000000000000000000000
+    sprites:
+    - {fileID: 21300000, guid: 5d339dc4523a1a948aff743f630d8662, type: 3}
+    perlinScale: 0.5
+    output: 0
+    colliderType: 0
