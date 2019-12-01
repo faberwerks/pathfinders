@@ -98,8 +98,8 @@ MonoBehaviour:
   - {fileID: 0}
   togglerType: 1
   toggleSprites:
-  - {fileID: 21300000, guid: 27f17737680ec0d49ba7251fa0249535, type: 3}
-  - {fileID: 21300000, guid: aedba536d8cd95749935ceee50c21329, type: 3}
+  - {fileID: 1694985531360637023, guid: d82c98c67555ae4409553a22eae55161, type: 3}
+  - {fileID: -4454914845596493489, guid: d82c98c67555ae4409553a22eae55161, type: 3}
 --- !u!61 &-6055643985896265924
 BoxCollider2D:
   m_ObjectHideFlags: 0
