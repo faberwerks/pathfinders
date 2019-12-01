@@ -1,6 +1,9 @@
 ﻿using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using GooglePlayGames.BasicApi.SavedGame;
+using System;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using UnityEngine;
 
@@ -8,7 +11,7 @@ public class PlayGamesScript : MonoBehaviour
 {
     public static PlayGamesScript Instance { get; private set; }
 
-    private const string SAVE_NAME = "Tutorial";
+    private const string SAVE_NAME = "save.gd";
     private bool isSaving;
     private bool isCloudDataLoaded = false;
 
@@ -17,9 +20,13 @@ public class PlayGamesScript : MonoBehaviour
     {
         Instance = this;
         
-        if (!PlayerPrefs.HasKey(SAVE_NAME))
+        //if (!PlayerPrefs.HasKey(SAVE_NAME))
+        //{
+        //    PlayerPrefs.SetString(SAVE_NAME, "0");
+        //}
+        if (GameData.Instance.saveData == null)
         {
-            PlayerPrefs.SetString(SAVE_NAME, "0");
+            GameData.Instance.saveData = new SaveData();
         }
 
         if (!PlayerPrefs.HasKey("IsFirstTime"))
@@ -40,40 +47,248 @@ public class PlayGamesScript : MonoBehaviour
     }
 
     #region SavedGames
-    private string GameDataToString()
+    //private string GameDataToString()
+    //{
+    //    return CloudVariables.Highscore.ToString();
+    //}
+
+    //private void StringToGameData(string cloudData, string localData)
+    //{
+    //    if (PlayerPrefs.GetInt("IsFirstTime") == 1)
+    //    {
+    //        PlayerPrefs.SetInt("IsFirstTime", 0);
+    //        if (int.Parse(cloudData) > int.Parse(localData))
+    //        {
+    //            PlayerPrefs.SetString(SAVE_NAME, cloudData);
+    //        }
+    //    }
+    //    else
+    //    {
+    //        if (int.Parse(localData) > int.Parse(cloudData))
+    //        {
+    //            CloudVariables.Highscore = int.Parse(localData);
+    //            AddScoreToLeaderboard(GPGSIds.leaderboard_test_leaderboard, CloudVariables.Highscore);
+    //            isCloudDataLoaded = true;
+    //            SaveData();
+    //            return;
+    //        }
+    //    }
+
+    //    CloudVariables.Highscore = int.Parse(cloudData);
+    //    isCloudDataLoaded = true;
+    //}
+
+    //private void StringToGameData(string localData)
+    //{
+    //    CloudVariables.Highscore = int.Parse(localData);
+    //}
+
+    //public void LoadData()
+    //{
+    //    if (Social.localUser.authenticated)
+    //    {
+    //        isSaving = false;
+    //        ((PlayGamesPlatform)Social.Active).SavedGame.OpenWithManualConflictResolution(SAVE_NAME, DataSource.ReadCacheOrNetwork, true, ResolveConflict, OnSavedGameOpened);
+    //    }
+    //    else
+    //    {
+    //        LoadLocal();
+    //    }
+    //}
+
+    //private byte[] LoadLocal()
+    //{
+    //    //StringToGameData(PlayerPrefs.GetString(SAVE_NAME));
+    //    string path = Application.persistentDataPath + "/" + SAVE_NAME;
+    //    if (File.Exists(path))
+    //    {
+    //        BinaryFormatter formatter = new BinaryFormatter();
+    //        FileStream stream = new FileStream(path, FileMode.Open);
+
+    //        SaveData data = formatter.Deserialize(stream) as SaveData;
+    //    }
+    //    else
+    //    {
+    //        Debug.LogError("Save file not found in " + path);
+    //        return null;
+    //    }
+    //}
+
+    //public void SaveData()
+    //{
+    //    if (!isCloudDataLoaded)
+    //    {
+    //        SaveLocal();
+    //    }
+
+    //    if (Social.localUser.authenticated)
+    //    {
+    //        isSaving = true;
+    //        ((PlayGamesPlatform)Social.Active).SavedGame.OpenWithManualConflictResolution(SAVE_NAME, DataSource.ReadCacheOrNetwork, true, ResolveConflict, OnSavedGameOpened);
+    //    }
+    //    else
+    //    {
+    //        SaveLocal();
+    //    }
+    //}
+
+    //private void SaveLocal()
+    //{
+    //    //PlayerPrefs.SetString(SAVE_NAME, GameDataToString());
+    //    BinaryFormatter formatter = new BinaryFormatter();
+
+    //    string path = Application.persistentDataPath + "/" + SAVE_NAME;
+    //    FileStream stream = new FileStream(path, FileMode.Create);
+
+    //    SaveData data = new SaveData();
+
+    //    formatter.Serialize(stream, data);
+    //    stream.Close();
+    //}
+
+    //private void ResolveConflict(IConflictResolver resolver, ISavedGameMetadata original, byte[] originalData, ISavedGameMetadata unmerged, byte[] unmergedData)
+    //{
+    //    if (originalData == null)
+    //    {
+    //        resolver.ChooseMetadata(unmerged);
+    //    }
+    //    else if (unmergedData == null)
+    //    {
+    //        resolver.ChooseMetadata(original);
+    //    }
+    //    else
+    //    {
+    //        string originalStr = Encoding.ASCII.GetString(originalData);
+    //        string unmergedStr = Encoding.ASCII.GetString(unmergedData);
+
+    //        int originalNum = int.Parse(originalStr);
+    //        int unmergedNum = int.Parse(unmergedStr);
+
+    //        if (originalNum > unmergedNum)
+    //        {
+    //            resolver.ChooseMetadata(original);
+    //            return;
+    //        }
+    //        else if (unmergedNum > originalNum)
+    //        {
+    //            resolver.ChooseMetadata(unmerged);
+    //            return;
+    //        }
+    //    }
+
+    //    resolver.ChooseMetadata(original);
+    //}
+
+    //private void OnSavedGameOpened(SavedGameRequestStatus status, ISavedGameMetadata game)
+    //{
+    //    if (status == SavedGameRequestStatus.Success)
+    //    {
+    //        if (!isSaving)
+    //        {
+    //            LoadGame(game);
+    //        }
+    //        else
+    //        {
+    //            SaveGame(game);
+    //        }
+    //    }
+    //    else
+    //    {
+    //        if (!isSaving)
+    //        {
+    //            LoadLocal();
+    //        }
+    //        else
+    //        {
+    //            SaveLocal();
+    //        }
+    //    }
+    //}
+
+    //private void LoadGame(ISavedGameMetadata game)
+    //{
+    //    ((PlayGamesPlatform)Social.Active).SavedGame.ReadBinaryData(game, OnSavedGameDataRead);
+    //}
+
+    //private void SaveGame(ISavedGameMetadata game)
+    //{
+    //    string stringToSave = GameDataToString();
+    //    SaveLocal();
+
+    //    byte[] dataToSave = Encoding.ASCII.GetBytes(stringToSave);
+
+    //    SavedGameMetadataUpdate update = new SavedGameMetadataUpdate.Builder().Build();
+
+    //    ((PlayGamesPlatform)Social.Active).SavedGame.CommitUpdate(game, update, dataToSave, OnSavedGameDataWritten);
+    //}
+
+    //private void OnSavedGameDataRead(SavedGameRequestStatus status, byte[] savedData)
+    //{
+    //    if (status == SavedGameRequestStatus.Success)
+    //    {
+    //        string cloudDataString;
+
+    //        if (savedData.Length == 0)
+    //        {
+    //            cloudDataString = "0";
+    //        }
+    //        else
+    //        {
+    //            cloudDataString = Encoding.ASCII.GetString(savedData);
+    //        }
+
+    //        string localDataString = PlayerPrefs.GetString(SAVE_NAME);
+
+    //        StringToGameData(cloudDataString, localDataString);
+    //    }
+    //}
+
+    //private void OnSavedGameDataWritten(SavedGameRequestStatus status, ISavedGameMetadata game)
+    //{
+
+    //}
+    #endregion /Saved Games
+
+    #region Saved Games
+    // USELESS?
+    private byte[] SaveDataToByteArray()
     {
-        return CloudVariables.Highscore.ToString();
+        BinaryFormatter binaryFormatter = new BinaryFormatter();
+        MemoryStream memoryStream = new MemoryStream();
+        binaryFormatter.Serialize(memoryStream, GameData.Instance.saveData);
+        return memoryStream.ToArray();
     }
 
-    private void StringToGameData(string cloudData, string localData)
+    private void ByteArrayToSaveData(byte[] cloudData, byte[] localData)
     {
+        SaveData cloudSaveData = DeserialiseSaveData(cloudData);
+        SaveData localSaveData = DeserialiseSaveData(localData);
+
         if (PlayerPrefs.GetInt("IsFirstTime") == 1)
         {
             PlayerPrefs.SetInt("IsFirstTime", 0);
-            if (int.Parse(cloudData) > int.Parse(localData))
+            if (cloudSaveData.timestamp > localSaveData.timestamp)
             {
-                PlayerPrefs.SetString(SAVE_NAME, cloudData);
+                GameData.Instance.saveData = cloudSaveData;
             }
         }
         else
         {
-            if (int.Parse(localData) > int.Parse(cloudData))
+            if (localSaveData.timestamp > cloudSaveData.timestamp)
             {
-                CloudVariables.Highscore = int.Parse(localData);
-                AddScoreToLeaderboard(GPGSIds.leaderboard_test_leaderboard, CloudVariables.Highscore);
+                GameData.Instance.saveData = localSaveData;
                 isCloudDataLoaded = true;
                 SaveData();
                 return;
             }
         }
-
-        CloudVariables.Highscore = int.Parse(cloudData);
+        GameData.Instance.saveData = cloudSaveData;
         isCloudDataLoaded = true;
     }
 
-    private void StringToGameData(string localData)
+    private void ByteArrayToSaveData(byte[] localData)
     {
-        CloudVariables.Highscore = int.Parse(localData);
+        GameData.Instance.saveData = DeserialiseSaveData(localData); ;
     }
 
     public void LoadData()
@@ -91,7 +306,15 @@ public class PlayGamesScript : MonoBehaviour
 
     private void LoadLocal()
     {
-        StringToGameData(PlayerPrefs.GetString(SAVE_NAME));
+        string path = Application.persistentDataPath + "/" + SAVE_NAME;
+        if (File.Exists(path))
+        {
+            GameData.Instance.saveData = DeserialiseSaveData(path);
+        }
+        else
+        {
+            Debug.LogError("Save file not found in " + path);
+        }
     }
 
     public void SaveData()
@@ -99,6 +322,7 @@ public class PlayGamesScript : MonoBehaviour
         if (!isCloudDataLoaded)
         {
             SaveLocal();
+            return;
         }
 
         if (Social.localUser.authenticated)
@@ -114,7 +338,13 @@ public class PlayGamesScript : MonoBehaviour
 
     private void SaveLocal()
     {
-        PlayerPrefs.SetString(SAVE_NAME, GameDataToString());
+        BinaryFormatter binaryFormatter = new BinaryFormatter();
+
+        string path = Application.persistentDataPath + "/" + SAVE_NAME;
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        binaryFormatter.Serialize(stream, GameData.Instance.saveData);
+        stream.Close();
     }
 
     private void ResolveConflict(IConflictResolver resolver, ISavedGameMetadata original, byte[] originalData, ISavedGameMetadata unmerged, byte[] unmergedData)
@@ -129,25 +359,24 @@ public class PlayGamesScript : MonoBehaviour
         }
         else
         {
-            string originalStr = Encoding.ASCII.GetString(originalData);
-            string unmergedStr = Encoding.ASCII.GetString(unmergedData);
+            SaveData originalSaveData = DeserialiseSaveData(originalData);
+            SaveData unmergedSaveData = DeserialiseSaveData(unmergedData);
 
-            int originalNum = int.Parse(originalStr);
-            int unmergedNum = int.Parse(unmergedStr);
+            DateTime originalTimestamp = originalSaveData.timestamp;
+            DateTime unmergedTimestamp = unmergedSaveData.timestamp;
 
-            if (originalNum > unmergedNum)
+            if (originalTimestamp > unmergedTimestamp)
             {
                 resolver.ChooseMetadata(original);
                 return;
             }
-            else if (unmergedNum > originalNum)
+            else if (unmergedTimestamp > originalTimestamp)
             {
                 resolver.ChooseMetadata(unmerged);
                 return;
             }
+            resolver.ChooseMetadata(original);
         }
-
-        resolver.ChooseMetadata(original);
     }
 
     private void OnSavedGameOpened(SavedGameRequestStatus status, ISavedGameMetadata game)
@@ -183,10 +412,9 @@ public class PlayGamesScript : MonoBehaviour
 
     private void SaveGame(ISavedGameMetadata game)
     {
-        string stringToSave = GameDataToString();
         SaveLocal();
 
-        byte[] dataToSave = Encoding.ASCII.GetBytes(stringToSave);
+        byte[] dataToSave = SaveDataToByteArray();
 
         SavedGameMetadataUpdate update = new SavedGameMetadataUpdate.Builder().Build();
 
@@ -197,28 +425,41 @@ public class PlayGamesScript : MonoBehaviour
     {
         if (status == SavedGameRequestStatus.Success)
         {
-            string cloudDataString;
-
+            SaveData cloudSaveData;
             if (savedData.Length == 0)
             {
-                cloudDataString = "0";
+                cloudSaveData = new SaveData();
             }
             else
             {
-                cloudDataString = Encoding.ASCII.GetString(savedData);
+                cloudSaveData = DeserialiseSaveData(savedData);
             }
+            
+            SaveData localSaveData = GameData.Instance.saveData;
 
-            string localDataString = PlayerPrefs.GetString(SAVE_NAME);
-
-            StringToGameData(cloudDataString, localDataString);
+            ByteArrayToSaveData(cloudSaveData, localSaveData);
         }
     }
 
-    private void OnSavedGameDataWritten(SavedGameRequestStatus status, ISavedGameMetadata game)
+    private SaveData DeserialiseSaveData(byte[] data)
     {
-
+        BinaryFormatter binaryFormatter = new BinaryFormatter();
+        MemoryStream memoryStream = new MemoryStream(data);
+        SaveData saveData = binaryFormatter.Deserialize(memoryStream) as SaveData;
+        memoryStream.Close();
+        return saveData;
     }
-    #endregion /Saved Games
+
+    private SaveData DeserialiseSaveData(string path)
+    {
+        BinaryFormatter binaryFormatter = new BinaryFormatter();
+        FileStream stream = new FileStream(path, FileMode.Open);
+
+        SaveData saveData = binaryFormatter.Deserialize(stream) as SaveData;
+        stream.Close();
+        return saveData;
+    }
+    #endregion
 
     #region Achievements
     public static void UnlockAchievement(string id)
