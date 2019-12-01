@@ -25,8 +25,7 @@ public class RuleTile : TileBase
         /// DontCare    -> don't take into account
         /// This        -> take into account that it's there
         /// NotThis     -> take into account that it's not there
-        /// AnotherTile -> take into account that it's a different tile
-        public enum Neighbour { DontCare, This, NotThis, AnotherTile }
+        public enum Neighbour { DontCare, This, NotThis }
         public enum OutputSprite { Single, Random }         // determines how output sprite is chosen
 
         public Neighbour[] neighbours;          // surrounding tiles
@@ -127,9 +126,20 @@ public class RuleTile : TileBase
                 {
                     Vector3Int offset = new Vector3Int(x, y, 0);
                     int index = GetIndexOfOffset(offset);
-                    RuleTile tile = tilemap.GetTile(position + offset) as RuleTile;
+                    TileBase baseTile = tilemap.GetTile(position + offset);
+                    RuleTile tile = baseTile as RuleTile;
+                    // check whether the currently checked tile is a rule tile
+                    if (tile == null)
+                    {
+                        if (rule.neighbours[index] == TilingRule.Neighbour.This)
+                        {
+                            return false;
+                        }
+
+                        continue;
+                    }
                     // check whether the currently checked tile is taken into account and whether it is the same rule tile instance
-                    if (rule.neighbours[index] == TilingRule.Neighbour.This && !tile.IsOfSameInstance(this) || rule.neighbours[index] == TilingRule.Neighbour.NotThis && tile.IsOfSameInstance(this))
+                    if (rule.neighbours[index] == TilingRule.Neighbour.This && !(this.IsOfSameInstance(tile)) || rule.neighbours[index] == TilingRule.Neighbour.NotThis && this.IsOfSameInstance(tile))
                     {
                         return false;
                     }
@@ -156,6 +166,11 @@ public class RuleTile : TileBase
         return result;
     }
 
+    /// <summary>
+    /// Checks whether this tile and target tile are tiles of the same Rule Tile instance.
+    /// </summary>
+    /// <param name="targetTile">Tile to be checked.</param>
+    /// <returns></returns>
     public bool IsOfSameInstance(RuleTile targetTile)
     {
         if (targetTile != null)
