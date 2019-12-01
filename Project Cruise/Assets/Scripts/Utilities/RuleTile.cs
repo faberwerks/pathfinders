@@ -25,7 +25,8 @@ public class RuleTile : TileBase
         /// DontCare    -> don't take into account
         /// This        -> take into account that it's there
         /// NotThis     -> take into account that it's not there
-        public enum Neighbour { DontCare, This, NotThis }
+        /// AnotherTile -> take into account that another tile is there
+        public enum Neighbour { DontCare, This, NotThis, AnotherTile }
         public enum OutputSprite { Single, Random }         // determines how output sprite is chosen
 
         public Neighbour[] neighbours;          // surrounding tiles
@@ -131,7 +132,7 @@ public class RuleTile : TileBase
                     // check whether the currently checked tile is a rule tile
                     if (tile == null)
                     {
-                        if (rule.neighbours[index] == TilingRule.Neighbour.This)
+                        if (rule.neighbours[index] == TilingRule.Neighbour.This || rule.neighbours[index] == TilingRule.Neighbour.AnotherTile)
                         {
                             return false;
                         }
@@ -139,7 +140,7 @@ public class RuleTile : TileBase
                         continue;
                     }
                     // check whether the currently checked tile is taken into account and whether it is the same rule tile instance
-                    if (rule.neighbours[index] == TilingRule.Neighbour.This && !(this.IsOfSameInstance(tile)) || rule.neighbours[index] == TilingRule.Neighbour.NotThis && this.IsOfSameInstance(tile))
+                    if (rule.neighbours[index] == TilingRule.Neighbour.This && !(this.IsOfSameInstance(tile)) || rule.neighbours[index] == TilingRule.Neighbour.NotThis && this.IsOfSameInstance(tile) || rule.neighbours[index] == TilingRule.Neighbour.AnotherTile && this.IsOfSameInstance(tile))
                     {
                         return false;
                     }
