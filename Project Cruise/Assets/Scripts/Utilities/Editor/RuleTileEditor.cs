@@ -47,6 +47,7 @@ public class RuleTileEditor : Editor
         reorderableList.drawElementCallback = OnDrawElement;
         reorderableList.elementHeightCallback = GetElementHeight;
         reorderableList.onReorderCallback = ListUpdated;
+        reorderableList.onAddCallback = OnAdd;
     }
 
     /// <summary>
@@ -107,6 +108,14 @@ public class RuleTileEditor : Editor
     private void ListUpdated(ReorderableList list)
     {
         SaveTile();
+    }
+
+    /// <summary>
+    /// A callback method for adding new objects to the list.
+    /// </summary>
+    private void OnAdd(ReorderableList list)
+    {
+        list.list.Add(new RuleTile.TilingRule(tile.defaultColliderType));
     }
 
     public override void OnInspectorGUI()
