@@ -15,6 +15,7 @@ public class RuleTileEditor : Editor
     private static Texture blackCircle;
     private static Texture greenCheckmark;
     private static Texture redX;
+    private static Texture blueBox;
 
     private ReorderableList reorderableList;
     public RuleTile tile { get { return (target as RuleTile); } }
@@ -27,12 +28,14 @@ public class RuleTileEditor : Editor
     private const string blackCirclePath = "Assets/Sprites/Editor/rule-tile.png";
     private const string greenCheckmarkPath = "Assets/Sprites/Editor/rule-tile-this.png";
     private const string redXPath = "Assets/Sprites/Editor/rule-tile-not_this.png";
+    private const string blueBoxPath = "Assets/Sprites/Editor/rule-tile-another_tile.png";
 
     public void OnEnable()
     {
         blackCircle = (Texture) AssetDatabase.LoadAssetAtPath(blackCirclePath, typeof (Texture));
         greenCheckmark = (Texture)AssetDatabase.LoadAssetAtPath(greenCheckmarkPath, typeof(Texture));
         redX = (Texture)AssetDatabase.LoadAssetAtPath(redXPath, typeof(Texture));
+        blueBox = (Texture)AssetDatabase.LoadAssetAtPath(blueBoxPath, typeof(Texture));
 
         if (tile.tilingRules == null)
         {
@@ -209,11 +212,14 @@ public class RuleTileEditor : Editor
                         case RuleTile.TilingRule.Neighbour.NotThis:
                             GUI.DrawTexture(r, redX);
                             break;
+                        case RuleTile.TilingRule.Neighbour.AnotherTile:
+                            GUI.DrawTexture(r, blueBox);
+                            break;
                     }
 
                     if (Event.current.type == EventType.MouseDown && r.Contains(Event.current.mousePosition))
                     {
-                        tilingRule.neighbours[index] = (RuleTile.TilingRule.Neighbour)(((int)tilingRule.neighbours[index] + 1) % 3);
+                        tilingRule.neighbours[index] = (RuleTile.TilingRule.Neighbour)(((int)tilingRule.neighbours[index] + 1) % 4);
                         GUI.changed = true;
                         Event.current.Use();
                     }
