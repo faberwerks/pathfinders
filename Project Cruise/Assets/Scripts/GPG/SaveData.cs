@@ -45,6 +45,8 @@ public class SaveData
 public class LevelSaveData
 {
     public float lowestTime = 0.0f;
-    public bool hasFoundRelic = false;
     public int stars = 0;
+    public bool hasCollectedTreasures = false;
+    public bool hasAchievedTargetTime = false;
+    public bool hasFoundRelic = false;
 }
