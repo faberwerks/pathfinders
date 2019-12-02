@@ -27,6 +27,16 @@ public class SaveData
     {
         Timestamp = DateTime.Now;
     }
+
+    /// <summary>
+    /// Resets level progress data.
+    /// </summary>
+    public void ResetProgress()
+    {
+        LastLevelIndex = 0;
+        levelSaveData = new List<LevelSaveData>();
+        UpdateTimestamp();
+    }
 }
 
 /// <summary>
