@@ -4,7 +4,7 @@ using UnityEngine;
 public class PostLevelManager : MonoBehaviour
 {
     #region STRING CONSTANTS
-    private const string TREASURE_RESULT = " Treasures collected!";
+    private const string TREASURE_RESULT = "/3";
     private const string TARGET_TIME = "Target: ";
     private const string PLAYER_TIME = "Your time: ";
     private const string RATING_0 = "Not bad!";
