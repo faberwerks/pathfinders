@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 /// <summary>
 /// A component to handle sound setting.
@@ -7,6 +8,10 @@ using UnityEngine.Audio;
 public class SoundController : MonoBehaviour
 {
     public AudioMixer mixer;
+    public Image BGMSprite;
+    public Image SFXSprite;
+    public Sprite[] toggleSprite = new Sprite[2];
+
     private float volume;
     private bool BGMOn;
     private bool SFXOn;
@@ -15,7 +20,8 @@ public class SoundController : MonoBehaviour
     {
         BGMOn = PlayerPrefs.GetInt("BGMVol") == 1 ? true : false;
         SFXOn = PlayerPrefs.GetInt("SFXVol") == 1 ? true : false;
-        //SET THE ICON ASSET
+        ToggleSprite("BGMVol", BGMOn);
+        ToggleSprite("SFXVol", SFXOn);
     }
 
     /// <summary>
@@ -28,11 +34,27 @@ public class SoundController : MonoBehaviour
         {
             mixer.SetFloat(group, -80.0f);
             PlayerPrefs.SetInt(group, 0);
+            ToggleSprite(group, false);
         }
         else
         {
             mixer.SetFloat(group, 0.0f);
             PlayerPrefs.SetInt(group, 1);
+            ToggleSprite(group, true);
+        }
+    }
+
+    private void ToggleSprite(string group, bool isOn)
+    {
+        if (group == "BGMVol")
+        {
+            if(isOn) BGMSprite.sprite = toggleSprite[1];
+            else BGMSprite.sprite = toggleSprite[0];
+        }
+        if(group == "SFXVol")
+        {
+            if (isOn) SFXSprite.sprite = toggleSprite[1];
+            else SFXSprite.sprite = toggleSprite[0];
         }
     }
 }
