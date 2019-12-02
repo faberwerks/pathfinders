@@ -16,6 +16,11 @@ public class SaveData
         coins = 0;
         lastLevelIndex = 0;
         levelSaveData = new List<LevelSaveData>();
+        UpdateTimestamp();
+    }
+
+    public void UpdateTimestamp()
+    {
         timestamp = DateTime.Now;
     }
 }

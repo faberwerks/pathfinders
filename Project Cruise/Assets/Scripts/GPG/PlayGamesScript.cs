@@ -24,15 +24,23 @@ public class PlayGamesScript : MonoBehaviour
         //{
         //    PlayerPrefs.SetString(SAVE_NAME, "0");
         //}
+        // setting default value, if game is played for first time
         if (GameData.Instance.saveData == null)
         {
             GameData.Instance.saveData = new SaveData();
         }
 
+        // tells us if first time that this game has been launched after install
+        // - 0 = no
+        // - 1 = yes
         if (!PlayerPrefs.HasKey("IsFirstTime"))
         {
             PlayerPrefs.SetInt("IsFirstTime", 1);
         }
+
+        // load local data first because loading from cloud can take time, if user progresses while using local data, it will all
+        // sync in comparison in [???]
+        LoadLocal();
 
         PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().EnableSavedGames().Build();
         PlayGamesPlatform.InitializeInstance(config);
@@ -41,12 +49,16 @@ public class PlayGamesScript : MonoBehaviour
         SignIn();
     }
 
+    /// <summary>
+    /// Sign in to Google Play Games.
+    /// </summary>
     private void SignIn()
     {
+        // when authentication process is done (successfuly or not), load cloud data
         Social.localUser.Authenticate(success => { LoadData(); });
     }
 
-    #region SavedGames
+    #region Old Saved Games
     //private string GameDataToString()
     //{
     //    return CloudVariables.Highscore.ToString();
@@ -250,8 +262,11 @@ public class PlayGamesScript : MonoBehaviour
     #endregion /Saved Games
 
     #region Saved Games
-    // USELESS?
-    private byte[] SaveDataToByteArray()
+    /// <summary>
+    /// Serialises Save Data into byte array.
+    /// </summary>
+    /// <returns>Serialised Save Data as byte array.</returns>
+    private byte[] SerialiseSaveData()
     {
         BinaryFormatter binaryFormatter = new BinaryFormatter();
         MemoryStream memoryStream = new MemoryStream();
@@ -259,51 +274,97 @@ public class PlayGamesScript : MonoBehaviour
         return memoryStream.ToArray();
     }
 
-    private void ByteArrayToSaveData(byte[] cloudData, byte[] localData)
+    /// <summary>
+    /// Deserialises byte data into Save Data.
+    /// </summary>
+    /// <param name="data">Byte data to be deserialised.</param>
+    /// <returns>Deserialised byte data as Save Data.</returns>
+    private SaveData DeserialiseSaveData(byte[] data)
     {
-        SaveData cloudSaveData = DeserialiseSaveData(cloudData);
-        SaveData localSaveData = DeserialiseSaveData(localData);
+        BinaryFormatter binaryFormatter = new BinaryFormatter();
+        MemoryStream memoryStream = new MemoryStream(data);
+        SaveData saveData = binaryFormatter.Deserialize(memoryStream) as SaveData;
+        memoryStream.Close();
+        return saveData;
+    }
 
+    /// <summary>
+    /// Deserialises serialised data into Save Data.
+    /// </summary>
+    /// <param name="path">Path of serialised save data</param>
+    /// <returns>Deserialised byte data as Save Data.</returns>
+    private SaveData DeserialiseSaveData(string path)
+    {
+        BinaryFormatter binaryFormatter = new BinaryFormatter();
+        FileStream stream = new FileStream(path, FileMode.Open);
+
+        SaveData saveData = binaryFormatter.Deserialize(stream) as SaveData;
+        stream.Close();
+        return saveData;
+    }
+
+    /// <summary>
+    /// Assigns save data to game data and decides whether to use local or cloud save data.
+    /// </summary>
+    private void CompareCloudAndLocalSaveData(SaveData cloudData, SaveData localData)
+    {
+        //SaveData cloudSaveData = DeserialiseSaveData(cloudData);
+        //SaveData localSaveData = DeserialiseSaveData(localData);
+
+        // if first time that game has been launched after installing and successfully log in to GPG
         if (PlayerPrefs.GetInt("IsFirstTime") == 1)
         {
+            // set playerpref to be 0 (false)
             PlayerPrefs.SetInt("IsFirstTime", 0);
-            if (cloudSaveData.timestamp > localSaveData.timestamp)
+            // cloud save is more up to date
+            if (cloudData.timestamp > localData.timestamp)
             {
-                GameData.Instance.saveData = cloudSaveData;
+                SaveLocal(cloudData);
             }
         }
+        // if not first time, start comparing
         else
         {
-            if (localSaveData.timestamp > cloudSaveData.timestamp)
+            // if one timestamp is higher than other, update it
+            if (localData.timestamp > cloudData.timestamp)
             {
-                GameData.Instance.saveData = localSaveData;
+                // update cloud save
+                // first set GameData save data to be equal to local data
+                GameData.Instance.saveData = localData;
                 isCloudDataLoaded = true;
+                // save updated GameData save data to cloud
                 SaveData();
                 return;
             }
         }
-        GameData.Instance.saveData = cloudSaveData;
+        // if code above doesn't trigger return and code below executes
+        // cloud save and local save are identical, can load either one
+        GameData.Instance.saveData = cloudData;
         isCloudDataLoaded = true;
     }
 
-    private void ByteArrayToSaveData(byte[] localData)
-    {
-        GameData.Instance.saveData = DeserialiseSaveData(localData); ;
-    }
-
+    /// <summary>
+    /// Loads data from the cloud or locally.
+    /// </summary>
     public void LoadData()
     {
+        // if connected to internet or signed in, do everything on cloud
         if (Social.localUser.authenticated)
         {
             isSaving = false;
             ((PlayGamesPlatform)Social.Active).SavedGame.OpenWithManualConflictResolution(SAVE_NAME, DataSource.ReadCacheOrNetwork, true, ResolveConflict, OnSavedGameOpened);
         }
+        // will only run on Unity Editor
+        // on device, localUser will be authenticated even if not connected to internet (if player is using GPG)
         else
         {
             LoadLocal();
         }
     }
 
+    /// <summary>
+    /// Loads saved game data locally.
+    /// </summary>
     private void LoadLocal()
     {
         string path = Application.persistentDataPath + "/" + SAVE_NAME;
@@ -313,29 +374,39 @@ public class PlayGamesScript : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Save file not found in " + path);
+            Debug.LogError("Save file not found in " + path + ".");
         }
     }
 
+    /// <summary>
+    /// Saves data to the cloud or locally.
+    /// </summary>
     public void SaveData()
     {
+        // if still running on local data (cloud data has not been loaded yet)
         if (!isCloudDataLoaded)
         {
             SaveLocal();
             return;
         }
 
+        // if connected to internet or signed in, do everything on cloud
         if (Social.localUser.authenticated)
         {
             isSaving = true;
             ((PlayGamesPlatform)Social.Active).SavedGame.OpenWithManualConflictResolution(SAVE_NAME, DataSource.ReadCacheOrNetwork, true, ResolveConflict, OnSavedGameOpened);
         }
+        // will only run on Unity Editor
+        // on device, localUser will be authenticated even if not connected to internet (if player is using GPG)
         else
         {
             SaveLocal();
         }
     }
 
+    /// <summary>
+    /// Saves saved game data locally.
+    /// </summary>
     private void SaveLocal()
     {
         BinaryFormatter binaryFormatter = new BinaryFormatter();
@@ -347,6 +418,24 @@ public class PlayGamesScript : MonoBehaviour
         stream.Close();
     }
 
+    /// <summary>
+    /// Saves saved game data locally.
+    /// </summary>
+    /// <param name="saveData">Saved game data to be saved.</param>
+    private void SaveLocal(SaveData saveData)
+    {
+        BinaryFormatter binaryFormatter = new BinaryFormatter();
+
+        string path = Application.persistentDataPath + "/" + SAVE_NAME;
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        binaryFormatter.Serialize(stream, saveData);
+        stream.Close();
+    }
+
+    /// <summary>
+    /// Callback for resolving metadata conflict.
+    /// </summary>
     private void ResolveConflict(IConflictResolver resolver, ISavedGameMetadata original, byte[] originalData, ISavedGameMetadata unmerged, byte[] unmergedData)
     {
         if (originalData == null)
@@ -359,39 +448,53 @@ public class PlayGamesScript : MonoBehaviour
         }
         else
         {
+            // deserialising byte data into Save Data
             SaveData originalSaveData = DeserialiseSaveData(originalData);
             SaveData unmergedSaveData = DeserialiseSaveData(unmergedData);
 
+            // getting timestamp
             DateTime originalTimestamp = originalSaveData.timestamp;
             DateTime unmergedTimestamp = unmergedSaveData.timestamp;
 
+            // if original timestamp is more recent than unmerged timestamp
             if (originalTimestamp > unmergedTimestamp)
             {
                 resolver.ChooseMetadata(original);
                 return;
             }
+            // unmerged timestamp is more recent than original
             else if (unmergedTimestamp > originalTimestamp)
             {
                 resolver.ChooseMetadata(unmerged);
                 return;
             }
+            // if return doesn't get called, original and unmerged are identical
+            // can keep either one
             resolver.ChooseMetadata(original);
         }
     }
 
+    /// <summary>
+    /// Callback for opening saved game data.
+    /// </summary>
     private void OnSavedGameOpened(SavedGameRequestStatus status, ISavedGameMetadata game)
     {
+        // if connected to internet
         if (status == SavedGameRequestStatus.Success)
         {
+            // if LOADING game data
             if (!isSaving)
             {
                 LoadGame(game);
             }
+            // if SAVING game data
             else
             {
                 SaveGame(game);
             }
         }
+        // if couldn't successfully connect to cloud, runs while on device
+        // same code that is in else statements in LoadData() and SaveData()
         else
         {
             if (!isSaving)
@@ -405,59 +508,71 @@ public class PlayGamesScript : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Loads saved game data from the cloud.
+    /// </summary>
+    /// <param name="game"></param>
     private void LoadGame(ISavedGameMetadata game)
     {
         ((PlayGamesPlatform)Social.Active).SavedGame.ReadBinaryData(game, OnSavedGameDataRead);
     }
 
+    /// <summary>
+    /// Saves saved game data to the cloud.
+    /// </summary>
+    /// <param name="game"></param>
     private void SaveGame(ISavedGameMetadata game)
     {
+        // also saving locally
         SaveLocal();
 
-        byte[] dataToSave = SaveDataToByteArray();
-
+        // serialises to byte array
+        byte[] dataToSave = SerialiseSaveData();
+        // updating metadata with new description
         SavedGameMetadataUpdate update = new SavedGameMetadataUpdate.Builder().Build();
-
+        // uploading data to cloud
         ((PlayGamesPlatform)Social.Active).SavedGame.CommitUpdate(game, update, dataToSave, OnSavedGameDataWritten);
     }
 
+    /// <summary>
+    /// Callback for ReadBinaryData().
+    /// </summary>
     private void OnSavedGameDataRead(SavedGameRequestStatus status, byte[] savedData)
     {
+        // if reading of data successful
         if (status == SavedGameRequestStatus.Success)
         {
             SaveData cloudSaveData;
+            // if never played game before, savedData will have length of 0
             if (savedData.Length == 0)
             {
+                // assign new SaveData to cloudSaveData
                 cloudSaveData = new SaveData();
             }
+            // otherwise take byte[] of data abnd deserialise
             else
             {
                 cloudSaveData = DeserialiseSaveData(savedData);
             }
-            
-            SaveData localSaveData = GameData.Instance.saveData;
 
-            ByteArrayToSaveData(cloudSaveData, localSaveData);
+            // getting local data
+            // (if never played before on this device, localData is already new SaveData
+            // no need for checking as with cloudSaveData
+            string path = Application.persistentDataPath + "/" + SAVE_NAME;
+            SaveData localSaveData = DeserialiseSaveData(path);
+
+            CompareCloudAndLocalSaveData(cloudSaveData, localSaveData);
         }
     }
 
-    private SaveData DeserialiseSaveData(byte[] data)
+    /// <summary>
+    /// Callback for writing saved game data.
+    /// </summary>
+    /// <param name="status"></param>
+    /// <param name="game"></param>
+    private void OnSavedGameDataWritten(SavedGameRequestStatus status, ISavedGameMetadata game)
     {
-        BinaryFormatter binaryFormatter = new BinaryFormatter();
-        MemoryStream memoryStream = new MemoryStream(data);
-        SaveData saveData = binaryFormatter.Deserialize(memoryStream) as SaveData;
-        memoryStream.Close();
-        return saveData;
-    }
 
-    private SaveData DeserialiseSaveData(string path)
-    {
-        BinaryFormatter binaryFormatter = new BinaryFormatter();
-        FileStream stream = new FileStream(path, FileMode.Open);
-
-        SaveData saveData = binaryFormatter.Deserialize(stream) as SaveData;
-        stream.Close();
-        return saveData;
     }
     #endregion
 
@@ -479,14 +594,14 @@ public class PlayGamesScript : MonoBehaviour
     #endregion /Achievements
 
     #region Leaderboards
-    public static void AddScoreToLeaderboard(string leaderboardId, long score)
-    {
-        Social.ReportScore(score, leaderboardId, success => { });
-    }
+    //public static void AddScoreToLeaderboard(string leaderboardId, long score)
+    //{
+    //    Social.ReportScore(score, leaderboardId, success => { });
+    //}
 
-    public static void ShowLeaderboardsUI()
-    {
-        Social.ShowLeaderboardUI();
-    }
+    //public static void ShowLeaderboardsUI()
+    //{
+    //    Social.ShowLeaderboardUI();
+    //}
     #endregion /Leaderboards
 }
