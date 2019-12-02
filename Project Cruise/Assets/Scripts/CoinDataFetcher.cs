@@ -7,6 +7,6 @@ public class CoinDataFetcher : MonoBehaviour
 
     void Start()
     {
-        //this.coins = GameData.Instance.saveData.coins;
+        this.coins.text = "" + GameData.Instance.saveData.Coins;
     }
 }
