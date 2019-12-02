@@ -10,32 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 735179a033f144f4697ae3d17e7a0dc0, type: 3}
-  m_Name: Aztec Wall
+  m_Name: Wall
   m_EditorClassIdentifier: 
-  defaultSprite: {fileID: 21300000, guid: af6269b98151a3940bdbecf66a6e054a, type: 3}
+  defaultSprite: {fileID: 21300000, guid: f58cea4f599f4f84098c7f0ff7c7cb2c, type: 3}
   defaultColliderType: 1
-  tilingRules:
-  - neighbours: 0000000001000000000000000100000000000000000000000100000000000000
-    sprites:
-    - {fileID: 21300000, guid: 4546203ec1a0506488daa9001c34f480, type: 3}
-    perlinScale: 0.5
-    output: 0
-    colliderType: 1
-  - neighbours: 0000000001000000000000000000000001000000000000000100000000000000
-    sprites:
-    - {fileID: 21300000, guid: f58cea4f599f4f84098c7f0ff7c7cb2c, type: 3}
-    perlinScale: 0.5
-    output: 0
-    colliderType: 1
-  - neighbours: 0000000001000000000000000000000000000000000000000100000000000000
-    sprites:
-    - {fileID: 21300000, guid: 10ead91d397b6de4d8cd218d6e75dec9, type: 3}
-    perlinScale: 0.5
-    output: 0
-    colliderType: 1
-  - neighbours: 0000000000000000000000000000000000000000000000000100000000000000
-    sprites:
-    - {fileID: 21300000, guid: 10ead91d397b6de4d8cd218d6e75dec9, type: 3}
-    perlinScale: 0.5
-    output: 0
-    colliderType: 1
+  tilingRules: []
