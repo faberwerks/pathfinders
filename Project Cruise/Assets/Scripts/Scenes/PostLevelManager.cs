@@ -5,7 +5,7 @@ public class PostLevelManager : MonoBehaviour
 {
     #region STRING CONSTANTS
     private const string TREASURE_RESULT = " Treasures collected!";
-    private const string TARGET_TIME = "Target time: ";
+    private const string TARGET_TIME = "Target: ";
     private const string PLAYER_TIME = "Your time: ";
     private const string RATING_0 = "Not bad!";
     private const string RATING_1 = "Nice!";
