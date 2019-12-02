@@ -41,10 +41,10 @@ public class UIScript : MonoBehaviour
         PlayGamesScript.ShowAchievementsUI();
     }
 
-    public void ShowLeaderboard()
-    {
-        PlayGamesScript.ShowLeaderboardsUI();
-    }
+    //public void ShowLeaderboard()
+    //{
+    //    PlayGamesScript.ShowLeaderboardsUI();
+    //}
 
     public void UpdatePointsText()
     {

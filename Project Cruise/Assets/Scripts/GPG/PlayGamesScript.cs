@@ -4,9 +4,11 @@ using GooglePlayGames.BasicApi.SavedGame;
 using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
 using UnityEngine;
 
+/// <summary>
+/// A component to handle interaction with Google Play Games including saving, loading, and achievements.
+/// </summary>
 public class PlayGamesScript : MonoBehaviour
 {
     public static PlayGamesScript Instance { get; private set; }
@@ -19,7 +21,7 @@ public class PlayGamesScript : MonoBehaviour
     private void Start()
     {
         Instance = this;
-        
+
         //if (!PlayerPrefs.HasKey(SAVE_NAME))
         //{
         //    PlayerPrefs.SetString(SAVE_NAME, "0");
@@ -317,7 +319,7 @@ public class PlayGamesScript : MonoBehaviour
             // set playerpref to be 0 (false)
             PlayerPrefs.SetInt("IsFirstTime", 0);
             // cloud save is more up to date
-            if (cloudData.timestamp > localData.timestamp)
+            if (cloudData.Timestamp > localData.Timestamp)
             {
                 SaveLocal(cloudData);
             }
@@ -325,8 +327,8 @@ public class PlayGamesScript : MonoBehaviour
         // if not first time, start comparing
         else
         {
-            // if one timestamp is higher than other, update it
-            if (localData.timestamp > cloudData.timestamp)
+            // if one Timestamp is higher than other, update it
+            if (localData.Timestamp > cloudData.Timestamp)
             {
                 // update cloud save
                 // first set GameData save data to be equal to local data
@@ -452,17 +454,17 @@ public class PlayGamesScript : MonoBehaviour
             SaveData originalSaveData = DeserialiseSaveData(originalData);
             SaveData unmergedSaveData = DeserialiseSaveData(unmergedData);
 
-            // getting timestamp
-            DateTime originalTimestamp = originalSaveData.timestamp;
-            DateTime unmergedTimestamp = unmergedSaveData.timestamp;
+            // getting Timestamp
+            DateTime originalTimestamp = originalSaveData.Timestamp;
+            DateTime unmergedTimestamp = unmergedSaveData.Timestamp;
 
-            // if original timestamp is more recent than unmerged timestamp
+            // if original Timestamp is more recent than unmerged Timestamp
             if (originalTimestamp > unmergedTimestamp)
             {
                 resolver.ChooseMetadata(original);
                 return;
             }
-            // unmerged timestamp is more recent than original
+            // unmerged Timestamp is more recent than original
             else if (unmergedTimestamp > originalTimestamp)
             {
                 resolver.ChooseMetadata(unmerged);

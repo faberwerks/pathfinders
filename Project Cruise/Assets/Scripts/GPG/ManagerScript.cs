@@ -20,7 +20,7 @@ public class ManagerScript : MonoBehaviour
 
     public void RestartGame()
     {
-        PlayGamesScript.AddScoreToLeaderboard(GPGSIds.leaderboard_test_leaderboard, Counter);
+        //PlayGamesScript.AddScoreToLeaderboard(GPGSIds.leaderboard_test_leaderboard, Counter);
 
         if (Counter > CloudVariables.Highscore)
         {

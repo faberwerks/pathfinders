@@ -1,30 +1,37 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
+/// <summary>
+/// A class to hold save data.
+/// </summary>
 [System.Serializable]
 public class SaveData
 {
-    public int coins;
-    public int lastLevelIndex;
+    public int Coins { get; set; }
+    public int LastLevelIndex { get; set; }
+    public DateTime Timestamp { get; private set; }
     public List<LevelSaveData> levelSaveData;
-    public DateTime timestamp;
 
     public SaveData()
     {
-        coins = 0;
-        lastLevelIndex = 0;
+        Coins = 0;
+        LastLevelIndex = 0;
         levelSaveData = new List<LevelSaveData>();
         UpdateTimestamp();
     }
 
+    /// <summary>
+    /// Updates the timestamp.
+    /// </summary>
     public void UpdateTimestamp()
     {
-        timestamp = DateTime.Now;
+        Timestamp = DateTime.Now;
     }
 }
 
+/// <summary>
+/// A class to hold save data for a level.
+/// </summary>
 public class LevelSaveData
 {
     public float lowestTime = 0.0f;
