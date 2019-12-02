@@ -21,6 +21,7 @@ public class GameData
     public bool isRelicCollected = false;
     public float levelTime = 0.0f;
     public int lastLevelIndex = 0;
+    public SaveData saveData = null;
 
     public int coin = 0;
 }
