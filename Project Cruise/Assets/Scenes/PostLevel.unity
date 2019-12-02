@@ -577,11 +577,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rating: {fileID: 1701916209}
-  targetTime: {fileID: 553585671}
-  playerTime: {fileID: 1589873950}
-  timeResult: {fileID: 1140629362}
+  targetTimeText: {fileID: 553585671}
+  playerTimeText: {fileID: 1589873950}
   treasureResult: {fileID: 922791891}
-  collectedIGC: {fileID: 811334150}
+  coinsEarnedText: {fileID: 811334150}
   treasureIcon:
   - {fileID: 484469924}
   - {fileID: 2043907564}
@@ -1389,7 +1388,7 @@ GameObject:
   - component: {fileID: 811334151}
   - component: {fileID: 811334150}
   m_Layer: 5
-  m_Name: IGC Earned
+  m_Name: Coins Earned
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
