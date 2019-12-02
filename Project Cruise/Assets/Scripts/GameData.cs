@@ -23,5 +23,5 @@ public class GameData
     public int lastLevelIndex = 0;
     public SaveData saveData = new SaveData();
 
-    public int coin = 0;
+    public int coinsEarned = 0;
 }

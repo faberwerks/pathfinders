@@ -9,7 +9,7 @@ public class IAPManager : MonoBehaviour
     /// <param name="bought">The product that will be taken from the IAP Button component</param>
     public void AddCoinPurchase(Product bought)
     {
-        GameData.Instance.coin += (int)bought.definition.payout.quantity;
+        GameData.Instance.saveData.Coins += (int)bought.definition.payout.quantity;
         Debug.Log("[IAP] Product ID: " + bought.definition.id);
     }
 
