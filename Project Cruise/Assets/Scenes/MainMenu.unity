@@ -1365,7 +1365,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: a6154ddd449efee42b4c207f80d5c6e7, type: 2}
-  audioPlayerManagerPrefab: {fileID: 0}
+  audioPlayerManagerPrefab: {fileID: 6366910947519922949, guid: 2bc40eabfbce469448f8b5e5597fbe8a,
+    type: 3}
 --- !u!1 &1792181897
 GameObject:
   m_ObjectHideFlags: 0
