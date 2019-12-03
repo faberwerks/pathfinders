@@ -78,8 +78,8 @@ public class LevelManager : MonoBehaviour
     private void Win()
     {
         levelTimer.EndTimer();
-        GameData.Instance.treasuresCollected = TreasureCollected;
-        GameData.Instance.isRelicCollected = RelicCollected;
+        GameData.Instance.currTreasuresCollected = TreasureCollected;
+        GameData.Instance.currIsRelicCollected = RelicCollected;
         //GameData.Instance.levelTime
         //GameData.Instance.lastSceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
         CalculateCoinsAndStarsEarned();

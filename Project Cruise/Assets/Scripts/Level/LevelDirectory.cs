@@ -34,4 +34,14 @@ public class LevelDirectory : ScriptableObject
     {
         return levels[index - 1];
     }
+
+    /// <summary>
+    /// A method to get the level data at the specified raw index.
+    /// </summary>
+    /// <param name="rawIndex">Raw level index.</param>
+    /// <returns>Levle data.</returns>
+    public LevelData GetLevelDataWithRawIndex(int rawIndex)
+    {
+        return levels[rawIndex];
+    }
 }
