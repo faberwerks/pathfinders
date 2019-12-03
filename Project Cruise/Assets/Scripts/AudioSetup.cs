@@ -7,10 +7,12 @@ using UnityEngine.Audio;
 public class AudioSetup : MonoBehaviour
 {
     public AudioMixer mixer;
+    public GameObject audioPlayerManagerPrefab = null;
 
     // Start is called before the first frame update
     private void Start()
     {
+        SetUpAudioPlayerManager();
         SetUpAudioGroup("BGMVol");
         SetUpAudioGroup("SFXVol");
     }
@@ -33,6 +35,17 @@ public class AudioSetup : MonoBehaviour
         else
         {
             mixer.SetFloat(group, 0.0f);
+        }
+    }
+
+    /// <summary>
+    /// Checks if the Audio Player Manager exists and instantiates it if not.
+    /// </summary>
+    private void SetUpAudioPlayerManager()
+    {
+        if (AudioPlayerManager.Instance == null)
+        {
+            ((GameObject)Instantiate(audioPlayerManagerPrefab)).name = audioPlayerManagerPrefab.name;
         }
     }
 }

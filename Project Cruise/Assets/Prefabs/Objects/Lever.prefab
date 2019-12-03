@@ -94,6 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e734eaf06f167ed409925a9f07033947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leverSound: {fileID: 1071482608811649883, guid: eac1f0b6adbd2814da6d39804f35ac2b,
+    type: 3}
   toggledObjects:
   - {fileID: 0}
   togglerType: 1

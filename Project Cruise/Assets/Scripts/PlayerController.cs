@@ -6,6 +6,7 @@ using UnityEngine.UI;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
+    private AudioSource walkingSound;
     private Joystick joystick;
     private Toggler currentPressurePlate;
     private Toggler currentLever;
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
         translation = Vector3.zero;
         button = Blackboard.Instance.Button;
         joystick = Blackboard.Instance.Joystick;
+        walkingSound = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -32,6 +34,14 @@ public class PlayerController : MonoBehaviour
         //direction of the character movement from the joystick
         dir = joystick.Direction;
         translation.Set(dir.x, dir.y, translation.z);
+        if (translation != Vector3.zero && !walkingSound.isPlaying)
+        {
+            walkingSound.Play();
+        }
+        else if(translation == Vector3.zero)
+        {
+            walkingSound.Stop();
+        }
 
         translation = translation.normalized * speed * Time.deltaTime;
         rb.MovePosition(rb.transform.position + translation);

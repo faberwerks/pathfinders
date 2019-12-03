@@ -10,7 +10,7 @@ public class Goal : MonoBehaviour
     /////// PROPERTIES ///////
     public bool IsPressed { get; set; }
 
-    
+    private AudioSource stepOnGoal;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +18,7 @@ public class Goal : MonoBehaviour
         IsPressed = false;
         Blackboard.Instance.LevelManager.goals.Add(this);
         //Blackboard.instance.LevelManager.goals.Add(this);
+        stepOnGoal = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -35,6 +36,7 @@ public class Goal : MonoBehaviour
         if(collision.CompareTag(TagStrings.PLAYER_TAG))
         {
             IsPressed = true;
+            stepOnGoal.Play();
             Blackboard.Instance.LevelManager.CheckGoals();
         }
     }

@@ -1986,8 +1986,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 826809264}
   m_HandleRect: {fileID: 826809263}
   m_Direction: 2
-  m_Value: 0.9860806
-  m_Size: 0.6387899
+  m_Value: 0.98608065
+  m_Size: 0.61892414
   m_NumberOfSteps: 1
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2445,7 +2445,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 187.95471, y: -79.52478}
+  m_AnchoredPosition: {x: 187.95471, y: -79.524765}
   m_SizeDelta: {x: -500.99994, y: -276.09998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1180360306
@@ -3262,6 +3262,7 @@ GameObject:
   - component: {fileID: 2049676741}
   - component: {fileID: 2049676740}
   - component: {fileID: 2049676739}
+  - component: {fileID: 2049676743}
   m_Layer: 5
   m_Name: Back Button
   m_TagString: Untagged
@@ -3355,6 +3356,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: MainMenu
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2049676743}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
