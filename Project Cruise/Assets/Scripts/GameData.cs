@@ -22,6 +22,6 @@ public class GameData
     public float levelTime = 0.0f;
     public int lastLevelIndex = 0;
     public SaveData saveData = new SaveData();
-
     public int coinsEarned = 0;
+    public int starsEarned = 0;
 }

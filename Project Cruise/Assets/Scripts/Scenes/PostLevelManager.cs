@@ -3,18 +3,20 @@ using UnityEngine;
 
 public class PostLevelManager : MonoBehaviour
 {
-    #region STRING CONSTANTS
-    //private const string TREASURE_RESULT = "/3";
-    //private const string TARGET_TIME = "Target: ";
-    //private const string PLAYER_TIME = "Your time: ";
-    //private const string RATING_0 = "Not bad!";
-    private const string RATING_1 = "Nice!";
-    private const string RATING_2 = "Great!";
-    private const string RATING_3 = "Perfect!";
-    //private const string TIME_PASS = "Great job!\nFaster than the light!";
-    //private const string TIME_FAIL = "Better luck next time!";
-    #endregion
+    //#region STRING CONSTANTS
+    ////private const string TREASURE_RESULT = "/3";
+    ////private const string TARGET_TIME = "Target: ";
+    ////private const string PLAYER_TIME = "Your time: ";
+    ////private const string RATING_0 = "Not bad!";
+    //private const string RATING_1 = "Nice!";
+    //private const string RATING_2 = "Great!";
+    //private const string RATING_3 = "Perfect!";
+    ////private const string TIME_PASS = "Great job!\nFaster than the light!";
+    ////private const string TIME_FAIL = "Better luck next time!";
+    //#endregion
 
+
+    private string[] RATING = new string[3] { "Nice!", "Great!", "Perfect!" };
     public TextMeshProUGUI rating;
     public TextMeshProUGUI targetTimeText;
     public TextMeshProUGUI playerTimeText;
@@ -76,30 +78,21 @@ public class PostLevelManager : MonoBehaviour
         targetTime = Mathf.Round(targetTime * 100f) / 100f;
         playerTime = Mathf.Round(playerTime * 100f) / 100f;
         ShowTimes();
-        if (playerTime <= targetTime) passedTarget = true;
+        //if (playerTime <= targetTime) passedTarget = true;
 
-        //Stars acquiring method
-        if(treasure >= 3 && passedTarget)
-        {
-            ActivateStarIcon(3);
-            rating.text = RATING_3;
-        }
-        else if(treasure >= 3 || passedTarget)
-        {
-            ActivateStarIcon(2);
-            rating.text = RATING_2;
-        }
-        else
-        {
-            ActivateStarIcon(1);
-            rating.text = RATING_1;
-        }
+        ShowResult(GameData.Instance.starsEarned);
 
         coinsEarnedText.text = "" + GameData.Instance.coinsEarned;
 
     }
 
-    private void ActivateStarIcon(short _stars)
+    private void ShowResult(int stars)
+    {
+        ActivateStarIcon(stars);
+        rating.text = RATING[stars-1];
+    }
+
+    private void ActivateStarIcon(int _stars)
     {
         foreach (GameObject icon in treasureIcon)
         {

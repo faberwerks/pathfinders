@@ -23,10 +23,14 @@ public class LevelManager : MonoBehaviour
     public List<Goal> goals = new List<Goal>();
     public GameObject winCanvas;
     public GameObject loseCanvas;
-    public TMP_Text targetTime;
+    public TMP_Text[] targetTime;
+    public TMP_Text playerTimer;
     public float postLevelDelay = 2.0f;
 
+    public int relicCoin = 30;
+
     private LevelTimer levelTimer;
+    private LevelData currLevelData;
 
     //Awake is called before Start
     private void Awake()
@@ -41,8 +45,12 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = 1.0f;
         TreasureCollected = 0;
         RelicCollected = false;
-        LevelData currLevelData = LevelDirectory.Instance.GetLevelData(GameData.Instance.lastLevelIndex);
-        targetTime.text = "Target time: " + currLevelData.targetTime;
+        currLevelData = LevelDirectory.Instance.GetLevelData(GameData.Instance.lastLevelIndex);
+        foreach (var tmp in targetTime)
+        {
+            tmp.text = currLevelData.targetTime.ToString("#.##") + "s";
+        }
+        //targetTime.text = "Target time: " + currLevelData.targetTime;
         hasRelic = currLevelData.hasRelic;
     }
 
@@ -74,6 +82,7 @@ public class LevelManager : MonoBehaviour
         GameData.Instance.isRelicCollected = RelicCollected;
         //GameData.Instance.levelTime
         //GameData.Instance.lastSceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
+        CalculateCoinsAndStarsEarned();
         Invoke("LoadPostLevel", postLevelDelay);
     }
     /// <summary>
@@ -81,9 +90,10 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void Lose()
     {
-        //Debug.Log("lose");
-        loseCanvas.SetActive(true);
+        levelTimer.EndTimer();
         Time.timeScale = 0.0f;
+        playerTimer.text = GameData.Instance.levelTime.ToString("#.##") + "s";
+        loseCanvas.SetActive(true);
     }
     
     /// <summary>
@@ -107,5 +117,29 @@ public class LevelManager : MonoBehaviour
     private void LoadPostLevel()
     {
         SceneManager.LoadScene(POST_LEVEL_SCENE_NAME);
+    }
+
+    private void CalculateCoinsAndStarsEarned()
+    {
+        int coinsEarned = 0;
+        int tempStar = 1;
+        var currLevelSave = GameData.Instance.saveData.levelSaveData[GameData.Instance.lastLevelIndex];
+        coinsEarned += currLevelData.baseCoin;             //adds base coin
+        if(hasRelic && RelicCollected)
+        {
+            coinsEarned += relicCoin;                      //adds relic coin
+        }
+        if(TreasureCollected >= 3 && currLevelSave.hasCollectedTreasures)
+        {
+            coinsEarned += currLevelData.treasureCoin;     //adds treasure coin
+            tempStar += 1;
+        }
+        if(levelTimer.timer <= currLevelData.targetTime && !currLevelSave.hasAchievedTargetTime)
+        {
+            coinsEarned += currLevelData.targetTimeCoin;   //adds target time coin
+            tempStar += 1;
+        }
+        GameData.Instance.coinsEarned = coinsEarned;
+        GameData.Instance.starsEarned = tempStar;
     }
 }
