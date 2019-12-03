@@ -1,4 +1,4 @@
-#if UNITY_PURCHASING
+
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
@@ -206,4 +206,4 @@ namespace UnityEngine.Purchasing
         }
     }
 }
-#endif
+
