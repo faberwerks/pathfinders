@@ -83,6 +83,7 @@ public class LevelManager : MonoBehaviour
         //GameData.Instance.levelTime
         //GameData.Instance.lastSceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
         CalculateCoinsAndStarsEarned();
+        GameData.Instance.saveData.UpdateTimestamp();
         PlayGamesScript.Instance.SaveData();
         Invoke("LoadPostLevel", postLevelDelay);
     }
