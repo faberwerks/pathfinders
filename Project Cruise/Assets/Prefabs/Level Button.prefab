@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8174233151560335092}
   - component: {fileID: 8525618123306392754}
   - component: {fileID: 7115682560993849152}
+  - component: {fileID: 1653574114549808821}
   m_Layer: 5
   m_Name: Level Button
   m_TagString: Level Button
@@ -133,12 +134,13 @@ MonoBehaviour:
           m_StringArgument: DummyLevel
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7766606463023858292}
+      - m_Target: {fileID: 1653574114549808821}
         m_MethodName: Play
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a53b6a6c4c28164c8d45445d9730e18,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -179,6 +181,18 @@ MonoBehaviour:
   - {fileID: 7190769715458713978, guid: 05787e748710eb84abdea6ab4e1f37f7, type: 3}
   - {fileID: -8970986535776614042, guid: 05787e748710eb84abdea6ab4e1f37f7, type: 3}
   - {fileID: 4002422890817813562, guid: 05787e748710eb84abdea6ab4e1f37f7, type: 3}
+--- !u!114 &1653574114549808821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8174233151560335090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393907b3cbb265643907ee540f8ce6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8174233152740322947
 GameObject:
   m_ObjectHideFlags: 0
