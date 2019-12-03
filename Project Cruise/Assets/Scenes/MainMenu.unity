@@ -952,6 +952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: a6154ddd449efee42b4c207f80d5c6e7, type: 2}
+  audioPlayerManagerPrefab: {fileID: 0}
 --- !u!114 &1746146916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1401,6 +1402,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085763564}
   m_CullTransparentMesh: 0
+--- !u!114 &2085763570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085763564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393907b3cbb265643907ee540f8ce6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5401174349372222224
 PrefabInstance:
   m_ObjectHideFlags: 0
