@@ -35,13 +35,13 @@ public class RuleTile : TileBase
         public OutputSprite output;
         public Tile.ColliderType colliderType;
 
-        public TilingRule()
+        public TilingRule(Tile.ColliderType defaultColliderType)
         {
             output = OutputSprite.Single;
             neighbours = new Neighbour[8];      // top left, top mid, top right, mid left, etc.
             sprites = new Sprite[1];
             perlinScale = 0.5f;
-            colliderType = Tile.ColliderType.None;
+            colliderType = defaultColliderType;
 
             for (int i = 0; i < neighbours.Length; i++)
             {

@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿/// <summary>
+/// Static class holding current playthrough data.
+/// </summary>
 public class GameData
 {
     private static GameData instance;
@@ -17,10 +16,21 @@ public class GameData
         }
     }
 
-    public int treasuresCollected = 0;
-    public bool isRelicCollected = false;
-    public float levelTime = 0.0f;
-    public int lastLevelIndex = 0;
+    public GameData()
+    {
+        currTreasuresCollected = 0;
+        currIsRelicCollected = false;
+        currLevelTime = 0.0f;
+        currLevelID = 0;
+        coinsEarned = 0;
+        saveData = new SaveData();
+    }
 
-    public int coin = 0;
+    public int currTreasuresCollected = 0;
+    public bool currIsRelicCollected = false;
+    public float currLevelTime = 0.0f;
+    public int currLevelID = 0;
+    public int coinsEarned = 0;
+    public int starsEarned = 0;
+    public SaveData saveData = null;
 }

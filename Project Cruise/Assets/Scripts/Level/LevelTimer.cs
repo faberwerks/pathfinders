@@ -6,7 +6,7 @@ using TMPro;
 public class LevelTimer : MonoBehaviour
 {
     //public bool gameHasEnded;
-    private float timer;
+    public float timer;
     private bool timeHasEnded;
     //public GameObject endPanel;
     //public TMP_Text timerText;
@@ -53,6 +53,6 @@ public class LevelTimer : MonoBehaviour
     public void EndTimer()
     {
         timeHasEnded = true;
-        GameData.Instance.levelTime = timer;
+        GameData.Instance.currLevelTime = timer;
     }
 }
