@@ -648,7 +648,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 259801351}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 325417497}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1442229870}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &259801351
@@ -706,7 +728,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &325417498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1063,8 +1085,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -800}
-  m_SizeDelta: {x: 700, y: 1200}
+  m_AnchoredPosition: {x: 0, y: -1025.1}
+  m_SizeDelta: {x: 700, y: 1650.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &537429900
 MonoBehaviour:
@@ -1131,7 +1153,26 @@ MonoBehaviour:
 
     Music:
 
-    Hans Budiman'
+    Hans Budiman
+
+
+    This game uses these sounds from freesound:
+
+    lever-pull one-armed-bandit by Timbre
+
+    Badge Coin Win by isteak
+
+    Walking Sound #1 by Mativve
+
+    Stabbing Lettuce by InspectorJ
+
+    ugh (male) by brookmorgan
+
+    Coins by DWOBoyle
+
+    button by Leszek_Szary
+
+    "Win" Video Game Sound by 0EV'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1200,12 +1241,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 537429900}
-    characterCount: 332
+    characterCount: 596
     spriteCount: 0
-    spaceCount: 48
-    wordCount: 44
+    spaceCount: 90
+    wordCount: 86
     linkCount: 0
-    lineCount: 28
+    lineCount: 39
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -2956,7 +2997,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1442229871
 MonoBehaviour:
   m_ObjectHideFlags: 0

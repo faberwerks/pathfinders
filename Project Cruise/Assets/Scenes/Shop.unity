@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -220.00006}
+  m_AnchoredPosition: {x: 0, y: -220.00005}
   m_SizeDelta: {x: 0, y: 452.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &171235047
@@ -2445,7 +2445,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 187.95471, y: -79.524765}
+  m_AnchoredPosition: {x: 187.95471, y: -79.52478}
   m_SizeDelta: {x: -500.99994, y: -276.09998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1180360306
@@ -2786,7 +2786,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -13.799988, y: 0.2999878}
+  m_AnchoredPosition: {x: -13.800049, y: 0.2999878}
   m_SizeDelta: {x: -84.6, y: -68.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1533991502
@@ -3360,10 +3360,11 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2049676743}
         m_MethodName: Play
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 2a53b6a6c4c28164c8d45445d9730e18,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3408,6 +3409,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049676737}
   m_CullTransparentMesh: 0
+--- !u!114 &2049676743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049676737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393907b3cbb265643907ee540f8ce6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2071572625
 PrefabInstance:
   m_ObjectHideFlags: 0
