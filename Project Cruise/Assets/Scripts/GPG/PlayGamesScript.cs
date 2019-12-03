@@ -20,6 +20,7 @@ public class PlayGamesScript : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        DontDestroyOnLoad(gameObject);
         Instance = this;
 
         //if (!PlayerPrefs.HasKey(SAVE_NAME))

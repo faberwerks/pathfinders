@@ -12,4 +12,5 @@ public class LevelData : ScriptableObject
     public int baseCoin = 0;
     public int treasureCoin = 0;
     public int targetTimeCoin = 0;
+    public int threeStarsCoin = 0;
 }

@@ -17,6 +17,7 @@ public class SaveData
         public bool hasCollectedTreasures = false;
         public bool hasAchievedTargetTime = false;
         public bool hasFoundRelic = false;
+        public bool hasAchievedThreeStars = false;
 
         public LevelSaveData()
         {
@@ -25,10 +26,10 @@ public class SaveData
             hasCollectedTreasures = false;
             hasAchievedTargetTime = false;
             hasFoundRelic = false;
+            hasAchievedThreeStars = false;
         }
     }
-
-
+    
     public int Coins { get; set; }
     public int LastLevelNumber { get; set; }
     public DateTime Timestamp { get; private set; }
