@@ -41,7 +41,7 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = 1.0f;
         TreasureCollected = 0;
         RelicCollected = false;
-        LevelData currLevelData = LevelDirectory.Instance.GetLevelData(GameData.Instance.lastLevelIndex);
+        LevelData currLevelData = LevelDirectory.Instance.GetLevelData(GameData.Instance.currLevelID);
         targetTime.text = "Target time: " + currLevelData.targetTime;
         hasRelic = currLevelData.hasRelic;
     }
@@ -70,8 +70,8 @@ public class LevelManager : MonoBehaviour
     private void Win()
     {
         levelTimer.EndTimer();
-        GameData.Instance.treasuresCollected = TreasureCollected;
-        GameData.Instance.isRelicCollected = RelicCollected;
+        GameData.Instance.currTreasuresCollected = TreasureCollected;
+        GameData.Instance.currIsRelicCollected = RelicCollected;
         //GameData.Instance.levelTime
         //GameData.Instance.lastSceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
         Invoke("LoadPostLevel", postLevelDelay);

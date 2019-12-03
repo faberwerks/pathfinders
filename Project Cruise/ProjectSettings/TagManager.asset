@@ -10,6 +10,7 @@ TagManager:
   - Obstacle
   - Interactable
   - Door
+  - Level Button
   layers:
   - Default
   - TransparentFX

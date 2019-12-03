@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 8174233151560335095}
   - component: {fileID: 8174233151560335092}
   - component: {fileID: 8525618123306392754}
+  - component: {fileID: 7115682560993849152}
   m_Layer: 5
   m_Name: Level Button
-  m_TagString: Untagged
+  m_TagString: Level Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,6 +150,24 @@ MonoBehaviour:
   transitionType: 0
   keyToPress: 27
   targetScene: 
+--- !u!114 &7115682560993849152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8174233151560335090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc8ea5d06b735b4d832871e49483839, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelNumber: 0
+  levelButtonIcons:
+  - {fileID: -6165578130320922507, guid: 05787e748710eb84abdea6ab4e1f37f7, type: 3}
+  - {fileID: 7190769715458713978, guid: 05787e748710eb84abdea6ab4e1f37f7, type: 3}
+  - {fileID: -8970986535776614042, guid: 05787e748710eb84abdea6ab4e1f37f7, type: 3}
+  - {fileID: 4002422890817813562, guid: 05787e748710eb84abdea6ab4e1f37f7, type: 3}
 --- !u!1 &8174233152740322947
 GameObject:
   m_ObjectHideFlags: 0
