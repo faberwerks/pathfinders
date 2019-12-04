@@ -14,8 +14,8 @@ public class Toggler : Interactable
         Timer
     }
 
-    public AudioSource leverSound;
-    public GameObject leverSoundObject;
+    //public AudioSource leverSound;
+    //public GameObject leverSoundObject;
 
     public List<GameObject> toggledObjects;
 
@@ -42,8 +42,8 @@ public class Toggler : Interactable
 
         maxIndex = toggleSprites.Count;
         spriteIndex = 0;
-        leverSoundObject = Instantiate(leverSound.gameObject);
-        leverSound = leverSoundObject.GetComponent<AudioSource>();
+        //leverSoundObject = Instantiate(leverSound.gameObject);
+        //leverSound = leverSoundObject.GetComponent<AudioSource>();
     }
 
     // only used for LEVERS and TRIGGERED TIMERS
@@ -69,7 +69,7 @@ public class Toggler : Interactable
     /// </summary>
     public void ToggleObjects()
     {
-        leverSound.Play();
+        //leverSound.Play();
         foreach (GameObject toggledObject in toggledObjects)
         {
             toggledObject.SetActive(!toggledObject.activeInHierarchy);

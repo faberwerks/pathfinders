@@ -10,6 +10,7 @@ public class SaveData
     /// <summary>
     /// A class to hold save data for a level.
     /// </summary>
+    [System.Serializable]
     public class LevelSaveData
     {
         public float lowestTime = 0.0f;
