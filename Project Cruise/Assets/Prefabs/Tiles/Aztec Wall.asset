@@ -203,3 +203,9 @@ MonoBehaviour:
     perlinScale: 0.5
     output: 0
     colliderType: 1
+  - neighbours: 0300000001000000000000000100000000000000000000000000000000000000
+    sprites:
+    - {fileID: 8242569394117755163, guid: 13c76c49df153574285c8b9e44971a71, type: 3}
+    perlinScale: 0.5
+    output: 0
+    colliderType: 1
