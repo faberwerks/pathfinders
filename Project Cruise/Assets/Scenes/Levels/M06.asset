@@ -16,6 +16,6 @@ MonoBehaviour:
   targetTime: 0
   hasRelic: 0
   baseCoin: 0
+  threeStarsCoin: 10
   treasureCoin: 0
   targetTimeCoin: 0
-  threeStarsCoin: 0

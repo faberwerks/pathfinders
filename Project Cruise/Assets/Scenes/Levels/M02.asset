@@ -15,3 +15,7 @@ MonoBehaviour:
   levelID: M02
   targetTime: 0
   hasRelic: 0
+  baseCoin: 1
+  threeStarsCoin: 10
+  treasureCoin: 10
+  targetTimeCoin: 5
