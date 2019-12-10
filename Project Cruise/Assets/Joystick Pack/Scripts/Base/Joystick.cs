@@ -42,7 +42,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     protected virtual void Awake()
     {
-        Blackboard.Instance.Joystick = this;
+        //Blackboard.Instance.Joystick = this;
     }
 
     protected virtual void Start()

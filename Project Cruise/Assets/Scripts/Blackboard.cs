@@ -20,7 +20,8 @@ public class Blackboard
     }
 
     /////// PROPERTIES ///////
-    public Joystick Joystick { get; set; }
+    //public Joystick Joystick { get; set; }
+    public MovementArrowManager movementArrowManager { get; set; }
     public LevelManager LevelManager { get; set; }
     public Button Button { get; set; }
     public int CurrentLevelIndex { get; set;}

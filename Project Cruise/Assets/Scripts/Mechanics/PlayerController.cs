@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     private AudioSource walkingSound;
-    private Joystick joystick;
+    //private Joystick joystick;
+    private MovementArrowManager movementArrowManager;
     private Toggler currentPressurePlate;
     private Toggler currentLever;
     private Interactable interactableObject;
@@ -25,14 +26,16 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         translation = Vector3.zero;
         button = Blackboard.Instance.Button;
-        joystick = Blackboard.Instance.Joystick;
+        //joystick = Blackboard.Instance.Joystick;
+        movementArrowManager = Blackboard.Instance.movementArrowManager;
         walkingSound = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
     {
         //direction of the character movement from the joystick
-        dir = joystick.Direction;
+        //dir = joystick.Direction;
+        dir = movementArrowManager.Direction;
         translation.Set(dir.x, dir.y, translation.z);
         if (translation != Vector3.zero && !walkingSound.isPlaying)
         {
