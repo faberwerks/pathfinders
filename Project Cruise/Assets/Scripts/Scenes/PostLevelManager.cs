@@ -89,7 +89,14 @@ public class PostLevelManager : MonoBehaviour
     private void ShowResult(int stars)
     {
         ActivateStarIcon(stars);
-        rating.text = RATING[stars-1];
+        if (stars <= 0)
+        {
+            rating.text = RATING[0];
+        }
+        else
+        {
+            rating.text = RATING[stars - 1];
+        }
     }
 
     private void ActivateStarIcon(int _stars)

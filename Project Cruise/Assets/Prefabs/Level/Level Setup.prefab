@@ -1862,6 +1862,7 @@ MonoBehaviour:
   - {fileID: 8956770363573942332}
   playerTimer: {fileID: 7779883527342102875}
   postLevelDelay: 1
+  relicCoin: 30
 --- !u!114 &4876187472796362768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1874,6 +1875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7539c4985ed949c42a389e1ba3c51e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 0
 --- !u!1 &1127568639475787173
 GameObject:
   m_ObjectHideFlags: 0
@@ -2941,7 +2943,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1104854951
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &1127568640425162172
