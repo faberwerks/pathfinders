@@ -386,6 +386,7 @@ public class PlayGamesScript : MonoBehaviour
     /// </summary>
     public void SaveData()
     {
+        Debug.Log("SAVE DATA CALLED!");
         // if still running on local data (cloud data has not been loaded yet)
         if (!isCloudDataLoaded)
         {
@@ -412,6 +413,7 @@ public class PlayGamesScript : MonoBehaviour
     /// </summary>
     private void SaveLocal()
     {
+        Debug.Log("SAVE LOCAL CALLED!");
         BinaryFormatter binaryFormatter = new BinaryFormatter();
 
         string path = Application.persistentDataPath + "/" + SAVE_NAME;

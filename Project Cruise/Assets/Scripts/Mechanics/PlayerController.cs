@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     public float speed = 5.0f;
     public Button button;
+    private bool isMoving = false;
+    private Animator anim = null;
 
     // cached variables
     private Vector2 dir;
@@ -24,6 +26,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         translation = Vector3.zero;
         button = Blackboard.Instance.Button;
         //joystick = Blackboard.Instance.Joystick;
@@ -44,6 +47,27 @@ public class PlayerController : MonoBehaviour
         else if(translation == Vector3.zero)
         {
             walkingSound.Stop();
+        }
+
+        // controls animation
+        if (translation != Vector3.zero && !isMoving)
+        {
+            isMoving = true;
+            anim.SetTrigger("Move");
+        }
+        else if (translation == Vector3.zero && isMoving)
+        {
+            isMoving = false;
+            anim.SetTrigger("Stop");
+        }
+
+        if (translation.x > 0)
+        {
+            transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, 180.0f, transform.localEulerAngles.z);
+        }
+        else if (translation.x < 0)
+        {
+            transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, 0.0f, transform.localEulerAngles.z);
         }
 
         translation = translation.normalized * speed * Time.deltaTime;

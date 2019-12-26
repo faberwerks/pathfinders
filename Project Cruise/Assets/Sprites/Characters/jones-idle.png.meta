@@ -1,0 +1,472 @@
+fileFormatVersion: 2
+guid: dc8187a851e99c24582102ab5ac70cbf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7928530139209083267
+    second: jones-idle_0
+  - first:
+      213: -8103664201109541019
+    second: jones-idle_1
+  - first:
+      213: 4823828330116823775
+    second: jones-idle_2
+  - first:
+      213: 2376486395550519492
+    second: jones-idle_3
+  - first:
+      213: 753664065175904687
+    second: jones-idle_4
+  - first:
+      213: 6914134926010809000
+    second: jones-idle_5
+  - first:
+      213: 6820854916873484662
+    second: jones-idle_6
+  - first:
+      213: 8752248160933512260
+    second: jones-idle_7
+  - first:
+      213: -8987446624457291557
+    second: jones-idle_8
+  - first:
+      213: -5014404271843399157
+    second: jones-idle_9
+  - first:
+      213: 6141901845764017766
+    second: jones-idle_10
+  - first:
+      213: -7861190248508587663
+    second: jones-idle_11
+  - first:
+      213: 4410170219107167288
+    second: jones-idle_12
+  - first:
+      213: -8620608858895213983
+    second: jones-idle_13
+  - first:
+      213: 5795355342619184623
+    second: jones-idle_14
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 448
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: jones-idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2254
+        width: 486
+        height: 1127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8d6c0d1c7240034ea1dfa0d5faf1d4f
+      internalID: -7928530139209083267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-idle_1
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 2256
+        width: 487
+        height: 1125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e227b3db7c8d22749a8e7aef437dfcc1
+      internalID: -8103664201109541019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-idle_2
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 2256
+        width: 486
+        height: 1125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b107048d5127d7439491e4187ad208d
+      internalID: 4823828330116823775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-idle_3
+      rect:
+        serializedVersion: 2
+        x: 1451
+        y: 2256
+        width: 487
+        height: 1125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b154c5242d94e2947a2e5fa579ed82f1
+      internalID: 2376486395550519492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-idle_4
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 2256
+        width: 485
+        height: 1125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e65e58719564ab14594f371328a09dbd
+      internalID: 753664065175904687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-idle_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1128
+        width: 486
+        height: 1126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ff3ccd83dc24654b974dcbf77d87bcc
+      internalID: 6914134926010809000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-idle_6
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 1129
+        width: 487
+        height: 1125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53a4787a702dbca4ea4b35ff4b112d64
+      internalID: 6820854916873484662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-idle_7
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1128
+        width: 486
+        height: 1126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00c1355c4e00b0146b19cefc75d23262
+      internalID: 8752248160933512260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-idle_8
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 1128
+        width: 488
+        height: 1126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c992b6ae9612e04e963ed0f13269831
+      internalID: -8987446624457291557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-idle_9
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 1128
+        width: 485
+        height: 1126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce90e1ba25ff1bf46baf4af7548c8626
+      internalID: -5014404271843399157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-idle_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 486
+        height: 1128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fef2f03b185fe54ba3cbef5a7347e62
+      internalID: 6141901845764017766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-idle_11
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 0
+        width: 487
+        height: 1128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fec98b95cd0be644abb854b638c90cb0
+      internalID: -7861190248508587663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-idle_12
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 0
+        width: 486
+        height: 1128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e17d4e92d93331e4fae1837701028123
+      internalID: 4410170219107167288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-idle_13
+      rect:
+        serializedVersion: 2
+        x: 1451
+        y: 0
+        width: 487
+        height: 1128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9158683d8704cee428514a82b86c89a8
+      internalID: -8620608858895213983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-idle_14
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 0
+        width: 485
+        height: 1128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b1a6940fe46fe146af40a03037a4000
+      internalID: 5795355342619184623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 696f85c260c506e42a0bc2ad6a229283
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

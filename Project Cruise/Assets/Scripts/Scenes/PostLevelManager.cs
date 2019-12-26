@@ -70,6 +70,7 @@ public class PostLevelManager : MonoBehaviour
         //relicCanvas.SetActive(GameData.Instance.isRelicCollected ? true : false);
         #endregion
 
+        Time.timeScale = 1.0f;
         treasure = GameData.Instance.currTreasuresCollected;
         treasureResult.text = treasure + "/3";
         targetTime = LevelDirectory.Instance.GetLevelData(GameData.Instance.currLevelID).targetTime;

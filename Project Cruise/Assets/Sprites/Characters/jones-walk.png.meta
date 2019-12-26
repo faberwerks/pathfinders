@@ -1,0 +1,472 @@
+fileFormatVersion: 2
+guid: 82acfd708d24b0d4d95d4e0ff1b5e9bf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3372894393627575306
+    second: jones-walk_0
+  - first:
+      213: 6640799085338914289
+    second: jones-walk_1
+  - first:
+      213: -387501271562403152
+    second: jones-walk_2
+  - first:
+      213: -4745774072746675710
+    second: jones-walk_3
+  - first:
+      213: -4094486854519723613
+    second: jones-walk_4
+  - first:
+      213: 6303370906840874796
+    second: jones-walk_5
+  - first:
+      213: 1066326938928230764
+    second: jones-walk_6
+  - first:
+      213: 1785013996558805128
+    second: jones-walk_7
+  - first:
+      213: 2761431395709394678
+    second: jones-walk_8
+  - first:
+      213: -3624594538931131318
+    second: jones-walk_9
+  - first:
+      213: 2095877188848882601
+    second: jones-walk_10
+  - first:
+      213: -2601417574896610033
+    second: jones-walk_11
+  - first:
+      213: 3664464066802096946
+    second: jones-walk_12
+  - first:
+      213: 6358461143108869322
+    second: jones-walk_13
+  - first:
+      213: 4956000939588892683
+    second: jones-walk_14
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 448
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: jones-walk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2379
+        width: 534
+        height: 1123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efc46582a0f972c468ba0ac35fe7b3c7
+      internalID: -3372894393627575306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-walk_1
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 2393
+        width: 506
+        height: 1087
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 348cbf4078bf33541a8e15d2843b36d5
+      internalID: 6640799085338914289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-walk_2
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 2372
+        width: 488
+        height: 1089
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc234cb16aeb25f4b8d37a199481cf62
+      internalID: -387501271562403152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-walk_3
+      rect:
+        serializedVersion: 2
+        x: 1639
+        y: 2379
+        width: 488
+        height: 1091
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d15ae4e136e7a047bcdf276d384097e
+      internalID: -4745774072746675710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-walk_4
+      rect:
+        serializedVersion: 2
+        x: 2170
+        y: 2382
+        width: 485
+        height: 1098
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 163f366dcd6f4144fb6ee665af49b966
+      internalID: -4094486854519723613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-walk_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1203
+        width: 534
+        height: 1119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd92d14e374cf8a4c8e4764f5df3e2a3
+      internalID: 6303370906840874796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-walk_6
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 1202
+        width: 488
+        height: 1124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ee752bd0a4ddc4aa93feb31d2e6a0b
+      internalID: 1066326938928230764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-walk_7
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 1199
+        width: 488
+        height: 1104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f3857fbfe7544548873d35fc9c59c31
+      internalID: 1785013996558805128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-walk_8
+      rect:
+        serializedVersion: 2
+        x: 1639
+        y: 1185
+        width: 488
+        height: 1105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29bc910eb2107fb4da65e14766deeef6
+      internalID: 2761431395709394678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-walk_9
+      rect:
+        serializedVersion: 2
+        x: 2170
+        y: 1178
+        width: 485
+        height: 1101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 574a8e675a884fb46907f3093c1d3512
+      internalID: -3624594538931131318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-walk_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4
+        width: 534
+        height: 1110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9b0387db65a8714b9729bf76efc264e
+      internalID: 2095877188848882601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-walk_11
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 4
+        width: 488
+        height: 1131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6660be60a726da44a867527fe071d7a8
+      internalID: -2601417574896610033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-walk_12
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 11
+        width: 488
+        height: 1144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5c92cd23f5315743b888af75ba61659
+      internalID: 3664464066802096946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-walk_13
+      rect:
+        serializedVersion: 2
+        x: 1639
+        y: 30
+        width: 488
+        height: 1144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c58f0c0a1fd5e144a3429e9b3d950b4
+      internalID: 6358461143108869322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-walk_14
+      rect:
+        serializedVersion: 2
+        x: 2170
+        y: 32
+        width: 485
+        height: 1137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 061153eb37dbbb847bf6da56eb9867ec
+      internalID: 4956000939588892683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: c0fa84abd7a82254086ef2de69baa583
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
