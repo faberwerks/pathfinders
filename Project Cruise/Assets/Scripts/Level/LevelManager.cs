@@ -85,8 +85,10 @@ public class LevelManager : MonoBehaviour
         CalculateCoinsAndStarsEarned();
         GameData.Instance.saveData.UpdateTimestamp();
         PlayGamesScript.Instance.SaveData();
-        Time.timeScale = 0.0f;
+       
+        Debug.Log("Invoking Post Level");
         Invoke("LoadPostLevel", postLevelDelay);
+        //Time.timeScale = 0.0f;
     }
     /// <summary>
     /// A method to handle player defeat.
@@ -135,10 +137,10 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-#if UNITY_EDITOR
-#else
+//#if UNITY_EDITOR
+//#else
             currLevelSave = GameData.Instance.saveData.levelSaveData[GameData.Instance.currLevelID - 1];
-#endif
+//#endif
         }
         coinsEarned += currLevelData.baseCoin;             //adds base coin
         if (hasRelic && RelicCollected && !currLevelSave.hasFoundRelic)
@@ -166,13 +168,13 @@ public class LevelManager : MonoBehaviour
         GameData.Instance.coinsEarned = coinsEarned;
         GameData.Instance.starsEarned = tempStar;
         GameData.Instance.saveData.Coins += coinsEarned;
-#if UNITY_EDITOR
-#else
+//#if UNITY_EDITOR
+//#else
         if (tempStar > currLevelSave.stars)
         {
             currLevelSave.stars = tempStar;
         }
-#endif
+//#endif
         GameData.Instance.saveData.UpdateTimestamp();
     }
 }
