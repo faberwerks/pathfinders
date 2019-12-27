@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: L01
   m_EditorClassIdentifier: 
   levelID: L01
-  targetTime: 0
+  targetTime: 16
   hasRelic: 0
   baseCoin: 4
   threeStarsCoin: 15
