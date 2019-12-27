@@ -148,17 +148,24 @@ public class LevelManager : MonoBehaviour
             coinsEarned += relicCoin;                      //adds relic coin
             currLevelSave.hasFoundRelic = true;
         }
-        if (TreasureCollected >= 3 && !currLevelSave.hasCollectedTreasures)
+        if (TreasureCollected >= 3)
         {
-            coinsEarned += currLevelData.treasureCoin;     //adds treasure coin
             tempStar += 1;
-            currLevelSave.hasCollectedTreasures = true;
+            if (!currLevelSave.hasCollectedTreasures)
+            {
+                coinsEarned += currLevelData.treasureCoin;     //adds treasure coin
+                currLevelSave.hasCollectedTreasures = true;
+            }
         }
-        if (levelTimer.timer <= currLevelData.targetTime && !currLevelSave.hasAchievedTargetTime)
+        if (levelTimer.timer <= currLevelData.targetTime)
         {
-            coinsEarned += currLevelData.targetTimeCoin;   //adds target time coin
             tempStar += 1;
-            currLevelSave.hasAchievedTargetTime = true;
+            if (!currLevelSave.hasAchievedTargetTime)
+            {
+                coinsEarned += currLevelData.targetTimeCoin;   //adds target time coin
+             
+                currLevelSave.hasAchievedTargetTime = true;
+            }
         }
         if (tempStar == 3 && !currLevelSave.hasAchievedThreeStars)
         {
