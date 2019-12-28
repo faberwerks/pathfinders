@@ -95,6 +95,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eaac46a9257740469a41b682a44f7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goalSprites:
+  - {fileID: -3457448024721243918, guid: 3303f2d98d8cf6f4eb32cbc275e2a5b5, type: 3}
+  - {fileID: -2296653774574130574, guid: 3303f2d98d8cf6f4eb32cbc275e2a5b5, type: 3}
 --- !u!82 &4813931240696908109
 AudioSource:
   m_ObjectHideFlags: 0

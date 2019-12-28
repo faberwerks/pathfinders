@@ -52,6 +52,8 @@ public class LevelManager : MonoBehaviour
         }
         //targetTime.text = "Target time: " + currLevelData.targetTime;
         hasRelic = currLevelData.hasRelic;
+        Debug.Log("CURR LEVEL ID: " + GameData.Instance.currLevelID);
+        Debug.Log("LAST LEVEL NUMBER: " + GameData.Instance.saveData.LastLevelNumber);
     }
 
     private void Update()
@@ -131,8 +133,8 @@ public class LevelManager : MonoBehaviour
         SaveData.LevelSaveData currLevelSave = null;
         if (GameData.Instance.saveData.LastLevelNumber == GameData.Instance.currLevelID)
         {
-            currLevelSave = new SaveData.LevelSaveData();
-            GameData.Instance.saveData.levelSaveData.Add(currLevelSave);
+            currLevelSave = GameData.Instance.saveData.levelSaveData[GameData.Instance.saveData.levelSaveData.Count - 1];
+            GameData.Instance.saveData.levelSaveData.Add(new SaveData.LevelSaveData());
             GameData.Instance.saveData.LastLevelNumber += 1;
         }
         else

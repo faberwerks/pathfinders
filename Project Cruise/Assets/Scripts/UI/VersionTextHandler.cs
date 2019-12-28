@@ -8,6 +8,6 @@ public class VersionTextHandler : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        GetComponent<TMP_Text>().text = Application.version;
+        GetComponent<TMP_Text>().text = "version " + Application.version;
     }
 }
