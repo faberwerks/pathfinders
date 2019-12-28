@@ -48,7 +48,7 @@ public class LevelManager : MonoBehaviour
         currLevelData = LevelDirectory.Instance.GetLevelData(GameData.Instance.currLevelID);
         foreach (var tmp in targetTime)
         {
-            tmp.text = currLevelData.targetTime.ToString("#.##") + "s";
+            tmp.text = currLevelData.targetTime.ToString("0.00") + "s";
         }
         //targetTime.text = "Target time: " + currLevelData.targetTime;
         hasRelic = currLevelData.hasRelic;

@@ -77,8 +77,9 @@ public class PostLevelManager : MonoBehaviour
         targetTime = LevelDirectory.Instance.GetLevelData(GameData.Instance.currLevelID).targetTime;
         playerTime = GameData.Instance.currLevelTime;
         //change the floats into 2 decimal places
-        targetTime = Mathf.Round(targetTime * 100f) / 100f;
-        playerTime = Mathf.Round(playerTime * 100f) / 100f;
+        //targetTime = Mathf.Round(targetTime * 100f) / 100f;
+        //playerTime = Mathf.Round(playerTime * 100f) / 100f;
+        Debug.Log(targetTime.ToString("#.##"));
         ShowTimes();
         //if (playerTime <= targetTime) passedTarget = true;
 
@@ -113,7 +114,7 @@ public class PostLevelManager : MonoBehaviour
 
     private void ShowTimes()
     {
-        targetTimeText.text = targetTime.ToString("#.##") + "s";
-        playerTimeText.text = playerTime.ToString("#.##") + "s";
+        targetTimeText.text = targetTime.ToString("0.00") + "s";
+        playerTimeText.text = playerTime.ToString("0.00") + "s";
     }
 }
