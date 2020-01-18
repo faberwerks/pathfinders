@@ -32,6 +32,8 @@ public class LevelManager : MonoBehaviour
     private LevelTimer levelTimer;
     private LevelData currLevelData;
 
+    public bool noInteractables = false;
+
     //Awake is called before Start
     private void Awake()
     {
@@ -52,6 +54,12 @@ public class LevelManager : MonoBehaviour
         }
         //targetTime.text = "Target time: " + currLevelData.targetTime;
         hasRelic = currLevelData.hasRelic;
+
+        if (noInteractables)
+        {
+            Blackboard.Instance.Button.gameObject.SetActive(false);
+        }
+
         Debug.Log("CURR LEVEL ID: " + GameData.Instance.currLevelID);
         Debug.Log("LAST LEVEL NUMBER: " + GameData.Instance.saveData.LastLevelNumber);
     }
