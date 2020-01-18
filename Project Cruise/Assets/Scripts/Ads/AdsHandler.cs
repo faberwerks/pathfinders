@@ -89,12 +89,22 @@ public class AdsHandler : MonoBehaviour
     #region
     public void HandleOnAdLoaded(object sender, EventArgs args)
     {
-        ShowInterstitialAD();
+        if (GameData.Instance.interstitialAdsCounter == 0)
+        {
+            ShowInterstitialAD();
+        }
     }
 
     public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
     {
-        RequestInterstitialAD();
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            Debug.Log("Error. Check internet connection!");
+        }
+        else
+        {
+            RequestInterstitialAD();
+        }
     }
 
     public void HandleOnAdOpened(object sender, EventArgs args)
@@ -123,7 +133,14 @@ public class AdsHandler : MonoBehaviour
 
     public void HandleOnVideoAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
     {
-        RequestRewardedVideoAD();
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            Debug.Log("Error. Check internet connection!");
+        }
+        else
+        {
+            RequestRewardedVideoAD();
+        }
     }
 
     public void HandleOnVideoAdOpened(object sender, EventArgs args)
@@ -160,6 +177,7 @@ public class AdsHandler : MonoBehaviour
         if (this.interstitial.IsLoaded())
         {
             this.interstitial.Show();
+            GameData.Instance.interstitialAdsCounter = 2;
         }
         else
         {

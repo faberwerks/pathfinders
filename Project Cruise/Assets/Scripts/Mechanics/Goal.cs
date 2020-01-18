@@ -34,7 +34,7 @@ public class Goal : MonoBehaviour
     }
 
     //Method CheckGoals is called here so there is no need for this method called in update function 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.CompareTag(TagStrings.PLAYER_TAG))
         {

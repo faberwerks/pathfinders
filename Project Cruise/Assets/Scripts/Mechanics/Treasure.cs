@@ -13,10 +13,19 @@ public class Treasure : Collectible
     //    getTreasure = getTreasureObject.GetComponent<AudioSource>();
     //}
     //It add point to the treasure collected
+
+    int point = 0;
+
+    private void Start()
+    {
+        point = 1;
+    }
+
     protected override void OnCollected()
     {
         //getTreasure.Play();
-        Blackboard.Instance.LevelManager.TreasureCollected += 1;
+        Blackboard.Instance.LevelManager.TreasureCollected += point;
         Debug.Log(Blackboard.Instance.LevelManager.TreasureCollected);
+        point = 0;
     }
 }

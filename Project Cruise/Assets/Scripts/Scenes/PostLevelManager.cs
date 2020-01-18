@@ -86,7 +86,7 @@ public class PostLevelManager : MonoBehaviour
         ShowResult(GameData.Instance.starsEarned);
 
         coinsEarnedText.text = "" + GameData.Instance.coinsEarned;
-
+        GameData.Instance.interstitialAdsCounter -= 1;
     }
 
     private void ShowResult(int stars)

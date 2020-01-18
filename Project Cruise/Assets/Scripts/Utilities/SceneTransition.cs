@@ -18,9 +18,26 @@ public class SceneTransition : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        GameData.Instance.previousSceneID = SceneManager.GetActiveScene().buildIndex;
         if (transitionType == TransitionType.KeyDown)
         {
             StartCoroutine(LoadSceneOnKeyDown());
+        }
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            Application.Quit();
+        }
+        else if(Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            SceneManager.LoadScene(0);
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().buildIndex < 4)
+        {
+            SceneManager.LoadScene(GameData.Instance.previousSceneID);
         }
     }
 
