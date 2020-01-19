@@ -25,7 +25,7 @@ public class Treasure : Collectible
     {
         //getTreasure.Play();
         Blackboard.Instance.LevelManager.TreasureCollected += point;
-        Debug.Log(Blackboard.Instance.LevelManager.TreasureCollected);
         point = 0;
+        Debug.Log(Blackboard.Instance.LevelManager.TreasureCollected);
     }
 }

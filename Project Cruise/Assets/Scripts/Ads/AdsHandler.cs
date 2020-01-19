@@ -89,7 +89,7 @@ public class AdsHandler : MonoBehaviour
     #region
     public void HandleOnAdLoaded(object sender, EventArgs args)
     {
-        if (GameData.Instance.interstitialAdsCounter == 0)
+        if (GameData.Instance.interstitialAdsCounter == 0 && Application.internetReachability != NetworkReachability.NotReachable)
         {
             ShowInterstitialAD();
         }
@@ -97,14 +97,7 @@ public class AdsHandler : MonoBehaviour
 
     public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
     {
-        if (Application.internetReachability == NetworkReachability.NotReachable)
-        {
-            Debug.Log("Error. Check internet connection!");
-        }
-        else
-        {
             RequestInterstitialAD();
-        }
     }
 
     public void HandleOnAdOpened(object sender, EventArgs args)
