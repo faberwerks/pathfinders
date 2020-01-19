@@ -317,28 +317,79 @@ public class PlayGamesScript : MonoBehaviour
         // if first time that game has been launched after installing and successfully log in to GPG
         if (PlayerPrefs.GetInt("IsFirstTime") == 1)
         {
+            Debug.Log("First time Launched the game after installing");
             // set playerpref to be 0 (false)
             PlayerPrefs.SetInt("IsFirstTime", 0);
             // cloud save is more up to date
-            if (cloudData.Timestamp > localData.Timestamp)
+            //Samuel 19 jan 2020 - Commented
+            #region commented
+            //if (cloudData.Timestamp > localData.Timestamp)
+            //{
+            //    SaveLocal(cloudData);
+            //}
+            #endregion
+
+            //change to always get from cloud if there's cloud save
+            try
             {
                 SaveLocal(cloudData);
+            }
+            catch (Exception ex)
+            {
+                Debug.Log("Failed to get Save data from cloud");
+                Debug.Log(ex.Message);
+                throw new Exception(ex.Message);
             }
         }
         // if not first time, start comparing
         else
         {
             // if one Timestamp is higher than other, update it
-            if (localData.Timestamp > cloudData.Timestamp)
+            #region commented
+            //if (localData.Timestamp > cloudData.Timestamp)
+            //{
+            // update cloud save
+            // first set GameData save data to be equal to local data
+            //GameData.Instance.saveData = localData;
+            //isCloudDataLoaded = true;
+            // save updated GameData save data to cloud
+            //    SaveData();
+            //    return;
+            //}
+            #endregion
+
+            //Samuel 19 Jan 2020 - Changed validation to fartest lvl
+            // compare cloud with local one which one is the fartest one
+            if (cloudData.LastLevelNumber > localData.LastLevelNumber)
             {
-                // update cloud save
-                // first set GameData save data to be equal to local data
-                GameData.Instance.saveData = localData;
-                isCloudDataLoaded = true;
-                // save updated GameData save data to cloud
-                SaveData();
+                SaveLocal(cloudData);
                 return;
             }
+            // compare cloud with local one which one has most stars
+            else if (cloudData.LastLevelNumber == localData.LastLevelNumber)
+            {
+                int Cloudstar = 0;
+                int localStar = 0;
+                foreach (var item in cloudData.levelSaveData)
+                {
+                    Cloudstar += item.stars;
+                }
+                foreach (var item in localData.levelSaveData)
+                {
+                    Cloudstar += item.stars;
+                }
+
+                if(Cloudstar > localStar)
+                {
+                    SaveLocal(cloudData);
+                    return;
+                }
+            }
+
+            GameData.Instance.saveData = localData;
+            isCloudDataLoaded = true;
+            SaveData();
+            return;
         }
         // if code above doesn't trigger return and code below executes
         // cloud save and local save are identical, can load either one
