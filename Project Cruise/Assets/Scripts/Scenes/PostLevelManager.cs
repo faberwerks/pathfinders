@@ -1,10 +1,12 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PostLevelManager : MonoBehaviour
 {
-    private string[] RATING = new string[3] { "Nice!", "Great!", "Perfect!" };
-    public TextMeshProUGUI rating;
+    public Sprite[] ratings;
+    // public TextMeshProUGUI rating;
+    public Image ratingImage;
     public TextMeshProUGUI targetTimeText;
     public TextMeshProUGUI playerTimeText;
     public TextMeshProUGUI treasureResult;
@@ -42,11 +44,13 @@ public class PostLevelManager : MonoBehaviour
         ActivateStarIcon(stars);
         if (stars <= 0)
         {
-            rating.text = RATING[0];
+            // rating.text = RATING[0];
+            ratingImage.sprite = ratings[0];
         }
         else
         {
-            rating.text = RATING[stars - 1];
+            // rating.text = RATING[stars - 1];
+            ratingImage.sprite = ratings[stars - 1];
         }
     }
 
