@@ -879,6 +879,7 @@ GameObject:
   - component: {fileID: 1127568639475787169}
   - component: {fileID: 1127568639475787168}
   - component: {fileID: 1127568639475787171}
+  - component: {fileID: 7498908724203581512}
   m_Layer: 5
   m_Name: Levels Button
   m_TagString: Untagged
@@ -985,6 +986,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 7498908724203581512}
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 49cd805c584c9f9408170123b296f96d,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Levels
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1127568639475787171}
         m_MethodName: LoadSceneByName
         m_Mode: 5
@@ -1013,6 +1026,18 @@ MonoBehaviour:
   transitionType: 0
   keyToPress: 27
   targetScene: 
+--- !u!114 &7498908724203581512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127568639475787173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393907b3cbb265643907ee540f8ce6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1127568639724973804
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,6 +1627,7 @@ GameObject:
   - component: {fileID: 1127568640388815748}
   - component: {fileID: 1127568640388815751}
   - component: {fileID: 1127568640388815750}
+  - component: {fileID: 8839564581593288130}
   m_Layer: 5
   m_Name: Pause Button
   m_TagString: Untagged
@@ -1730,8 +1756,32 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 8839564581593288130}
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 49cd805c584c9f9408170123b296f96d,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &8839564581593288130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127568640388815752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393907b3cbb265643907ee540f8ce6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1127568640414312614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1744,6 +1794,7 @@ GameObject:
   - component: {fileID: 1127568640414312610}
   - component: {fileID: 1127568640414312613}
   - component: {fileID: 1127568640414312612}
+  - component: {fileID: 5121834904108143774}
   m_Layer: 5
   m_Name: Resume Button
   m_TagString: Untagged
@@ -1850,8 +1901,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1127568640251774655}
-        m_MethodName: SetActive
+      - m_Target: {fileID: 7498908724203581512}
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 49cd805c584c9f9408170123b296f96d,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1127568639392276344}
+        m_MethodName: Pause
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1874,6 +1937,18 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &5121834904108143774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127568640414312614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393907b3cbb265643907ee540f8ce6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1127568640425162113
 GameObject:
   m_ObjectHideFlags: 0
@@ -2146,6 +2221,7 @@ GameObject:
   - component: {fileID: 1127568640545906596}
   - component: {fileID: 1127568640545906599}
   - component: {fileID: 1127568640545906598}
+  - component: {fileID: 1418803048999190406}
   m_Layer: 5
   m_Name: Retry Button
   m_TagString: Untagged
@@ -2252,6 +2328,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 7498908724203581512}
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 49cd805c584c9f9408170123b296f96d,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: DummyLevel
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1127568640545906598}
         m_MethodName: ReloadScene
         m_Mode: 1
@@ -2280,6 +2368,18 @@ MonoBehaviour:
   transitionType: 0
   keyToPress: 27
   targetScene: 
+--- !u!114 &1418803048999190406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127568640545906600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393907b3cbb265643907ee540f8ce6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1127568640955652446
 GameObject:
   m_ObjectHideFlags: 0
@@ -2292,6 +2392,7 @@ GameObject:
   - component: {fileID: 1127568640955652442}
   - component: {fileID: 1127568640955652445}
   - component: {fileID: 1127568640955652444}
+  - component: {fileID: 9109333462434536496}
   m_Layer: 5
   m_Name: Shop Button
   m_TagString: Untagged
@@ -2397,9 +2498,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1127568640955652445}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7498908724203581512}
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 49cd805c584c9f9408170123b296f96d,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &9109333462434536496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127568640955652446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393907b3cbb265643907ee540f8ce6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1127568641050000863
 GameObject:
   m_ObjectHideFlags: 0
@@ -3257,6 +3382,7 @@ GameObject:
   - component: {fileID: 7453633001874679249}
   - component: {fileID: 6862459491760324992}
   - component: {fileID: 4241119103189258705}
+  - component: {fileID: 8308511594918696359}
   m_Layer: 5
   m_Name: Shop Button
   m_TagString: Untagged
@@ -3374,6 +3500,18 @@ MonoBehaviour:
           m_StringArgument: Shop
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8308511594918696359}
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 49cd805c584c9f9408170123b296f96d,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &4241119103189258705
@@ -3391,6 +3529,18 @@ MonoBehaviour:
   transitionType: 0
   keyToPress: 27
   targetScene: 
+--- !u!114 &8308511594918696359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2859460659575598641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393907b3cbb265643907ee540f8ce6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2955679092804112818
 GameObject:
   m_ObjectHideFlags: 0
@@ -3465,7 +3615,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -3993,6 +4143,7 @@ GameObject:
   - component: {fileID: 3098819719689275618}
   - component: {fileID: 3594846382156908477}
   - component: {fileID: 6695878073984930758}
+  - component: {fileID: 6087961191782171162}
   m_Layer: 5
   m_Name: Levels Button
   m_TagString: Untagged
@@ -4110,6 +4261,18 @@ MonoBehaviour:
           m_StringArgument: Levels
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8308511594918696359}
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 49cd805c584c9f9408170123b296f96d,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &6695878073984930758
@@ -4127,6 +4290,18 @@ MonoBehaviour:
   transitionType: 0
   keyToPress: 27
   targetScene: 
+--- !u!114 &6087961191782171162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3687882120000198103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393907b3cbb265643907ee540f8ce6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3842243361924619884
 GameObject:
   m_ObjectHideFlags: 0
@@ -5172,7 +5347,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -5617,7 +5792,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -5713,6 +5888,7 @@ GameObject:
   - component: {fileID: 2778587657879543798}
   - component: {fileID: 3103279953549959572}
   - component: {fileID: 6885052132137444359}
+  - component: {fileID: 8570201928502389844}
   m_Layer: 5
   m_Name: Retry Button
   m_TagString: Untagged
@@ -5830,6 +6006,18 @@ MonoBehaviour:
           m_StringArgument: DummyLevel
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8308511594918696359}
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 49cd805c584c9f9408170123b296f96d,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &6885052132137444359
@@ -5847,6 +6035,18 @@ MonoBehaviour:
   transitionType: 0
   keyToPress: 27
   targetScene: 
+--- !u!114 &8570201928502389844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7013812751452000369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393907b3cbb265643907ee540f8ce6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7775492014916575530
 GameObject:
   m_ObjectHideFlags: 0
@@ -5921,7 +6121,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -6601,7 +6801,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

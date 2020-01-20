@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2813297379110222084}
   - component: {fileID: 7499787088195680508}
   - component: {fileID: -6055643985896265924}
+  - component: {fileID: -5233519054133540788}
   m_Layer: 0
   m_Name: Lever
   m_TagString: Interactable
@@ -94,8 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e734eaf06f167ed409925a9f07033947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leverSound: {fileID: 1071482608811649883, guid: eac1f0b6adbd2814da6d39804f35ac2b,
-    type: 3}
+  toggleSound: {fileID: 8300000, guid: 85c7f0c1fad84fe43a2441ee938396b6, type: 3}
   toggledObjects:
   - {fileID: 0}
   togglerType: 1
@@ -119,7 +119,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.30859375, y: 0.35546875}
+    oldSize: {x: 0.6171875, y: 0.7109375}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -128,3 +128,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-5233519054133540788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2813297379110222091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393907b3cbb265643907ee540f8ce6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

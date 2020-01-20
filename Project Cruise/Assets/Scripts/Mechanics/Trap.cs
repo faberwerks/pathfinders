@@ -2,14 +2,20 @@
 
 public class Trap : MonoBehaviour
 {
-    public AudioSource hitOnTrap;
-    public AudioSource die;
+    public AudioClip hitSound;
+
+    private AudioHandler audioHandler;
+
+    private void Start()
+    {
+        audioHandler = GetComponent<AudioHandler>();
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag(TagStrings.PLAYER_TAG))
         {
-            hitOnTrap.Play();
-            die.Play();
+            audioHandler.Play(hitSound);
             Blackboard.Instance.LevelManager.Lose();
         }
     }

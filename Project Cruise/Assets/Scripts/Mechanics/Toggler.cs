@@ -14,8 +14,7 @@ public class Toggler : Interactable
         Timer
     }
 
-    //public AudioSource leverSound;
-    //public GameObject leverSoundObject;
+    public AudioClip toggleSound;
 
     public List<GameObject> toggledObjects;
 
@@ -25,6 +24,7 @@ public class Toggler : Interactable
 
     private TriggeredTimer timer = null;
     private SpriteRenderer sprRend = null;
+    private AudioHandler audioHandler = null;
     private int maxIndex = 0;
     private int spriteIndex;
     private bool hasBeenTriggered;  // used to check state of triggered timer
@@ -40,10 +40,10 @@ public class Toggler : Interactable
 
         sprRend = GetComponent<SpriteRenderer>();
 
+        audioHandler = GetComponent<AudioHandler>();
+
         maxIndex = toggleSprites.Count;
         spriteIndex = 0;
-        //leverSoundObject = Instantiate(leverSound.gameObject);
-        //leverSound = leverSoundObject.GetComponent<AudioSource>();
     }
 
     // only used for LEVERS and TRIGGERED TIMERS
@@ -69,7 +69,7 @@ public class Toggler : Interactable
     /// </summary>
     public void ToggleObjects()
     {
-        //leverSound.Play();
+        audioHandler.Play(toggleSound);
         foreach (GameObject toggledObject in toggledObjects)
         {
             toggledObject.SetActive(!toggledObject.activeInHierarchy);
