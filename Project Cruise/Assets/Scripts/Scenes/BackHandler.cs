@@ -6,9 +6,8 @@ using UnityEngine.SceneManagement;
 public class BackHandler : MonoBehaviour
 {
     // Update is called once per frame
-    private static void Update()
+    private void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().buildIndex == 0)
         {
             Application.Quit();
