@@ -40,8 +40,15 @@ public class Goal : MonoBehaviour
         {
             IsPressed = true;
             sprRend.sprite = goalSprites[1];
-            stepOnGoal.Play();
             Blackboard.Instance.LevelManager.CheckGoals();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag(TagStrings.PLAYER_TAG))
+        {
+            stepOnGoal.Play();
         }
     }
 

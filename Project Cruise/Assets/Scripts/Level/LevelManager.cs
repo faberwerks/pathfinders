@@ -59,9 +59,6 @@ public class LevelManager : MonoBehaviour
         {
             Blackboard.Instance.Button.gameObject.SetActive(false);
         }
-
-        Debug.Log("CURR LEVEL ID: " + GameData.Instance.currLevelID);
-        Debug.Log("LAST LEVEL NUMBER: " + GameData.Instance.saveData.LastLevelNumber);
     }
 
     private void Update()

@@ -9,18 +9,6 @@ public class AdsHandler : MonoBehaviour
     private InterstitialAd interstitial;
     private RewardBasedVideoAd rewardedVideo;
     public static AdsHandler instance;
-    //public static AdsHandler Instance
-    //{
-    //    get
-    //    {
-    //        if (instance == null)
-    //        {
-    //            instance = new AdsHandler();
-    //        }
-    //        return instance;
-    //    }
-    //}
-
 
     private void Awake()
     {
@@ -33,11 +21,6 @@ public class AdsHandler : MonoBehaviour
             Destroy(this);
         }
     }
-
-    //public void Start()
-    //{
-    //    MobileAds.Initialize(AppID);
-    //}
 
     public void RequestInterstitialAD()
     {
@@ -89,13 +72,12 @@ public class AdsHandler : MonoBehaviour
     #region
     public void HandleOnAdLoaded(object sender, EventArgs args)
     {
-        if(GameData.Instance.interstitialAdsCounter == 0)
-            ShowInterstitialAD();
+        ShowInterstitialAD();
     }
 
     public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
     {
-            RequestInterstitialAD();
+        RequestInterstitialAD();
     }
 
     public void HandleOnAdOpened(object sender, EventArgs args)
@@ -158,7 +140,7 @@ public class AdsHandler : MonoBehaviour
 
     public void ShowInterstitialAD()
     {
-        if (this.interstitial.IsLoaded())
+        if (this.interstitial.IsLoaded() && GameData.Instance.interstitialAdsCounter < 1)
         {
             this.interstitial.Show();
             GameData.Instance.interstitialAdsCounter = 2;

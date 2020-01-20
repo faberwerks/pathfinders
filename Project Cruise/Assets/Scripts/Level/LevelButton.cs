@@ -33,7 +33,6 @@ public class LevelButton : MonoBehaviour
                     imageComponent.sprite = levelButtonIcons[3];
                     break;
             }
-            Debug.Log(gameObject.name + ": " + GameData.Instance.saveData.levelSaveData[levelNumber - 1].stars);
         }
     }
 }
