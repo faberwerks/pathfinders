@@ -10,7 +10,11 @@ public class ShowAds : MonoBehaviour
     void Start()
     {
 
-        if (GameData.Instance.interstitialAdsCounter == 0 && Application.internetReachability != NetworkReachability.NotReachable)
+        if (Application.internetReachability != NetworkReachability.NotReachable)
+        {
+            Debug.Log("internet error");
+        }
+        else
         {
             AdsHandler.instance.RequestInterstitialAD();
             AdsHandler.instance.RequestRewardedVideoAD();

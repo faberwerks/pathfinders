@@ -89,6 +89,7 @@ public class AdsHandler : MonoBehaviour
     #region
     public void HandleOnAdLoaded(object sender, EventArgs args)
     {
+        if(GameData.Instance.interstitialAdsCounter == 0)
             ShowInterstitialAD();
     }
 
