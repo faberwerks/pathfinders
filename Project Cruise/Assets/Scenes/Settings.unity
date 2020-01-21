@@ -521,8 +521,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: version 0.5
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 13c720bdf44ea034da86570e30f13c13, type: 2}
+  m_sharedMaterial: {fileID: 104661437338730952, guid: 13c720bdf44ea034da86570e30f13c13,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1042,7 +1043,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Settings
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 13c720bdf44ea034da86570e30f13c13, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1120,7 +1121,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -1263,7 +1264,7 @@ MonoBehaviour:
 
     "Win" Video Game Sound by 0EV'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 13c720bdf44ea034da86570e30f13c13, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1341,7 +1342,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -1420,7 +1421,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Are you sure you want to reset your progress?
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 13c720bdf44ea034da86570e30f13c13, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1498,7 +1499,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -1660,15 +1661,16 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 13c720bdf44ea034da86570e30f13c13, type: 2}
+  m_sharedMaterial: {fileID: 104661437338730952, guid: 13c720bdf44ea034da86570e30f13c13,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1817,7 +1819,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Yes
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 13c720bdf44ea034da86570e30f13c13, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1895,7 +1897,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -2079,7 +2081,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Reset Progress
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 13c720bdf44ea034da86570e30f13c13, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2157,7 +2159,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -3576,6 +3578,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6447518929803923330, guid: 5bd2cde32d29e534a9f53bb6d3bb0189,
+        type: 3}
+      propertyPath: m_Name
+      value: Back Handler
+      objectReference: {fileID: 0}
     - target: {fileID: 1516441090629872899, guid: 5bd2cde32d29e534a9f53bb6d3bb0189,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3630,11 +3637,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6447518929803923330, guid: 5bd2cde32d29e534a9f53bb6d3bb0189,
-        type: 3}
-      propertyPath: m_Name
-      value: Back Handler
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bd2cde32d29e534a9f53bb6d3bb0189, type: 3}
@@ -3975,15 +3977,16 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Sound Effects
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 13c720bdf44ea034da86570e30f13c13, type: 2}
+  m_sharedMaterial: {fileID: 104661437338730952, guid: 13c720bdf44ea034da86570e30f13c13,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4132,7 +4135,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: No
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 13c720bdf44ea034da86570e30f13c13, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4210,7 +4213,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}

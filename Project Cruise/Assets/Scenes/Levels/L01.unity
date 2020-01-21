@@ -10503,10 +10503,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -144
       objectReference: {fileID: 0}
+    - target: {fileID: 1127568640388815753, guid: 12adafa3f9ce7d24ca6dbbe00446056c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -14.399902
+      objectReference: {fileID: 0}
     - target: {fileID: 2581976266456775023, guid: 12adafa3f9ce7d24ca6dbbe00446056c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 102.599976
+      value: 102.59985
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352090391729929033, guid: 12adafa3f9ce7d24ca6dbbe00446056c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194876974766182097, guid: 12adafa3f9ce7d24ca6dbbe00446056c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1127568641050000863, guid: 12adafa3f9ce7d24ca6dbbe00446056c,
         type: 3}
