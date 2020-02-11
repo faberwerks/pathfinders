@@ -1,0 +1,712 @@
+fileFormatVersion: 2
+guid: 223c4805e5fedc74c97f792ae838651c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3693471043708204506
+    second: jones-die_0
+  - first:
+      213: -5074619934526944296
+    second: jones-die_1
+  - first:
+      213: -6550589655639032789
+    second: jones-die_2
+  - first:
+      213: 1225907420307449693
+    second: jones-die_3
+  - first:
+      213: -5083864271560778048
+    second: jones-die_4
+  - first:
+      213: -2614830743822862829
+    second: jones-die_5
+  - first:
+      213: -1121435656963006456
+    second: jones-die_6
+  - first:
+      213: -3218104995177105581
+    second: jones-die_7
+  - first:
+      213: -4032194823878373777
+    second: jones-die_8
+  - first:
+      213: -411398735654271091
+    second: jones-die_9
+  - first:
+      213: 3510555798805600136
+    second: jones-die_10
+  - first:
+      213: -2796936440882525973
+    second: jones-die_11
+  - first:
+      213: 6015742045543602588
+    second: jones-die_12
+  - first:
+      213: 6687662136322206092
+    second: jones-die_13
+  - first:
+      213: -4457689288397588995
+    second: jones-die_14
+  - first:
+      213: 8834445477153518297
+    second: jones-die_15
+  - first:
+      213: -7490960472706917933
+    second: jones-die_16
+  - first:
+      213: -4261553394640890444
+    second: jones-die_17
+  - first:
+      213: -6715352151061978356
+    second: jones-die_18
+  - first:
+      213: -858291079704082517
+    second: jones-die_19
+  - first:
+      213: 3549890493209717622
+    second: jones-die_20
+  - first:
+      213: 2071558683363779763
+    second: jones-die_21
+  - first:
+      213: -8084566948853974510
+    second: jones-die_22
+  - first:
+      213: -131531440633222783
+    second: jones-die_23
+  - first:
+      213: -8985622198341131704
+    second: jones-die_24
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: jones-die_0
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 4757
+        width: 488
+        height: 1128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de40ecb8e27227a4c9384cbaf4280467
+      internalID: -3693471043708204506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-die_1
+      rect:
+        serializedVersion: 2
+        x: 1702
+        y: 4740
+        width: 488
+        height: 1135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95cc6dc83c8ccb64aa8655e623fc9219
+      internalID: -5074619934526944296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-die_2
+      rect:
+        serializedVersion: 2
+        x: 2863
+        y: 4726
+        width: 488
+        height: 1137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40ae0b10b45edd34498f8711ab960dad
+      internalID: -6550589655639032789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-die_3
+      rect:
+        serializedVersion: 2
+        x: 4027
+        y: 4717
+        width: 489
+        height: 1134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3360ec804089b924f824b7659bf1a1f9
+      internalID: 1225907420307449693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-die_4
+      rect:
+        serializedVersion: 2
+        x: 5190
+        y: 4711
+        width: 488
+        height: 1124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f822d713e3b9a534eb64d0d23418a465
+      internalID: -5083864271560778048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-die_5
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 3530
+        width: 488
+        height: 1115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37c15851f69098e4986426ade20f8087
+      internalID: -2614830743822862829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-die_6
+      rect:
+        serializedVersion: 2
+        x: 1702
+        y: 3533
+        width: 488
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b9295f293a4daf478af6b0a8b77fec0
+      internalID: -1121435656963006456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-die_7
+      rect:
+        serializedVersion: 2
+        x: 2863
+        y: 3536
+        width: 488
+        height: 1086
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa313e83fd1954b4d9ae2877b47b28d3
+      internalID: -3218104995177105581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-die_8
+      rect:
+        serializedVersion: 2
+        x: 4024
+        y: 3545
+        width: 492
+        height: 1060
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bd96323f76e87048ada33d34172f225
+      internalID: -4032194823878373777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-die_9
+      rect:
+        serializedVersion: 2
+        x: 5182
+        y: 3553
+        width: 497
+        height: 1040
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eabaaee8f07446418e83dbabcc2f557
+      internalID: -411398735654271091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-die_10
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 2389
+        width: 503
+        height: 1015
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 613cdc26d467bdd46b7234bf6fb42150
+      internalID: 3510555798805600136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-die_11
+      rect:
+        serializedVersion: 2
+        x: 1682
+        y: 2401
+        width: 508
+        height: 990
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df44aa8dad6c1d045a4f791634f63e32
+      internalID: -2796936440882525973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-die_12
+      rect:
+        serializedVersion: 2
+        x: 2839
+        y: 2413
+        width: 512
+        height: 962
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc8898971dc1b6648abe4aebcf637a24
+      internalID: 6015742045543602588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-die_13
+      rect:
+        serializedVersion: 2
+        x: 3981
+        y: 2404
+        width: 531
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 463f1befb84837644a3046869212c6cf
+      internalID: 6687662136322206092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-die_14
+      rect:
+        serializedVersion: 2
+        x: 5104
+        y: 2401
+        width: 595
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 743ff8c52dfab1948b8cbef8e2b5ed6d
+      internalID: -4457689288397588995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-die_15
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 1214
+        width: 663
+        height: 965
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ef47e65d37fec14983fe1258984ded0
+      internalID: 8834445477153518297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-die_16
+      rect:
+        serializedVersion: 2
+        x: 1521
+        y: 1205
+        width: 730
+        height: 951
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d103b1588d98804a912d7f95327f371
+      internalID: -7490960472706917933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-die_17
+      rect:
+        serializedVersion: 2
+        x: 2642
+        y: 1200
+        width: 790
+        height: 922
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55c9ec8fc7951b142ac1f777b1133a39
+      internalID: -4261553394640890444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-die_18
+      rect:
+        serializedVersion: 2
+        x: 3754
+        y: 1194
+        width: 859
+        height: 885
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 094134d1a850bd5438cfe7a5327c2dfa
+      internalID: -6715352151061978356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-die_19
+      rect:
+        serializedVersion: 2
+        x: 4857
+        y: 1191
+        width: 933
+        height: 836
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86b92b04b548f043abb993fcd32662d
+      internalID: -858291079704082517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-die_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1149
+        height: 792
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80d923a23ff5ce14c99f83627f0d75be
+      internalID: 3549890493209717622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-die_21
+      rect:
+        serializedVersion: 2
+        x: 1272
+        y: 19
+        width: 1048
+        height: 707
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b2e483e29d03d4fa3b485e583a10e7
+      internalID: 2071558683363779763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-die_22
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 22
+        width: 1089
+        height: 632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbd6ad4ff31020c40aa78c916304e400
+      internalID: -8084566948853974510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-die_23
+      rect:
+        serializedVersion: 2
+        x: 3538
+        y: 30
+        width: 1118
+        height: 552
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc0f7432eee97c443be93db07059056e
+      internalID: -131531440633222783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jones-die_24
+      rect:
+        serializedVersion: 2
+        x: 4684
+        y: 36
+        width: 1131
+        height: 488
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae2775f6e4667f4449020cae180027a9
+      internalID: -8985622198341131704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 1fecc006397822345918bc789dcc5fca
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
