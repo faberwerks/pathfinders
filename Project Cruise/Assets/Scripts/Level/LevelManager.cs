@@ -135,38 +135,59 @@ public class LevelManager : MonoBehaviour
     {
         int coinsEarned = 0;
         int tempStar = 1;
+        // bool firstTimeThisLevel = false;
+
         SaveData.LevelSaveData currLevelSave = null;
+
+        // if current level is latest level
+        // use existing latest level save data
         if (GameData.Instance.saveData.LastLevelNumber == GameData.Instance.currLevelID)
         {
             currLevelSave = GameData.Instance.saveData.levelSaveData[GameData.Instance.saveData.levelSaveData.Count - 1];
+            // add new level save data for next level
             GameData.Instance.saveData.levelSaveData.Add(new SaveData.LevelSaveData());
+            // update last level number to latest level (next level)
             GameData.Instance.saveData.LastLevelNumber += 1;
+
+            // firstTimeThisLevel = true;
         }
+        // else
+        // use appropriate level save data
         else
         {
-//#if UNITY_EDITOR
-//#else
             currLevelSave = GameData.Instance.saveData.levelSaveData[GameData.Instance.currLevelID - 1];
-//#endif
         }
+
         coinsEarned += currLevelData.baseCoin;             //adds base coin
+
+        // if there is a relic
+        // and relic is collected
+        // and hasn't found relic before
         if (hasRelic && RelicCollected && !currLevelSave.hasFoundRelic)
         {
             coinsEarned += relicCoin;                      //adds relic coin
             currLevelSave.hasFoundRelic = true;
         }
+        
+        // if all treasures collected
         if (TreasureCollected >= 3)
         {
             tempStar += 1;
+
+            // if hasn't collected treasures before
             if (!currLevelSave.hasCollectedTreasures)
             {
                 coinsEarned += currLevelData.treasureCoin;     //adds treasure coin
                 currLevelSave.hasCollectedTreasures = true;
             }
         }
+
+        // if finished within target time
         if (levelTimer.timer <= currLevelData.targetTime)
         {
             tempStar += 1;
+
+            // if hasn't achieved target time before
             if (!currLevelSave.hasAchievedTargetTime)
             {
                 coinsEarned += currLevelData.targetTimeCoin;   //adds target time coin
@@ -174,21 +195,35 @@ public class LevelManager : MonoBehaviour
                 currLevelSave.hasAchievedTargetTime = true;
             }
         }
+
+        // if receive 3 stars and hasn't before
         if (tempStar == 3 && !currLevelSave.hasAchievedThreeStars)
         {
             coinsEarned += currLevelData.threeStarsCoin;
             currLevelSave.hasAchievedThreeStars = true;
         }
+
         GameData.Instance.coinsEarned = coinsEarned;
         GameData.Instance.starsEarned = tempStar;
         GameData.Instance.saveData.Coins += coinsEarned;
-//#if UNITY_EDITOR
-//#else
+
+        //if (firstTimeThisLevel)
+        //{
+        //    GameData.Instance.saveData.Stars += tempStar;
+        //}
+        //else
+        //{
+        //    if (currLevelSave.stars < tempStar)
+        //    {
+        //        GameData.Instance.saveData.Stars += (tempStar - currLevelSave.stars);
+        //    }
+        //}
+
         if (tempStar > currLevelSave.stars)
         {
             currLevelSave.stars = tempStar;
         }
-//#endif
+
         GameData.Instance.saveData.UpdateTimestamp();
     }
 }

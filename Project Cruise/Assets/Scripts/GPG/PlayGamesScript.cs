@@ -20,6 +20,7 @@ public class PlayGamesScript : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        Debug.Log("[GPGS BUG] Start entered.");
         DontDestroyOnLoad(gameObject);
         Instance = this;
 
@@ -30,6 +31,7 @@ public class PlayGamesScript : MonoBehaviour
         // setting default value, if game is played for first time
         if (GameData.Instance.saveData == null)
         {
+            Debug.Log("[GPGS BUG] GameData.Instance.saveData set to new save data.");
             GameData.Instance.saveData = new SaveData();
         }
 
@@ -57,6 +59,7 @@ public class PlayGamesScript : MonoBehaviour
     /// </summary>
     private void SignIn()
     {
+        Debug.Log("[GPGS BUG] SignIn entered.");
         // when authentication process is done (successfuly or not), load cloud data
         Social.localUser.Authenticate(success => { LoadData(); });
     }
@@ -311,13 +314,11 @@ public class PlayGamesScript : MonoBehaviour
     /// </summary>
     private void CompareCloudAndLocalSaveData(SaveData cloudData, SaveData localData)
     {
-        //SaveData cloudSaveData = DeserialiseSaveData(cloudData);
-        //SaveData localSaveData = DeserialiseSaveData(localData);
-
+        Debug.Log("[GPGS BUG] CompareCloudAndLocalSaveData entered.");
         // if first time that game has been launched after installing and successfully log in to GPG
         if (PlayerPrefs.GetInt("IsFirstTime") == 1)
         {
-            Debug.Log("First time Launched the game after installing");
+            Debug.Log("[GPGS BUG] CompareCloudAndLocalSaveData: first time.");
             // set playerpref to be 0 (false)
             PlayerPrefs.SetInt("IsFirstTime", 0);
             // cloud save is more up to date
@@ -336,7 +337,7 @@ public class PlayGamesScript : MonoBehaviour
             }
             catch (Exception ex)
             {
-                Debug.Log("Failed to get Save data from cloud");
+                Debug.Log("[GPGS BUG] CompareCloudAndLocalSaveData: Exception.");
                 Debug.Log(ex.Message);
                 throw new Exception(ex.Message);
             }
@@ -344,6 +345,7 @@ public class PlayGamesScript : MonoBehaviour
         // if not first time, start comparing
         else
         {
+            Debug.Log("[GPGS BUG] CompareCloudAndLocalSaveData: not first time.");
             // if one Timestamp is higher than other, update it
             #region commented
             //if (localData.Timestamp > cloudData.Timestamp)
@@ -362,12 +364,16 @@ public class PlayGamesScript : MonoBehaviour
             // compare cloud with local one which one is the fartest one
             if (cloudData.LastLevelNumber > localData.LastLevelNumber)
             {
+                Debug.Log("[GPGS BUG] CompareCloudAndLocalSaveData: cloud data is farther than local data.");
                 SaveLocal(cloudData);
+                GameData.Instance.saveData = cloudData;
+                Debug.Log("[GPGS BUG] CompareCloudAndLocalSaveData: GameData.Instance.saveData set to cloud data.");
                 return;
             }
             // compare cloud with local one which one has most stars
             else if (cloudData.LastLevelNumber == localData.LastLevelNumber)
             {
+                Debug.Log("[GPGS BUG] CompareCloudAndLocalSaveData: cloud data is equal to local data.");
                 int Cloudstar = 0;
                 int localStar = 0;
                 foreach (var item in cloudData.levelSaveData)
@@ -376,17 +382,21 @@ public class PlayGamesScript : MonoBehaviour
                 }
                 foreach (var item in localData.levelSaveData)
                 {
-                    Cloudstar += item.stars;
+                    localStar += item.stars;
                 }
 
                 if(Cloudstar > localStar)
                 {
+                    Debug.Log("[GPGS BUG] CompareCloudAndLocalSaveData: cloud has more stars.");
                     SaveLocal(cloudData);
+                    GameData.Instance.saveData = cloudData;
+                    Debug.Log("[GPGS BUG] CompareCloudAndLocalSaveData: GameData.Instance.saveData set to cloud data.");
                     return;
                 }
             }
 
             GameData.Instance.saveData = localData;
+            Debug.Log("[GPGS BUG] CompareCloudAndLocalSaveData: GameData.Instance.saveData set to local data.");
             isCloudDataLoaded = true;
             SaveData();
             return;
@@ -394,6 +404,7 @@ public class PlayGamesScript : MonoBehaviour
         // if code above doesn't trigger return and code below executes
         // cloud save and local save are identical, can load either one
         GameData.Instance.saveData = cloudData;
+        Debug.Log("[GPGS BUG] CompareCloudAndLocalSaveData: GameData.Instance.saveData set to cloud data.");
         isCloudDataLoaded = true;
     }
 
@@ -402,9 +413,11 @@ public class PlayGamesScript : MonoBehaviour
     /// </summary>
     public void LoadData()
     {
+        Debug.Log("[GPGS BUG] LoadData entered.");
         // if connected to internet or signed in, do everything on cloud
         if (Social.localUser.authenticated)
         {
+            Debug.Log("[GPGS BUG] LoadData: authenticated.");
             isSaving = false;
             ((PlayGamesPlatform)Social.Active).SavedGame.OpenWithManualConflictResolution(SAVE_NAME, DataSource.ReadCacheOrNetwork, true, ResolveConflict, OnSavedGameOpened);
         }
@@ -412,6 +425,7 @@ public class PlayGamesScript : MonoBehaviour
         // on device, localUser will be authenticated even if not connected to internet (if player is using GPG)
         else
         {
+            Debug.Log("[GPGS BUG] LoadData: not authenticated.");
             LoadLocal();
         }
     }
@@ -421,6 +435,7 @@ public class PlayGamesScript : MonoBehaviour
     /// </summary>
     private void LoadLocal()
     {
+        Debug.Log("[GPGS BUG] LoadLocal entered.");
         string path = Application.persistentDataPath + "/" + SAVE_NAME;
         if (File.Exists(path))
         {
@@ -437,10 +452,11 @@ public class PlayGamesScript : MonoBehaviour
     /// </summary>
     public void SaveData()
     {
-        Debug.Log("SAVE DATA CALLED!");
+        Debug.Log("[GPGS BUG] SaveData entered.");
         // if still running on local data (cloud data has not been loaded yet)
         if (!isCloudDataLoaded)
         {
+            Debug.Log("[GPGS BUG] SaveData: cloud data not loaded.");
             SaveLocal();
             return;
         }
@@ -448,6 +464,7 @@ public class PlayGamesScript : MonoBehaviour
         // if connected to internet or signed in, do everything on cloud
         if (Social.localUser.authenticated)
         {
+            Debug.Log("[GPGS BUG] SaveData: authenticated.");
             isSaving = true;
             ((PlayGamesPlatform)Social.Active).SavedGame.OpenWithManualConflictResolution(SAVE_NAME, DataSource.ReadCacheOrNetwork, true, ResolveConflict, OnSavedGameOpened);
         }
@@ -455,6 +472,7 @@ public class PlayGamesScript : MonoBehaviour
         // on device, localUser will be authenticated even if not connected to internet (if player is using GPG)
         else
         {
+            Debug.Log("[GPGS BUG] SaveData: not authenticated.");
             SaveLocal();
         }
     }
@@ -464,7 +482,7 @@ public class PlayGamesScript : MonoBehaviour
     /// </summary>
     private void SaveLocal()
     {
-        Debug.Log("SAVE LOCAL CALLED!");
+        Debug.Log("[GPGS BUG] SaveLocal, no args, entered.");
         BinaryFormatter binaryFormatter = new BinaryFormatter();
 
         string path = Application.persistentDataPath + "/" + SAVE_NAME;
@@ -480,6 +498,7 @@ public class PlayGamesScript : MonoBehaviour
     /// <param name="saveData">Saved game data to be saved.</param>
     private void SaveLocal(SaveData saveData)
     {
+        Debug.Log("[GPGS BUG] SaveLocal, 1 arg, entered.");
         BinaryFormatter binaryFormatter = new BinaryFormatter();
 
         string path = Application.persistentDataPath + "/" + SAVE_NAME;
@@ -494,6 +513,7 @@ public class PlayGamesScript : MonoBehaviour
     /// </summary>
     private void ResolveConflict(IConflictResolver resolver, ISavedGameMetadata original, byte[] originalData, ISavedGameMetadata unmerged, byte[] unmergedData)
     {
+        Debug.Log("[GPGS BUG] ResolveConflict entered.");
         if (originalData == null)
         {
             resolver.ChooseMetadata(unmerged);
@@ -508,24 +528,75 @@ public class PlayGamesScript : MonoBehaviour
             SaveData originalSaveData = DeserialiseSaveData(originalData);
             SaveData unmergedSaveData = DeserialiseSaveData(unmergedData);
 
-            // getting Timestamp
-            DateTime originalTimestamp = originalSaveData.Timestamp;
-            DateTime unmergedTimestamp = unmergedSaveData.Timestamp;
+            #region Old Timestamp-based Validation
+            //// getting Timestamp
+            //DateTime originalTimestamp = originalSaveData.Timestamp;
+            //DateTime unmergedTimestamp = unmergedSaveData.Timestamp;
 
-            // if original Timestamp is more recent than unmerged Timestamp
-            if (originalTimestamp > unmergedTimestamp)
+            //// if original Timestamp is more recent than unmerged Timestamp
+            //if (originalTimestamp > unmergedTimestamp)
+            //{
+            //    resolver.ChooseMetadata(original);
+            //    return;
+            //}
+            //// unmerged Timestamp is more recent than original
+            //else if (unmergedTimestamp > originalTimestamp)
+            //{
+            //    resolver.ChooseMetadata(unmerged);
+            //    return;
+            //}
+            //// if return doesn't get called, original and unmerged are identical
+            //// can keep either one
+            //resolver.ChooseMetadata(original);
+            #endregion
+
+            // getting last level
+            int originalLastLevel = originalSaveData.LastLevelNumber;
+            int unmergedLastLevel = originalSaveData.LastLevelNumber;
+
+            // if original last level is farther than unmerged last level
+            if (originalLastLevel > unmergedLastLevel)
             {
                 resolver.ChooseMetadata(original);
                 return;
             }
-            // unmerged Timestamp is more recent than original
-            else if (unmergedTimestamp > originalTimestamp)
+            // if unmerged last level is farther than original last level
+            else if (unmergedLastLevel > originalLastLevel)
             {
                 resolver.ChooseMetadata(unmerged);
                 return;
             }
+
+            // if return doesn't get called, original and unmerged last levels are identical
+            // getting stars
+            int originalStars = 0;
+            int unmergedStars = 0;
+
+            foreach (var levelSaveData in originalSaveData.levelSaveData)
+            {
+                originalStars += levelSaveData.stars;
+            }
+
+            foreach (var levelSaveData in unmergedSaveData.levelSaveData)
+            {
+                unmergedStars += levelSaveData.stars;
+            }
+
+            // if original stars is more than unmerged stars
+            if (originalStars > unmergedStars)
+            {
+                resolver.ChooseMetadata(original);
+                return;
+            }
+            // if unmerged stars is more than original stars
+            else if (unmergedStars > originalStars)
+            {
+                resolver.ChooseMetadata(unmerged);
+                return;
+            }
+
             // if return doesn't get called, original and unmerged are identical
-            // can keep either one
+            // can choose either one
             resolver.ChooseMetadata(original);
         }
     }
@@ -535,17 +606,21 @@ public class PlayGamesScript : MonoBehaviour
     /// </summary>
     private void OnSavedGameOpened(SavedGameRequestStatus status, ISavedGameMetadata game)
     {
+        Debug.Log("[GPGS BUG] OnSavedGameOpened entered.");
         // if connected to internet
         if (status == SavedGameRequestStatus.Success)
         {
+            Debug.Log("[GPGS BUG] OnSavedGameOpened: success.");
             // if LOADING game data
             if (!isSaving)
             {
+                Debug.Log("[GPGS BUG] OnSavedGameOpened: loading.");
                 LoadGame(game);
             }
             // if SAVING game data
             else
             {
+                Debug.Log("[GPGS BUG] OnSavedGameOpened: saving.");
                 SaveGame(game);
             }
         }
@@ -553,12 +628,15 @@ public class PlayGamesScript : MonoBehaviour
         // same code that is in else statements in LoadData() and SaveData()
         else
         {
+            Debug.Log("[GPGS BUG] OnSavedGameOpened: failed.");
             if (!isSaving)
             {
+                Debug.Log("[GPGS BUG] OnSavedGameOpened: loading.");
                 LoadLocal();
             }
             else
             {
+                Debug.Log("[GPGS BUG] OnSavedGameOpened: saving.");
                 SaveLocal();
             }
         }
@@ -570,6 +648,7 @@ public class PlayGamesScript : MonoBehaviour
     /// <param name="game"></param>
     private void LoadGame(ISavedGameMetadata game)
     {
+        Debug.Log("[GPGS BUG] LoadGame entered.");
         ((PlayGamesPlatform)Social.Active).SavedGame.ReadBinaryData(game, OnSavedGameDataRead);
     }
 
@@ -579,6 +658,7 @@ public class PlayGamesScript : MonoBehaviour
     /// <param name="game"></param>
     private void SaveGame(ISavedGameMetadata game)
     {
+        Debug.Log("[GPGS BUG] SaveGame entered.");
         // also saving locally
         SaveLocal();
 
@@ -595,19 +675,23 @@ public class PlayGamesScript : MonoBehaviour
     /// </summary>
     private void OnSavedGameDataRead(SavedGameRequestStatus status, byte[] savedData)
     {
+        Debug.Log("[GPGS BUG] OnSavedGameDataRead entered.");
         // if reading of data successful
         if (status == SavedGameRequestStatus.Success)
         {
+            Debug.Log("[GPGS BUG] OnSavedGameDataRead: success.");
             SaveData cloudSaveData;
             // if never played game before, savedData will have length of 0
             if (savedData.Length == 0)
             {
+                Debug.Log("[GPGS BUG] OnSavedGameDataRead: save data length 0.");
                 // assign new SaveData to cloudSaveData
                 cloudSaveData = new SaveData();
             }
             // otherwise take byte[] of data abnd deserialise
             else
             {
+                Debug.Log("[GPGS BUG] OnSavedGameDataRead: save data length not 0.");
                 cloudSaveData = DeserialiseSaveData(savedData);
             }
 
@@ -615,9 +699,18 @@ public class PlayGamesScript : MonoBehaviour
             // (if never played before on this device, localData is already new SaveData
             // no need for checking as with cloudSaveData
             string path = Application.persistentDataPath + "/" + SAVE_NAME;
-            SaveData localSaveData = DeserialiseSaveData(path);
-
-            CompareCloudAndLocalSaveData(cloudSaveData, localSaveData);
+            if (File.Exists(path))
+            {
+                Debug.Log("[GPGS BUG] OnSavedGameDataRead: local file exists.");
+                SaveData localSaveData = DeserialiseSaveData(path);
+                CompareCloudAndLocalSaveData(cloudSaveData, localSaveData);
+            }
+            else
+            {
+                SaveLocal(cloudSaveData);
+                GameData.Instance.saveData = cloudSaveData;
+                Debug.Log("[GPGS BUG] OnSavedGameDataRead: GameData.Instance.saveData set to cloud data.");
+            }
         }
     }
 
@@ -628,7 +721,7 @@ public class PlayGamesScript : MonoBehaviour
     /// <param name="game"></param>
     private void OnSavedGameDataWritten(SavedGameRequestStatus status, ISavedGameMetadata game)
     {
-
+        Debug.Log("[GPGS BUG] OnSavedGameDataWritten entered.");
     }
     #endregion
 
