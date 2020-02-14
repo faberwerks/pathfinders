@@ -11,6 +11,7 @@ TagManager:
   - Interactable
   - Door
   - Level Button
+  - TutorialLayer
   layers:
   - Default
   - TransparentFX
