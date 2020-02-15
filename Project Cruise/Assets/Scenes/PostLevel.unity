@@ -655,11 +655,14 @@ MonoBehaviour:
   playerTimeText: {fileID: 1589873950}
   treasureResult: {fileID: 922791891}
   coinsEarnedText: {fileID: 811334150}
-  treasureIcon:
+  starIcon:
   - {fileID: 484469924}
   - {fileID: 2043907564}
   - {fileID: 281275405}
   relicCanvas: {fileID: 1800728186}
+  targetTimeLabelText: {fileID: 580485042}
+  playerTimeLabelText: {fileID: 1979689810}
+  treasureImage: {fileID: 1928076060}
 --- !u!4 &334967128
 Transform:
   m_ObjectHideFlags: 0

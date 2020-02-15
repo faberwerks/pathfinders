@@ -12,13 +12,18 @@ public class PostLevelManager : MonoBehaviour
     public TextMeshProUGUI treasureResult;
     public TextMeshProUGUI coinsEarnedText;
 
-    public GameObject[] treasureIcon;
+    public GameObject[] starIcon;
     public GameObject relicCanvas;
 
     private float targetTime = 0f;
     private float playerTime = 0f;
     private bool passedTarget = false;
     private int treasure = 0;
+
+    //To set things unactive in Level 1 and 2
+    public TextMeshProUGUI targetTimeLabelText;
+    public TextMeshProUGUI playerTimeLabelText;
+    public Image treasureImage;
 
     // Start is called before the first frame update
     void Start()
@@ -29,9 +34,22 @@ public class PostLevelManager : MonoBehaviour
         treasureResult.text = treasure + "/3";
         targetTime = LevelDirectory.Instance.GetLevelData(GameData.Instance.currLevelID).targetTime;
         playerTime = GameData.Instance.currLevelTime;
+        
         ShowTimes();
-
         ShowResult(GameData.Instance.starsEarned);
+
+        if (GameData.Instance.currLevelID <= 2)
+        {
+            if (GameData.Instance.currLevelID == 1)
+            {
+                treasureImage.gameObject.SetActive(false);
+                treasureResult.text = "";
+            }
+            targetTimeLabelText.text = "";
+            playerTimeLabelText.text = "";
+            targetTimeText.text = "";
+            playerTimeText.text = "";
+        }
 
         coinsEarnedText.text = "" + GameData.Instance.coinsEarned;
         GameData.Instance.interstitialAdsCounter -= 1;
@@ -56,7 +74,7 @@ public class PostLevelManager : MonoBehaviour
 
     private void ActivateStarIcon(int _stars)
     {
-        foreach (GameObject icon in treasureIcon)
+        foreach (GameObject icon in starIcon)
         {
             if (_stars -- <= 0) break;
             icon.SetActive(true);

@@ -181,6 +181,8 @@ public class LevelManager : MonoBehaviour
                 currLevelSave.hasCollectedTreasures = true;
             }
         }
+        //Hardcode for level 1 to be automatically completed
+        if (GameData.Instance.currLevelID == 1) tempStar += 1;
 
         // if finished within target time
         if (levelTimer.timer <= currLevelData.targetTime)
@@ -195,6 +197,8 @@ public class LevelManager : MonoBehaviour
                 currLevelSave.hasAchievedTargetTime = true;
             }
         }
+        //Hardcode for level 1 & 2 to be automatically completed
+        if (GameData.Instance.currLevelID == 1 || GameData.Instance.currLevelID == 2) tempStar += 1;
 
         // if receive 3 stars and hasn't before
         if (tempStar == 3 && !currLevelSave.hasAchievedThreeStars)
