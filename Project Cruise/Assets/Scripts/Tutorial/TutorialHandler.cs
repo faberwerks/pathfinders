@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialHandler : MonoBehaviour
 {
@@ -23,6 +24,11 @@ public class TutorialHandler : MonoBehaviour
         currLayer = tutorialLayers.Dequeue();
         currLayer.SetActive(true);
         Time.timeScale = 0f;
+        if(GameData.Instance.saveData.LastLevelNumber > SceneManager.GetActiveScene().buildIndex-4)
+        {
+            Time.timeScale = 1f;
+            Destroy(gameObject);
+        }
     }
 
     void Update()
