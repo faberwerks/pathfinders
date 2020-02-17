@@ -24,7 +24,7 @@ public class TutorialHandler : MonoBehaviour
         currLayer = tutorialLayers.Dequeue();
         currLayer.SetActive(true);
         Time.timeScale = 0f;
-        if(GameData.Instance.saveData.LastLevelNumber > SceneManager.GetActiveScene().buildIndex-4)
+        if(GameData.Instance.saveData.LastLevelNumber > GameData.Instance.currLevelID)
         {
             Time.timeScale = 1f;
             Destroy(gameObject);

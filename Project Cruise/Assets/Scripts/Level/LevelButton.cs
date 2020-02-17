@@ -6,7 +6,7 @@ using UnityEngine.UI;
 /// </summary>
 public class LevelButton : MonoBehaviour
 {
-    public int levelNumber = 0;
+    public int levelNumber;
     public Sprite[] levelButtonIcons = new Sprite[4];
     private Image imageComponent = null;
 
@@ -14,9 +14,14 @@ public class LevelButton : MonoBehaviour
     private void Start()
     {
         imageComponent = GetComponent<Image>();
+        var button = GetComponent<Button>();
 
         if (GameData.Instance.saveData.levelSaveData.Count >= levelNumber)
         {
+            //Debug.Log(GameData.Instance.saveData.levelSaveData.Count);
+            //Debug.Log("Level " + levelNumber + " unlocked.");
+
+            button.interactable = true;
             switch (GameData.Instance.saveData.levelSaveData[levelNumber - 1].stars)
             {
                 default:
