@@ -27,7 +27,7 @@ public class AnimateLoadingText : MonoBehaviour
         {
             loadingText.text = "Loading";
         }
-        yield return 0;
         yield return new WaitForSeconds(delay);
+        
     }
 }
