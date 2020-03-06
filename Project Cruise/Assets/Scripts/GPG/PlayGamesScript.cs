@@ -499,6 +499,62 @@ public class PlayGamesScript : MonoBehaviour
     }
 
     /// <summary>
+    /// Force-saves data to the cloud or locally.
+    /// </summary>
+    public void ForceSaveData()
+    {
+        Debug.Log("[GPGS BUG] ForceSaveData entered.");
+        // if still running on local data (cloud data has not been loaded yet)
+        if (!isCloudDataLoaded)
+        {
+            Debug.Log("[GPGS BUG] ForceSaveData: cloud data not loaded.");
+            isDone = false;
+            SaveLocal();
+            return;
+        }
+
+        // if connected to internet or signed in, do everything on cloud
+        if (Social.localUser.authenticated)
+        {
+            Debug.Log("[GPGS BUG] ForceSaveData: authenticated.");
+            ((PlayGamesPlatform)Social.Active).SavedGame.OpenWithManualConflictResolution(SAVE_NAME, DataSource.ReadCacheOrNetwork, true, ResolveConflict, OnForceSavedGameOpened);
+        }
+        // will only run on Unity Editor
+        // on device, localUser will be authenticated even if not connected to internet (if player is using GPG)
+        else
+        {
+            Debug.Log("[GPGS BUG] ForceSaveData: not authenticated.");
+            isDone = false;
+            SaveLocal();
+        }
+    }
+
+    /// <summary>
+    /// Callback for opening force-saved game data.
+    /// </summary>
+    private void OnForceSavedGameOpened(SavedGameRequestStatus status, ISavedGameMetadata game)
+    {
+        Debug.Log("[GPGS BUG] OnForceSavedGameOpened entered.");
+        // if connected to internet
+        if (status == SavedGameRequestStatus.Success)
+        {
+            Debug.Log("[GPGS BUG] OnForceSavedGameOpened: success.");
+            isDone = false;
+            Debug.Log("[GPGS BUG] OnForceSavedGameOpened: saving.");
+            SaveGame(game);
+        }
+        // if couldn't successfully connect to cloud, runs while on device
+        // same code that is in else statements in LoadData() and SaveData()
+        else
+        {
+            Debug.Log("[GPGS BUG] OnForceSavedGameOpened: failed.");
+            isDone = false;
+            Debug.Log("[GPGS BUG] OnForceSavedGameOpened: saving.");
+            SaveLocal();
+        }
+    }
+
+    /// <summary>
     /// Callback for ReadBinaryData().
     /// </summary>
     private void OnSavedGameDataRead(SavedGameRequestStatus status, byte[] savedData)

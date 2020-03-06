@@ -63,6 +63,7 @@ public class SaveData
         LastLevelNumber = 1;
         levelSaveData = new List<LevelSaveData>();
         levelSaveData.Add(new LevelSaveData());
-        UpdateTimestamp();
+        PlayGamesScript.Instance.ForceSaveData();
+        // UpdateTimestamp();
     }
 }
