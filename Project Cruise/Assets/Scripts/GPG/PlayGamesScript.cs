@@ -12,10 +12,17 @@ using UnityEngine;
 public class PlayGamesScript : MonoBehaviour
 {
     public static PlayGamesScript Instance { get; private set; }
+    private SceneTransition sceneTransition;
 
     private const string SAVE_NAME = "save.gd";
     private bool isSaving;
     private bool isCloudDataLoaded = false;
+    private bool isDone = false;
+
+    private void Awake()
+    {
+        sceneTransition = GetComponent<SceneTransition>();
+    }
 
     // Start is called before the first frame update
     private void Start()
@@ -63,209 +70,6 @@ public class PlayGamesScript : MonoBehaviour
         // when authentication process is done (successfuly or not), load cloud data
         Social.localUser.Authenticate(success => { LoadData(); });
     }
-
-    #region Old Saved Games
-    //private string GameDataToString()
-    //{
-    //    return CloudVariables.Highscore.ToString();
-    //}
-
-    //private void StringToGameData(string cloudData, string localData)
-    //{
-    //    if (PlayerPrefs.GetInt("IsFirstTime") == 1)
-    //    {
-    //        PlayerPrefs.SetInt("IsFirstTime", 0);
-    //        if (int.Parse(cloudData) > int.Parse(localData))
-    //        {
-    //            PlayerPrefs.SetString(SAVE_NAME, cloudData);
-    //        }
-    //    }
-    //    else
-    //    {
-    //        if (int.Parse(localData) > int.Parse(cloudData))
-    //        {
-    //            CloudVariables.Highscore = int.Parse(localData);
-    //            AddScoreToLeaderboard(GPGSIds.leaderboard_test_leaderboard, CloudVariables.Highscore);
-    //            isCloudDataLoaded = true;
-    //            SaveData();
-    //            return;
-    //        }
-    //    }
-
-    //    CloudVariables.Highscore = int.Parse(cloudData);
-    //    isCloudDataLoaded = true;
-    //}
-
-    //private void StringToGameData(string localData)
-    //{
-    //    CloudVariables.Highscore = int.Parse(localData);
-    //}
-
-    //public void LoadData()
-    //{
-    //    if (Social.localUser.authenticated)
-    //    {
-    //        isSaving = false;
-    //        ((PlayGamesPlatform)Social.Active).SavedGame.OpenWithManualConflictResolution(SAVE_NAME, DataSource.ReadCacheOrNetwork, true, ResolveConflict, OnSavedGameOpened);
-    //    }
-    //    else
-    //    {
-    //        LoadLocal();
-    //    }
-    //}
-
-    //private byte[] LoadLocal()
-    //{
-    //    //StringToGameData(PlayerPrefs.GetString(SAVE_NAME));
-    //    string path = Application.persistentDataPath + "/" + SAVE_NAME;
-    //    if (File.Exists(path))
-    //    {
-    //        BinaryFormatter formatter = new BinaryFormatter();
-    //        FileStream stream = new FileStream(path, FileMode.Open);
-
-    //        SaveData data = formatter.Deserialize(stream) as SaveData;
-    //    }
-    //    else
-    //    {
-    //        Debug.LogError("Save file not found in " + path);
-    //        return null;
-    //    }
-    //}
-
-    //public void SaveData()
-    //{
-    //    if (!isCloudDataLoaded)
-    //    {
-    //        SaveLocal();
-    //    }
-
-    //    if (Social.localUser.authenticated)
-    //    {
-    //        isSaving = true;
-    //        ((PlayGamesPlatform)Social.Active).SavedGame.OpenWithManualConflictResolution(SAVE_NAME, DataSource.ReadCacheOrNetwork, true, ResolveConflict, OnSavedGameOpened);
-    //    }
-    //    else
-    //    {
-    //        SaveLocal();
-    //    }
-    //}
-
-    //private void SaveLocal()
-    //{
-    //    //PlayerPrefs.SetString(SAVE_NAME, GameDataToString());
-    //    BinaryFormatter formatter = new BinaryFormatter();
-
-    //    string path = Application.persistentDataPath + "/" + SAVE_NAME;
-    //    FileStream stream = new FileStream(path, FileMode.Create);
-
-    //    SaveData data = new SaveData();
-
-    //    formatter.Serialize(stream, data);
-    //    stream.Close();
-    //}
-
-    //private void ResolveConflict(IConflictResolver resolver, ISavedGameMetadata original, byte[] originalData, ISavedGameMetadata unmerged, byte[] unmergedData)
-    //{
-    //    if (originalData == null)
-    //    {
-    //        resolver.ChooseMetadata(unmerged);
-    //    }
-    //    else if (unmergedData == null)
-    //    {
-    //        resolver.ChooseMetadata(original);
-    //    }
-    //    else
-    //    {
-    //        string originalStr = Encoding.ASCII.GetString(originalData);
-    //        string unmergedStr = Encoding.ASCII.GetString(unmergedData);
-
-    //        int originalNum = int.Parse(originalStr);
-    //        int unmergedNum = int.Parse(unmergedStr);
-
-    //        if (originalNum > unmergedNum)
-    //        {
-    //            resolver.ChooseMetadata(original);
-    //            return;
-    //        }
-    //        else if (unmergedNum > originalNum)
-    //        {
-    //            resolver.ChooseMetadata(unmerged);
-    //            return;
-    //        }
-    //    }
-
-    //    resolver.ChooseMetadata(original);
-    //}
-
-    //private void OnSavedGameOpened(SavedGameRequestStatus status, ISavedGameMetadata game)
-    //{
-    //    if (status == SavedGameRequestStatus.Success)
-    //    {
-    //        if (!isSaving)
-    //        {
-    //            LoadGame(game);
-    //        }
-    //        else
-    //        {
-    //            SaveGame(game);
-    //        }
-    //    }
-    //    else
-    //    {
-    //        if (!isSaving)
-    //        {
-    //            LoadLocal();
-    //        }
-    //        else
-    //        {
-    //            SaveLocal();
-    //        }
-    //    }
-    //}
-
-    //private void LoadGame(ISavedGameMetadata game)
-    //{
-    //    ((PlayGamesPlatform)Social.Active).SavedGame.ReadBinaryData(game, OnSavedGameDataRead);
-    //}
-
-    //private void SaveGame(ISavedGameMetadata game)
-    //{
-    //    string stringToSave = GameDataToString();
-    //    SaveLocal();
-
-    //    byte[] dataToSave = Encoding.ASCII.GetBytes(stringToSave);
-
-    //    SavedGameMetadataUpdate update = new SavedGameMetadataUpdate.Builder().Build();
-
-    //    ((PlayGamesPlatform)Social.Active).SavedGame.CommitUpdate(game, update, dataToSave, OnSavedGameDataWritten);
-    //}
-
-    //private void OnSavedGameDataRead(SavedGameRequestStatus status, byte[] savedData)
-    //{
-    //    if (status == SavedGameRequestStatus.Success)
-    //    {
-    //        string cloudDataString;
-
-    //        if (savedData.Length == 0)
-    //        {
-    //            cloudDataString = "0";
-    //        }
-    //        else
-    //        {
-    //            cloudDataString = Encoding.ASCII.GetString(savedData);
-    //        }
-
-    //        string localDataString = PlayerPrefs.GetString(SAVE_NAME);
-
-    //        StringToGameData(cloudDataString, localDataString);
-    //    }
-    //}
-
-    //private void OnSavedGameDataWritten(SavedGameRequestStatus status, ISavedGameMetadata game)
-    //{
-
-    //}
-    #endregion /Saved Games
 
     #region Saved Games
     /// <summary>
@@ -365,8 +169,9 @@ public class PlayGamesScript : MonoBehaviour
             if (cloudData.LastLevelNumber > localData.LastLevelNumber)
             {
                 Debug.Log("[GPGS BUG] CompareCloudAndLocalSaveData: cloud data is farther than local data.");
-                SaveLocal(cloudData);
+                isDone = true;
                 GameData.Instance.saveData = cloudData;
+                SaveLocal(cloudData);
                 Debug.Log("[GPGS BUG] CompareCloudAndLocalSaveData: GameData.Instance.saveData set to cloud data.");
                 return;
             }
@@ -388,8 +193,9 @@ public class PlayGamesScript : MonoBehaviour
                 if(Cloudstar > localStar)
                 {
                     Debug.Log("[GPGS BUG] CompareCloudAndLocalSaveData: cloud has more stars.");
-                    SaveLocal(cloudData);
+                    isDone = true;
                     GameData.Instance.saveData = cloudData;
+                    SaveLocal(cloudData);
                     Debug.Log("[GPGS BUG] CompareCloudAndLocalSaveData: GameData.Instance.saveData set to cloud data.");
                     return;
                 }
@@ -406,6 +212,7 @@ public class PlayGamesScript : MonoBehaviour
         GameData.Instance.saveData = cloudData;
         Debug.Log("[GPGS BUG] CompareCloudAndLocalSaveData: GameData.Instance.saveData set to cloud data.");
         isCloudDataLoaded = true;
+        isDone = true;
     }
 
     /// <summary>
@@ -425,6 +232,7 @@ public class PlayGamesScript : MonoBehaviour
         // on device, localUser will be authenticated even if not connected to internet (if player is using GPG)
         else
         {
+            isDone = true;
             Debug.Log("[GPGS BUG] LoadData: not authenticated.");
             LoadLocal();
         }
@@ -445,6 +253,11 @@ public class PlayGamesScript : MonoBehaviour
         {
             Debug.LogError("Save file not found in " + path + ".");
         }
+
+        if (isDone)
+        {
+            EndLoading();
+        }
     }
 
     /// <summary>
@@ -457,6 +270,7 @@ public class PlayGamesScript : MonoBehaviour
         if (!isCloudDataLoaded)
         {
             Debug.Log("[GPGS BUG] SaveData: cloud data not loaded.");
+            isDone = true;
             SaveLocal();
             return;
         }
@@ -473,6 +287,7 @@ public class PlayGamesScript : MonoBehaviour
         else
         {
             Debug.Log("[GPGS BUG] SaveData: not authenticated.");
+            isDone = true;
             SaveLocal();
         }
     }
@@ -490,6 +305,11 @@ public class PlayGamesScript : MonoBehaviour
 
         binaryFormatter.Serialize(stream, GameData.Instance.saveData);
         stream.Close();
+
+        if (isDone)
+        {
+            EndLoading();
+        }
     }
 
     /// <summary>
@@ -506,6 +326,11 @@ public class PlayGamesScript : MonoBehaviour
 
         binaryFormatter.Serialize(stream, saveData);
         stream.Close();
+
+        if (isDone)
+        {
+            EndLoading();
+        }
     }
 
     /// <summary>
@@ -620,6 +445,7 @@ public class PlayGamesScript : MonoBehaviour
             // if SAVING game data
             else
             {
+                isDone = true;
                 Debug.Log("[GPGS BUG] OnSavedGameOpened: saving.");
                 SaveGame(game);
             }
@@ -631,11 +457,13 @@ public class PlayGamesScript : MonoBehaviour
             Debug.Log("[GPGS BUG] OnSavedGameOpened: failed.");
             if (!isSaving)
             {
+                isDone = true;
                 Debug.Log("[GPGS BUG] OnSavedGameOpened: loading.");
                 LoadLocal();
             }
             else
             {
+                isDone = true;
                 Debug.Log("[GPGS BUG] OnSavedGameOpened: saving.");
                 SaveLocal();
             }
@@ -707,8 +535,9 @@ public class PlayGamesScript : MonoBehaviour
             }
             else
             {
-                SaveLocal(cloudSaveData);
+                isDone = true;
                 GameData.Instance.saveData = cloudSaveData;
+                SaveLocal(cloudSaveData);
                 Debug.Log("[GPGS BUG] OnSavedGameDataRead: GameData.Instance.saveData set to cloud data.");
             }
         }
@@ -742,15 +571,8 @@ public class PlayGamesScript : MonoBehaviour
     }
     #endregion /Achievements
 
-    #region Leaderboards
-    //public static void AddScoreToLeaderboard(string leaderboardId, long score)
-    //{
-    //    Social.ReportScore(score, leaderboardId, success => { });
-    //}
-
-    //public static void ShowLeaderboardsUI()
-    //{
-    //    Social.ShowLeaderboardUI();
-    //}
-    #endregion /Leaderboards
+    private void EndLoading()
+    {
+        sceneTransition.LoadSceneByName("MainMenu");
+    }
 }
