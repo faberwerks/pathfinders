@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,11 +8,11 @@ public class AnimateLoadingText : MonoBehaviour
 {
     public float delay = 0.5f;
 
-    public Text loadingText;
+    private TextMeshProUGUI loadingText;
     // Start is called before the first frame update
     void Start()
     {
-        loadingText = GetComponent<Text>();
+        loadingText = GetComponent<TextMeshProUGUI>();
         loadingText.text = "Loading";
 
         StartCoroutine(AnimateText());
