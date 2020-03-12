@@ -8,11 +8,11 @@ public class AnimateLoadingText : MonoBehaviour
 {
     public float delay = 0.5f;
 
-    private TextMeshProUGUI loadingText;
+    private TMP_Text loadingText;
     // Start is called before the first frame update
     void Start()
     {
-        loadingText = GetComponent<TextMeshProUGUI>();
+        loadingText = GetComponent<TMP_Text>();
         loadingText.text = "Loading";
 
         StartCoroutine(AnimateText());
@@ -20,15 +20,18 @@ public class AnimateLoadingText : MonoBehaviour
 
     IEnumerator AnimateText()
     {
-        if (loadingText.text != "Loading...")
+        while (true)
         {
-            loadingText.text += ".";
+            if (loadingText.text != "Loading...")
+            {
+                loadingText.text += ".";
+            }
+            else
+            {
+                loadingText.text = "Loading";
+            }
+            
+            yield return new WaitForSeconds(delay);
         }
-        else
-        {
-            loadingText.text = "Loading";
-        }
-        yield return new WaitForSeconds(delay);
-        
     }
 }
