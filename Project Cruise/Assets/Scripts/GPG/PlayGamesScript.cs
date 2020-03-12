@@ -18,6 +18,7 @@ public class PlayGamesScript : MonoBehaviour
     private bool isSaving;
     private bool isCloudDataLoaded = false;
     private bool isDone = false;
+    private bool isLoading = true;
 
     private void Awake()
     {
@@ -254,10 +255,7 @@ public class PlayGamesScript : MonoBehaviour
             Debug.LogError("Save file not found in " + path + ".");
         }
 
-        if (isDone)
-        {
-            EndLoading();
-        }
+        EndLoading();
     }
 
     /// <summary>
@@ -306,10 +304,7 @@ public class PlayGamesScript : MonoBehaviour
         binaryFormatter.Serialize(stream, GameData.Instance.saveData);
         stream.Close();
 
-        if (isDone)
-        {
-            EndLoading();
-        }
+        EndLoading();
     }
 
     /// <summary>
@@ -327,10 +322,7 @@ public class PlayGamesScript : MonoBehaviour
         binaryFormatter.Serialize(stream, saveData);
         stream.Close();
 
-        if (isDone)
-        {
-            EndLoading();
-        }
+        EndLoading();
     }
 
     /// <summary>
@@ -627,8 +619,15 @@ public class PlayGamesScript : MonoBehaviour
     }
     #endregion /Achievements
 
+    /// <summary>
+    /// Ends the initial Play Games loading.
+    /// </summary>
     private void EndLoading()
     {
-        sceneTransition.LoadSceneByName("MainMenu");
+        if (isDone && isLoading)
+        {
+            sceneTransition.LoadSceneByName("MainMenu");
+            isLoading = false;
+        }
     }
 }
