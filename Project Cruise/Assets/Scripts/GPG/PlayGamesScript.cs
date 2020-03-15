@@ -333,10 +333,12 @@ public class PlayGamesScript : MonoBehaviour
         Debug.Log("[GPGS BUG] ResolveConflict entered.");
         if (originalData == null)
         {
+            Debug.Log("[GPGS BUG] ResolveConflict: originalData null. Choose unmerged.");
             resolver.ChooseMetadata(unmerged);
         }
         else if (unmergedData == null)
         {
+            Debug.Log("[GPGS BUG] ResolveConflict: unmergedData null. Choose original.");
             resolver.ChooseMetadata(original);
         }
         else
@@ -408,12 +410,14 @@ public class PlayGamesScript : MonoBehaviour
             // if unmerged stars is more than original stars
             else if (unmergedStars > originalStars)
             {
+                Debug.Log("[GPGS BUG] ResolveConflict: unmergedStars more. Choose unmerged.");
                 resolver.ChooseMetadata(unmerged);
                 return;
             }
 
             // if return doesn't get called, original and unmerged are identical
             // can choose either one
+            Debug.Log("[GPGS BUG] ResolveConflict: identical. Choose original.");
             resolver.ChooseMetadata(original);
         }
     }
