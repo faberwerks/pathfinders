@@ -26,6 +26,7 @@ public class GameData
         currLevelID = 0;
         coinsEarned = 0;
         saveData = new SaveData();
+        tutorialDebug = false;
     }
 
     public int previousSceneID = 0;
@@ -37,4 +38,6 @@ public class GameData
     public int coinsEarned = 0;
     public int starsEarned = 0;
     public SaveData saveData = null;
+    //For tutorial debugging
+    public bool tutorialDebug = false;
 }
