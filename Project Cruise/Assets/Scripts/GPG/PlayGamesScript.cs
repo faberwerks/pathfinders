@@ -404,6 +404,7 @@ public class PlayGamesScript : MonoBehaviour
             // if original stars is more than unmerged stars
             if (originalStars > unmergedStars)
             {
+                Debug.Log("[GPGS BUG] ResolveConflict: originalStars more. Choose original.");
                 resolver.ChooseMetadata(original);
                 return;
             }
