@@ -45,7 +45,7 @@ public class LevelSceneCreatorWindow : EditorWindow
     private int levelIndex = 0;
 
     // add menu named "Create New Level" to "Tools" menu
-    [MenuItem("Tools/Create New Level")]
+    // [MenuItem("Tools/Create New Level")]
     public static void Init()
     {
         // get existing open window or if none, make new one
