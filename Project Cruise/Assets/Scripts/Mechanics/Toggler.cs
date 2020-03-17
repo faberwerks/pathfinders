@@ -54,13 +54,13 @@ public class Toggler : Interactable
             case TogglerType.Lever:
                 ToggleObjects();
                 break;
-            case TogglerType.Timer:
-                if (!hasBeenTriggered)
-                {
-                    timer.StartTimer();
-                    hasBeenTriggered = true;
-                }
-                break;
+            //case TogglerType.Timer:
+            //    if (!hasBeenTriggered)
+            //    {
+            //        timer.StartTimer();
+            //        hasBeenTriggered = true;
+            //    }
+            //    break;
         }
     }
 
@@ -88,6 +88,13 @@ public class Toggler : Interactable
         {
             case TogglerType.PressurePlate:
                 ToggleObjects();
+                break;
+            case TogglerType.Timer:
+                if (!hasBeenTriggered)
+                {
+                    timer.StartTimer();
+                    hasBeenTriggered = true;
+                }
                 break;
         }
     }
