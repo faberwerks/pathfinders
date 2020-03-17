@@ -1,28 +1,9 @@
-﻿using TMPro;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEditor.SceneManagement;
 
-public class DebugSceneLoader : MonoBehaviour
+public class DebugStarter
 {
-    public GameObject debugUI = null;
-    public TMP_InputField input = null;
-
-    private void Start()
-    {
-        if (!Application.isEditor)
-        {
-            debugUI.SetActive(false);
-        }
-    }
-
-    public void DebugLoadScene()
-    {
-        SceneManager.LoadScene(input.text);
-    }
-
-    // add menu named "Create New Level" to "Tools" menu
+    // add menu named "Start" to "Tools" menu
     [MenuItem("Tools/Start")]
     public static void Init()
     {
