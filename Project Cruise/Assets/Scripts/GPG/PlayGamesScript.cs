@@ -214,6 +214,7 @@ public class PlayGamesScript : MonoBehaviour
         Debug.Log("[GPGS BUG] CompareCloudAndLocalSaveData: GameData.Instance.saveData set to cloud data.");
         isCloudDataLoaded = true;
         isDone = true;
+        EndLoading();
     }
 
     /// <summary>

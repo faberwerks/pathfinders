@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour
     private bool hasRelic;
     //private bool relicCollected;
     //private float levelTimer;
+    private bool hasWon;
 
     /////// PROPERTIES ///////
     public int TreasureCollected { get; set; }
@@ -54,6 +55,7 @@ public class LevelManager : MonoBehaviour
         }
         //targetTime.text = "Target time: " + currLevelData.targetTime;
         hasRelic = currLevelData.hasRelic;
+        hasWon = false;
 
         if (noInteractables)
         {
@@ -76,7 +78,11 @@ public class LevelManager : MonoBehaviour
             if (goal.IsPressed == false)
                 return;
         }
-        Win();
+        if (!hasWon)
+        {
+            hasWon = true;
+            Win();
+        }
     }
 
     /// <summary>
