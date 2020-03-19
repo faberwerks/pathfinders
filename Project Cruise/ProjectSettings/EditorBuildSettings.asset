@@ -87,6 +87,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Testing/E1.unity
     guid: ad7271d661e841b49b096f6bb0b30f43
   - enabled: 1
+    path: Assets/Scenes/Levels/Testing/E4.unity
+    guid: 3b342b8b28184ed47a9439a28c44bfdc
+  - enabled: 1
     path: Assets/Scenes/Levels/Testing/F2.unity
     guid: d5c0fb7ef54f31843b37b49fc56ed2bc
   - enabled: 1
