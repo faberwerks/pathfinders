@@ -19,6 +19,7 @@ public class LevelManager : MonoBehaviour
     /////// PROPERTIES ///////
     public int TreasureCollected { get; set; }
     public bool RelicCollected { get; set; }
+    public bool CharacterCanMove { get; private set; }
 
     //Public list of goals
     public List<Goal> goals = new List<Goal>();
@@ -56,6 +57,7 @@ public class LevelManager : MonoBehaviour
         //targetTime.text = "Target time: " + currLevelData.targetTime;
         hasRelic = currLevelData.hasRelic;
         hasWon = false;
+        CharacterCanMove = true;
 
         if (noInteractables)
         {
@@ -90,6 +92,7 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     private void Win()
     {
+        DisableCharacterMovement();
         levelTimer.EndTimer();
         GameData.Instance.currTreasuresCollected = TreasureCollected;
         GameData.Instance.currIsRelicCollected = RelicCollected;
@@ -108,6 +111,7 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void Lose()
     {
+        DisableCharacterMovement();
         levelTimer.EndTimer();
         Time.timeScale = 0.0f;
         playerTimer.text = GameData.Instance.currLevelTime.ToString("#.##") + "s";
@@ -235,5 +239,10 @@ public class LevelManager : MonoBehaviour
         }
 
         GameData.Instance.saveData.UpdateTimestamp();
+    }
+
+    public void DisableCharacterMovement()
+    {
+        CharacterCanMove = false;
     }
 }

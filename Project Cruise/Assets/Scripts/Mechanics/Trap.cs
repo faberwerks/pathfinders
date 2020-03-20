@@ -17,6 +17,7 @@ public class Trap : MonoBehaviour
         {
             audioHandler.Play(hitSound);
             collision.gameObject.GetComponent<Animator>().SetTrigger("Die");
+            Blackboard.Instance.LevelManager.DisableCharacterMovement();
         }
     }
 }

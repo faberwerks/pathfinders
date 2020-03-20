@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public Button button;
     private bool isMoving = false;
     private Animator anim = null;
+    private bool canMove = true;
 
     // cached variables
     private Vector2 dir;
@@ -36,8 +37,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //direction of the character movement from the joystick
-        //dir = joystick.Direction;
+        // direction of the character movement from the joystick
         dir = movementArrowManager.Direction;
         translation.Set(dir.x, dir.y, translation.z);
         if (translation != Vector3.zero && !walkingSound.isPlaying)
@@ -71,7 +71,11 @@ public class PlayerController : MonoBehaviour
         }
 
         translation = translation.normalized * speed * Time.deltaTime;
-        rb.MovePosition(rb.transform.position + translation);
+        
+        if (Blackboard.Instance.LevelManager.CharacterCanMove)
+        {
+            rb.MovePosition(rb.transform.position + translation);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
