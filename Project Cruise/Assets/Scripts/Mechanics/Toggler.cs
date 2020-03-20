@@ -69,7 +69,11 @@ public class Toggler : Interactable
     /// </summary>
     public void ToggleObjects()
     {
-        audioHandler.Play(toggleSound);
+        if (toggleSound)
+        {
+            audioHandler.Play(toggleSound);
+        }
+       
         foreach (GameObject toggledObject in toggledObjects)
         {
             toggledObject.SetActive(!toggledObject.activeInHierarchy);
