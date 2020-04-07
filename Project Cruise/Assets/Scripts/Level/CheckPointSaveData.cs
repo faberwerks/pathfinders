@@ -16,62 +16,143 @@ public class CheckPointSaveData : MonoBehaviour
             this.x = x;
             this.y = y;
         }
+
+        public int GetX()
+        {
+            return x;
+        }
+
+        public int GetY()
+        {
+            return y;
+        }
+
+        public void SetPosition(int x , int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+
     }
 
     struct Lever 
     {
         int x;
         int y;
-        bool istriggered;
+        bool isTriggered;
 
         public Lever(int x, int y,bool istriggered)
         {
             this.x = x;
             this.y = y;
-            this.istriggered = istriggered;
+            this.isTriggered = istriggered;
         }
+
+        public int GetX()
+        {
+            return x;
+        }
+
+        public int GetY()
+        {
+            return y;
+        }
+
+        public void SetIsTriggered(bool isTriggered)
+        {
+            this.isTriggered = isTriggered;
+        }
+
     }
 
     struct Obstacle
     {
         int x;
         int y;
-        bool istriggered;
+        bool isTriggered;
 
-        public Obstacle(int x , int y, bool istriggered)
+        public Obstacle(int x , int y, bool isTriggered)
         {
             this.x = x;
             this.y = y;
-            this.istriggered = istriggered;
+            this.isTriggered = isTriggered;
         }
+
+        public int GetX()
+        {
+            return x;
+        }
+
+        public int GetY()
+        {
+            return y;
+        }
+
+        public void SetIsTriggered(bool isTriggered)
+        {
+            this.isTriggered = isTriggered;
+        }
+
     }
 
     struct TriggeredTimer
     {
         int x;
         int y;
-        bool isTaken;
+        bool isTriggered;
 
-        public TriggeredTimer(int x , int y , bool isTaken)
+        public TriggeredTimer(int x , int y , bool isTriggered)
         {
             this.x = x;
             this.y = y;
-            this.isTaken = isTaken;
+            this.isTriggered = isTriggered;
         }
+
+        public int GetX()
+        {
+            return x;
+        }
+
+        public int GetY()
+        {
+            return y;
+        }
+
+        public void SetIsTriggered(bool isTriggered)
+        {
+            this.isTriggered = isTriggered;
+        }
+
     }
 
     struct Treasure
     {
         int x;
         int y;
-        bool istriggered;
+        bool isTriggered;
 
-        public Treasure(int x, int y , bool istriggered)
+        public Treasure(int x, int y , bool isTriggered)
         {
             this.x = x;
             this.y = y;
-            this.istriggered = istriggered;
+            this.isTriggered = isTriggered;
         }
+
+        public int GetX()
+        {
+            return x;
+        }
+
+        public int GetY()
+        {
+            return y;
+        }
+
+        public void SetIsTriggered(bool isTriggered)
+        {
+            this.isTriggered = isTriggered;
+        }
+
     }
 
     struct Relic
@@ -88,14 +169,30 @@ public class CheckPointSaveData : MonoBehaviour
     {
         int x;
         int y;
-        bool istriggered;
+        bool isTriggered;
 
-        public Door(int x, int y , bool istriggered)
+        public Door(int x, int y , bool isTriggered)
         {
             this.x = x;
             this.y = y;
-            this.istriggered = istriggered;
+            this.isTriggered = isTriggered;
         }
+
+        public int GetX()
+        {
+            return x;
+        }
+
+        public int GetY()
+        {
+            return y;
+        }
+
+        public void SetIsTriggered(bool isTriggered)
+        {
+            this.isTriggered = isTriggered;
+        }
+
     }
 
     struct Key
@@ -108,6 +205,17 @@ public class CheckPointSaveData : MonoBehaviour
             this.id = id;
             this.isTaken = isTaken;
         }
+
+        public void SetisTaken(bool isTaken)
+        {
+            this.isTaken = isTaken;
+        }
+
+        public int GetID()
+        {
+            return id;
+        }
+
     }
 
     #region List
@@ -178,9 +286,89 @@ public class CheckPointSaveData : MonoBehaviour
         relic.SetIstaken(isTaken);
     }
 
-    public void AddItem()
+    public void AddKey(int id, bool isTaken)
     {
+        Keys.Add(new Key(id, isTaken));
+    }
 
+    public void EditState(int x, int y ,bool state , string type)
+    {
+        if (type.Equals("lever", StringComparison.InvariantCultureIgnoreCase))
+        {
+            foreach(Lever data in Levers)
+            {
+                if(data.GetX() == x && data.GetY() == y)
+                {
+                    data.SetIsTriggered(state);
+                    break;
+                }
+            }
+        }
+        else if (type.Equals("obstacle", StringComparison.InvariantCultureIgnoreCase))
+        {
+            foreach (Obstacle data in Obstacles)
+            {
+                if (data.GetX() == x && data.GetY() == y)
+                {
+                    data.SetIsTriggered(state);
+                    break;
+                }
+            }
+        }
+        else if (type.Equals("triggeredtimer", StringComparison.InvariantCultureIgnoreCase))
+        {
+            foreach (TriggeredTimer data in Triggeredtimers)
+            {
+                if (data.GetX() == x && data.GetY() == y)
+                {
+                    data.SetIsTriggered(state);
+                    break;
+                }
+            }
+        }
+        else if (type.Equals("treasure", StringComparison.InvariantCultureIgnoreCase))
+        {
+            foreach (Treasure data in Treasures)
+            {
+                if (data.GetX() == x && data.GetY() == y)
+                {
+                    data.SetIsTriggered(state);
+                    break;
+                }
+            }
+        }
+        else if (type.Equals("door", StringComparison.InvariantCultureIgnoreCase))
+        {
+            foreach (Door data in Doors)
+            {
+                if (data.GetX() == x && data.GetY() == y)
+                {
+                    data.SetIsTriggered(state);
+                    break;
+                }
+            }
+        }
+    }
+
+    public void EditPlayerPostion(int x , int y)
+    {
+        foreach(Character character in Characters)
+        {
+            //edit later
+            character.SetPosition(x, y);
+        }
+    }
+
+    public void SetKeyIsTaken(int id , bool isTaken)
+    {
+        foreach(Key key in Keys)
+        {
+            if(key.GetID() == id)
+            {
+                key.SetisTaken(isTaken);
+                break;
+            }
+        }
     }
 
 }
