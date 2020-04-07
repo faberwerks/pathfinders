@@ -8,7 +8,7 @@ public class KeyHolder : MonoBehaviour
 {
     private int id;
     private Button button;
-    private GameObject keySprite;
+    public GameObject keySprite;
 
     // Start is called before the first frame update
     private void Start()

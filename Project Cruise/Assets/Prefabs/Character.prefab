@@ -214,6 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c638cceefcf19b4191caa59b4b1b225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keySprite: {fileID: 192013275740167521}
 --- !u!82 &2232374364076854818
 AudioSource:
   m_ObjectHideFlags: 0
