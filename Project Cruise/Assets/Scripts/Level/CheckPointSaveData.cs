@@ -8,52 +8,68 @@ public class CheckPointSaveData : MonoBehaviour
 
     struct Character  
     {
-        int x;
-        int y;
+        float x;
+        float y;
+        float lastX;
+        float lastY;
 
-        public Character(int x , int y)
+        public Character(float x , float y)
         {
             this.x = x;
             this.y = y;
+            this.lastX = x;
+            this.lastY = y;
         }
 
-        public int GetX()
+        public float GetX()
         {
             return x;
         }
 
-        public int GetY()
+        public float GetY()
         {
             return y;
         }
 
-        public void SetPosition(int x , int y)
+        public float GetLastX()
+        {
+            return lastX;
+        }
+
+        public float GetLastY()
+        {
+            return lastY;
+        }
+
+        public void SetPosition(float x , float y)
         {
             this.x = x;
             this.y = y;
+            lastX = x;
+            lastY = y;
         }
 
     }
 
     struct Lever 
     {
-        int x;
-        int y;
+        float x;
+        float y;
         bool isTriggered;
 
-        public Lever(int x, int y,bool istriggered)
+        public Lever(float x, float y,bool istriggered)
         {
             this.x = x;
             this.y = y;
             this.isTriggered = istriggered;
         }
 
-        public int GetX()
+        public float GetX()
         {
             return x;
         }
 
-        public int GetY()
+        public float GetY()
         {
             return y;
         }
@@ -67,23 +83,23 @@ public class CheckPointSaveData : MonoBehaviour
 
     struct Obstacle
     {
-        int x;
-        int y;
+        float x;
+        float y;
         bool isTriggered;
 
-        public Obstacle(int x , int y, bool isTriggered)
+        public Obstacle(float x , float y, bool isTriggered)
         {
             this.x = x;
             this.y = y;
             this.isTriggered = isTriggered;
         }
 
-        public int GetX()
+        public float GetX()
         {
             return x;
         }
 
-        public int GetY()
+        public float GetY()
         {
             return y;
         }
@@ -97,23 +113,23 @@ public class CheckPointSaveData : MonoBehaviour
 
     struct TriggeredTimer
     {
-        int x;
-        int y;
+        float x;
+        float y;
         bool isTriggered;
 
-        public TriggeredTimer(int x , int y , bool isTriggered)
+        public TriggeredTimer(float x , float y , bool isTriggered)
         {
             this.x = x;
             this.y = y;
             this.isTriggered = isTriggered;
         }
 
-        public int GetX()
+        public float GetX()
         {
             return x;
         }
 
-        public int GetY()
+        public float GetY()
         {
             return y;
         }
@@ -125,25 +141,25 @@ public class CheckPointSaveData : MonoBehaviour
 
     }
 
-    struct Treasure
+    public struct Treasure
     {
-        int x;
-        int y;
+        float x;
+        float y;
         bool isTriggered;
 
-        public Treasure(int x, int y , bool isTriggered)
+        public Treasure(float x, float y , bool isTriggered)
         {
             this.x = x;
             this.y = y;
             this.isTriggered = isTriggered;
         }
 
-        public int GetX()
+        public float GetX()
         {
             return x;
         }
 
-        public int GetY()
+        public float GetY()
         {
             return y;
         }
@@ -167,23 +183,23 @@ public class CheckPointSaveData : MonoBehaviour
     
     struct Door
     {
-        int x;
-        int y;
+        float x;
+        float y;
         bool isTriggered;
 
-        public Door(int x, int y , bool isTriggered)
+        public Door(float x, float y , bool isTriggered)
         {
             this.x = x;
             this.y = y;
             this.isTriggered = isTriggered;
         }
 
-        public int GetX()
+        public float GetX()
         {
             return x;
         }
 
-        public int GetY()
+        public float GetY()
         {
             return y;
         }
@@ -223,7 +239,7 @@ public class CheckPointSaveData : MonoBehaviour
     List<Lever> Levers;
     List<Obstacle> Obstacles;
     List<TriggeredTimer> Triggeredtimers;
-    List<Treasure> Treasures;
+    public List<Treasure> Treasures;
     List<Door> Doors;
     List<Key> Keys;
     #endregion
@@ -233,6 +249,7 @@ public class CheckPointSaveData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("init all");
         #region init list
         Characters = new List<Character>();
         Levers = new List<Lever>();
@@ -252,12 +269,12 @@ public class CheckPointSaveData : MonoBehaviour
     }
 
     // to Add character to list
-    public void AddCharacterData(int x, int y)
+    public void AddCharacterData(float x, float y)
     {
         Characters.Add(new Character(x, y));
     }
 
-    public void AddItem(int x, int y , bool triggered , string type)
+    public void AddItem(float x, float y , bool triggered , string type)
     {
         if(type.Equals("lever",StringComparison.InvariantCultureIgnoreCase))
         {
@@ -273,7 +290,15 @@ public class CheckPointSaveData : MonoBehaviour
         }
         else if (type.Equals("treasure", StringComparison.InvariantCultureIgnoreCase))
         {
-            Treasures.Add(new Treasure(x, y, triggered));
+            try
+            {
+                Treasures.Add(new Treasure(x, y, triggered));
+            }
+            catch(Exception e)
+            {
+                Debug.Log(e.Message);
+            }
+            
         }
         else if (type.Equals("door", StringComparison.InvariantCultureIgnoreCase))
         {
@@ -291,7 +316,7 @@ public class CheckPointSaveData : MonoBehaviour
         Keys.Add(new Key(id, isTaken));
     }
 
-    public void EditState(int x, int y ,bool state , string type)
+    public void EditState(float x, float y ,bool state , string type)
     {
         if (type.Equals("lever", StringComparison.InvariantCultureIgnoreCase))
         {
@@ -350,12 +375,14 @@ public class CheckPointSaveData : MonoBehaviour
         }
     }
 
-    public void EditPlayerPostion(int x , int y)
+    public void EditPlayerPostion(float x , float y , float LastX , float LastY)
     {
         foreach(Character character in Characters)
         {
-            //edit later
-            character.SetPosition(x, y);
+            if(character.GetLastX() == LastX && character.GetLastY() == LastY)
+            {
+                character.SetPosition(x, y);
+            }
         }
     }
 

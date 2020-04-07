@@ -19,6 +19,15 @@ public class Treasure : Collectible
     private void Start()
     {
         point = 1;
+        AddToSaveData();
+    }
+
+    //Samuel 7 April 2020 - Add
+    private void AddToSaveData()
+    {
+        Debug.Log("Added");
+        CheckPointSaveData data = Blackboard.Instance.LevelManager.GetComponent<CheckPointSaveData>();
+        data.AddItem(transform.position.x , transform.position.y , false , "treasure");
     }
 
     protected override void OnCollected()
