@@ -16,19 +16,24 @@ public class Treasure : Collectible
 
     int point = 0;
 
+    CheckPointSaveData data;
+
     private void Start()
     {
         point = 1;
-        AddToSaveData();
+        data = Blackboard.Instance.LevelManager.GetComponent<CheckPointSaveData>();
+        // commented to try new system
+        //AddToSaveData();
     }
 
+    //commented to try new system
     //Samuel 7 April 2020 - Add
-    private void AddToSaveData()
-    {
-        Debug.Log("Added");
-        CheckPointSaveData data = Blackboard.Instance.LevelManager.GetComponent<CheckPointSaveData>();
-        data.AddItem(transform.position.x , transform.position.y , false , "treasure");
-    }
+    //private void AddToSaveData()
+    //{
+    //    Debug.Log("Added");
+        
+    //    data.AddItem(transform.position.x , transform.position.y , false , "treasure");
+    //}
 
     protected override void OnCollected()
     {
@@ -36,5 +41,10 @@ public class Treasure : Collectible
         Blackboard.Instance.LevelManager.TreasureCollected += point;
         point = 0;
         Debug.Log(Blackboard.Instance.LevelManager.TreasureCollected);
+        #region commented
+        //Commented to try new system
+        //Samuel 9 april 2020 - add for save checkpoint
+        //data.EditState(transform.position.x, transform.position.y, true, "treasure");
+        #endregion
     }
 }
