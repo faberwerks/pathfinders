@@ -16,13 +16,13 @@ public class Treasure : Collectible
 
     int point = 0;
 
-    CheckPointSaveData data;
+    //CheckPointSaveData data;
 
     private void Start()
     {
         point = 1;
-        data = Blackboard.Instance.LevelManager.GetComponent<CheckPointSaveData>();
         // commented to try new system
+        //data = Blackboard.Instance.LevelManager.GetComponent<CheckPointSaveData>();
         //AddToSaveData();
     }
 
@@ -31,7 +31,7 @@ public class Treasure : Collectible
     //private void AddToSaveData()
     //{
     //    Debug.Log("Added");
-        
+
     //    data.AddItem(transform.position.x , transform.position.y , false , "treasure");
     //}
 

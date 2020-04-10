@@ -402,17 +402,15 @@ public class CheckPointSaveData : MonoBehaviour
 
     struct Character
     {
+        GameObject character;
         float x;
         float y;
-        float lastX;
-        float lastY;
 
-        public Character(float x, float y)
+        public Character(GameObject character , float x, float y)
         {
+            this.character = character;
             this.x = x;
             this.y = y;
-            this.lastX = x;
-            this.lastY = y;
         }
 
         public float GetX()
@@ -425,22 +423,15 @@ public class CheckPointSaveData : MonoBehaviour
             return y;
         }
 
-        public float GetLastX()
-        {
-            return lastX;
-        }
-
-        public float GetLastY()
-        {
-            return lastY;
-        }
-
         public void SetPosition(float x, float y)
         {
             this.x = x;
             this.y = y;
-            lastX = x;
-            lastY = y;
+        }
+
+        public GameObject GetPlayer()
+        {
+            return character;
         }
 
     }
@@ -462,6 +453,7 @@ public class CheckPointSaveData : MonoBehaviour
     }
 
     List<Character> characters;
+
     TriggeredTimer triggeredTimer;
 
     void Awake()
@@ -470,28 +462,25 @@ public class CheckPointSaveData : MonoBehaviour
         triggeredTimer = new TriggeredTimer();
     }
 
-    public void AddCharacterData(float x, float y)
+    public void AddCharacter(GameObject player,float x , float y)
     {
-        Debug.Log("Add Character called");
-        characters.Add(new Character(x, y));
+        Debug.Log("Add character called");
+        characters.Add(new Character(player, x, y));
     }
 
 
-    public void EditPlayerPostion(float x, float y, float lastX, float lastY)
+    public void SavePlayerPostion()
     {
-        Debug.Log("Edit player called");
-        foreach (Character character in characters)
+        Debug.Log("Save player called");
+        foreach(Character data in characters)
         {
-            if (character.GetLastX() == lastX && character.GetLastY() == lastY)
-            {
-                character.SetPosition(x, y);
-                Debug.Log("player position edited");
-            }
+            data.SetPosition(data.GetPlayer().transform.position.x, data.GetPlayer().transform.position.y);
         }
     }
 
     public void SetTimer(float time)
     {
+        Debug.Log("SetTimer Called");
         triggeredTimer.SetTime(time);
     }
 
@@ -500,10 +489,10 @@ public class CheckPointSaveData : MonoBehaviour
         return triggeredTimer.GetTime();
     }
 
-    public void Save(float x, float y , float lastX , float lastY , float time)
+    public void Save(float x, float y , float time)
     {
         Debug.Log("save called");
-        EditPlayerPostion(x, y, lastX, lastY);
+        SavePlayerPostion();
         SetTimer(time);
     }
 

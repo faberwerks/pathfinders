@@ -33,6 +33,10 @@ public class PlayerController : MonoBehaviour
         //joystick = Blackboard.Instance.Joystick;
         movementArrowManager = Blackboard.Instance.movementArrowManager;
         walkingSound = GetComponent<AudioSource>();
+
+        //Samuel 10 April 2020 - Add
+        CheckPointSaveData data = Blackboard.Instance.LevelManager.GetComponent<CheckPointSaveData>();
+        data.AddCharacter(gameObject,gameObject.transform.position.x , gameObject.transform.position.y);
     }
 
     private void FixedUpdate()
