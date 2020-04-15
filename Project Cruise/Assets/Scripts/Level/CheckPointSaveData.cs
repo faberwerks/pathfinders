@@ -406,13 +406,14 @@ public class CheckPointSaveData
         public float X { get; set; }
         public float Y { get; set; }
 
+        // CONSTRUCTOR
         public Character(GameObject character , float x, float y)
         {
             this.CharacterObject = character;
             this.X = x;
             this.Y = y;
         }
-
+        
         public void SetPosition(float x, float y)
         {
             this.X = x;
@@ -475,6 +476,26 @@ public class CheckPointSaveData
         Debug.Log("save called");
         SavePlayerPostion();
         SetTimer(time);
+    }
+
+    public void Load()
+    {
+        Character temp = null;
+        Vector3 tempPos = Vector3.zero;
+        // reposition Characters
+        for(int i = 0; i < characters.Count;i++)
+        {
+            temp = characters[i];
+            tempPos.x = temp.X;
+            tempPos.y = temp.Y;
+            tempPos.z = temp.CharacterObject.transform.localPosition.z;
+
+            temp.CharacterObject.transform.localPosition = tempPos;
+            // TODO call method on Character to return to normal animation
+        }
+
+        // TODO reset timer to last saved time
+        // TODO reset triggered timers to last saved time
     }
 
 }
