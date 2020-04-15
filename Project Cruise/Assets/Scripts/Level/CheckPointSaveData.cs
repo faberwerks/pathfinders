@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckPointSaveData : MonoBehaviour
+public class CheckPointSaveData
 {
     #region Commented
     //struct Character
@@ -438,18 +438,7 @@ public class CheckPointSaveData : MonoBehaviour
 
     struct TriggeredTimer
     {
-        float time;
-
-        public float GetTime()
-        {
-            return time;
-        }
-
-        public void SetTime(float time)
-        {
-            this.time = time;
-        }
-
+        public float Time { get; set; }
     }
 
     List<Character> characters;
@@ -472,21 +461,28 @@ public class CheckPointSaveData : MonoBehaviour
     public void SavePlayerPostion()
     {
         Debug.Log("Save player called");
-        foreach(Character data in characters)
+        //foreach(Character data in characters)
+        //{
+        //    data.SetPosition(data.GetPlayer().transform.position.x, data.GetPlayer().transform.position.y);
+        //}
+
+        for(int i = 0; i < characters.Count;i++)
         {
-            data.SetPosition(data.GetPlayer().transform.position.x, data.GetPlayer().transform.position.y);
+            Character temp = new Character(characters[i].GetPlayer(), characters[i].GetPlayer().transform.position.x, characters[i].GetPlayer().transform.position.y);
+            characters[i] = temp;
         }
+
     }
 
     public void SetTimer(float time)
     {
         Debug.Log("SetTimer Called");
-        triggeredTimer.SetTime(time);
+        triggeredTimer.Time = time;
     }
 
     public float GetTimer(float time)
     {
-        return triggeredTimer.GetTime();
+        return triggeredTimer.Time;
     }
 
     public void Save(float x, float y , float time)
