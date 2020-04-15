@@ -402,36 +402,21 @@ public class CheckPointSaveData
 
     struct Character
     {
-        GameObject character;
-        float x;
-        float y;
+        public GameObject CharacterObject { get; set; }
+        public float X { get; set; }
+        public float Y { get; set; }
 
         public Character(GameObject character , float x, float y)
         {
-            this.character = character;
-            this.x = x;
-            this.y = y;
-        }
-
-        public float GetX()
-        {
-            return x;
-        }
-
-        public float GetY()
-        {
-            return y;
+            this.CharacterObject = character;
+            this.X = x;
+            this.Y = y;
         }
 
         public void SetPosition(float x, float y)
         {
-            this.x = x;
-            this.y = y;
-        }
-
-        public GameObject GetPlayer()
-        {
-            return character;
+            this.X = x;
+            this.Y = y;
         }
 
     }
@@ -468,7 +453,7 @@ public class CheckPointSaveData
 
         for(int i = 0; i < characters.Count;i++)
         {
-            Character temp = new Character(characters[i].GetPlayer(), characters[i].GetPlayer().transform.position.x, characters[i].GetPlayer().transform.position.y);
+            Character temp = new Character(characters[i].CharacterObject, characters[i].CharacterObject.transform.position.x, characters[i].CharacterObject.transform.position.y);
             characters[i] = temp;
         }
 
@@ -485,7 +470,7 @@ public class CheckPointSaveData
         return triggeredTimer.Time;
     }
 
-    public void Save(float x, float y , float time)
+    public void Save(float time)
     {
         Debug.Log("save called");
         SavePlayerPostion();
