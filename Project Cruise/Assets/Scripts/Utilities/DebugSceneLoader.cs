@@ -9,7 +9,7 @@ public class DebugSceneLoader : MonoBehaviour
 
     private void Start()
     {
-        if (!Application.isEditor)
+        if (!(Application.isEditor))
         {
             debugUI.SetActive(false);
         }
