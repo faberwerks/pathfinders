@@ -27,10 +27,12 @@ public class TriggeredTimer : MonoBehaviour
     {
         if (timerIsActive && countdownTimer > 0)
         {
+            Debug.Log("Counting down.");
             countdownTimer -= Time.deltaTime;
 
             if (countdownTimer <= 0)
             {
+                Debug.Log("LOSE.");
                 Blackboard.Instance.LevelManager.Lose();
             }
         }

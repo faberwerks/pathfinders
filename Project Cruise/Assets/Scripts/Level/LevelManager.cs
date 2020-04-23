@@ -49,6 +49,7 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = 1.0f;
         TreasureCollected = 0;
         RelicCollected = false;
+        CharacterCanMove = true;
         currLevelData = LevelDirectory.Instance.GetLevelData(GameData.Instance.currLevelID);
         foreach (var tmp in targetTime)
         {
@@ -57,7 +58,7 @@ public class LevelManager : MonoBehaviour
         //targetTime.text = "Target time: " + currLevelData.targetTime;
         hasRelic = currLevelData.hasRelic;
         hasWon = false;
-        CharacterCanMove = true;
+        Debug.Log("CharacterCanMove set to true.");
 
         if (noInteractables)
         {
