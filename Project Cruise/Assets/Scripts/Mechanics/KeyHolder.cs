@@ -27,6 +27,8 @@ public class KeyHolder : MonoBehaviour
         }
         else if (collision.CompareTag(TagStrings.DOOR_TAG) && id == collision.GetComponent<Door>().ID)
         {
+            id = 0;
+            keySprite.SetActive(false);
             collision.GetComponent<Door>().Interact();
         }
     }
