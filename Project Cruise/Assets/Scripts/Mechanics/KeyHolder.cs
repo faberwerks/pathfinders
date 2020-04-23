@@ -27,7 +27,7 @@ public class KeyHolder : MonoBehaviour
         }
         else if (collision.CompareTag(TagStrings.DOOR_TAG) && id == collision.GetComponent<Door>().ID)
         {
-            button.onClick.AddListener(collision.GetComponent<Door>().Interact);
+            collision.GetComponent<Door>().Interact();
         }
     }
 
