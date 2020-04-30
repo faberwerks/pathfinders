@@ -63,12 +63,8 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("STOP!");
             isMoving = false;
+            anim.ResetTrigger("Stop");
             anim.SetTrigger("Stop");
-
-            if (Time.timeScale == 0)
-            {
-                anim.ResetTrigger("Stop");
-            }
         }
 
         if (translation.x > 0)
@@ -110,5 +106,6 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetTrigger("Reset");
         Debug.Log("RESET ANIMATION CALLED!");
+        anim.ResetTrigger("Stop");
     }
 }
