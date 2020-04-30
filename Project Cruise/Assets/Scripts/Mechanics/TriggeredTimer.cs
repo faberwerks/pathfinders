@@ -34,6 +34,7 @@ public class TriggeredTimer : MonoBehaviour
 
             if (CountdownTimer <= 0)
             {
+                Debug.Log("LOSE.");
                 Blackboard.Instance.LevelManager.Lose();
             }
         }

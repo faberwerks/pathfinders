@@ -8,6 +8,7 @@ public class KeyHolder : MonoBehaviour
 {
     private int id;
     private Button button;
+    public GameObject keySprite;
 
     // Start is called before the first frame update
     private void Start()
@@ -21,11 +22,14 @@ public class KeyHolder : MonoBehaviour
         if (id == 0 && collision.CompareTag(TagStrings.KEY_TAG))
         {
             id = collision.GetComponent<Key>().ID;
+            keySprite.SetActive(true);
             Destroy(collision.gameObject);
         }
         else if (collision.CompareTag(TagStrings.DOOR_TAG) && id == collision.GetComponent<Door>().ID)
         {
-            button.onClick.AddListener(collision.GetComponent<Door>().Interact);
+            id = 0;
+            keySprite.SetActive(false);
+            collision.GetComponent<Door>().Interact();
         }
     }
 
