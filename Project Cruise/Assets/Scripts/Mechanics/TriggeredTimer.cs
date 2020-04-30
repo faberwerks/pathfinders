@@ -10,26 +10,29 @@ public class TriggeredTimer : MonoBehaviour
     public List<GameObject> pathObjects;
 
     public float countdownTime = 5.0f;
-    private float countdownTimer;
+    public float CountdownTimer { get; set; }
     private bool timerIsActive;
 
     private void Start()
     {
         pathObjects = new List<GameObject>();
 
-        countdownTimer = countdownTime;
+        CountdownTimer = countdownTime;
 
         timerIsActive = false;
+
+        CheckPointSaveData data = Blackboard.Instance.LevelManager.checkPointSaveData;
+        data.AddTriggeredTimer(this);
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if (timerIsActive && countdownTimer > 0)
+        if (timerIsActive && CountdownTimer > 0)
         {
-            countdownTimer -= Time.deltaTime;
+            CountdownTimer -= Time.deltaTime;
 
-            if (countdownTimer <= 0)
+            if (CountdownTimer <= 0)
             {
                 Blackboard.Instance.LevelManager.Lose();
             }

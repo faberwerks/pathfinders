@@ -27,15 +27,15 @@ public class CheckPointSaveData
 
     }
 
-    struct TriggeredTimer
+    struct TriggeredTimerData
     {
-        public GameObject TriggeredTimerObject { get; set; }
+        public TriggeredTimer TriggeredTimerObject { get; set; }
         public float Time { get; set; }
 
-        public TriggeredTimer(GameObject triggeredTimer)
+        public TriggeredTimerData(TriggeredTimer triggeredTimer, float time)
         {
             TriggeredTimerObject = triggeredTimer;
-            Time = 0.0f;
+            Time = time;
         }
     }
 
@@ -43,16 +43,22 @@ public class CheckPointSaveData
     {
         public LevelTimer TimerObject { get; set; }
         public float Time { get; set; }
+
+        public Timer(LevelTimer levelTimer)
+        {
+            TimerObject = levelTimer;
+            Time = levelTimer.timer;
+        }
     }
 
-    List<Character> characters;
-    List<TriggeredTimer> triggeredTimers;
-    Timer timer;
+    private List<Character> characters;
+    private List<TriggeredTimerData> triggeredTimers;
+    private Timer timer;
 
     public CheckPointSaveData(LevelTimer levelTimer)
     {
         characters = new List<Character>();
-        triggeredTimers = new List<TriggeredTimer>();
+        triggeredTimers = new List<TriggeredTimerData>();
         timer = new Timer();
         timer.TimerObject = levelTimer;
     }
@@ -63,22 +69,75 @@ public class CheckPointSaveData
         characters.Add(new Character(player, x, y));
     }
 
-    public void AddTriggeredTimer(GameObject triggeredTimer)
+    public void AddTriggeredTimer(TriggeredTimer triggeredTimer)
     {
         Debug.Log("[DEBUG] AddTriggeredTimer called.");
-        triggeredTimers.Add(new TriggeredTimer(triggeredTimer));
+        triggeredTimers.Add(new TriggeredTimerData(triggeredTimer, 0.0f));
     }
 
-    public void SavePlayerPostion()
+    private void SavePlayerPostions()
     {
-        Debug.Log("Save player called");
+        Debug.Log("[DEBUG] SavePlayerPositions called.");
 
-        for(int i = 0; i < characters.Count;i++)
+        Character temp;
+
+        for (int i = 0; i < characters.Count;i++)
         {
-            Character temp = new Character(characters[i].CharacterObject, characters[i].CharacterObject.transform.position.x, characters[i].CharacterObject.transform.position.y);
+            temp = new Character(characters[i].CharacterObject, characters[i].CharacterObject.transform.position.x, characters[i].CharacterObject.transform.position.y);
             characters[i] = temp;
         }
+    }
 
+    private void SaveTriggeredTimerTimes()
+    {
+        Debug.Log("[DEBUG] SaveTriggeredTimerTimes called.");
+
+        TriggeredTimerData temp;
+
+        for (int i = 0; i < triggeredTimers.Count; i++)
+        {
+            temp = new TriggeredTimerData(triggeredTimers[i].TriggeredTimerObject, triggeredTimers[i].TriggeredTimerObject.CountdownTimer);
+            triggeredTimers[i] = temp;
+        }
+    }
+
+    private void SaveTimerTime()
+    {
+        Timer temp = new Timer(timer.TimerObject);
+        timer = temp;
+    }
+
+    public void SaveCheckPointSaveData()
+    {
+        SavePlayerPostions();
+        SaveTriggeredTimerTimes();
+        SaveTimerTime();
+    }
+
+    public void LoadCheckPointSaveData()
+    {
+        Character tempChar;
+        Vector3 tempPos = Vector3.zero;
+        // reposition Characters
+        for (int i = 0; i < characters.Count; i++)
+        {
+            tempChar = characters[i];
+            tempPos.x = tempChar.X;
+            tempPos.y = tempChar.Y;
+            tempPos.z = tempChar.CharacterObject.transform.localPosition.z;
+
+            tempChar.CharacterObject.transform.localPosition = tempPos;
+            tempChar.CharacterObject.GetComponent<PlayerController>().ResetAnimation();
+        }
+
+        // reset timer to last saved time
+        timer.TimerObject.timer = timer.Time;
+
+        // reset triggered timers to last saved time
+        for (int i = 0; i < triggeredTimers.Count; i++)
+        {
+            triggeredTimers[i].TriggeredTimerObject.CountdownTimer = triggeredTimers[i].Time;
+        }
     }
 
     //public void SetTimer(float time)

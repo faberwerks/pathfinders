@@ -41,6 +41,7 @@ public class Treasure : Collectible
         Blackboard.Instance.LevelManager.TreasureCollected += point;
         point = 0;
         Debug.Log(Blackboard.Instance.LevelManager.TreasureCollected);
+        Blackboard.Instance.LevelManager.SaveCheckpoint();
         #region commented
         //Commented to try new system
         //Samuel 9 april 2020 - add for save checkpoint

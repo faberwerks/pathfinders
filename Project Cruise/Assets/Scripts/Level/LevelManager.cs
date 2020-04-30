@@ -33,6 +33,7 @@ public class LevelManager : MonoBehaviour
 
     private LevelTimer levelTimer;
     private LevelData currLevelData;
+    public CheckPointSaveData checkPointSaveData;
 
     public bool noInteractables = false;
 
@@ -42,6 +43,7 @@ public class LevelManager : MonoBehaviour
         Blackboard.Instance.LevelManager = this;
 
         levelTimer = GetComponent<LevelTimer>();
+        checkPointSaveData = new CheckPointSaveData(levelTimer);
     }
 
     private void Start()
@@ -239,6 +241,19 @@ public class LevelManager : MonoBehaviour
         }
 
         GameData.Instance.saveData.UpdateTimestamp();
+    }
+
+    public void SaveCheckpoint()
+    {
+        checkPointSaveData.SaveCheckPointSaveData();
+    }
+
+    public void LoadCheckpoint()
+    {
+        checkPointSaveData.LoadCheckPointSaveData();
+        loseCanvas.SetActive(false);
+        Time.timeScale = 1.0f;
+        CharacterCanMove = true;
     }
 
     public void DisableCharacterMovement()

@@ -35,8 +35,8 @@ public class PlayerController : MonoBehaviour
         walkingSound = GetComponent<AudioSource>();
 
         //Samuel 10 April 2020 - Add
-        CheckPointSaveData data = Blackboard.Instance.LevelManager.GetComponent<CheckPointSaveData>();
-        data.AddCharacter(gameObject,gameObject.transform.position.x , gameObject.transform.position.y);
+        CheckPointSaveData data = Blackboard.Instance.LevelManager.checkPointSaveData;
+        data.AddCharacter(gameObject, gameObject.transform.position.x, gameObject.transform.position.y);
     }
 
     private void FixedUpdate()
@@ -98,5 +98,10 @@ public class PlayerController : MonoBehaviour
             button.onClick.RemoveListener(interactableObject.Interact);
             interactableObject = null;
         }
+    }
+
+    public void ResetAnimation()
+    {
+        anim.SetTrigger("Reset");
     }
 }

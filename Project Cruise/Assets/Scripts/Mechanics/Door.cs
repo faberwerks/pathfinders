@@ -11,6 +11,7 @@ public class Door : Interactable
 
     public override void Interact()
     {
+        Blackboard.Instance.LevelManager.SaveCheckpoint();
         Destroy(gameObject);
     }
 }
