@@ -21,6 +21,7 @@ public class Teleporter : Interactable
     {
         if (target && characters.Count > 0)
         {
+            Blackboard.Instance.LevelManager.SaveCheckpoint();
             Teleport();
         }
     }

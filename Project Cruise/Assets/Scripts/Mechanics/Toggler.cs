@@ -53,14 +53,8 @@ public class Toggler : Interactable
         {
             case TogglerType.Lever:
                 ToggleObjects();
+                Blackboard.Instance.LevelManager.SaveCheckpoint();
                 break;
-            //case TogglerType.Timer:
-            //    if (!hasBeenTriggered)
-            //    {
-            //        timer.StartTimer();
-            //        hasBeenTriggered = true;
-            //    }
-            //    break;
         }
     }
 
@@ -92,10 +86,13 @@ public class Toggler : Interactable
         {
             case TogglerType.PressurePlate:
                 ToggleObjects();
+                Blackboard.Instance.LevelManager.SaveCheckpoint();
                 break;
             case TogglerType.Timer:
                 if (!hasBeenTriggered)
                 {
+                    ToggleObjects();
+                    Blackboard.Instance.LevelManager.SaveCheckpoint();
                     timer.StartTimer();
                     hasBeenTriggered = true;
                 }

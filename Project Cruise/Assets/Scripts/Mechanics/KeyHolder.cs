@@ -23,6 +23,7 @@ public class KeyHolder : MonoBehaviour
         {
             id = collision.GetComponent<Key>().ID;
             keySprite.SetActive(true);
+            Blackboard.Instance.LevelManager.SaveCheckpoint();
             Destroy(collision.gameObject);
         }
         else if (collision.CompareTag(TagStrings.DOOR_TAG) && id == collision.GetComponent<Door>().ID)
