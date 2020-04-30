@@ -61,8 +61,14 @@ public class PlayerController : MonoBehaviour
         }
         else if (translation == Vector3.zero && isMoving)
         {
+            Debug.Log("STOP!");
             isMoving = false;
             anim.SetTrigger("Stop");
+
+            if (Time.timeScale == 0)
+            {
+                anim.ResetTrigger("Stop");
+            }
         }
 
         if (translation.x > 0)
@@ -103,5 +109,6 @@ public class PlayerController : MonoBehaviour
     public void ResetAnimation()
     {
         anim.SetTrigger("Reset");
+        Debug.Log("RESET ANIMATION CALLED!");
     }
 }
