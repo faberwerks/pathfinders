@@ -19,6 +19,8 @@ public class LevelManager : MonoBehaviour
     public int TreasureCollected { get; set; }
     public bool RelicCollected { get; set; }
 
+    public TMP_Text TriggeredTimerUi;
+
     //Public list of goals
     public List<Goal> goals = new List<Goal>();
     public GameObject winCanvas;

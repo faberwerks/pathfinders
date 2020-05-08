@@ -20,6 +20,8 @@ public class TriggeredTimer : MonoBehaviour
         countdownTimer = countdownTime;
 
         timerIsActive = false;
+        //to clear the ui text
+        Blackboard.Instance.LevelManager.TriggeredTimerUi.text = "";
     }
 
     // Update is called once per frame
@@ -28,6 +30,8 @@ public class TriggeredTimer : MonoBehaviour
         if (timerIsActive && countdownTimer > 0)
         {
             countdownTimer -= Time.deltaTime;
+            //Samuel - Add to show the timer in the ui
+            Blackboard.Instance.LevelManager.TriggeredTimerUi.text = countdownTimer.ToString();
 
             if (countdownTimer <= 0)
             {
