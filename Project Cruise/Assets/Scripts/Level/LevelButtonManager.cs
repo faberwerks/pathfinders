@@ -7,13 +7,15 @@ using UnityEngine.UI;
 /// </summary>
 public class LevelButtonManager : MonoBehaviour
 {
-    public List<GameObject> levelButtons = new List<GameObject>();
+    public int firstLevelNumber = 1;
+
+    private List<GameObject> levelButtons = new List<GameObject>();
 
     // Start is called before the first frame update
     private void Start()
     {
         AddDescendantsWithTag(transform, "Level Button", levelButtons);
-        for (int i = GameData.Instance.saveData.LastLevelNumber; i < levelButtons.Count; i++)
+        for (int i = GameData.Instance.saveData.LastLevelNumber - (firstLevelNumber - 1); i < levelButtons.Count; i++)
         {
             levelButtons[i].GetComponent<Button>().interactable = false;
         }
