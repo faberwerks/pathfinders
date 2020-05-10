@@ -23,6 +23,8 @@ public class TriggeredTimer : MonoBehaviour
 
         CheckPointSaveData data = Blackboard.Instance.LevelManager.checkPointSaveData;
         data.AddTriggeredTimer(this);
+
+        Blackboard.Instance.LevelManager.triggeredTimerTime.text = "";
     }
 
     // Update is called once per frame
@@ -31,6 +33,8 @@ public class TriggeredTimer : MonoBehaviour
         if (timerIsActive && CountdownTimer > 0)
         {
             CountdownTimer -= Time.deltaTime;
+
+            Blackboard.Instance.LevelManager.triggeredTimerTime.text = CountdownTimer.ToString("0");
 
             if (CountdownTimer <= 0)
             {

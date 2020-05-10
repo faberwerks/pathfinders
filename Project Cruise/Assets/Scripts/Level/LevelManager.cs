@@ -27,6 +27,7 @@ public class LevelManager : MonoBehaviour
     public GameObject loseCanvas;
     public TMP_Text[] targetTime;
     public TMP_Text playerTimer;
+    public TMP_Text triggeredTimerTime;
     public float postLevelDelay = 2.0f;
 
     public int relicCoin = 30;
