@@ -13,13 +13,13 @@ public class KeyHolder : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        id = 0;
+        id = -1;
         button = Blackboard.Instance.Button;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (id == 0 && collision.CompareTag(TagStrings.KEY_TAG))
+        if (id == -1 && collision.CompareTag(TagStrings.KEY_TAG))
         {
             id = collision.GetComponent<Key>().ID;
             keySprite.SetActive(true);
@@ -28,7 +28,7 @@ public class KeyHolder : MonoBehaviour
         }
         else if (collision.CompareTag(TagStrings.DOOR_TAG) && id == collision.GetComponent<Door>().ID)
         {
-            id = 0;
+            id = -1;
             keySprite.SetActive(false);
             collision.GetComponent<Door>().Interact();
         }
