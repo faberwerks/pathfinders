@@ -11,9 +11,14 @@ public class Teleporter : Interactable
 
     public Transform target;            // target to teleport characters to
 
+    float yOffset = -0.35f;
+
+    private Vector3 offset;
+
     // Start is called before the first frame update
     private void Start()
     {
+        offset = new Vector3(0, yOffset, 0);
         characters = new List<Transform>();
     }
 
@@ -49,7 +54,7 @@ public class Teleporter : Interactable
     {
         foreach (Transform character in characters)
         {
-            character.position = target.position;
+            character.position = target.position + offset;
         }
     }
 
