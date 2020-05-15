@@ -6874,12 +6874,12 @@ PrefabInstance:
     - target: {fileID: 3647705559841844485, guid: d07e3575e4b71b741bc2f8e53b16c49c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.467
+      value: -2.51
       objectReference: {fileID: 0}
     - target: {fileID: 3647705559841844485, guid: d07e3575e4b71b741bc2f8e53b16c49c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.525
+      value: -1.486
       objectReference: {fileID: 0}
     - target: {fileID: 3647705559841844485, guid: d07e3575e4b71b741bc2f8e53b16c49c,
         type: 3}
@@ -8483,7 +8483,7 @@ PrefabInstance:
     - target: {fileID: 5720164782713971494, guid: 52f7d3aeb3f7c6747991ab716a26b448,
         type: 3}
       propertyPath: countdownTime
-      value: 15
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52f7d3aeb3f7c6747991ab716a26b448, type: 3}
