@@ -19,14 +19,14 @@ public class KeyHolder : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (id == -1 && collision.CompareTag(TagStrings.KEY_TAG))
-        {
-            id = collision.GetComponent<Key>().ID;
-            keySprite.SetActive(true);
-            Blackboard.Instance.LevelManager.SaveCheckpoint();
-            Destroy(collision.gameObject);
-        }
-        else if (collision.CompareTag(TagStrings.DOOR_TAG) && id == collision.GetComponent<Door>().ID)
+        //if (id == -1 && collision.CompareTag(TagStrings.KEY_TAG))
+        //{
+        //    id = collision.GetComponent<Key>().ID;
+        //    Destroy(collision.gameObject);
+        //    keySprite.SetActive(true);
+        //    Blackboard.Instance.LevelManager.SaveCheckpoint();
+        //}
+        if (collision.CompareTag(TagStrings.DOOR_TAG) && id == collision.GetComponent<Door>().ID)
         {
             id = -1;
             keySprite.SetActive(false);
@@ -40,5 +40,12 @@ public class KeyHolder : MonoBehaviour
         {
             button.onClick.RemoveListener(collision.GetComponent<Door>().Interact);
         }
+    }
+
+    public void GetKey(int id)
+    {
+        this.id = id;
+        keySprite.SetActive(true);
+        Blackboard.Instance.LevelManager.SaveCheckpoint();
     }
 }
