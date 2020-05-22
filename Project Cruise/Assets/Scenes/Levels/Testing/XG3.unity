@@ -598,6 +598,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5647659460817281563, guid: 8c0e23da49e1de34ba6897842bb194f6,
         type: 3}
+      propertyPath: toggledObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5647659460817281563, guid: 8c0e23da49e1de34ba6897842bb194f6,
+        type: 3}
       propertyPath: toggledObjects.Array.data[0]
       value: 
       objectReference: {fileID: 945781418}
@@ -7670,6 +7675,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1380348601}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1380348603 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1699990773855533801, guid: bb4570c303a711e479c3ce7d31c1c641,
+    type: 3}
+  m_PrefabInstance: {fileID: 1380348601}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1523448759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7962,6 +7973,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7499787088195680508, guid: 027358ea074c3514e821d6a1448be4ac,
+        type: 3}
+      propertyPath: toggledObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1380348603}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 027358ea074c3514e821d6a1448be4ac, type: 3}
 --- !u!4 &1617780479 stripped

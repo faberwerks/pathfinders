@@ -134,4 +134,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/NewLevel21-50/E2.unity
     guid: 9b6e95c4df7c7094fbe1346f4e08e4d1
+  - enabled: 1
+    path: Assets/Scenes/Levels/Testing/XG3.unity
+    guid: cc1cd55ad0ed6ab4da5b7e7c1b256174
   m_configObjects: {}
