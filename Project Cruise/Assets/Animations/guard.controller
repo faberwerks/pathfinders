@@ -22,7 +22,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7bb603381fd27cb4b84a993e76fc8a44, type: 2}
+  m_Motion: {fileID: 7400000, guid: 658bd8d6ffef4274ba507742fa061a00, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -71,7 +71,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 0eaf642f392224e418ba2fe77d58d471, type: 2}
+  m_Motion: {fileID: 7400000, guid: 3cdde4238f5ba0748a5b4f089fc9182f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -124,7 +124,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7966fffadfd4eca428c8f54e0f310c82, type: 2}
+  m_Motion: {fileID: 7400000, guid: 130bdd3d01a03b047bacbfcc6c6a65f3, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -161,7 +161,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: jones
+  m_Name: guard
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Move
@@ -316,7 +316,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: dacea143d4f1fe54486c40542b930dc7, type: 2}
+  m_Motion: {fileID: 7400000, guid: 00a978a1417f6154c801668c834ab733, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
