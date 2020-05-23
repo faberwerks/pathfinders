@@ -124,8 +124,8 @@ MonoBehaviour:
   toggledObjects: []
   togglerType: 2
   toggleSprites:
-  - {fileID: 910260828389422322, guid: 9d7da0bcb35061743baddb1992b387c8, type: 3}
-  - {fileID: -3965290533454273608, guid: 9d7da0bcb35061743baddb1992b387c8, type: 3}
+  - {fileID: -389396429426610250, guid: 410461f968559ae408e14c9386470301, type: 3}
+  - {fileID: -1379138091881671927, guid: 410461f968559ae408e14c9386470301, type: 3}
 --- !u!114 &5720164782713971494
 MonoBehaviour:
   m_ObjectHideFlags: 0
