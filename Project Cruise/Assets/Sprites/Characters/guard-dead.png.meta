@@ -1,0 +1,712 @@
+fileFormatVersion: 2
+guid: 06290dde5ef4e27438a5c7c639be7942
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8289724461015087118
+    second: guard-dead_0
+  - first:
+      213: 5923536493544621050
+    second: guard-dead_1
+  - first:
+      213: -3714645353687379820
+    second: guard-dead_2
+  - first:
+      213: 5145752410392569745
+    second: guard-dead_3
+  - first:
+      213: -2149117095579792890
+    second: guard-dead_4
+  - first:
+      213: 7565947235394637831
+    second: guard-dead_5
+  - first:
+      213: -4787304165426650472
+    second: guard-dead_6
+  - first:
+      213: 5042271984206282861
+    second: guard-dead_7
+  - first:
+      213: 3013013560586989362
+    second: guard-dead_8
+  - first:
+      213: 5487293001707084112
+    second: guard-dead_9
+  - first:
+      213: 2358589214700625733
+    second: guard-dead_10
+  - first:
+      213: -7678602116712087998
+    second: guard-dead_11
+  - first:
+      213: 4969174275273588794
+    second: guard-dead_12
+  - first:
+      213: -3165506865820751578
+    second: guard-dead_13
+  - first:
+      213: 5396146554049365908
+    second: guard-dead_14
+  - first:
+      213: -86059975166978916
+    second: guard-dead_15
+  - first:
+      213: -3575532222734788151
+    second: guard-dead_16
+  - first:
+      213: -6117235876350393868
+    second: guard-dead_17
+  - first:
+      213: 2155880558011160996
+    second: guard-dead_18
+  - first:
+      213: 566173920661336193
+    second: guard-dead_19
+  - first:
+      213: 6146728753017079510
+    second: guard-dead_20
+  - first:
+      213: 8948068066749622248
+    second: guard-dead_21
+  - first:
+      213: -4015626706726867514
+    second: guard-dead_22
+  - first:
+      213: -4084827027737697528
+    second: guard-dead_23
+  - first:
+      213: 9021517395147532172
+    second: guard-dead_24
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: guard-dead_0
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 4763
+        width: 557
+        height: 996
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e23d2a9743c47ab4fb3c71d6b04a5c50
+      internalID: -8289724461015087118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard-dead_1
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 4721
+        width: 551
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ae85ba21de667458ad5018aefc9107
+      internalID: 5923536493544621050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard-dead_2
+      rect:
+        serializedVersion: 2
+        x: 2696
+        y: 4679
+        width: 608
+        height: 1046
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2587785526d6a7d48af5219d2b18da20
+      internalID: -3714645353687379820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard-dead_3
+      rect:
+        serializedVersion: 2
+        x: 3762
+        y: 4642
+        width: 659
+        height: 1057
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb38714a161bc9e408749723b7ea1a7e
+      internalID: 5145752410392569745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard-dead_4
+      rect:
+        serializedVersion: 2
+        x: 4817
+        y: 4620
+        width: 720
+        height: 1046
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ffd2621038b02c49822ce282adf1784
+      internalID: -2149117095579792890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard-dead_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3455
+        width: 1104
+        height: 1021
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e0b95ddbff645549a96b2fbb8f520f5
+      internalID: 7565947235394637831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard-dead_6
+      rect:
+        serializedVersion: 2
+        x: 1385
+        y: 3455
+        width: 830
+        height: 976
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85e771aeaf7b65447a5aa006995ae089
+      internalID: -4787304165426650472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard-dead_7
+      rect:
+        serializedVersion: 2
+        x: 2452
+        y: 3466
+        width: 874
+        height: 920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aea6e7c74a61e64997a22dc87cdc5ad
+      internalID: 5042271984206282861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard-dead_8
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 3486
+        width: 920
+        height: 849
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a2734292eb4ee41a794b3c1a974745
+      internalID: 3013013560586989362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard-dead_9
+      rect:
+        serializedVersion: 2
+        x: 4590
+        y: 3515
+        width: 960
+        height: 767
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c546e870ff747e6429d65e4f10b22910
+      internalID: 5487293001707084112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard-dead_10
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 2401
+        width: 998
+        height: 672
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22773f4cc0b2ed241b01fec6a4712565
+      internalID: 2358589214700625733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard-dead_11
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 2443
+        width: 1024
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca3b7c25e1993ed48a43f42c4e73b2c5
+      internalID: -7678602116712087998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard-dead_12
+      rect:
+        serializedVersion: 2
+        x: 2277
+        y: 2472
+        width: 1047
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 626eebf6d28c1a745ae611b4848d5352
+      internalID: 4969174275273588794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard-dead_13
+      rect:
+        serializedVersion: 2
+        x: 3377
+        y: 2468
+        width: 1055
+        height: 455
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06e96595906818f448fef38a6e86cc41
+      internalID: -3165506865820751578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard-dead_14
+      rect:
+        serializedVersion: 2
+        x: 4485
+        y: 2468
+        width: 1058
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e3803cf2d9661c45bca2804dad905b3
+      internalID: 5396146554049365908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard-dead_15
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 1318
+        width: 1060
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4adc1174fa3d96b45a2888f53f28e781
+      internalID: -86059975166978916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard-dead_16
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1320
+        width: 1060
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e573f3a76c461234b8eb14327f9e0ca6
+      internalID: -3575532222734788151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard-dead_17
+      rect:
+        serializedVersion: 2
+        x: 2258
+        y: 1321
+        width: 1065
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dceffad97a163c4dac39f6edfd42574
+      internalID: -6117235876350393868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard-dead_18
+      rect:
+        serializedVersion: 2
+        x: 3366
+        y: 1323
+        width: 1068
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f27fa5842eaa9f458e6e6d1d7d0dfe6
+      internalID: 2155880558011160996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard-dead_19
+      rect:
+        serializedVersion: 2
+        x: 4475
+        y: 1323
+        width: 1068
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e3fef6c2b20e24fbd999d094da8c3d
+      internalID: 566173920661336193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard-dead_20
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 173
+        width: 1069
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11d819d679b9de34287bc536522401c9
+      internalID: 6146728753017079510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard-dead_21
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 167
+        width: 1069
+        height: 417
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c741fd17aa7e09f418087e1e258feff1
+      internalID: 8948068066749622248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard-dead_22
+      rect:
+        serializedVersion: 2
+        x: 2252
+        y: 165
+        width: 1069
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc64b7a282d85f740b81662b4a71f84f
+      internalID: -4015626706726867514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard-dead_23
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 162
+        width: 1072
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36fa0b33443442f4398628099505d0f4
+      internalID: -4084827027737697528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guard-dead_24
+      rect:
+        serializedVersion: 2
+        x: 4468
+        y: 156
+        width: 1072
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f398ab49404731d469dc34d149a7f189
+      internalID: 9021517395147532172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: f516f8fca1d4d944a98a58b7d74aee86
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
