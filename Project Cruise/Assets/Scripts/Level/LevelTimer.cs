@@ -55,4 +55,10 @@ public class LevelTimer : MonoBehaviour
         timeHasEnded = true;
         GameData.Instance.currLevelTime = timer;
     }
+
+    //27 may 2020 Samuel - Add
+    public void EnableTimer()
+    {
+        timeHasEnded = false;
+    }
 }
