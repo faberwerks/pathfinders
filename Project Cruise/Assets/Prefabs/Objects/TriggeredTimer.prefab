@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3635538645873091485}
   - component: {fileID: 6641666147594507320}
   - component: {fileID: 5720164782713971494}
+  - component: {fileID: -2611624034098935485}
   m_Layer: 0
   m_Name: TriggeredTimer
   m_TagString: PressurePlate
@@ -120,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e734eaf06f167ed409925a9f07033947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toggleSound: {fileID: 0}
+  toggleSound: {fileID: 8300000, guid: ee3ff982384994045ad6a6e48257e7b3, type: 3}
   toggledObjects: []
   togglerType: 2
   toggleSprites:
@@ -141,3 +142,15 @@ MonoBehaviour:
   pathObjects:
   - {fileID: 0}
   countdownTime: 5
+--- !u!114 &-2611624034098935485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6379791876542919457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393907b3cbb265643907ee540f8ce6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

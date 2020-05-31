@@ -65,7 +65,18 @@ public class Toggler : Interactable
     {
         if (toggleSound)
         {
-            audioHandler.Play(toggleSound);
+            // triggered timers only play the sound once
+            if (togglerType == TogglerType.Timer)
+            {
+                if (!hasBeenTriggered)
+                {
+                    audioHandler.Play(toggleSound);
+                }
+            }
+            else
+            {
+                audioHandler.Play(toggleSound);
+            }
         }
        
         foreach (GameObject toggledObject in toggledObjects)
