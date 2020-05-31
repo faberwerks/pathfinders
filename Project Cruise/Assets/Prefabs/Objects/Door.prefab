@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4236512705278443497}
   - component: {fileID: 598671307539896476}
   - component: {fileID: 4460141814127876283}
+  - component: {fileID: -8918734773375629292}
   m_Layer: 0
   m_Name: Door
   m_TagString: Door
@@ -72,6 +73,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  unlockSound: {fileID: 8300000, guid: 848d01aa08b190441bfbe5103bdcbb57, type: 3}
+--- !u!114 &-8918734773375629292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720815361996159742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393907b3cbb265643907ee540f8ce6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2416109615540135152
 GameObject:
   m_ObjectHideFlags: 0
