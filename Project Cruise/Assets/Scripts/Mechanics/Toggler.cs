@@ -28,10 +28,14 @@ public class Toggler : Interactable
     private int maxIndex = 0;
     private int spriteIndex;
     private bool hasBeenTriggered;  // used to check state of triggered timer
+    //2 june 2020 Samuel - Add
+    private bool pressurePlateTriggered; //used to check state of presure plate
 
     private void Start()
     {
         hasBeenTriggered = false;
+        //2 june 2020 Samuel - Add
+        pressurePlateTriggered = false;
 
         if (togglerType == TogglerType.Timer)
         {
@@ -96,8 +100,13 @@ public class Toggler : Interactable
         switch (togglerType)
         {
             case TogglerType.PressurePlate:
-                ToggleObjects();
-                Blackboard.Instance.LevelManager.SaveCheckpoint();
+                //2 june 2020 Samuel - Add validation
+                if (!pressurePlateTriggered)
+                {
+                    ToggleObjects();
+                    Blackboard.Instance.LevelManager.SaveCheckpoint();
+                    pressurePlateTriggered = true;
+                }
                 break;
             case TogglerType.Timer:
                 if (!hasBeenTriggered)
@@ -118,7 +127,13 @@ public class Toggler : Interactable
         {
             if (togglerType == TogglerType.PressurePlate)
             {
-                ToggleObjects();
+                //2 june 2020 Samuel - Add validation
+                if (pressurePlateTriggered)
+                {
+                    ToggleObjects();
+                    //2 june 2020 Samuel - Add
+                    pressurePlateTriggered = false;
+                }
             }
         }
     }
