@@ -1,0 +1,712 @@
+fileFormatVersion: 2
+guid: 457d10ace999b8f41861540b98bc3daf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5241467309154740214
+    second: archaeologist-die_0
+  - first:
+      213: 2509296200546406129
+    second: archaeologist-die_1
+  - first:
+      213: 1866974856431985177
+    second: archaeologist-die_2
+  - first:
+      213: 3893836269153395285
+    second: archaeologist-die_3
+  - first:
+      213: 223091041990345226
+    second: archaeologist-die_4
+  - first:
+      213: 8885621605072759586
+    second: archaeologist-die_5
+  - first:
+      213: -3480242212804949560
+    second: archaeologist-die_6
+  - first:
+      213: -6239316646174998197
+    second: archaeologist-die_7
+  - first:
+      213: 5701530227963226027
+    second: archaeologist-die_8
+  - first:
+      213: 1668056383919906774
+    second: archaeologist-die_9
+  - first:
+      213: -6479596374554081382
+    second: archaeologist-die_10
+  - first:
+      213: -6107437701462364369
+    second: archaeologist-die_11
+  - first:
+      213: 8528286483259959841
+    second: archaeologist-die_12
+  - first:
+      213: 1983125393982105094
+    second: archaeologist-die_13
+  - first:
+      213: 9043513849541591093
+    second: archaeologist-die_14
+  - first:
+      213: -5595091147060924812
+    second: archaeologist-die_15
+  - first:
+      213: -4854098930086895219
+    second: archaeologist-die_16
+  - first:
+      213: -7132494192844364453
+    second: archaeologist-die_17
+  - first:
+      213: 8047218433952404802
+    second: archaeologist-die_18
+  - first:
+      213: -8378330053940114620
+    second: archaeologist-die_19
+  - first:
+      213: -7293186242434308406
+    second: archaeologist-die_20
+  - first:
+      213: 6264718199065801819
+    second: archaeologist-die_21
+  - first:
+      213: -3276872720809436020
+    second: archaeologist-die_22
+  - first:
+      213: 5340376001777156918
+    second: archaeologist-die_23
+  - first:
+      213: -1989848364752428592
+    second: archaeologist-die_24
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: archaeologist-die_0
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 4843
+        width: 488
+        height: 1132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9dbb36f592095748bd9c9d7386fa5b2
+      internalID: 5241467309154740214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-die_1
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 4823
+        width: 502
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 128cc9029ffffd34da4fd582fae1b433
+      internalID: 2509296200546406129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-die_2
+      rect:
+        serializedVersion: 2
+        x: 2829
+        y: 4807
+        width: 513
+        height: 1140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1165313a6dc5f594fa4f2cfce582ceed
+      internalID: 1866974856431985177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-die_3
+      rect:
+        serializedVersion: 2
+        x: 3970
+        y: 4794
+        width: 522
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5e3308a7527e5447954c1bc992f3275
+      internalID: 3893836269153395285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-die_4
+      rect:
+        serializedVersion: 2
+        x: 5111
+        y: 4785
+        width: 531
+        height: 1133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4262c16190a77c64286022c1a8045345
+      internalID: 223091041990345226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-die_5
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 3585
+        width: 539
+        height: 1122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fde4edcdd0846ed4abaa85e6097b7663
+      internalID: 8885621605072759586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-die_6
+      rect:
+        serializedVersion: 2
+        x: 1636
+        y: 3584
+        width: 557
+        height: 1109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14ab19512fe27224e96894cc47c5f591
+      internalID: -3480242212804949560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-die_7
+      rect:
+        serializedVersion: 2
+        x: 2783
+        y: 3587
+        width: 575
+        height: 1091
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39f9309f14dd09441a72ed82db945011
+      internalID: -6239316646174998197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-die_8
+      rect:
+        serializedVersion: 2
+        x: 3932
+        y: 3591
+        width: 589
+        height: 1070
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c60effdbfe2f5344a3aab2155fc6d21
+      internalID: 5701530227963226027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-die_9
+      rect:
+        serializedVersion: 2
+        x: 5085
+        y: 3599
+        width: 595
+        height: 1047
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d43a0b24cbb4a674ca4097141a73d3e4
+      internalID: 1668056383919906774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-die_10
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 2414
+        width: 595
+        height: 1021
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13efb1c0d739a84495729d530dbfb5c
+      internalID: -6479596374554081382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-die_11
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 2426
+        width: 590
+        height: 995
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53bc166aa6865b04e8fea25ffc9362d0
+      internalID: -6107437701462364369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-die_12
+      rect:
+        serializedVersion: 2
+        x: 2799
+        y: 2441
+        width: 578
+        height: 965
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1a1a7f850818704eaab44bfe4389125
+      internalID: 8528286483259959841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-die_13
+      rect:
+        serializedVersion: 2
+        x: 3938
+        y: 2438
+        width: 598
+        height: 959
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e3351fb20bd6154cbb9526105ff56dc
+      internalID: 1983125393982105094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-die_14
+      rect:
+        serializedVersion: 2
+        x: 5064
+        y: 2429
+        width: 636
+        height: 959
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9795181771978e04bb920d728b8bbba5
+      internalID: 9043513849541591093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-die_15
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 1224
+        width: 668
+        height: 951
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fcfc48d12496424eabdd137613b16d4
+      internalID: -5595091147060924812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-die_16
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 1218
+        width: 720
+        height: 934
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 866f691ca7c7d19468541eedbf0b8ef1
+      internalID: -4854098930086895219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-die_17
+      rect:
+        serializedVersion: 2
+        x: 2642
+        y: 1212
+        width: 782
+        height: 910
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bf12698c2149604ba0cbf040cee255a
+      internalID: -7132494192844364453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-die_18
+      rect:
+        serializedVersion: 2
+        x: 3742
+        y: 1206
+        width: 843
+        height: 881
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8f7023bc9f63194c92eb21fc23fe346
+      internalID: 8047218433952404802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-die_19
+      rect:
+        serializedVersion: 2
+        x: 4842
+        y: 1203
+        width: 902
+        height: 844
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f2c12be2a1436b4caf8677485553d54
+      internalID: -8378330053940114620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-die_20
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 0
+        width: 957
+        height: 804
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b93f1c91f3642904e89a6bbbc4bffa4c
+      internalID: -7293186242434308406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-die_21
+      rect:
+        serializedVersion: 2
+        x: 1297
+        y: 4
+        width: 1001
+        height: 753
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8461811672d621344893c5b07a053f5c
+      internalID: 6264718199065801819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-die_22
+      rect:
+        serializedVersion: 2
+        x: 2412
+        y: 4
+        width: 1041
+        height: 703
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cb38adf0308d3c4c9ac5de7f98543b1
+      internalID: -3276872720809436020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-die_23
+      rect:
+        serializedVersion: 2
+        x: 3535
+        y: 5
+        width: 1071
+        height: 644
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dd5ee56b8e6d274caaf92e350e3dcd7
+      internalID: 5340376001777156918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-die_24
+      rect:
+        serializedVersion: 2
+        x: 4661
+        y: 7
+        width: 1097
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5fcbdc6e8fd421439ec9854910bec18
+      internalID: -1989848364752428592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 666f344a58bb6694494bc026251af2e1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

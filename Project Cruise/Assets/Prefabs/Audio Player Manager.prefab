@@ -45,3 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioPlayerPrefab: {fileID: 425436857264402607, guid: 7f0e30bba8f0b0b48b1bd54a6f0d213c,
     type: 3}
+  bgmPlayerPrefab: {fileID: 425436857264402607, guid: 6bac718fc2d8c5446ae9a7631d7a4fe2,
+    type: 3}
