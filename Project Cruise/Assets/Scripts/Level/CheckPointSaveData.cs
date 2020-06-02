@@ -138,6 +138,9 @@ public class CheckPointSaveData
         {
             triggeredTimers[i].TriggeredTimerObject.CountdownTimer = triggeredTimers[i].Time;
         }
+        //27 may 2020 Samuel - add
+        Time.timeScale = 1.0f;
+        Blackboard.Instance.LevelManager.GetComponent<LevelTimer>().EnableTimer();
     }
 
     //public void SetTimer(float time)

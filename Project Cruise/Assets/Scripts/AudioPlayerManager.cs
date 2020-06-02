@@ -8,6 +8,7 @@ public class AudioPlayerManager : MonoBehaviour
 {
     public static AudioPlayerManager Instance { get; private set; }
     public GameObject audioPlayerPrefab = null;
+    public GameObject bgmPlayerPrefab = null;
     private List<AudioPlayer> audioPlayers;
 
     private void Awake()
@@ -15,6 +16,7 @@ public class AudioPlayerManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         Instance = this;
         audioPlayers = new List<AudioPlayer>();
+        PlayBGM();
     }
 
     /// <summary>
@@ -37,5 +39,14 @@ public class AudioPlayerManager : MonoBehaviour
         audioPlayers.Add(newAudioPlayer.GetComponent<AudioPlayer>());
         newAudioPlayer.GetComponent<AudioPlayer>().Play(audioClip);
         return;
+    }
+
+    /// <summary>
+    /// Intantiates the BGM Player.
+    /// </summary>
+    public void PlayBGM()
+    {
+        GameObject bgmPlayer = (GameObject)Instantiate(bgmPlayerPrefab);
+        bgmPlayer.transform.SetParent(transform);
     }
 }

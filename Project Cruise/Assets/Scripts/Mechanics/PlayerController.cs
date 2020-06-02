@@ -105,5 +105,6 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetTrigger("Reset");
         anim.ResetTrigger("Stop");
+        anim.Play("Idle");
     }
 }

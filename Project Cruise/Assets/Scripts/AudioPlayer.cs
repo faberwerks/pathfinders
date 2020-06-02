@@ -7,7 +7,7 @@ public class AudioPlayer : MonoBehaviour
 {
     public AudioSource AudioSource { get; private set; }
 
-    private void Awake()
+    protected virtual void Awake()
     {
         DontDestroyOnLoad(gameObject);
         AudioSource = GetComponent<AudioSource>();

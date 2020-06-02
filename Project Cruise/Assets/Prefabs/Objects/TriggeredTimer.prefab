@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3635538645873091485}
   - component: {fileID: 6641666147594507320}
   - component: {fileID: 5720164782713971494}
+  - component: {fileID: -2611624034098935485}
   m_Layer: 0
   m_Name: TriggeredTimer
   m_TagString: PressurePlate
@@ -71,8 +72,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c52eb1e6125033947952b461d56b90c5, type: 3}
-  m_Color: {r: 0, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 910260828389422322, guid: 9d7da0bcb35061743baddb1992b387c8, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -120,10 +121,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e734eaf06f167ed409925a9f07033947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toggleSound: {fileID: 0}
+  toggleSound: {fileID: 8300000, guid: ee3ff982384994045ad6a6e48257e7b3, type: 3}
   toggledObjects: []
   togglerType: 2
-  toggleSprites: []
+  toggleSprites:
+  - {fileID: -389396429426610250, guid: 410461f968559ae408e14c9386470301, type: 3}
+  - {fileID: -1379138091881671927, guid: 410461f968559ae408e14c9386470301, type: 3}
 --- !u!114 &5720164782713971494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,3 +142,15 @@ MonoBehaviour:
   pathObjects:
   - {fileID: 0}
   countdownTime: 5
+--- !u!114 &-2611624034098935485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6379791876542919457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393907b3cbb265643907ee540f8ce6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

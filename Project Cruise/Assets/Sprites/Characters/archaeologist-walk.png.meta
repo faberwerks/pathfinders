@@ -1,0 +1,472 @@
+fileFormatVersion: 2
+guid: 0fab7d1b0e5864942a725f8c7a864569
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6831486922255661468
+    second: archaeologist-walk_0
+  - first:
+      213: -951272811203312940
+    second: archaeologist-walk_1
+  - first:
+      213: 3394919596511538475
+    second: archaeologist-walk_2
+  - first:
+      213: 2656360663271505045
+    second: archaeologist-walk_3
+  - first:
+      213: 4661365500966014306
+    second: archaeologist-walk_4
+  - first:
+      213: 438100189162105600
+    second: archaeologist-walk_5
+  - first:
+      213: -6218207677114053231
+    second: archaeologist-walk_6
+  - first:
+      213: 6333723884265972099
+    second: archaeologist-walk_7
+  - first:
+      213: -4175201820216419816
+    second: archaeologist-walk_8
+  - first:
+      213: -2492041813749142665
+    second: archaeologist-walk_9
+  - first:
+      213: 7488604713907780331
+    second: archaeologist-walk_10
+  - first:
+      213: 1582190525504763345
+    second: archaeologist-walk_11
+  - first:
+      213: -251120071306323009
+    second: archaeologist-walk_12
+  - first:
+      213: 1759416543359361773
+    second: archaeologist-walk_13
+  - first:
+      213: -318890503746542066
+    second: archaeologist-walk_14
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: archaeologist-walk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2339
+        width: 558
+        height: 1127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee0f2001ae29e85489e8d98dcee87e37
+      internalID: -6831486922255661468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-walk_1
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 2348
+        width: 523
+        height: 1108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b6a7ab47cf27044885b44877a3782cd
+      internalID: -951272811203312940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-walk_2
+      rect:
+        serializedVersion: 2
+        x: 1241
+        y: 2335
+        width: 464
+        height: 1114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0db8938d77634f478cebc89359ef267
+      internalID: 3394919596511538475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-walk_3
+      rect:
+        serializedVersion: 2
+        x: 1817
+        y: 2335
+        width: 441
+        height: 1112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8731eee32c2a2a14a9dfae7d51ad6467
+      internalID: 2656360663271505045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-walk_4
+      rect:
+        serializedVersion: 2
+        x: 2358
+        y: 2334
+        width: 472
+        height: 1115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 443f54b4aba9e414c91298689eefb71e
+      internalID: 4661365500966014306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-walk_5
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1166
+        width: 509
+        height: 1130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54c949adaee334c4884de4bb1fd4599f
+      internalID: 438100189162105600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-walk_6
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 1165
+        width: 514
+        height: 1129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6262bc8700343964ab2a422752674415
+      internalID: -6218207677114053231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-walk_7
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 1163
+        width: 501
+        height: 1105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bef8470377900c943867ecad94be539d
+      internalID: 6333723884265972099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-walk_8
+      rect:
+        serializedVersion: 2
+        x: 1766
+        y: 1185
+        width: 487
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a17b38cce29818948923e4885ddbbef7
+      internalID: -4175201820216419816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-walk_9
+      rect:
+        serializedVersion: 2
+        x: 2413
+        y: 1190
+        width: 414
+        height: 1092
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e44e3c94d3cf63247ba49144e5a44baf
+      internalID: -2492041813749142665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-walk_10
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 13
+        width: 413
+        height: 1124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbc6f67ca6469c24a8119317f078a301
+      internalID: 7488604713907780331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-walk_11
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 10
+        width: 450
+        height: 1146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d2abf86b4037c34dbff60dc75fff655
+      internalID: 1582190525504763345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-walk_12
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 6
+        width: 474
+        height: 1157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19b6e28cc9620134b9c2c03e1373dc73
+      internalID: -251120071306323009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-walk_13
+      rect:
+        serializedVersion: 2
+        x: 1779
+        y: 13
+        width: 480
+        height: 1151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d0a6cac612ef0745843bebecfeacb4a
+      internalID: 1759416543359361773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: archaeologist-walk_14
+      rect:
+        serializedVersion: 2
+        x: 2316
+        y: 15
+        width: 519
+        height: 1139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eee4dc114ccffc74184c7555c63472ef
+      internalID: -318890503746542066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: b87088ca4ce8598449a25abb2f7955a8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
