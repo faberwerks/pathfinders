@@ -83,23 +83,32 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag(TagStrings.INTERACTABLE_TAG))
-        {
-            interactableObject = collision.gameObject.GetComponent<Interactable>();
-            button.onClick.AddListener(interactableObject.Interact);
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.CompareTag(TagStrings.INTERACTABLE_TAG))
+    //    {
+    //        Debug.Log("In!");
+    //        if (collision.GetComponent<Interactable>().canAddInteractListener())
+    //        {
+    //            Debug.Log("Added!");
+    //            interactableObject = collision.gameObject.GetComponent<Interactable>();
+    //            button.onClick.AddListener(interactableObject.Interact);
+    //        }
+    //    }
+    //}
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag(TagStrings.INTERACTABLE_TAG))
-        {
-            button.onClick.RemoveListener(interactableObject.Interact);
-            interactableObject = null;
-        }
-    }
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if (collision.CompareTag(TagStrings.INTERACTABLE_TAG))
+    //    {
+    //        if (collision.GetComponent<Interactable>().canRemoveInteractListener())
+    //        {
+    //            Debug.Log(collision.gameObject.name + ": " + collision.GetComponent<Interactable>().canRemoveInteractListener());
+    //            button.onClick.RemoveListener(interactableObject.Interact);
+    //        }
+    //        interactableObject = null;
+    //    }
+    //}
 
     public void ResetAnimation()
     {

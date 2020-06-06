@@ -31,8 +31,10 @@ public class Toggler : Interactable
     //2 june 2020 Samuel - Add
     private bool pressurePlateTriggered; //used to check state of presure plate
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+
         hasBeenTriggered = false;
         //2 june 2020 Samuel - Add
         pressurePlateTriggered = false;
@@ -67,6 +69,7 @@ public class Toggler : Interactable
     /// </summary>
     public void ToggleObjects()
     {
+        Debug.Log("ToggleObjects called.");
         if (toggleSound)
         {
             // triggered timers only play the sound once
@@ -94,7 +97,6 @@ public class Toggler : Interactable
         }
     }
 
-    // only used for PRESSURE PLATES
     private void OnTriggerEnter2D(Collider2D collision)
     {
         switch (togglerType)
@@ -117,23 +119,32 @@ public class Toggler : Interactable
                     hasBeenTriggered = true;
                 }
                 break;
+            case TogglerType.Lever:
+                addCharacter(collision);
+                break;
         }
     }
 
     // only used for PRESSURE PLATES
     private void OnTriggerExit2D(Collider2D collision)
     {
+        Debug.Log(gameObject.name + ": " + characters.Count);
+
         if (collision.CompareTag(TagStrings.PLAYER_TAG))
         {
             if (togglerType == TogglerType.PressurePlate)
             {
                 //2 june 2020 Samuel - Add validation
-                if (pressurePlateTriggered)
+                if (pressurePlateTriggered && canRemoveInteractListener())
                 {
                     ToggleObjects();
                     //2 june 2020 Samuel - Add
                     pressurePlateTriggered = false;
                 }
+            }
+            else if (togglerType == TogglerType.Lever)
+            {
+                removeCharacter(collision);
             }
         }
     }

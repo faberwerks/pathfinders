@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [RequireComponent(typeof(AudioHandler))]
 /// <summary>
@@ -19,6 +20,11 @@ public class Door : Interactable
         audioHandler = GetComponent<AudioHandler>();
     }
 
+    protected override void Start()
+    {
+        base.Start();
+    }
+
     public override void Interact()
     {
         Blackboard.Instance.LevelManager.SaveCheckpoint();
@@ -27,5 +33,15 @@ public class Door : Interactable
             audioHandler.Play(unlockSound);
         }
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        addCharacter(collision);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        removeCharacter(collision);
     }
 }

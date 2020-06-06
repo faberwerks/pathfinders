@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class Teleporter : Interactable
 {
-    private List<Transform> characters; // characters to be teleported
+    // private List<Transform> characters; // characters to be teleported
 
     public Transform target;            // target to teleport characters to
 
@@ -16,10 +16,11 @@ public class Teleporter : Interactable
     private Vector3 offset;
 
     // Start is called before the first frame update
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+
         offset = new Vector3(0, yOffset, 0);
-        characters = new List<Transform>();
     }
 
     public override void Interact()
@@ -33,18 +34,12 @@ public class Teleporter : Interactable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag(TagStrings.PLAYER_TAG))
-        {
-            characters.Add(collision.transform);
-        }
+        addCharacter(collision);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag(TagStrings.PLAYER_TAG))
-        {
-            characters.Remove(collision.transform);
-        }
+        removeCharacter(collision);
     }
 
     /// <summary>
