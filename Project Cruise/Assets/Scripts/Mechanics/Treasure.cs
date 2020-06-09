@@ -14,9 +14,18 @@ public class Treasure : Collectible
     //}
     //It add point to the treasure collected
 
+    public AudioClip treasureSound;
+
     int point = 0;
 
+    private AudioHandler audioHandler;
+
     //CheckPointSaveData data;
+
+    private void Awake()
+    {
+        audioHandler = GetComponent<AudioHandler>();
+    }
 
     private void Start()
     {
@@ -38,6 +47,7 @@ public class Treasure : Collectible
     protected override void OnCollected()
     {
         //getTreasure.Play();
+        audioHandler.Play(treasureSound);
         Blackboard.Instance.LevelManager.TreasureCollected += point;
         point = 0;
         Debug.Log(Blackboard.Instance.LevelManager.TreasureCollected);
