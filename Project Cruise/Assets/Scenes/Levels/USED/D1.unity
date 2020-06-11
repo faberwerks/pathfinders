@@ -412,22 +412,22 @@ PrefabInstance:
     - target: {fileID: 9191778167426029199, guid: 2d14966ac7d786641bfd13c956fa4497,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 210
+      value: 166
       objectReference: {fileID: 0}
     - target: {fileID: 9191778167426029199, guid: 2d14966ac7d786641bfd13c956fa4497,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 39
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 9191778167426029199, guid: 2d14966ac7d786641bfd13c956fa4497,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 40
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 9191778167426029199, guid: 2d14966ac7d786641bfd13c956fa4497,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9191778167426029199, guid: 2d14966ac7d786641bfd13c956fa4497,
         type: 3}
@@ -437,9 +437,9 @@ PrefabInstance:
     - target: {fileID: 9191778167426029199, guid: 2d14966ac7d786641bfd13c956fa4497,
         type: 3}
       propertyPath: m_text
-      value: "Look at the goal! There will be some occasions where there are less
-        goals than your party member. It\u2019s okay, in such cases, you just need
-        some of your party members to reach all the goals available in the room."
+      value: Look at the goal! Sometimes there are less goals than there are party
+        members. It's okay. You just need some of your party members to reach all
+        the goals in the room.
       objectReference: {fileID: 0}
     - target: {fileID: 9191778167426029199, guid: 2d14966ac7d786641bfd13c956fa4497,
         type: 3}
