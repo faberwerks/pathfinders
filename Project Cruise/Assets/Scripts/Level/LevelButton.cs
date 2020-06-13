@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 /// <summary>
 /// Component to run level button behaviour.
@@ -15,12 +16,16 @@ public class LevelButton : MonoBehaviour
     {
         imageComponent = GetComponent<Image>();
         var button = GetComponent<Button>();
+        var sceneTransition = GetComponent<SceneTransition>();
+        var text = gameObject.transform.GetChild(0).GetComponent<TMP_Text>();
+
+        button.interactable = false;
+        button.onClick.AddListener(() => sceneTransition.LoadLevel(levelNumber));
+
+        text.text = levelNumber.ToString();
 
         if (GameData.Instance.saveData.levelSaveData.Count >= levelNumber)
         {
-            //Debug.Log(GameData.Instance.saveData.levelSaveData.Count);
-            //Debug.Log("Level " + levelNumber + " unlocked.");
-
             button.interactable = true;
             switch (GameData.Instance.saveData.levelSaveData[levelNumber - 1].stars)
             {
