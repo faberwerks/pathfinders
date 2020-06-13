@@ -761,6 +761,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3290228807729648699, guid: d1d048e1431c5384a8e83779913807d4,
+        type: 3}
+      propertyPath: characterType
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1d048e1431c5384a8e83779913807d4, type: 3}
 --- !u!1001 &847891000
@@ -1175,6 +1180,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4747530896132391711, guid: 0474fd4561b569645a8ea6a07f5117b4,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1781111165}
     - target: {fileID: 9146862250598621468, guid: 0474fd4561b569645a8ea6a07f5117b4,
         type: 3}
       propertyPath: m_Color.r
@@ -1190,11 +1200,6 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4747530896132391711, guid: 0474fd4561b569645a8ea6a07f5117b4,
-        type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 1781111165}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0474fd4561b569645a8ea6a07f5117b4, type: 3}
 --- !u!4 &1194970332 stripped
@@ -7245,6 +7250,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4747530896132391711, guid: 0474fd4561b569645a8ea6a07f5117b4,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1194970332}
     - target: {fileID: 9146862250598621468, guid: 0474fd4561b569645a8ea6a07f5117b4,
         type: 3}
       propertyPath: m_Color.r
@@ -7255,11 +7265,6 @@ PrefabInstance:
       propertyPath: m_Color.g
       value: 0.92156863
       objectReference: {fileID: 0}
-    - target: {fileID: 4747530896132391711, guid: 0474fd4561b569645a8ea6a07f5117b4,
-        type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 1194970332}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0474fd4561b569645a8ea6a07f5117b4, type: 3}
 --- !u!4 &1781111165 stripped
