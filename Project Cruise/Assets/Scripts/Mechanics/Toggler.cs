@@ -22,6 +22,8 @@ public class Toggler : Interactable
 
     public List<Sprite> toggleSprites;
 
+    public GameObject relic;
+
     private TriggeredTimer timer = null;
     private SpriteRenderer sprRend = null;
     private AudioHandler audioHandler = null;
@@ -30,6 +32,7 @@ public class Toggler : Interactable
     private bool hasBeenTriggered;  // used to check state of triggered timer
     //2 june 2020 Samuel - Add
     private bool pressurePlateTriggered; //used to check state of presure plate
+    private bool hasTriggeredRelic;
 
     protected override void Start()
     {
@@ -50,6 +53,8 @@ public class Toggler : Interactable
 
         maxIndex = toggleSprites.Count;
         spriteIndex = 0;
+
+        hasTriggeredRelic = false;
     }
 
     // only used for LEVERS and TRIGGERED TIMERS
@@ -89,6 +94,12 @@ public class Toggler : Interactable
         foreach (GameObject toggledObject in toggledObjects)
         {
             toggledObject.SetActive(!toggledObject.activeInHierarchy);
+        }
+
+        if (relic && !hasTriggeredRelic)
+        {
+            relic.SetActive(true);
+            hasTriggeredRelic = true;
         }
 
         if (maxIndex > 0)
