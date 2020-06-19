@@ -91,13 +91,18 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public void EndLevelTimer()
+    {
+        levelTimer.EndTimer();
+    }
+
     /// <summary>
     /// A method to handle player victory.
     /// </summary>
     private void Win()
     {
         DisableCharacterMovement();
-        levelTimer.EndTimer();
+        //levelTimer.EndTimer();
         GameData.Instance.currTreasuresCollected = TreasureCollected;
         GameData.Instance.currIsRelicCollected = RelicCollected;
         //GameData.Instance.levelTime
