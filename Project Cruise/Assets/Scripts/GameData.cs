@@ -27,7 +27,6 @@ public class GameData
         coinsEarned = 0;
         saveData = new SaveData();
         tutorialDebug = false;
-        tutorialAlwaysOn = false;
     }
 
     public int previousSceneID = 0;
@@ -41,5 +40,4 @@ public class GameData
     public SaveData saveData = null;
     //For tutorial debugging
     public bool tutorialDebug = false;
-    public bool tutorialAlwaysOn = false;
 }

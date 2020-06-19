@@ -24,7 +24,7 @@ public class TutorialHandler : MonoBehaviour
         currLayer = tutorialLayers.Dequeue();
         currLayer.SetActive(true);
         Time.timeScale = 0f;
-        if (GameData.Instance.saveData.LastLevelNumber > GameData.Instance.currLevelID && !GameData.Instance.tutorialAlwaysOn && GameData.Instance.tutorialDebug == false)
+        if (GameData.Instance.saveData.LastLevelNumber > GameData.Instance.currLevelID && PlayerPrefs.GetInt("TutorialAlwaysOn",0) == 0 && GameData.Instance.tutorialDebug == false)
         {
             Time.timeScale = 1f;
             Destroy(gameObject);
