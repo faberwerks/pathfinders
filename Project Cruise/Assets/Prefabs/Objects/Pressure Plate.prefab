@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5647659460817281565}
   - component: {fileID: 5647659460817281564}
   - component: {fileID: 5647659460817281563}
-  - component: {fileID: 5647659460817281566}
+  - component: {fileID: -7520668038356308224}
   - component: {fileID: 7962445637719163764}
   m_Layer: 0
   m_Name: Pressure Plate
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1479041520144092992, guid: a2f684ab5436fcb4ca6bef2316007f27,
+  m_Sprite: {fileID: -997361215743486395, guid: a144b2c562acd6843a2b6bb033b9af4e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -100,10 +100,11 @@ MonoBehaviour:
   - {fileID: 0}
   togglerType: 0
   toggleSprites:
-  - {fileID: -1479041520144092992, guid: a2f684ab5436fcb4ca6bef2316007f27, type: 3}
-  - {fileID: 6605888185601254042, guid: a2f684ab5436fcb4ca6bef2316007f27, type: 3}
---- !u!61 &5647659460817281566
-BoxCollider2D:
+  - {fileID: -997361215743486395, guid: a144b2c562acd6843a2b6bb033b9af4e, type: 3}
+  - {fileID: -732630070579171765, guid: a144b2c562acd6843a2b6bb033b9af4e, type: 3}
+  relic: {fileID: 0}
+--- !u!58 &-7520668038356308224
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -115,19 +116,9 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0.075}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.4
 --- !u!114 &7962445637719163764
 MonoBehaviour:
   m_ObjectHideFlags: 0
