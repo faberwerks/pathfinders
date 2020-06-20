@@ -1,12 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// Component to handle relic in wall behaviour.
+/// </summary>
 public class Relic : Interactable
 {
     public override void Interact()
     {
         Blackboard.Instance.LevelManager.RelicCollected = true;
+        Blackboard.Instance.LevelManager.relicNotification.SetActive(true);
         Destroy(gameObject);
     }
 

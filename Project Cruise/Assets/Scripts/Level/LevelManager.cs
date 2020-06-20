@@ -25,6 +25,7 @@ public class LevelManager : MonoBehaviour
     public List<Goal> goals = new List<Goal>();
     public GameObject winCanvas;
     public GameObject loseCanvas;
+    public GameObject relicNotification;
     public TMP_Text[] targetTime;
     public TMP_Text playerTimer;
     public TMP_Text triggeredTimerTime;
