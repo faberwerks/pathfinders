@@ -1,8 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -28,6 +28,7 @@ public class LevelManager : MonoBehaviour
     public TMP_Text[] targetTime;
     public TMP_Text playerTimer;
     public TMP_Text triggeredTimerTime;
+    public Image triggeredTimerFillImage;
     public float postLevelDelay = 2.0f;
 
     public int relicCoin = 30;
@@ -79,7 +80,7 @@ public class LevelManager : MonoBehaviour
 
     public void CheckGoals()
     {
-        foreach(Goal goal in goals)
+        foreach (Goal goal in goals)
         {
             if (goal.IsPressed == false)
                 return;
@@ -110,7 +111,7 @@ public class LevelManager : MonoBehaviour
         CalculateCoinsAndStarsEarned();
         GameData.Instance.saveData.UpdateTimestamp();
         PlayGamesScript.Instance.SaveData();
-       
+
         Debug.Log("Invoking Post Level");
         Invoke("LoadPostLevel", postLevelDelay);
         //Time.timeScale = 0.0f;
@@ -126,7 +127,7 @@ public class LevelManager : MonoBehaviour
         playerTimer.text = GameData.Instance.currLevelTime.ToString("#.##") + "s";
         loseCanvas.SetActive(true);
     }
-    
+
     /// <summary>
     /// A method to pause the game.
     /// </summary>
@@ -139,7 +140,7 @@ public class LevelManager : MonoBehaviour
     //// update is called once per frame
     //void Update()
     //{
-    
+
     //}
 
     /// <summary>
@@ -187,7 +188,7 @@ public class LevelManager : MonoBehaviour
             coinsEarned += relicCoin;                      //adds relic coin
             currLevelSave.hasFoundRelic = true;
         }
-        
+
         // if all treasures collected
         if (TreasureCollected >= 3)
         {
@@ -212,7 +213,7 @@ public class LevelManager : MonoBehaviour
             if (!currLevelSave.hasAchievedTargetTime)
             {
                 coinsEarned += currLevelData.targetTimeCoin;   //adds target time coin
-             
+
                 currLevelSave.hasAchievedTargetTime = true;
             }
         }
