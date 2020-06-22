@@ -114,10 +114,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/USED/XG4.unity
     guid: 9195b758d8b56744b867208693f235b7
   - enabled: 1
-    path: Assets/Scenes/Levels/Testing/XH3.unity
+    path: Assets/Scenes/Levels/USED/XH3.unity
     guid: 66221015fb467824ba1cf0a1bafb0b30
   - enabled: 1
-    path: Assets/Scenes/Levels/Testing/XH2.unity
+    path: Assets/Scenes/Levels/USED/XH2.unity
     guid: 51548f9073999c64b98d91b976a5450a
   - enabled: 1
     path: Assets/Scenes/Levels/USED/A1.unity
@@ -135,6 +135,81 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/USED/E2.unity
     guid: 9b6e95c4df7c7094fbe1346f4e08e4d1
   - enabled: 1
-    path: Assets/Scenes/Levels/Testing/XG3.unity
+    path: Assets/Scenes/Levels/USED/XG3.unity
     guid: cc1cd55ad0ed6ab4da5b7e7c1b256174
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/A3.unity
+    guid: a1ef36241c0e24e4ea92c3cbfad95572
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/A4.unity
+    guid: 7f78b5536423c3745b275a7e79b5192d
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/A5.unity
+    guid: 4b49ce2d2dc1b424ca10c7b82582ceed
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/B1.unity
+    guid: 7e04747b787b0e54da1940148aced391
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/B5.unity
+    guid: 333f531a8f85dd94ab5e7b8e14417b66
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/C3.unity
+    guid: 0299294345eb5fb459d622601778aea9
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/C4.unity
+    guid: 76f62221baf123248b8845312a208223
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/D2.unity
+    guid: 53ae54b4b7b2fdb40970225a89429918
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/D4.unity
+    guid: b38219df16e7e214c98ef29b386aa0fa
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/F4.unity
+    guid: ccc9fb92de427414bb4dc3098688394f
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/G4.unity
+    guid: 9d6f419c9583e9d42ba98b4bbf306b1c
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/XA4.unity
+    guid: 40b70e8051a8d294b93f223e09ca498f
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/XB1.unity
+    guid: 283c7f92e197c1d4c8996a2924193122
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/XB2.unity
+    guid: baea3ef7f2533ff4d87ed99360444372
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/XB3.unity
+    guid: e9f5a9daea9aeb7418ede2f197487b83
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/XC1.unity
+    guid: 0e1a4fba129d2b147974cf0574ec881d
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/XC2.unity
+    guid: ed2c0ef67a8c157438e844098744ead1
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/XC3.unity
+    guid: 9ebe61b9a38ac7249a9fbd6f7ccf493e
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/XD1.unity
+    guid: 1d4ed56048ca31840b7cdbbb3484b55e
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/XD2.unity
+    guid: d613616f4b39a0c4b8cc6f18ffa439ec
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/XE1.unity
+    guid: d875ad52a99872a4c85d2f0cc0dcdca6
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/XE2.unity
+    guid: 45d3919303436094ead959042cd40e33
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/XF1.unity
+    guid: 5c202e7261f17fe4180368b8c0e75e7c
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/XG1.unity
+    guid: 26c9d34472672004481a691c89fcb78e
+  - enabled: 1
+    path: Assets/Scenes/Levels/USED/XH1.unity
+    guid: 3e75a110ce17f4f4593870a5d7f05a3e
   m_configObjects: {}
