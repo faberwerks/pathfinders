@@ -105,6 +105,7 @@ public class LevelManager : MonoBehaviour
     {
         DisableCharacterMovement();
         //levelTimer.EndTimer();
+        EndLevelTimer();
         GameData.Instance.currTreasuresCollected = TreasureCollected;
         GameData.Instance.currIsRelicCollected = RelicCollected;
         //GameData.Instance.levelTime
