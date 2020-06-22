@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetTrigger("Reset");
         anim.ResetTrigger("Stop");
-        anim.ResetTrigger("Walk");
+        anim.ResetTrigger("Move");
         anim.Play("Idle");
     }
 }
