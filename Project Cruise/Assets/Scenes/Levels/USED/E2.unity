@@ -7370,7 +7370,7 @@ PrefabInstance:
     - target: {fileID: 9191778167426029199, guid: 2d14966ac7d786641bfd13c956fa4497,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 126
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 9191778167426029199, guid: 2d14966ac7d786641bfd13c956fa4497,
         type: 3}
@@ -7395,8 +7395,8 @@ PrefabInstance:
     - target: {fileID: 9191778167426029199, guid: 2d14966ac7d786641bfd13c956fa4497,
         type: 3}
       propertyPath: m_text
-      value: That looks really interesting. I think it's a teleporter. Press the Interact
-        button when one of your party members is near it.
+      value: That looks really interesting. That should be a teleporter. Press the
+        Interact button when one of your party members is near it.
       objectReference: {fileID: 0}
     - target: {fileID: 9191778167426029199, guid: 2d14966ac7d786641bfd13c956fa4497,
         type: 3}
