@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstLevelNumber: 41
-  unlockedSprite: {fileID: 21300000, guid: 757977dcbb7205d41929d419eb845e9b, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: ee946eae90138e54584ef46e7dbb56a6, type: 3}
   lockedSprite: {fileID: 21300000, guid: 23bdde3db0b98e44ea8c16abda895134, type: 3}
 --- !u!1 &64582745
 GameObject:
@@ -11327,7 +11327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstLevelNumber: 1
-  unlockedSprite: {fileID: 21300000, guid: 89374a124b3b16848b8ec52ef3c0bd5a, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: e70d464bf1e94d445a7863c47bed1eca, type: 3}
   lockedSprite: {fileID: 0}
 --- !u!1 &1731512413
 GameObject:
