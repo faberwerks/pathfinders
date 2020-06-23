@@ -12,18 +12,20 @@ public class TriggeredTimer : MonoBehaviour
 
     public float countdownTime = 5.0f;
     public float CountdownTimer { get; set; }
+    public bool hasRun { get; set; }
 
     private Image fillImage;
 
     private void Start()
     {
+        hasRun = false;
         pathObjects = new List<GameObject>();
 
         CountdownTimer = countdownTime;
         fillImage = Blackboard.Instance.LevelManager.triggeredTimerFillImage;
 
         CheckPointSaveData data = Blackboard.Instance.LevelManager.checkPointSaveData;
-        data.AddTriggeredTimer(this);
+        data.AddTriggeredTimer(this, countdownTime);
     }
 
     /// <summary>
@@ -47,19 +49,25 @@ public class TriggeredTimer : MonoBehaviour
     {
         Blackboard.Instance.LevelManager.triggeredTimerTime.gameObject.SetActive(true);
         Blackboard.Instance.LevelManager.triggeredTimerTime.text = CountdownTimer.ToString("0");
-        float startTime = Time.time;
         float value = 0;
 
-        while (Time.time - startTime < duration)
+        while (CountdownTimer > 0.0f)
         {
             CountdownTimer -= Time.deltaTime;
             Blackboard.Instance.LevelManager.triggeredTimerTime.text = CountdownTimer.ToString("0");
-            value = CountdownTimer / duration;
+            value = CountdownTimer / countdownTime;
             fillImage.fillAmount = value;
             yield return null;
         }
 
         Blackboard.Instance.LevelManager.EndLevelTimer();
+        hasRun = true;
         Blackboard.Instance.LevelManager.Lose();
+    }
+
+    public void RestartTriggeredTimer(float duration)
+    {
+        hasRun = false;
+        StartCoroutine(CTimer(duration));
     }
 }

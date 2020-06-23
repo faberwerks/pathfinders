@@ -69,10 +69,10 @@ public class CheckPointSaveData
         characters.Add(new Character(player, x, y));
     }
 
-    public void AddTriggeredTimer(TriggeredTimer triggeredTimer)
+    public void AddTriggeredTimer(TriggeredTimer triggeredTimer, float countdownTime)
     {
         Debug.Log("[DEBUG] AddTriggeredTimer called.");
-        triggeredTimers.Add(new TriggeredTimerData(triggeredTimer, 0.0f));
+        triggeredTimers.Add(new TriggeredTimerData(triggeredTimer, countdownTime));
     }
 
     private void SavePlayerPostions()
@@ -136,7 +136,15 @@ public class CheckPointSaveData
         // reset triggered timers to last saved time
         for (int i = 0; i < triggeredTimers.Count; i++)
         {
-            triggeredTimers[i].TriggeredTimerObject.CountdownTimer = triggeredTimers[i].Time;
+            if (triggeredTimers[i].TriggeredTimerObject.hasRun)
+            {
+                triggeredTimers[i].TriggeredTimerObject.CountdownTimer = triggeredTimers[i].Time;
+                triggeredTimers[i].TriggeredTimerObject.RestartTriggeredTimer(triggeredTimers[i].Time);
+            }
+            else
+            {
+                triggeredTimers[i].TriggeredTimerObject.CountdownTimer = triggeredTimers[i].Time;
+            }
         }
         //27 may 2020 Samuel - add
         Time.timeScale = 1.0f;
