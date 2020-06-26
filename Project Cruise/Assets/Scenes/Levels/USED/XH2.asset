@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: XH2
   m_EditorClassIdentifier: 
   levelID: XH2
-  targetTime: 0
+  targetTime: 95
   hasRelic: 0
   baseCoin: 0
   threeStarsCoin: 0

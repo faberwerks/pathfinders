@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: XG3
   m_EditorClassIdentifier: 
   levelID: XG3
-  targetTime: 0
+  targetTime: 150
   hasRelic: 0
   baseCoin: 0
   threeStarsCoin: 0

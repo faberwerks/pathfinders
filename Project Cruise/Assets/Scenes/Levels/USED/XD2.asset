@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: XD2
   m_EditorClassIdentifier: 
   levelID: XD2
-  targetTime: 0
+  targetTime: 85
   hasRelic: 0
   baseCoin: 0
   threeStarsCoin: 0

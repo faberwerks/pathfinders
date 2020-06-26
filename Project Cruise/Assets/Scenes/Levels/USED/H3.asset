@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: H3
   m_EditorClassIdentifier: 
   levelID: H3
-  targetTime: 0
+  targetTime: 30
   hasRelic: 0
   baseCoin: 0
   threeStarsCoin: 0

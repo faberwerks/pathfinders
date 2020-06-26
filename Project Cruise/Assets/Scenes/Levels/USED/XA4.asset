@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: XA4
   m_EditorClassIdentifier: 
   levelID: XA4
-  targetTime: 0
+  targetTime: 45
   hasRelic: 0
   baseCoin: 0
   threeStarsCoin: 0
