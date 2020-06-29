@@ -10,10 +10,7 @@ public class LevelManager : MonoBehaviour
     private string POST_LEVEL_SCENE_NAME = "PostLevel";
     #endregion
 
-    //private int treasureCollected;
     private bool hasRelic;
-    //private bool relicCollected;
-    //private float levelTimer;
     private bool hasWon;
 
     /////// PROPERTIES ///////
@@ -21,7 +18,6 @@ public class LevelManager : MonoBehaviour
     public bool RelicCollected { get; set; }
     public bool CharacterCanMove { get; private set; }
 
-    //Public list of goals
     public List<Goal> goals = new List<Goal>();
     public GameObject winCanvas;
     public GameObject loseCanvas;
@@ -40,7 +36,7 @@ public class LevelManager : MonoBehaviour
 
     public bool noInteractables = false;
 
-    //Awake is called before Start
+    // Awake is called before Start
     private void Awake()
     {
         Blackboard.Instance.LevelManager = this;
@@ -60,7 +56,6 @@ public class LevelManager : MonoBehaviour
         {
             tmp.text = currLevelData.targetTime.ToString("0.00") + "s";
         }
-        //targetTime.text = "Target time: " + currLevelData.targetTime;
         hasRelic = currLevelData.hasRelic;
         hasWon = false;
         Debug.Log("CharacterCanMove set to true.");
@@ -69,14 +64,6 @@ public class LevelManager : MonoBehaviour
         {
             Blackboard.Instance.Button.gameObject.SetActive(false);
         }
-    }
-
-    private void Update()
-    {
-        //if (Blackboard.instance.LevelManager == null)
-        //{
-        //    Blackboard.instance.LevelManager = this;
-        //}
     }
 
     public void CheckGoals()
@@ -104,19 +91,15 @@ public class LevelManager : MonoBehaviour
     private void Win()
     {
         DisableCharacterMovement();
-        //levelTimer.EndTimer();
         EndLevelTimer();
         GameData.Instance.currTreasuresCollected = TreasureCollected;
         GameData.Instance.currIsRelicCollected = RelicCollected;
-        //GameData.Instance.levelTime
-        //GameData.Instance.lastSceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
         CalculateCoinsAndStarsEarned();
-        GameData.Instance.saveData.UpdateTimestamp();
+        // GameData.Instance.saveData.UpdateTimestamp();
         PlayGamesScript.Instance.SaveData();
 
         Debug.Log("Invoking Post Level");
         Invoke("LoadPostLevel", postLevelDelay);
-        //Time.timeScale = 0.0f;
     }
     /// <summary>
     /// A method to handle player defeat.
@@ -139,12 +122,6 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = pause ? 0.0f : 1.0f;
     }
 
-    //// update is called once per frame
-    //void Update()
-    //{
-
-    //}
-
     /// <summary>
     /// A method to load the Post Level scene.
     /// </summary>
@@ -157,7 +134,6 @@ public class LevelManager : MonoBehaviour
     {
         int coinsEarned = 0;
         int tempStar = 1;
-        // bool firstTimeThisLevel = false;
 
         SaveData.LevelSaveData currLevelSave = null;
 
@@ -170,8 +146,6 @@ public class LevelManager : MonoBehaviour
             GameData.Instance.saveData.levelSaveData.Add(new SaveData.LevelSaveData());
             // update last level number to latest level (next level)
             GameData.Instance.saveData.LastLevelNumber += 1;
-
-            // firstTimeThisLevel = true;
         }
         // else
         // use appropriate level save data
@@ -219,7 +193,7 @@ public class LevelManager : MonoBehaviour
                 currLevelSave.hasAchievedTargetTime = true;
             }
         }
-        //Hardcode for level 1 & 2 to be automatically completed
+        // Hardcode for level 1 & 2 to be automatically completed
         if (GameData.Instance.currLevelID == 1 || GameData.Instance.currLevelID == 2) tempStar += 1;
 
         // if receive 3 stars and hasn't before
@@ -233,24 +207,10 @@ public class LevelManager : MonoBehaviour
         GameData.Instance.starsEarned = tempStar;
         GameData.Instance.saveData.Coins += coinsEarned;
 
-        //if (firstTimeThisLevel)
-        //{
-        //    GameData.Instance.saveData.Stars += tempStar;
-        //}
-        //else
-        //{
-        //    if (currLevelSave.stars < tempStar)
-        //    {
-        //        GameData.Instance.saveData.Stars += (tempStar - currLevelSave.stars);
-        //    }
-        //}
-
         if (tempStar > currLevelSave.stars)
         {
             currLevelSave.stars = tempStar;
         }
-
-        GameData.Instance.saveData.UpdateTimestamp();
     }
 
     public void SaveCheckpoint()

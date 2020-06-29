@@ -33,7 +33,6 @@ public class SaveData
     
     public int Coins { get; set; }
     public int LastLevelNumber { get; set; }
-    // public int Stars { get; set; }
     public DateTime Timestamp { get; private set; }
     public List<LevelSaveData> levelSaveData;
 
@@ -41,10 +40,9 @@ public class SaveData
     {
         Coins = 0;
         LastLevelNumber = 1;
-        // Stars = 0;
         levelSaveData = new List<LevelSaveData>();
         levelSaveData.Add(new LevelSaveData());
-        UpdateTimestamp();
+        // UpdateTimestamp();
     }
 
     /// <summary>

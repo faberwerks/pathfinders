@@ -5,6 +5,19 @@
 /// </summary>
 public class Relic : Interactable
 {
+    protected override void Start()
+    {
+        base.Start();
+
+        if (LevelDirectory.Instance.GetLevelData(GameData.Instance.currLevelID).hasRelic)
+        {
+            if (GameData.Instance.saveData.levelSaveData[GameData.Instance.currLevelID - 1].hasFoundRelic)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+
     public override void Interact()
     {
         Blackboard.Instance.LevelManager.RelicCollected = true;
