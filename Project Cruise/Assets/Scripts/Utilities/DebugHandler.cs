@@ -6,6 +6,7 @@ public class DebugHandler : MonoBehaviour
 {
     public GameObject debugUI = null;
     public TMP_InputField input = null;
+    public int[] relicLevels;
 
     private void Start()
     {
@@ -27,5 +28,21 @@ public class DebugHandler : MonoBehaviour
             GameData.Instance.saveData.levelSaveData.Add(new SaveData.LevelSaveData());
         }
         GameData.Instance.saveData.LastLevelNumber = 60;
+    }
+
+    public void DebugFoundAllRelics()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            GameData.Instance.saveData.levelSaveData[relicLevels[i] - 1].hasFoundRelic = true;
+        }
+    }
+
+    public void DebugRemoveAllRelics()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            GameData.Instance.saveData.levelSaveData[relicLevels[i] - 1].hasFoundRelic = false;
+        }
     }
 }
