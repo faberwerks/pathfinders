@@ -1,5 +1,4 @@
-﻿using UnityEditor.Animations;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// Component to change Character type.
@@ -13,11 +12,11 @@ public class CharacterAnimator : MonoBehaviour
         Archaeologist
     }
 
-    public AnimatorController jones;
+    public RuntimeAnimatorController jones;
     public Sprite jonesSprite;
-    public AnimatorController guard;
+    public RuntimeAnimatorController guard;
     public Sprite guardSprite;
-    public AnimatorController archaeologist;
+    public RuntimeAnimatorController archaeologist;
     public Sprite archaeologistSprite;
 
     public CharacterType characterType;
@@ -30,7 +29,7 @@ public class CharacterAnimator : MonoBehaviour
         anim = GetComponent<Animator>();
         sprRend = GetComponent<SpriteRenderer>();
 
-        AnimatorController animController = jones;
+        RuntimeAnimatorController animController = jones;
         Sprite spr = jonesSprite;
 
         switch (characterType)
