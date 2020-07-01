@@ -11634,11 +11634,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tutorial Setup
       objectReference: {fileID: 0}
-    - target: {fileID: 3178692429339584872, guid: 2d14966ac7d786641bfd13c956fa4497,
-        type: 3}
-      propertyPath: childLayer
-      value: 
-      objectReference: {fileID: 1023040783}
     - target: {fileID: 554834517117555697, guid: 2d14966ac7d786641bfd13c956fa4497,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11754,6 +11749,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9191778169130886385, guid: 2d14966ac7d786641bfd13c956fa4497,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4393181304573071424, guid: 2d14966ac7d786641bfd13c956fa4497,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -11861,16 +11861,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1694985531360637023, guid: d82c98c67555ae4409553a22eae55161,
         type: 3}
-    - target: {fileID: 9191778169130886385, guid: 2d14966ac7d786641bfd13c956fa4497,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4843716730073275842, guid: 2d14966ac7d786641bfd13c956fa4497,
         type: 3}
       propertyPath: childLayer
       value: 
       objectReference: {fileID: 909388936}
+    - target: {fileID: 3178692429339584872, guid: 2d14966ac7d786641bfd13c956fa4497,
+        type: 3}
+      propertyPath: childLayer
+      value: 
+      objectReference: {fileID: 1023040783}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d14966ac7d786641bfd13c956fa4497, type: 3}
 --- !u!1 &909388936 stripped
@@ -12305,6 +12305,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3290228807729648699, guid: d1d048e1431c5384a8e83779913807d4,
+        type: 3}
+      propertyPath: characterType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1d048e1431c5384a8e83779913807d4, type: 3}

@@ -423,15 +423,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8352090391729929033, guid: 12adafa3f9ce7d24ca6dbbe00446056c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1127568639392276344, guid: 12adafa3f9ce7d24ca6dbbe00446056c,
         type: 3}
       propertyPath: noInteractables
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352090391729929033, guid: 12adafa3f9ce7d24ca6dbbe00446056c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12adafa3f9ce7d24ca6dbbe00446056c, type: 3}
@@ -1098,6 +1098,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3290228807729648699, guid: d1d048e1431c5384a8e83779913807d4,
+        type: 3}
+      propertyPath: characterType
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1d048e1431c5384a8e83779913807d4, type: 3}
 --- !u!1 &896805013
@@ -1409,11 +1414,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tutorial Setup
       objectReference: {fileID: 0}
-    - target: {fileID: 3178692429339584872, guid: 2d14966ac7d786641bfd13c956fa4497,
-        type: 3}
-      propertyPath: childLayer
-      value: 
-      objectReference: {fileID: 1335106405}
     - target: {fileID: 554834517117555697, guid: 2d14966ac7d786641bfd13c956fa4497,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1576,6 +1576,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9191778169130886385, guid: 2d14966ac7d786641bfd13c956fa4497,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4393181304573071424, guid: 2d14966ac7d786641bfd13c956fa4497,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1687,16 +1692,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -1952563925864634708, guid: a60b6682504e74d4ba815a38830b1c6a,
         type: 3}
-    - target: {fileID: 9191778169130886385, guid: 2d14966ac7d786641bfd13c956fa4497,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4843716730073275842, guid: 2d14966ac7d786641bfd13c956fa4497,
         type: 3}
       propertyPath: childLayer
       value: 
       objectReference: {fileID: 1276905103}
+    - target: {fileID: 3178692429339584872, guid: 2d14966ac7d786641bfd13c956fa4497,
+        type: 3}
+      propertyPath: childLayer
+      value: 
+      objectReference: {fileID: 1335106405}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d14966ac7d786641bfd13c956fa4497, type: 3}
 --- !u!1 &1276905103 stripped
