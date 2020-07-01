@@ -27,6 +27,7 @@ public class LevelManager : MonoBehaviour
     public TMP_Text triggeredTimerTime;
     public Image triggeredTimerFillImage;
     public float postLevelDelay = 2.0f;
+    public bool hasAchievement = false;
 
     public int relicCoin = 30;
 
@@ -95,8 +96,12 @@ public class LevelManager : MonoBehaviour
         GameData.Instance.currTreasuresCollected = TreasureCollected;
         GameData.Instance.currIsRelicCollected = RelicCollected;
         CalculateCoinsAndStarsEarned();
-        // GameData.Instance.saveData.UpdateTimestamp();
         PlayGamesScript.Instance.SaveData();
+
+        if (hasAchievement)
+        {
+            CheckAchievements();
+        }
 
         Debug.Log("Invoking Post Level");
         Invoke("LoadPostLevel", postLevelDelay);
@@ -229,5 +234,16 @@ public class LevelManager : MonoBehaviour
     public void DisableCharacterMovement()
     {
         CharacterCanMove = false;
+    }
+
+    /// <summary>
+    /// A method to handle checking for tier I and II achievements.
+    /// </summary>
+    private void CheckAchievements()
+    {
+        if (GameData.Instance.currLevelID == 3)
+        {
+            PlayGamesScript.UnlockAchievement("CgkIscHpwIUZEAIQBA");
+        }
     }
 }
