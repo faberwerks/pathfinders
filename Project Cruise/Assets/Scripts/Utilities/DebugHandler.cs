@@ -45,4 +45,20 @@ public class DebugHandler : MonoBehaviour
             GameData.Instance.saveData.levelSaveData[relicLevels[i] - 1].hasFoundRelic = false;
         }
     }
+
+    public void DebugUnlockMostLevelsWithThreeStars()
+    {
+        DebugUnlockAllLevels();
+        for (int i = 0; i < GameData.Instance.saveData.levelSaveData.Count; i++)
+        {
+            if (i == 3)
+            {
+                continue;
+            }
+            else
+            {
+                GameData.Instance.saveData.levelSaveData[i].hasAchievedThreeStars = true;
+            }
+        }
+    }
 }

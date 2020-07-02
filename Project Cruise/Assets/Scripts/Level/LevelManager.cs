@@ -166,8 +166,9 @@ public class LevelManager : MonoBehaviour
         // and hasn't found relic before
         if (hasRelic && RelicCollected && !currLevelSave.hasFoundRelic)
         {
-            coinsEarned += relicCoin;                      //adds relic coin
+            // coinsEarned += relicCoin;                      //adds relic coin
             currLevelSave.hasFoundRelic = true;
+            CheckRelicAchievement();
         }
 
         // if all treasures collected
@@ -204,7 +205,9 @@ public class LevelManager : MonoBehaviour
         // if receive 3 stars and hasn't before
         if (tempStar == 3 && !currLevelSave.hasAchievedThreeStars)
         {
-            coinsEarned += currLevelData.threeStarsCoin;
+            // coinsEarned += currLevelData.threeStarsCoin;
+            GameData.Instance.saveData.ThreeStarLevels++;
+            CheckThreeStarAchievement();
             currLevelSave.hasAchievedThreeStars = true;
         }
 
@@ -241,9 +244,91 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     private void CheckAchievements()
     {
-        if (GameData.Instance.currLevelID == 3)
+        switch (GameData.Instance.currLevelID)
         {
-            PlayGamesScript.UnlockAchievement("CgkIscHpwIUZEAIQBA");
+            // basic
+            case 3:
+                PlayGamesScript.UnlockAchievement("CgkIscHpwIUZEAIQBA");
+                break;
+            // trap
+            case 5:
+                PlayGamesScript.UnlockAchievement("CgkIscHpwIUZEAIQBQ");
+                break;
+            // lever
+            case 9:
+                PlayGamesScript.UnlockAchievement("CgkIscHpwIUZEAIQBg");
+                break;
+            // finish stage 1
+            case 20:
+                PlayGamesScript.UnlockAchievement("CgkIscHpwIUZEAIQDQ");
+                break;
+            // key
+            case 21:
+                PlayGamesScript.UnlockAchievement("CgkIscHpwIUZEAIQBw");
+                break;
+            // pressure plate
+            case 26:
+                PlayGamesScript.UnlockAchievement("CgkIscHpwIUZEAIQCA");
+                break;
+            // unproportional
+            case 33:
+                PlayGamesScript.UnlockAchievement("CgkIscHpwIUZEAIQCQ");
+                break;
+            // finish stage 2
+            case 40:
+                PlayGamesScript.UnlockAchievement("CgkIscHpwIUZEAIQDg");
+                break;
+            // triggered timer
+            case 41:
+                PlayGamesScript.UnlockAchievement("CgkIscHpwIUZEAIQCg");
+                break;
+            // teleporter
+            case 46:
+                PlayGamesScript.UnlockAchievement("CgkIscHpwIUZEAIQCg");
+                break;
+            // finish stage 3
+            case 60:
+                PlayGamesScript.UnlockAchievement("CgkIscHpwIUZEAIQDw");
+                break;
+        }
+
+        // collect first relic
+        if (RelicCollected)
+        {
+            PlayGamesScript.UnlockAchievement("CgkIscHpwIUZEAIQDA");
+        }
+    }
+
+    /// <summary>
+    /// A method to handle checking for "Find All Relics" achievement.
+    /// </summary>
+    private void CheckRelicAchievement()
+    {
+        int[] relicLevels = {16, 23, 35, 40, 51};
+        int relics = 0;
+
+        for (int i = 0; i < relicLevels.Length; i++)
+        {
+            if (GameData.Instance.saveData.levelSaveData[relicLevels[i] -1].hasFoundRelic)
+            {
+                relics++;
+            }
+        }
+
+        if (relics >= 5)
+        {
+            PlayGamesScript.UnlockAchievement("CgkIscHpwIUZEAIQEA");
+        }
+    }
+
+    /// <summary>
+    /// A method to handle checking for "Finish All Levels with 3 Stars" Achievement
+    /// </summary>
+    private void CheckThreeStarAchievement()
+    {
+        if (GameData.Instance.saveData.ThreeStarLevels >= 60)
+        {
+            PlayGamesScript.UnlockAchievement("CgkIscHpwIUZEAIQEQ");
         }
     }
 }

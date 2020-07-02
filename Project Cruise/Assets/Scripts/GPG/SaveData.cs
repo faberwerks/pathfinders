@@ -35,6 +35,7 @@ public class SaveData
     public int LastLevelNumber { get; set; }
     public DateTime Timestamp { get; private set; }
     public List<LevelSaveData> levelSaveData;
+    public int ThreeStarLevels { get; set; }
 
     public SaveData()
     {
@@ -42,6 +43,7 @@ public class SaveData
         LastLevelNumber = 1;
         levelSaveData = new List<LevelSaveData>();
         levelSaveData.Add(new LevelSaveData());
+        ThreeStarLevels = 0;
         // UpdateTimestamp();
     }
 
