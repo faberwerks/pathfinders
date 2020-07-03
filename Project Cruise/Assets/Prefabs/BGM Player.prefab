@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuBGM: {fileID: 8300000, guid: bcef3a81fbacab5459e4c9daecc0bcb8, type: 3}
-  inGameBGM: {fileID: 8300000, guid: 2a53b6a6c4c28164c8d45445d9730e18, type: 3}
+  inGameBGM: {fileID: 8300000, guid: ba390edc52ab4844ab68fc4133d3d2cd, type: 3}
   menuScenes:
   - Loading
   - MainMenu
