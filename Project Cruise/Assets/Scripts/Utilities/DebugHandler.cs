@@ -8,13 +8,13 @@ public class DebugHandler : MonoBehaviour
     public TMP_InputField input = null;
     public int[] relicLevels;
 
-    private void Start()
-    {
-        if (!(Application.isEditor))
-        {
-            debugUI.SetActive(false);
-        }
-    }
+    //private void Start()
+    //{
+    //    if (!(Application.isEditor))
+    //    {
+    //        debugUI.SetActive(false);
+    //    }
+    //}
 
     public void DebugLoadScene()
     {
