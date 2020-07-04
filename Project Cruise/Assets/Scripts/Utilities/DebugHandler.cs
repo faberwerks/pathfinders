@@ -57,7 +57,9 @@ public class DebugHandler : MonoBehaviour
             }
             else
             {
+                GameData.Instance.saveData.levelSaveData[i].stars = 3;
                 GameData.Instance.saveData.levelSaveData[i].hasAchievedThreeStars = true;
+                GameData.Instance.saveData.ThreeStarLevels++;
             }
         }
     }
