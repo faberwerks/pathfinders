@@ -12096,6 +12096,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1127568639392276344, guid: 12adafa3f9ce7d24ca6dbbe00446056c,
+        type: 3}
+      propertyPath: hasAchievement
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352090391729929033, guid: 12adafa3f9ce7d24ca6dbbe00446056c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1127568640251774655, guid: 12adafa3f9ce7d24ca6dbbe00446056c,
         type: 3}
       propertyPath: m_IsActive
@@ -12115,11 +12125,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 102.59985
-      objectReference: {fileID: 0}
-    - target: {fileID: 8352090391729929033, guid: 12adafa3f9ce7d24ca6dbbe00446056c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3194876974766182097, guid: 12adafa3f9ce7d24ca6dbbe00446056c,
         type: 3}
@@ -12546,16 +12551,16 @@ PrefabInstance:
       propertyPath: childLayer
       value: 
       objectReference: {fileID: 1921078988}
-    - target: {fileID: 5017569991638963266, guid: 2d14966ac7d786641bfd13c956fa4497,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 212
-      objectReference: {fileID: 0}
     - target: {fileID: 3178692429339584872, guid: 2d14966ac7d786641bfd13c956fa4497,
         type: 3}
       propertyPath: childLayer
       value: 
       objectReference: {fileID: 301645584}
+    - target: {fileID: 5017569991638963266, guid: 2d14966ac7d786641bfd13c956fa4497,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 212
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d14966ac7d786641bfd13c956fa4497, type: 3}
 --- !u!1 &1921078988 stripped

@@ -428,6 +428,11 @@ PrefabInstance:
       propertyPath: noInteractables
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1127568639392276344, guid: 12adafa3f9ce7d24ca6dbbe00446056c,
+        type: 3}
+      propertyPath: hasAchievement
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8352090391729929033, guid: 12adafa3f9ce7d24ca6dbbe00446056c,
         type: 3}
       propertyPath: m_IsActive

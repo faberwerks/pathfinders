@@ -6965,6 +6965,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1127568639392276344, guid: 12adafa3f9ce7d24ca6dbbe00446056c,
+        type: 3}
+      propertyPath: hasAchievement
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2581976266456775023, guid: 12adafa3f9ce7d24ca6dbbe00446056c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -7566,6 +7571,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9191778169130886385, guid: 2d14966ac7d786641bfd13c956fa4497,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6416720788208947156, guid: 2d14966ac7d786641bfd13c956fa4497,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -7647,11 +7657,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -7928530139209083267, guid: dc8187a851e99c24582102ab5ac70cbf,
         type: 3}
-    - target: {fileID: 9191778169130886385, guid: 2d14966ac7d786641bfd13c956fa4497,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4843716730073275842, guid: 2d14966ac7d786641bfd13c956fa4497,
         type: 3}
       propertyPath: childLayer

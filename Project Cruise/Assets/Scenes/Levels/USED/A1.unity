@@ -727,6 +727,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1127568639392276344, guid: 12adafa3f9ce7d24ca6dbbe00446056c,
+        type: 3}
+      propertyPath: hasAchievement
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1127568639077009500, guid: 12adafa3f9ce7d24ca6dbbe00446056c,
         type: 3}
       propertyPath: orthographic size
@@ -8890,11 +8895,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tutorial Setup
       objectReference: {fileID: 0}
-    - target: {fileID: 3178692429339584872, guid: 2d14966ac7d786641bfd13c956fa4497,
-        type: 3}
-      propertyPath: childLayer
-      value: 
-      objectReference: {fileID: 768278569}
     - target: {fileID: 554834517117555697, guid: 2d14966ac7d786641bfd13c956fa4497,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9157,6 +9157,11 @@ PrefabInstance:
       propertyPath: childLayer
       value: 
       objectReference: {fileID: 1969335946}
+    - target: {fileID: 3178692429339584872, guid: 2d14966ac7d786641bfd13c956fa4497,
+        type: 3}
+      propertyPath: childLayer
+      value: 
+      objectReference: {fileID: 768278569}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d14966ac7d786641bfd13c956fa4497, type: 3}
 --- !u!224 &1969335942 stripped
