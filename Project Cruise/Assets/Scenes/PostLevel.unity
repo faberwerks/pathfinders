@@ -3317,7 +3317,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1912367493}
+      - m_Target: {fileID: 0}
         m_MethodName: ShowVideoAD
         m_Mode: 1
         m_Arguments:
@@ -3867,7 +3867,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1912367495}
   - component: {fileID: 1912367494}
-  - component: {fileID: 1912367493}
   m_Layer: 0
   m_Name: ShowAds
   m_TagString: Untagged
@@ -3875,18 +3874,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1912367493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1912367492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9f4a4148b9c9af4ea7180394d6179a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1912367494
 MonoBehaviour:
   m_ObjectHideFlags: 0

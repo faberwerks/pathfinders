@@ -24,6 +24,11 @@ public class AdsHandler : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        RequestInterstitialAD();
+    }
+
     public void RequestInterstitialAD()
     {
         string adUnitId = "ca-app-pub-3940256099942544/1033173712";
@@ -47,34 +52,34 @@ public class AdsHandler : MonoBehaviour
         
     }
 
-    public void RequestRewardedVideoAD()
-    {
-        string adUnitId = "ca-app-pub-3940256099942544/5224354917";
-        this.rewardedVideo = RewardBasedVideoAd.Instance;
+    //public void RequestRewardedVideoAD()
+    //{
+    //    string adUnitId = "ca-app-pub-3940256099942544/5224354917";
+    //    this.rewardedVideo = RewardBasedVideoAd.Instance;
 
-        // Called when an ad request has successfully loaded.
-        this.rewardedVideo.OnAdLoaded += HandleOnVideoAdLoaded;
-        // Called when an ad request failed to load.
-        this.rewardedVideo.OnAdFailedToLoad += HandleOnVideoAdFailedToLoad;
-        // Called when an ad is shown.
-        this.rewardedVideo.OnAdOpening += HandleOnVideoAdOpened;
-        // Called when the ad is closed.
-        this.rewardedVideo.OnAdClosed += HandleOnVideoAdClosed;
-        // Called when the ad click caused the user to leave the application.
-        this.rewardedVideo.OnAdLeavingApplication += HandleOnVideoAdLeavingApplication;
+    //    // Called when an ad request has successfully loaded.
+    //    this.rewardedVideo.OnAdLoaded += HandleOnVideoAdLoaded;
+    //    // Called when an ad request failed to load.
+    //    this.rewardedVideo.OnAdFailedToLoad += HandleOnVideoAdFailedToLoad;
+    //    // Called when an ad is shown.
+    //    this.rewardedVideo.OnAdOpening += HandleOnVideoAdOpened;
+    //    // Called when the ad is closed.
+    //    this.rewardedVideo.OnAdClosed += HandleOnVideoAdClosed;
+    //    // Called when the ad click caused the user to leave the application.
+    //    this.rewardedVideo.OnAdLeavingApplication += HandleOnVideoAdLeavingApplication;
 
-        // Create an empty ad request.
-        AdRequest request = new AdRequest.Builder().AddTestDevice("2B14A1568BC5F0CD5FE89A0505F28B39").Build();
-        // Load the interstitial with the request.
-        this.rewardedVideo.LoadAd(request,adUnitId);
+    //    // Create an empty ad request.
+    //    AdRequest request = new AdRequest.Builder().AddTestDevice("2B14A1568BC5F0CD5FE89A0505F28B39").Build();
+    //    // Load the interstitial with the request.
+    //    this.rewardedVideo.LoadAd(request,adUnitId);
 
-    }
+    //}
 
     //Interstitial Event
     #region
     public void HandleOnAdLoaded(object sender, EventArgs args)
     {
-        ShowInterstitialAD();
+        //ShowInterstitialAD();
     }
 
     public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
@@ -100,46 +105,46 @@ public class AdsHandler : MonoBehaviour
     }
     #endregion
 
-    //Video Event
-    #region
-    public void HandleOnVideoAdLoaded(object sender, EventArgs args)
-    {
-        //ShowInterstitialAD();
-    }
+    ////Video Event
+    //#region
+    //public void HandleOnVideoAdLoaded(object sender, EventArgs args)
+    //{
+    //    //ShowInterstitialAD();
+    //}
 
-    public void HandleOnVideoAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
-    {
-            RequestRewardedVideoAD();
-    }
+    //public void HandleOnVideoAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
+    //{
+    //        RequestRewardedVideoAD();
+    //}
 
-    public void HandleOnVideoAdOpened(object sender, EventArgs args)
-    {
-        MonoBehaviour.print("HandleAdOpened event received");
-    }
+    //public void HandleOnVideoAdOpened(object sender, EventArgs args)
+    //{
+    //    MonoBehaviour.print("HandleAdOpened event received");
+    //}
 
-    public void HandleOnVideoAdClosed(object sender, EventArgs args)
-    {
-        MonoBehaviour.print("HandleAdClosed event received");
-        //Double coins here
-    }
+    //public void HandleOnVideoAdClosed(object sender, EventArgs args)
+    //{
+    //    MonoBehaviour.print("HandleAdClosed event received");
+    //    //Double coins here
+    //}
 
-    public void HandleOnVideoAdLeavingApplication(object sender, EventArgs args)
-    {
-        MonoBehaviour.print("HandleAdLeavingApplication event received");
-    }
-    #endregion
+    //public void HandleOnVideoAdLeavingApplication(object sender, EventArgs args)
+    //{
+    //    MonoBehaviour.print("HandleAdLeavingApplication event received");
+    //}
+    //#endregion
 
-    public void ShowVideoAD()
-    {
-        if (this.rewardedVideo.IsLoaded())
-        {
-            this.rewardedVideo.Show();
-        }
-        else
-        {
-            Debug.Log("Video Ad is not loaded.");
-        }
-    }
+    //public void ShowVideoAD()
+    //{
+    //    if (this.rewardedVideo.IsLoaded())
+    //    {
+    //        this.rewardedVideo.Show();
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("Video Ad is not loaded.");
+    //    }
+    //}
 
     public void ShowInterstitialAD()
     {

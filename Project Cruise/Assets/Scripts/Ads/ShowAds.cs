@@ -16,8 +16,8 @@ public class ShowAds : MonoBehaviour
         }
         else
         {
-            AdsHandler.instance.RequestInterstitialAD();
-            AdsHandler.instance.RequestRewardedVideoAD();
+            AdsHandler.instance.ShowInterstitialAD();
+            //AdsHandler.instance.RequestRewardedVideoAD();
         }
         //AdsHandler.instance.ShowInterstitialAD();
     }
