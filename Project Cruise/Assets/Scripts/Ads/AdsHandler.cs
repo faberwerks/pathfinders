@@ -1,6 +1,8 @@
 ﻿using System;
 using UnityEngine;
 using GoogleMobileAds.Api;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 // Example script showing how to invoke the Google Mobile Ads Unity plugin.
 public class AdsHandler : MonoBehaviour
@@ -83,6 +85,7 @@ public class AdsHandler : MonoBehaviour
     public void HandleOnAdOpened(object sender, EventArgs args)
     {
         MonoBehaviour.print("HandleAdOpened event received");
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
     public void HandleOnAdClosed(object sender, EventArgs args)
