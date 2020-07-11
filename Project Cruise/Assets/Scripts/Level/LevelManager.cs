@@ -19,8 +19,9 @@ public class LevelManager : MonoBehaviour
     public bool CharacterCanMove { get; private set; }
 
     public List<Goal> goals = new List<Goal>();
-    public GameObject winCanvas;
+    //public GameObject winCanvas;
     public GameObject loseCanvas;
+    public GameObject pauseCanvas;
     public GameObject relicNotification;
     public TMP_Text[] targetTime;
     public TMP_Text playerTimer;
@@ -330,5 +331,11 @@ public class LevelManager : MonoBehaviour
         {
             PlayGamesScript.UnlockAchievement("CgkIscHpwIUZEAIQEQ");
         }
+    }
+
+    private void OnApplicationPause(bool pause)
+    {
+        Pause(true);
+        pauseCanvas.SetActive(true);
     }
 }
