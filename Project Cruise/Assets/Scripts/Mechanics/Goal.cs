@@ -36,17 +36,18 @@ public class Goal : MonoBehaviour
     //Method CheckGoals is called here so there is no need for this method called in update function 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.CompareTag(TagStrings.PLAYER_TAG))
+        if(collision.CompareTag(TagStrings.PLAYER_TAG) && CheckPlayer(collision.gameObject))
         {
             IsPressed = true;
             sprRend.sprite = goalSprites[1];
             Blackboard.Instance.LevelManager.CheckGoals();
+            Blackboard.Instance.LevelManager.playerOnGoal.Add(collision.gameObject);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag(TagStrings.PLAYER_TAG))
+        if (collision.CompareTag(TagStrings.PLAYER_TAG) && CheckPlayer(collision.gameObject))
         {
             stepOnGoal.Play();
         }
@@ -58,6 +59,19 @@ public class Goal : MonoBehaviour
         {
             IsPressed = false;
             sprRend.sprite = goalSprites[0];
+            Blackboard.Instance.LevelManager.playerOnGoal.Remove(collision.gameObject);
         }
+    }
+
+    private bool CheckPlayer(GameObject player)
+    {
+        foreach(GameObject gameobject in Blackboard.Instance.LevelManager.playerOnGoal)
+        {
+            if(player == gameobject)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }

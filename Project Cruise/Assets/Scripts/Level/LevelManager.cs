@@ -19,6 +19,7 @@ public class LevelManager : MonoBehaviour
     public bool CharacterCanMove { get; private set; }
 
     public List<Goal> goals = new List<Goal>();
+    public List<GameObject> playerOnGoal = new List<GameObject>();
     //public GameObject winCanvas;
     public GameObject loseCanvas;
     public GameObject pauseCanvas;
