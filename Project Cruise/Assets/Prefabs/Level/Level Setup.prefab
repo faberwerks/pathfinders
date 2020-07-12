@@ -844,9 +844,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goals: []
-  winCanvas: {fileID: 0}
   loseCanvas: {fileID: 8352090391729929033}
-  pauseCanvas: {fileID: 1127568640388815752}
+  pauseCanvas: {fileID: 1127568640251774655}
   relicNotification: {fileID: 2810188096661595798}
   targetTime:
   - {fileID: 8968932175800341172}

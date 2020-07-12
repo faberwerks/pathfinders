@@ -335,7 +335,8 @@ public class LevelManager : MonoBehaviour
 
     private void OnApplicationPause(bool pause)
     {
-        Pause(true);
         pauseCanvas.SetActive(true);
+        Pause(true);
     }
+    
 }
