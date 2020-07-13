@@ -311,9 +311,14 @@ public class LevelManager : MonoBehaviour
 
         for (int i = 0; i < relicLevels.Length; i++)
         {
-            if (GameData.Instance.saveData.levelSaveData[relicLevels[i] -1].hasFoundRelic)
+            //added to check if the said level already has a levelSaveData
+            if (GameData.Instance.saveData.levelSaveData.Count >= relicLevels[i])
             {
-                relics++;
+                if (GameData.Instance.saveData.levelSaveData[relicLevels[i] - 1].hasFoundRelic)
+                {
+                    Debug.Log("Relic earned at level:" + GameData.Instance.saveData.levelSaveData[relicLevels[i]]);
+                    relics++;
+                }
             }
         }
 

@@ -13,6 +13,9 @@ public class Door : Interactable
     private AudioClip unlockSound;
     private AudioHandler audioHandler;
 
+    //added relic that works like in Toggler.cs
+    public GameObject relic;
+
     public int ID { get { return id; } }
 
     private void Awake()
@@ -32,6 +35,13 @@ public class Door : Interactable
         {
             audioHandler.Play(unlockSound);
         }
+
+        //to activate relic
+        if (relic)
+        {
+            relic.SetActive(true);
+        }
+
         Destroy(gameObject);
     }
 

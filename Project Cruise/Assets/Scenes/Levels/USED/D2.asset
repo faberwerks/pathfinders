@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelID: D2
   targetTime: 60
-  hasRelic: 0
+  hasRelic: 1
   baseCoin: 0
   threeStarsCoin: 0
   treasureCoin: 0
