@@ -10,6 +10,11 @@ public class TutorialRelicHandler : MonoBehaviour
     {
         Time.timeScale = 1;
         tutorialLever.Interact();
+        Invoke("ResetTime", 0.2f);
+    }
+
+    private void ResetTime()
+    {
         Time.timeScale = 0;
     }
 }
