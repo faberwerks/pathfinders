@@ -10,6 +10,7 @@ public class Goal : MonoBehaviour
     /////// PROPERTIES ///////
     public bool IsPressed { get; set; }
     public Sprite[] goalSprites = new Sprite[2];
+    private GameObject playerOn;
 
     private AudioSource stepOnGoal;
     private SpriteRenderer sprRend;
@@ -22,6 +23,7 @@ public class Goal : MonoBehaviour
         //Blackboard.instance.LevelManager.goals.Add(this);
         stepOnGoal = GetComponent<AudioSource>();
         sprRend = GetComponent<SpriteRenderer>();
+        playerOn = null;
     }
 
     // Update is called once per frame
@@ -36,18 +38,19 @@ public class Goal : MonoBehaviour
     //Method CheckGoals is called here so there is no need for this method called in update function 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.CompareTag(TagStrings.PLAYER_TAG) && CheckPlayer(collision.gameObject))
+        if(collision.CompareTag(TagStrings.PLAYER_TAG) && playerOn == null && CheckPlayer(collision.gameObject))
         {
             IsPressed = true;
             sprRend.sprite = goalSprites[1];
             Blackboard.Instance.LevelManager.CheckGoals();
+            playerOn = collision.gameObject;
             Blackboard.Instance.LevelManager.playerOnGoal.Add(collision.gameObject);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag(TagStrings.PLAYER_TAG) && CheckPlayer(collision.gameObject))
+        if (collision.CompareTag(TagStrings.PLAYER_TAG) && playerOn == null && CheckPlayer(collision.gameObject))
         {
             stepOnGoal.Play();
         }
@@ -55,19 +58,20 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag(TagStrings.PLAYER_TAG))
+        if (collision.CompareTag(TagStrings.PLAYER_TAG) && collision.gameObject == playerOn)
         {
             IsPressed = false;
             sprRend.sprite = goalSprites[0];
+            playerOn = null;
             Blackboard.Instance.LevelManager.playerOnGoal.Remove(collision.gameObject);
         }
     }
 
     private bool CheckPlayer(GameObject player)
     {
-        foreach(GameObject gameobject in Blackboard.Instance.LevelManager.playerOnGoal)
+        foreach (GameObject gameobject in Blackboard.Instance.LevelManager.playerOnGoal)
         {
-            if(player == gameobject)
+            if (player == gameobject)
             {
                 return false;
             }
