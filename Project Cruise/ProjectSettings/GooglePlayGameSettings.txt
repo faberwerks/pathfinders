@@ -1,5 +1,5 @@
-lastUpgrade=01005
-proj.pluginVersion=0.10.05
+lastUpgrade=01009
+proj.pluginVersion=0.10.09
 proj.AppId=860471582897
 and.BundleId=com.faberwerks.pathfinders
 proj.classDir=Assets
