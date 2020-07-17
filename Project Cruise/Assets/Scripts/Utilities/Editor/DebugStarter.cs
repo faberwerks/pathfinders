@@ -22,7 +22,7 @@ public class DebugStarter
         EditorApplication.ExecuteMenuItem("Edit/Play");
     }
 
-    [MenuItem("Tools/List Scene Names")]
+    // [MenuItem("Tools/List Scene Names")]
     public static void LogNames()
     {
         List<string> temp = new List<string>();
