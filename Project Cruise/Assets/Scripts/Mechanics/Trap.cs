@@ -17,7 +17,7 @@ public class Trap : MonoBehaviour
 
     private void ResetTotalCollide()
     {
-        Debug.Log("reset");
+        //Debug.Log("reset");
         totalCollide = 0;
     }
 
@@ -34,7 +34,7 @@ public class Trap : MonoBehaviour
         if (collision.gameObject.CompareTag(TagStrings.PLAYER_TAG) && !hasCollided)
         {
             hasCollided = true;
-            Debug.Log("Die");
+            //Debug.Log("Die");
             audioHandler.Play(hitSound);
             // totalCollide += 1;
             collision.gameObject.GetComponent<Animator>().SetTrigger("Die");

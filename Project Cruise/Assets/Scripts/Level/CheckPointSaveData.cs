@@ -59,25 +59,27 @@ public class CheckPointSaveData
     {
         characters = new List<Character>();
         triggeredTimers = new List<TriggeredTimerData>();
-        timer = new Timer();
-        timer.TimerObject = levelTimer;
+        timer = new Timer
+        {
+            TimerObject = levelTimer
+        };
     }
 
     public void AddCharacter(GameObject player, float x, float y)
     {
-        Debug.Log("[DEBUG] AddCharacter called.");
+        //Debug.Log("[DEBUG] AddCharacter called.");
         characters.Add(new Character(player, x, y));
     }
 
     public void AddTriggeredTimer(TriggeredTimer triggeredTimer, float countdownTime)
     {
-        Debug.Log("[DEBUG] AddTriggeredTimer called.");
+        //Debug.Log("[DEBUG] AddTriggeredTimer called.");
         triggeredTimers.Add(new TriggeredTimerData(triggeredTimer, countdownTime));
     }
 
     private void SavePlayerPostions()
     {
-        Debug.Log("[DEBUG] SavePlayerPositions called.");
+        //Debug.Log("[DEBUG] SavePlayerPositions called.");
 
         Character temp;
 
@@ -90,7 +92,7 @@ public class CheckPointSaveData
 
     private void SaveTriggeredTimerTimes()
     {
-        Debug.Log("[DEBUG] SaveTriggeredTimerTimes called.");
+        //Debug.Log("[DEBUG] SaveTriggeredTimerTimes called.");
 
         TriggeredTimerData temp;
 
@@ -136,7 +138,7 @@ public class CheckPointSaveData
         // reset triggered timers to last saved time
         for (int i = 0; i < triggeredTimers.Count; i++)
         {
-            if (triggeredTimers[i].TriggeredTimerObject.hasRun)
+            if (triggeredTimers[i].TriggeredTimerObject.HasRun)
             {
                 triggeredTimers[i].TriggeredTimerObject.CountdownTimer = triggeredTimers[i].Time;
                 triggeredTimers[i].TriggeredTimerObject.RestartTriggeredTimer(triggeredTimers[i].Time);

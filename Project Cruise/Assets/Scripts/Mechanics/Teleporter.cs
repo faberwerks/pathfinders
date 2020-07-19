@@ -34,12 +34,12 @@ public class Teleporter : Interactable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        addCharacter(collision);
+        AddCharacter(collision);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        removeCharacter(collision);
+        RemoveCharacter(collision);
     }
 
     /// <summary>

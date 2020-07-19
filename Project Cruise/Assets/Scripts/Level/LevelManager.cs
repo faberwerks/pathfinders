@@ -61,7 +61,7 @@ public class LevelManager : MonoBehaviour
         }
         hasRelic = currLevelData.hasRelic;
         hasWon = false;
-        Debug.Log("CharacterCanMove set to true.");
+        //Debug.Log("CharacterCanMove set to true.");
 
         if (noInteractables)
         {
@@ -105,7 +105,7 @@ public class LevelManager : MonoBehaviour
             CheckAchievements();
         }
 
-        Debug.Log("Invoking Post Level");
+        //Debug.Log("Invoking Post Level");
         Invoke("LoadPostLevel", postLevelDelay);
     }
     /// <summary>
@@ -316,7 +316,7 @@ public class LevelManager : MonoBehaviour
             {
                 if (GameData.Instance.saveData.levelSaveData[relicLevels[i] - 1].hasFoundRelic)
                 {
-                    Debug.Log("Relic earned at level:" + GameData.Instance.saveData.levelSaveData[relicLevels[i]]);
+                    //Debug.Log("Relic earned at level:" + GameData.Instance.saveData.levelSaveData[relicLevels[i]]);
                     relics++;
                 }
             }

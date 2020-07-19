@@ -53,7 +53,7 @@ public class PostLevelManager : MonoBehaviour
 
         coinsEarnedText.text = "" + GameData.Instance.coinsEarned;
         GameData.Instance.interstitialAdsCounter -= 1;
-        Debug.Log(GameData.Instance.interstitialAdsCounter);
+        //Debug.Log(GameData.Instance.interstitialAdsCounter);
         AdsHandler.instance.ShowInterstitialAD();
     }
 

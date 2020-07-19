@@ -34,7 +34,7 @@ public class ReadSceneNames : MonoBehaviour
 
         foreach (string scene in scenes)
         {
-            Debug.Log(scene);
+            //Debug.Log(scene);
         }
     }
 

@@ -23,9 +23,9 @@ public abstract class Interactable : MonoBehaviour
     /// </summary>
     public abstract void Interact();
 
-    public bool canAddInteractListener()
+    public bool CanAddInteractListener()
     {
-        Debug.Log(characters.Count);
+        //Debug.Log(characters.Count);
         if (characters.Count == 0)
         {
             return true;
@@ -37,7 +37,7 @@ public abstract class Interactable : MonoBehaviour
     /// <summary>
     /// Virtual method to check if the interact listener can be removed.
     /// </summary>
-    public bool canRemoveInteractListener()
+    public bool CanRemoveInteractListener()
     {
         if (characters.Count == 0)
         {
@@ -47,36 +47,36 @@ public abstract class Interactable : MonoBehaviour
         return false;
     }
 
-    protected void addCharacter(Collider2D collision)
+    protected void AddCharacter(Collider2D collision)
     {
         if (characters.Count == 0)
         {
             button.onClick.AddListener(Interact);
-            Debug.Log("LISTENER ADDED!");
+            //Debug.Log("LISTENER ADDED!");
         }
-        addCharacterWithoutListener(collision);
+        AddCharacterWithoutListener(collision);
         
     }
 
-    protected void addCharacterWithoutListener(Collider2D collision)
+    protected void AddCharacterWithoutListener(Collider2D collision)
     {
         if (collision.CompareTag(TagStrings.PLAYER_TAG))
         {
             characters.Add(collision.transform);
-            Debug.Log("CHARACTER ADDED!");
+            //Debug.Log("CHARACTER ADDED!");
         }
     }
 
-    protected void removeCharacter(Collider2D collision)
+    protected void RemoveCharacter(Collider2D collision)
     {
-        removeCharacterWithoutListener(collision);
+        RemoveCharacterWithoutListener(collision);
         if (characters.Count == 0)
         {
             button.onClick.RemoveListener(Interact);
         }
     }
 
-    protected void removeCharacterWithoutListener(Collider2D collision)
+    protected void RemoveCharacterWithoutListener(Collider2D collision)
     {
         if (collision.CompareTag(TagStrings.PLAYER_TAG))
         {

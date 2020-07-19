@@ -74,7 +74,7 @@ public class Toggler : Interactable
     /// </summary>
     public void ToggleObjects()
     {
-        Debug.Log("ToggleObjects called.");
+        //Debug.Log("ToggleObjects called.");
         if (toggleSound)
         {
             // triggered timers only play the sound once
@@ -131,7 +131,7 @@ public class Toggler : Interactable
                 }
                 break;
             case TogglerType.Lever:
-                addCharacter(collision);
+                AddCharacter(collision);
                 break;
         }
     }
@@ -139,14 +139,14 @@ public class Toggler : Interactable
     // only used for PRESSURE PLATES
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log(gameObject.name + ": " + characters.Count);
+        //Debug.Log(gameObject.name + ": " + characters.Count);
 
         if (collision.CompareTag(TagStrings.PLAYER_TAG))
         {
             if (togglerType == TogglerType.PressurePlate)
             {
                 //2 june 2020 Samuel - Add validation
-                if (pressurePlateTriggered && canRemoveInteractListener())
+                if (pressurePlateTriggered && CanRemoveInteractListener())
                 {
                     ToggleObjects();
                     //2 june 2020 Samuel - Add
@@ -155,7 +155,7 @@ public class Toggler : Interactable
             }
             else if (togglerType == TogglerType.Lever)
             {
-                removeCharacter(collision);
+                RemoveCharacter(collision);
             }
         }
     }

@@ -50,7 +50,7 @@ public class Treasure : Collectible
         audioHandler.Play(treasureSound);
         Blackboard.Instance.LevelManager.TreasureCollected += point;
         point = 0;
-        Debug.Log(Blackboard.Instance.LevelManager.TreasureCollected);
+        //Debug.Log(Blackboard.Instance.LevelManager.TreasureCollected);
         Blackboard.Instance.LevelManager.SaveCheckpoint();
         #region commented
         //Commented to try new system

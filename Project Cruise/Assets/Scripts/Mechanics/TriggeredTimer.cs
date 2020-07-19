@@ -12,13 +12,13 @@ public class TriggeredTimer : MonoBehaviour
 
     public float countdownTime = 5.0f;
     public float CountdownTimer { get; set; }
-    public bool hasRun { get; set; }
+    public bool HasRun { get; set; }
 
     private Image fillImage;
 
     private void Start()
     {
-        hasRun = false;
+        HasRun = false;
         pathObjects = new List<GameObject>();
 
         CountdownTimer = countdownTime;
@@ -61,13 +61,13 @@ public class TriggeredTimer : MonoBehaviour
         }
 
         Blackboard.Instance.LevelManager.EndLevelTimer();
-        hasRun = true;
+        HasRun = true;
         Blackboard.Instance.LevelManager.Lose();
     }
 
     public void RestartTriggeredTimer(float duration)
     {
-        hasRun = false;
+        HasRun = false;
         StartCoroutine(CTimer(duration));
     }
 }
