@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 public class BackHandler : MonoBehaviour
 {
     // Update is called once per frame
-    public GameObject QuitCanvas;
+    public GameObject quitPanel;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().buildIndex == 1)
         {
             //Application.Quit();
-            QuitCanvas.SetActive(true);
+            quitPanel.SetActive(true);
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().buildIndex == 4)
         {
