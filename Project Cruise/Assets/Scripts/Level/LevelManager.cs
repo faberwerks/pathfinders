@@ -25,7 +25,7 @@ public class LevelManager : MonoBehaviour
     public GameObject pauseCanvas;
     public GameObject relicNotification;
     public TMP_Text[] targetTime;
-    public TMP_Text playerTimer;
+    public TMP_Text[] playerTimer;
     public TMP_Text triggeredTimerTime;
     public Image triggeredTimerFillImage;
     public float postLevelDelay = 2.0f;
@@ -116,7 +116,7 @@ public class LevelManager : MonoBehaviour
         DisableCharacterMovement();
         levelTimer.EndTimer();
         Time.timeScale = 0.0f;
-        playerTimer.text = GameData.Instance.currLevelTime.ToString("#.##") + "s";
+        playerTimer[0].text = GameData.Instance.currLevelTime.ToString("#.##") + "s";
         loseCanvas.SetActive(true);
     }
 
@@ -126,6 +126,10 @@ public class LevelManager : MonoBehaviour
     /// <param name="pause">To pause or not to pause.</param>
     public void Pause(bool pause)
     {
+        foreach (var tmp in playerTimer)
+        {
+            tmp.text = levelTimer.timer.ToString("#.##") + "s";
+        }
         Time.timeScale = pause ? 0.0f : 1.0f;
     }
 
