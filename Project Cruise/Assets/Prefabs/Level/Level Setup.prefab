@@ -6442,6 +6442,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2581976266456775023}
   - component: {fileID: 7721804860194911414}
+  - component: {fileID: 5499559700438449873}
   m_Layer: 5
   m_Name: Movement Arrows
   m_TagString: Untagged
@@ -6488,6 +6489,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692fabfbf76e4bc4fa2073b3378efb6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5499559700438449873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5932642494950468383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9c54a634d49d74479b0b23843c113d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diagonalArrows:
+  - {fileID: 4730724313300576541}
+  - {fileID: 113127075702493362}
+  - {fileID: 1990625188006340243}
+  - {fileID: 2226872346614339331}
 --- !u!1 &6282106873171772958
 GameObject:
   m_ObjectHideFlags: 0
