@@ -45,6 +45,7 @@ public class LevelManager : MonoBehaviour
         Blackboard.Instance.LevelManager = this;
 
         levelTimer = GetComponent<LevelTimer>();
+        levelTimer.EnableTimer();
         checkPointSaveData = new CheckPointSaveData(levelTimer);
     }
 

@@ -1,22 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
+﻿using UnityEngine;
 
+/// <summary>
+/// Component that counts how long the player has played the level.
+/// </summary>
 public class LevelTimer : MonoBehaviour
 {
-    //public bool gameHasEnded;
     public float timer;
     private bool timeHasEnded;
-    //public GameObject endPanel;
-    //public TMP_Text timerText;
-    //public TMP_Text finalTime;
-    // Start is called before the first frame update
+
     private void Start()
     {
         timer = 0f;
-        timeHasEnded = false;
-        //gameHasEnded = true; //Determines whether the game ends. True = start, False = end
+        timeHasEnded = true;
     }
 
     // Update is called once per frame
@@ -24,39 +19,23 @@ public class LevelTimer : MonoBehaviour
     {
         if (!timeHasEnded)
         {
-            IncrementTimer();
+            timer += Time.deltaTime;
         }
-        //if(!gameHasEnded)
-        //{
-        //    EndGame();
-        //}
     }
 
-    private void IncrementTimer()
-    {
-        timer += Time.deltaTime;
-        //timerText.text = timer.ToString("F2");
-    }
-
-    //public void SetGameEnd() //For button use. sets gameState to false to end the game
-    //{
-    //    //gameHasEnded = false;
-    //}
-
-    //private void EndGame()
-    //{
-    //    Time.timeScale = 0;
-    //    endPanel.SetActive(true);
-    //    finalTime.text = "Final Time: " + Mathf.Round(timer).ToString();
-    //}
-
+    /// <summary>
+    /// Publically accessible method to end the timer.
+    /// </summary>
     public void EndTimer()
     {
         timeHasEnded = true;
         GameData.Instance.currLevelTime = timer;
     }
 
-    //27 may 2020 Samuel - Add
+    /// <summary>
+    /// Publically accessible method to enable the timer.
+    /// </summary>
+    /// 27 May 2020 Samuel - Add
     public void EnableTimer()
     {
         timeHasEnded = false;
