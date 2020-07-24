@@ -6,12 +6,11 @@
 public class LevelTimer : MonoBehaviour
 {
     public float timer;
-    private bool timeHasEnded;
+    private bool timeHasEnded = true;
 
     private void Start()
     {
         timer = 0f;
-        timeHasEnded = true;
     }
 
     // Update is called once per frame
