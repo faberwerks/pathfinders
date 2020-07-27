@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// A component for key-triggered doors.
 /// </summary>
-public class Door : Interactable
+public class Door : MonoBehaviour
 {
     [SerializeField]
     private int id = 0;
@@ -23,12 +23,12 @@ public class Door : Interactable
         audioHandler = GetComponent<AudioHandler>();
     }
 
-    protected override void Start()
-    {
-        base.Start();
-    }
+    //protected void Start()
+    //{
+    //    base.Start();
+    //}
 
-    public override void Interact()
+    public void Interact()
     {
         Blackboard.Instance.LevelManager.SaveCheckpoint();
         if (audioHandler && unlockSound)
@@ -45,13 +45,13 @@ public class Door : Interactable
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        AddCharacter(collision);
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    AddCharacter(collision);
+    //}
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        RemoveCharacter(collision);
-    }
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    RemoveCharacter(collision);
+    //}
 }
