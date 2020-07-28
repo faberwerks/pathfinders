@@ -89,13 +89,18 @@ public class LevelManager : MonoBehaviour
         levelTimer.EndTimer();
     }
 
+    public void EndLevelTimer(bool isCheckingTolerance)
+    {
+        levelTimer.EndTimer(currLevelData.targetTime);
+    }
+
     /// <summary>
     /// A method to handle player victory.
     /// </summary>
     private void Win()
     {
         DisableCharacterMovement();
-        EndLevelTimer();
+        EndLevelTimer(true);            //added argument to take overload function
         GameData.Instance.currTreasuresCollected = TreasureCollected;
         GameData.Instance.currIsRelicCollected = RelicCollected;
         CalculateCoinsAndStarsEarned();

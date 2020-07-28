@@ -32,6 +32,16 @@ public class LevelTimer : MonoBehaviour
     }
 
     /// <summary>
+    /// Publically accessible method to end the timer with additional argument to check <0.2s tolerance
+    /// </summary>
+    public void EndTimer(float targetTime)
+    {
+        timeHasEnded = true;
+        if (timer > targetTime && timer - targetTime < 0.2f) timer = targetTime;
+        GameData.Instance.currLevelTime = timer;
+    }
+
+    /// <summary>
     /// Publically accessible method to enable the timer.
     /// </summary>
     /// 27 May 2020 Samuel - Add
