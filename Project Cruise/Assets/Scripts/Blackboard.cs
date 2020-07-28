@@ -25,4 +25,5 @@ public class Blackboard
     public LevelManager LevelManager { get; set; }
     public Button Button { get; set; }
     public int CurrentLevelIndex { get; set;}
+    public TriggeredTimer TriggeredTimer { get; set; }
 }

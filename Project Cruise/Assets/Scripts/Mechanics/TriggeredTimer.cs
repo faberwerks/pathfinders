@@ -16,6 +16,15 @@ public class TriggeredTimer : MonoBehaviour
 
     private Image fillImage;
 
+    //I actually don't really know how it works but i need a container for the enumerator to use StopCoroutine
+    //William Sebastian, 29-July-2020
+    private IEnumerator coroutine;      
+
+    private void Awake()
+    {
+        Blackboard.Instance.TriggeredTimer = gameObject.GetComponent<TriggeredTimer>();
+    }
+
     private void Start()
     {
         HasRun = false;
@@ -41,8 +50,8 @@ public class TriggeredTimer : MonoBehaviour
                 Destroy(pathObject);
             }
         }
-
-        StartCoroutine(CTimer(countdownTime));
+        coroutine = CTimer(countdownTime);
+        StartCoroutine(coroutine);
     }
 
     private IEnumerator CTimer(float duration)
@@ -69,5 +78,11 @@ public class TriggeredTimer : MonoBehaviour
     {
         HasRun = false;
         StartCoroutine(CTimer(duration));
+    }
+
+    public void StopTriggeredTimer()
+    {
+        //Debug.Log("Coroutine stopped");
+        StopCoroutine(coroutine);
     }
 }

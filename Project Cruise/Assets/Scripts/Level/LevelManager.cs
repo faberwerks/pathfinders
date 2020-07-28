@@ -101,6 +101,9 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     private void Win()
     {
+        //stopping triggered timer's coroutine to stop the timer
+        if (Blackboard.Instance.TriggeredTimer) Blackboard.Instance.TriggeredTimer.StopTriggeredTimer();
+
         DisableCharacterMovement();
         EndLevelTimer(checkTolerance); //added argument to take overload function
         GameData.Instance.currTreasuresCollected = TreasureCollected;
