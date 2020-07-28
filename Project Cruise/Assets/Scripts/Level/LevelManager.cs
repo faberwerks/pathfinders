@@ -39,13 +39,15 @@ public class LevelManager : MonoBehaviour
 
     public bool noInteractables = false;
 
+    private bool checkTolerance = true;
+
     // Awake is called before Start
     private void Awake()
     {
         Blackboard.Instance.LevelManager = this;
 
         levelTimer = GetComponent<LevelTimer>();
-        levelTimer.EnableTimer();
+        //levelTimer.EnableTimer();                 enabled by LevelTimerEnabler.cs after first input
         checkPointSaveData = new CheckPointSaveData(levelTimer);
     }
 
@@ -100,7 +102,7 @@ public class LevelManager : MonoBehaviour
     private void Win()
     {
         DisableCharacterMovement();
-        EndLevelTimer(true);            //added argument to take overload function
+        EndLevelTimer(checkTolerance); //added argument to take overload function
         GameData.Instance.currTreasuresCollected = TreasureCollected;
         GameData.Instance.currIsRelicCollected = RelicCollected;
         CalculateCoinsAndStarsEarned();
@@ -122,7 +124,7 @@ public class LevelManager : MonoBehaviour
         DisableCharacterMovement();
         levelTimer.EndTimer();
         Time.timeScale = 0.0f;
-        playerTimer[0].text = GameData.Instance.currLevelTime.ToString("#.##") + "s";
+        playerTimer[0].text = GameData.Instance.currLevelTime.ToString("0.00") + "s";
         loseCanvas.SetActive(true);
     }
 
@@ -132,11 +134,15 @@ public class LevelManager : MonoBehaviour
     /// <param name="pause">To pause or not to pause.</param>
     public void Pause(bool pause)
     {
+        Time.timeScale = pause ? 0.0f : 1.0f;
         foreach (var tmp in playerTimer)
         {
-            tmp.text = levelTimer.timer.ToString("#.##") + "s";
+            if (levelTimer.timer == 0f) tmp.text = "0.00s";
+            else
+            {
+                tmp.text = levelTimer.timer.ToString("0.00") + "s";
+            }
         }
-        Time.timeScale = pause ? 0.0f : 1.0f;
     }
 
     /// <summary>
