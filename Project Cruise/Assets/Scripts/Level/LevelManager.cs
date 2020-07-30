@@ -24,6 +24,8 @@ public class LevelManager : MonoBehaviour
     public GameObject loseCanvas;
     public GameObject pauseCanvas;
     public GameObject relicNotification;
+    //Samuel 30 july 2020 - Add
+    public GameObject inGameCanvas;
     public TMP_Text[] targetTime;
     public TMP_Text[] playerTimer;
     public TMP_Text triggeredTimerTime;
@@ -101,6 +103,9 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     private void Win()
     {
+        //Samuel 30 july 2020 - Add
+        inGameCanvas.SetActive(false);
+
         //stopping triggered timer's coroutine to stop the timer
         if (Blackboard.Instance.TriggeredTimer) Blackboard.Instance.TriggeredTimer.StopTriggeredTimer();
 
@@ -124,6 +129,9 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void Lose()
     {
+        //Samuel 30 july 2020 - Add
+        inGameCanvas.SetActive(false);
+
         DisableCharacterMovement();
         levelTimer.EndTimer();
         Time.timeScale = 0.0f;
@@ -137,6 +145,8 @@ public class LevelManager : MonoBehaviour
     /// <param name="pause">To pause or not to pause.</param>
     public void Pause(bool pause)
     {
+        //Samuel 30 july 2020 - Add
+        inGameCanvas.SetActive(!pause);
         Time.timeScale = pause ? 0.0f : 1.0f;
         foreach (var tmp in playerTimer)
         {
@@ -249,6 +259,8 @@ public class LevelManager : MonoBehaviour
 
     public void LoadCheckpoint()
     {
+        //Samuel 30 july 2020 - Add
+        inGameCanvas.SetActive(true);
         checkPointSaveData.LoadCheckPointSaveData();
         loseCanvas.SetActive(false);
         Time.timeScale = 1.0f;

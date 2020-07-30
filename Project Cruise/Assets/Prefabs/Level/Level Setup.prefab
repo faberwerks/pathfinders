@@ -882,6 +882,7 @@ MonoBehaviour:
   loseCanvas: {fileID: 8352090391729929033}
   pauseCanvas: {fileID: 1127568640251774655}
   relicNotification: {fileID: 2810188096661595798}
+  inGameCanvas: {fileID: 1127568640425162113}
   targetTime:
   - {fileID: 8968932175800341172}
   - {fileID: 8956770363573942332}
