@@ -50,6 +50,5 @@ public class CharacterAnimator : MonoBehaviour
 
         anim.runtimeAnimatorController = animController;
         sprRend.sprite = spr;
-
     }
 }

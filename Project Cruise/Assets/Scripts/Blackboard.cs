@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine.UI;
 
 /// <summary>
 /// A script to keep all the important references in one place
@@ -20,10 +19,9 @@ public class Blackboard
     }
 
     /////// PROPERTIES ///////
-    //public Joystick Joystick { get; set; }
-    public MovementArrowManager movementArrowManager { get; set; }
+    public MovementArrowManager MovementArrowManager { get; set; }
     public LevelManager LevelManager { get; set; }
     public Button Button { get; set; }
-    public int CurrentLevelIndex { get; set;}
+    public int CurrentLevelIndex { get; set; }
     public TriggeredTimer TriggeredTimer { get; set; }
 }

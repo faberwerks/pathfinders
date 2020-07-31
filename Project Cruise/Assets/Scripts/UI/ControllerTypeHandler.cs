@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Component to handle the control type.
+/// </summary>
 public class ControllerTypeHandler : MonoBehaviour
 {
     public GameObject[] diagonalArrows;

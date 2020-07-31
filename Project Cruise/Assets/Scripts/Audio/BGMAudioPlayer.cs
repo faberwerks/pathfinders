@@ -28,7 +28,6 @@ public class BGMAudioPlayer : AudioPlayer
     {
         if (menuScenes.Contains(next.name))
         {
-            //Debug.Log("[BGMAudioPlayer] Menu Scene: " + next.name);
             if (AudioSource.clip != mainMenuBGM)
             {
                 PlayBGM(mainMenuBGM);
@@ -36,7 +35,6 @@ public class BGMAudioPlayer : AudioPlayer
         }
         else
         {
-            //Debug.Log("[BGMAudioPlayer] Not Menu Scene: " + next.name);
             if (AudioSource.clip != inGameBGM)
             {
                 PlayBGM(inGameBGM);

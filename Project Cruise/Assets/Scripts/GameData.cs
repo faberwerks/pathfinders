@@ -38,6 +38,6 @@ public class GameData
     public int coinsEarned = 0;
     public int starsEarned = 0;
     public SaveData saveData = null;
-    //For tutorial debugging
+    // for tutorial debugging
     public bool tutorialDebug = false;
 }

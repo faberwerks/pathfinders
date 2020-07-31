@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Component to enable level timer only after player interaction.
+/// </summary>
 public class LevelTimerEnabler : MonoBehaviour
 {
     public MovementArrowManager movementManager;
@@ -13,27 +16,31 @@ public class LevelTimerEnabler : MonoBehaviour
     {
         timer = gameObject.GetComponent<LevelTimer>();
         button = Blackboard.Instance.Button;
-        if (button) button.onClick.AddListener(ButtonPressed);
+        if (button) button.onClick.AddListener(OnButtonPressed);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //check Direction in arrow manager
+        // check direction in arrow manager
         if (movementManager.Direction != Vector2.zero)
         {
-            //Debug.Log("Arrow Pressed");
             EnableTimer();
         }
     }
 
-    public void ButtonPressed()
+    /// <summary>
+    /// Method called at first player interaction in the level.
+    /// </summary>
+    public void OnButtonPressed()
     {
-        //Debug.Log("Button Pressed");
-        button.onClick.RemoveListener(ButtonPressed);
+        button.onClick.RemoveListener(OnButtonPressed);
         EnableTimer();
     }
 
+    /// <summary>
+    /// Enables the level timer and destroys this component.
+    /// </summary>
     private void EnableTimer()
     {
         timer.EnableTimer();

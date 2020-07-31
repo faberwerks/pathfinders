@@ -2,14 +2,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Component to handle the relic showcase UI.
+/// </summary>
 public class RelicShowcaseHandler : MonoBehaviour
 {
-    //relic levels list
-    public int[] levels;
-    //ref to Relic images
-    public Image[] relics;
-    //ref to TMPs
-    public TextMeshProUGUI[] levelTexts;
+    public int[] levels;    // relic levels list
+    public Image[] relics;  // refs to relic images
+    public TextMeshProUGUI[] levelTexts;    // refs to TMPs
 
     public Image panelButton;
 
@@ -24,7 +24,7 @@ public class RelicShowcaseHandler : MonoBehaviour
             if (lastLevelNumber >= levels[i]) {
                 levelTexts[i].text = levels[i].ToString();
 
-                //check hasFoundRelic in specific levelSaveData, if TRUE setActive the image, mark hasFoundRelic as true
+                // check hasFoundRelic in specific levelSaveData, if TRUE setActive the image, mark hasFoundRelic as true
                 if (GameData.Instance.saveData.levelSaveData[levels[i] - 1].hasFoundRelic)
                 {
                     relics[i].gameObject.SetActive(true);

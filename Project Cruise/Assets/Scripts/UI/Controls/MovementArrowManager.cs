@@ -9,7 +9,7 @@ public class MovementArrowManager : MonoBehaviour
 
     private void Awake()
     {
-        Blackboard.Instance.movementArrowManager = this;
+        Blackboard.Instance.MovementArrowManager = this;
     }
 #if UNITY_EDITOR
     private void Update()

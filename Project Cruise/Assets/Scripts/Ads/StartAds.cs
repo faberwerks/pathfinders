@@ -1,8 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using GoogleMobileAds.Api;
 using UnityEngine;
-using GoogleMobileAds.Api;
 
+/// <summary>
+/// Component to start ads.
+/// </summary>
 public class StartAds : MonoBehaviour
 {
     private string AppID = "ca-app-pub-7623091422700152~9683332999";
@@ -11,5 +12,4 @@ public class StartAds : MonoBehaviour
     {
         MobileAds.Initialize(AppID);
     }
-    
 }

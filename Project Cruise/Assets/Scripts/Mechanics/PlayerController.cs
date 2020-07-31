@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
         translation = Vector3.zero;
         button = Blackboard.Instance.Button;
         //joystick = Blackboard.Instance.Joystick;
-        movementArrowManager = Blackboard.Instance.movementArrowManager;
+        movementArrowManager = Blackboard.Instance.MovementArrowManager;
         walkingSound = GetComponent<AudioSource>();
 
         //Samuel 10 April 2020 - Add
