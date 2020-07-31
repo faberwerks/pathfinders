@@ -23,9 +23,11 @@ public abstract class Interactable : MonoBehaviour
     /// </summary>
     public abstract void Interact();
 
-    public bool CanAddInteractListener()
+    /// <summary>
+    /// Virtual method to check if there are no characters left in the interactable.
+    /// </summary>
+    public bool NoCharacters()
     {
-        //Debug.Log(characters.Count);
         if (characters.Count == 0)
         {
             return true;
@@ -35,38 +37,35 @@ public abstract class Interactable : MonoBehaviour
     }
 
     /// <summary>
-    /// Virtual method to check if the interact listener can be removed.
+    /// Adds listener and adds character to track.
     /// </summary>
-    public bool CanRemoveInteractListener()
-    {
-        if (characters.Count == 0)
-        {
-            return true;
-        }
-
-        return false;
-    }
-
+    /// <param name="collision">Character collision data.</param>
     protected void AddCharacter(Collider2D collision)
     {
         if (characters.Count == 0)
         {
             button.onClick.AddListener(Interact);
-            //Debug.Log("LISTENER ADDED!");
         }
         AddCharacterWithoutListener(collision);
         
     }
 
+    /// <summary>
+    /// Adds character to track.
+    /// </summary>
+    /// <param name="collision">Character collision data.</param>
     protected void AddCharacterWithoutListener(Collider2D collision)
     {
         if (collision.CompareTag(TagStrings.PLAYER_TAG))
         {
             characters.Add(collision.transform);
-            //Debug.Log("CHARACTER ADDED!");
         }
     }
 
+    /// <summary>
+    /// Removes character from tracking and removes listener if there are no characters left.
+    /// </summary>
+    /// <param name="collision">Character collision data.</param>
     protected void RemoveCharacter(Collider2D collision)
     {
         RemoveCharacterWithoutListener(collision);
@@ -76,6 +75,10 @@ public abstract class Interactable : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Removes character from tracking.
+    /// </summary>
+    /// <param name="collision">Character collision data.</param>
     protected void RemoveCharacterWithoutListener(Collider2D collision)
     {
         if (collision.CompareTag(TagStrings.PLAYER_TAG))

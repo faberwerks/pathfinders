@@ -29,9 +29,9 @@ public class Toggler : Interactable
     private AudioHandler audioHandler = null;
     private int maxIndex = 0;
     private int spriteIndex;
-    private bool hasBeenTriggered;  // used to check state of triggered timer
-    //2 june 2020 Samuel - Add
-    private bool pressurePlateTriggered; //used to check state of presure plate
+    private bool hasBeenTriggered;              // used to check state of triggered timer
+    /// 2 June 2020 Samuel - Add
+    private bool pressurePlateTriggered;        //used to check state of presure plate
     private bool hasTriggeredRelic;
 
     protected override void Start()
@@ -57,7 +57,7 @@ public class Toggler : Interactable
         hasTriggeredRelic = false;
     }
 
-    // only used for LEVERS and TRIGGERED TIMERS
+    // only used for LEVERS
     public override void Interact()
     {
         switch (togglerType)
@@ -74,7 +74,6 @@ public class Toggler : Interactable
     /// </summary>
     public void ToggleObjects()
     {
-        //Debug.Log("ToggleObjects called.");
         if (toggleSound)
         {
             // triggered timers only play the sound once
@@ -113,13 +112,14 @@ public class Toggler : Interactable
         switch (togglerType)
         {
             case TogglerType.PressurePlate:
-                //2 june 2020 Samuel - Add validation
+                /// 2 June 2020 Samuel - Add validation
                 if (!pressurePlateTriggered)
                 {
                     ToggleObjects();
                     Blackboard.Instance.LevelManager.SaveCheckpoint();
                     pressurePlateTriggered = true;
                 }
+                AddCharacter(collision);
                 break;
             case TogglerType.Timer:
                 if (!hasBeenTriggered)
@@ -136,20 +136,18 @@ public class Toggler : Interactable
         }
     }
 
-    // only used for PRESSURE PLATES
     private void OnTriggerExit2D(Collider2D collision)
     {
-        //Debug.Log(gameObject.name + ": " + characters.Count);
-
         if (collision.CompareTag(TagStrings.PLAYER_TAG))
         {
             if (togglerType == TogglerType.PressurePlate)
             {
-                //2 june 2020 Samuel - Add validation
-                if (pressurePlateTriggered && CanRemoveInteractListener())
+                RemoveCharacter(collision);
+                /// 2 June 2020 Samuel - Add validation
+                if (pressurePlateTriggered && NoCharacters())
                 {
                     ToggleObjects();
-                    //2 june 2020 Samuel - Add
+                    /// 2 June 2020 Samuel - Add
                     pressurePlateTriggered = false;
                 }
             }
