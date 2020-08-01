@@ -5,8 +5,12 @@ using UnityEngine.UI;
 
 public class TutorialShowHandler : MonoBehaviour
 {
-    private bool tutorialAlwaysOn;
     public Toggle tutorialSettingToggle;
+    public AudioClip audioClip;
+
+    private AudioHandler audioHandler;
+    private bool tutorialAlwaysOn;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +23,8 @@ public class TutorialShowHandler : MonoBehaviour
         {
             tutorialSettingToggle.isOn = false;
         }
+        audioHandler = GetComponent<AudioHandler>();
+        tutorialSettingToggle.onValueChanged.AddListener(delegate { PlaySFX(); });
     }
 
     public void ChangeTutorialState()
@@ -31,5 +37,13 @@ public class TutorialShowHandler : MonoBehaviour
         {
             PlayerPrefs.SetInt("TutorialAlwaysOn", 0);
         }
+    }
+
+    /// <summary>
+    /// Callback method to play the SFX.
+    /// </summary>
+    private void PlaySFX()
+    {
+        audioHandler.Play(audioClip);
     }
 }

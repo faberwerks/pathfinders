@@ -3638,7 +3638,6 @@ GameObject:
   - component: {fileID: 861857995}
   - component: {fileID: 861857997}
   - component: {fileID: 861857996}
-  - component: {fileID: 861857998}
   m_Layer: 5
   m_Name: Tutorial
   m_TagString: Untagged
@@ -3787,19 +3786,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861857994}
   m_CullTransparentMesh: 0
---- !u!114 &861857998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 861857994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6511e0688fc79ac489ff7812e719284e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tutorialSettingToggle: {fileID: 1153971747}
 --- !u!1 &871142055
 GameObject:
   m_ObjectHideFlags: 0
@@ -5028,6 +5014,7 @@ GameObject:
   - component: {fileID: 1153971746}
   - component: {fileID: 1153971747}
   - component: {fileID: 1153971748}
+  - component: {fileID: 1153971749}
   m_Layer: 5
   m_Name: Tutorial Toggle
   m_TagString: Untagged
@@ -5102,24 +5089,12 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 861857998}
+      - m_Target: {fileID: 1153971749}
         m_MethodName: ChangeTutorialState
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1153971748}
-        m_MethodName: Play
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 49cd805c584c9f9408170123b296f96d,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5138,6 +5113,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 393907b3cbb265643907ee540f8ce6fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1153971749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153971745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6511e0688fc79ac489ff7812e719284e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialSettingToggle: {fileID: 1153971747}
+  audioClip: {fileID: 8300000, guid: 49cd805c584c9f9408170123b296f96d, type: 3}
 --- !u!1 &1187280146
 GameObject:
   m_ObjectHideFlags: 0
