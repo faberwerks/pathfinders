@@ -104,7 +104,7 @@ public class LevelManager : MonoBehaviour
     private void Win()
     {
         //Samuel 30 july 2020 - Add
-        inGameCanvas.SetActive(false);
+        SetInGameCanvas(false);
 
         //stopping triggered timer's coroutine to stop the timer
         if (Blackboard.Instance.TriggeredTimer) Blackboard.Instance.TriggeredTimer.StopTriggeredTimer();
@@ -130,8 +130,8 @@ public class LevelManager : MonoBehaviour
     public void Lose()
     {
         //Samuel 30 july 2020 - Add
-        inGameCanvas.SetActive(false);
-
+        SetInGameCanvas(false);
+        //Blackboard.Instance.MovementArrowManager.Direction = Vector2.zero;
         DisableCharacterMovement();
         levelTimer.EndTimer();
         Time.timeScale = 0.0f;
@@ -146,7 +146,7 @@ public class LevelManager : MonoBehaviour
     public void Pause(bool pause)
     {
         //Samuel 30 july 2020 - Add
-        inGameCanvas.SetActive(!pause);
+        SetInGameCanvas(!pause);
         Time.timeScale = pause ? 0.0f : 1.0f;
         foreach (var tmp in playerTimer)
         {
@@ -260,7 +260,7 @@ public class LevelManager : MonoBehaviour
     public void LoadCheckpoint()
     {
         //Samuel 30 july 2020 - Add
-        inGameCanvas.SetActive(true);
+        SetInGameCanvas(true);
         checkPointSaveData.LoadCheckPointSaveData();
         loseCanvas.SetActive(false);
         Time.timeScale = 1.0f;
@@ -375,5 +375,13 @@ public class LevelManager : MonoBehaviour
         pauseCanvas.SetActive(true);
         Pause(true);
     }
-    
+
+    /// <summary>
+    /// A method to set In Game Canvas either On or Off depending on the parameter.
+    /// </summary>
+    public void SetInGameCanvas(bool status)
+    {
+        inGameCanvas.SetActive(status);
+    }
+
 }

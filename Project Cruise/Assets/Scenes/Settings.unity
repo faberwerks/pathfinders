@@ -1352,7 +1352,6 @@ GameObject:
   m_Component:
   - component: {fileID: 310947775}
   - component: {fileID: 310947776}
-  - component: {fileID: 310947777}
   m_Layer: 5
   m_Name: Default Toggle
   m_TagString: Untagged
@@ -1428,40 +1427,16 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1934788243}
         m_MethodName: OnDefaultChanged
-        m_Mode: 6
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 310947777}
-        m_MethodName: Play
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 49cd805c584c9f9408170123b296f96d,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 1
---- !u!114 &310947777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 310947774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 393907b3cbb265643907ee540f8ce6fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &325417497
 GameObject:
   m_ObjectHideFlags: 0
@@ -6921,6 +6896,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 599151348}
+        m_MethodName: CheckControllerType
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1597857350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7479,6 +7465,7 @@ GameObject:
   - component: {fileID: 1934788242}
   - component: {fileID: 1934788241}
   - component: {fileID: 1934788243}
+  - component: {fileID: 1934788244}
   m_Layer: 5
   m_Name: ToggleGroup
   m_TagString: Untagged
@@ -7532,6 +7519,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultToggle: {fileID: 310947776}
   classicToggle: {fileID: 2097658491}
+  audioClip: {fileID: 8300000, guid: 49cd805c584c9f9408170123b296f96d, type: 3}
+--- !u!114 &1934788244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934788240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393907b3cbb265643907ee540f8ce6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1962508339
 GameObject:
   m_ObjectHideFlags: 0
@@ -8185,7 +8185,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2097658490}
   - component: {fileID: 2097658491}
-  - component: {fileID: 2097658492}
   m_Layer: 5
   m_Name: Classic Toggle
   m_TagString: Untagged
@@ -8258,32 +8257,8 @@ MonoBehaviour:
   m_Group: {fileID: 1934788241}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2097658492}
-        m_MethodName: Play
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 49cd805c584c9f9408170123b296f96d,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_IsOn: 0
---- !u!114 &2097658492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2097658489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 393907b3cbb265643907ee540f8ce6fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2105781543
 GameObject:
   m_ObjectHideFlags: 0

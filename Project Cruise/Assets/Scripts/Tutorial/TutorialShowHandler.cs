@@ -14,15 +14,7 @@ public class TutorialShowHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tutorialAlwaysOn = PlayerPrefs.GetInt("TutorialAlwaysOn", 0) == 1 ? true :  false;
-        if(tutorialAlwaysOn)
-        {
-            tutorialSettingToggle.isOn = true;
-        }
-        else if(!tutorialAlwaysOn)
-        {
-            tutorialSettingToggle.isOn = false;
-        }
+        tutorialSettingToggle.isOn = PlayerPrefs.GetInt("TutorialAlwaysOn", 0) == 1 ? true :  false;
         audioHandler = GetComponent<AudioHandler>();
         tutorialSettingToggle.onValueChanged.AddListener(delegate { PlaySFX(); });
     }
