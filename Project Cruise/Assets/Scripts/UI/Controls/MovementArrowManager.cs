@@ -26,4 +26,9 @@ public class MovementArrowManager : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.Q) || Input.GetKeyUp(KeyCode.E) || Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.C)) Direction = Vector2.zero;
     }
 #endif
+
+    private void OnEnable()
+    {
+        Direction = Vector2.zero;
+    }
 }

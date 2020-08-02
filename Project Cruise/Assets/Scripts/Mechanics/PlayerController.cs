@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
         {
             walkingSound.Play();
         }
-        else if(translation == Vector3.zero)
+        else if (translation == Vector3.zero)
         {
             walkingSound.Stop();
         }
@@ -62,7 +62,6 @@ public class PlayerController : MonoBehaviour
         else if (translation == Vector3.zero && isMoving)
         {
             isMoving = false;
-            anim.ResetTrigger("Stop");
             anim.SetTrigger("Stop");
         }
 
@@ -76,7 +75,7 @@ public class PlayerController : MonoBehaviour
         }
 
         translation = translation.normalized * speed * Time.deltaTime;
-        
+
         if (Blackboard.Instance.LevelManager.CharacterCanMove)
         {
             rb.MovePosition(rb.transform.position + translation);
@@ -112,9 +111,9 @@ public class PlayerController : MonoBehaviour
 
     public void ResetAnimation()
     {
-        anim.SetTrigger("Reset");
         anim.ResetTrigger("Stop");
         anim.ResetTrigger("Move");
+        isMoving = false;
         anim.Play("Idle");
     }
 }
