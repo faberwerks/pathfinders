@@ -517,7 +517,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 145.69032, y: -141.74406}
+  m_AnchoredPosition: {x: 145.6903, y: -141.74408}
   m_SizeDelta: {x: 102.1, y: 102.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &62291184
@@ -2445,17 +2445,52 @@ MonoBehaviour:
     Budiman
 
 
-    This game uses these sounds from freesound:
+    Special Thanks to Our Testers:
 
-    lever-pull one-armed-bandit
-    by Timbre
+    Anthony GT
 
-    Badge Coin Win by isteak
+    Axel Zebe
+
+    Candra
+    S.
+
+    Chandra Delon
+
+    Dicky Hertanto
+
+    Dustin
+
+    Evan D.
+
+    Gerend
+    Tomasouw
+
+    Gilbert Chandra
+
+    Kevin Trisnadi Nugroho
+
+    Nadya Hartanto
+
+    Wincent
+    Liuswinardo
+
+    Wryan Cartie Halim
+
+    Yoel Gogo Panjaitan
+
+
+    This game
+    uses these sounds from freesound:
+
+    lever-pull one-armed-bandit by Timbre
+
+    Badge
+    Coin Win by isteak
 
     Walking Sound #1 by Mativve
 
-    Stabbing
-    Lettuce by InspectorJ
+    Stabbing Lettuce by
+    InspectorJ
 
     ugh (male) by brookmorgan
 
@@ -2519,7 +2554,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 517
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -2543,12 +2578,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 537429900}
-    characterCount: 682
+    characterCount: 918
     spriteCount: 0
-    spaceCount: 98
-    wordCount: 96
+    spaceCount: 134
+    wordCount: 131
     linkCount: 0
-    lineCount: 41
+    lineCount: 57
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
