@@ -31,7 +31,8 @@ public class AdsHandler : MonoBehaviour
 
     public void RequestInterstitialAD()
     {
-        string adUnitId = "ca-app-pub-3940256099942544/1033173712";
+        //string adUnitId = "ca-app-pub-3940256099942544/1033173712";
+        string adUnitId = "ca-app-pub-7623091422700152/2521661296";
         this.interstitial = new InterstitialAd(adUnitId);
 
         // Called when an ad request has successfully loaded.
@@ -46,7 +47,7 @@ public class AdsHandler : MonoBehaviour
         this.interstitial.OnAdLeavingApplication += HandleOnAdLeavingApplication;
 
         // Create an empty ad request.
-        AdRequest request = new AdRequest.Builder().AddTestDevice("2B14A1568BC5F0CD5FE89A0505F28B39").Build();
+        AdRequest request = new AdRequest.Builder().Build();
         // Load the interstitial with the request.
         this.interstitial.LoadAd(request);
         
