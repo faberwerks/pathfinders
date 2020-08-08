@@ -153,7 +153,7 @@ public class AdsHandler : MonoBehaviour
         if (this.interstitial.IsLoaded() && GameData.Instance.interstitialAdsCounter < 1)
         {
             this.interstitial.Show();
-            GameData.Instance.interstitialAdsCounter = 2;
+            GameData.Instance.interstitialAdsCounter = 3;
         }
         else
         {

@@ -19,7 +19,7 @@ public class GameData
     public GameData()
     {
         previousSceneID = 0;
-        interstitialAdsCounter = 2;
+        interstitialAdsCounter = 3;
         currTreasuresCollected = 0;
         currIsRelicCollected = false;
         currLevelTime = 0.0f;
@@ -30,7 +30,7 @@ public class GameData
     }
 
     public int previousSceneID = 0;
-    public int interstitialAdsCounter = 2;
+    public int interstitialAdsCounter = 3;
     public int currTreasuresCollected = 0;
     public bool currIsRelicCollected = false;
     public float currLevelTime = 0.0f;
