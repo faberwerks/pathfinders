@@ -591,6 +591,7 @@ public class PlayGamesScript : MonoBehaviour
             {
                 isDone = true;
                 GameData.Instance.saveData = cloudSaveData;
+                isCloudDataLoaded = true;
                 SaveLocal(cloudSaveData);
                 Debug.Log("[GPGS BUG] OnSavedGameDataRead: GameData.Instance.saveData set to cloud data.");
             }
