@@ -1,4 +1,4 @@
-﻿using GoogleMobileAds.Api;
+﻿// using GoogleMobileAds.Api;
 using UnityEngine;
 
 /// <summary>
@@ -10,6 +10,6 @@ public class StartAds : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MobileAds.Initialize(AppID);
+        // MobileAds.Initialize(AppID);
     }
 }

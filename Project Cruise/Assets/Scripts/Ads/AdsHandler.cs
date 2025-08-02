@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-using GoogleMobileAds.Api;
+// using GoogleMobileAds.Api;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
@@ -8,8 +8,8 @@ using UnityEngine.EventSystems;
 public class AdsHandler : MonoBehaviour
 {
 
-    private InterstitialAd interstitial;
-    private RewardBasedVideoAd rewardedVideo;
+    // private InterstitialAd interstitial;
+    // private RewardBasedVideoAd rewardedVideo;
     public static AdsHandler instance;
 
     private void Awake()
@@ -33,23 +33,23 @@ public class AdsHandler : MonoBehaviour
     {
         //string adUnitId = "ca-app-pub-3940256099942544/1033173712";
         string adUnitId = "ca-app-pub-7623091422700152/2521661296";
-        this.interstitial = new InterstitialAd(adUnitId);
+        // this.interstitial = new InterstitialAd(adUnitId);
 
-        // Called when an ad request has successfully loaded.
-        this.interstitial.OnAdLoaded += HandleOnAdLoaded;
-        // Called when an ad request failed to load.
-        this.interstitial.OnAdFailedToLoad += HandleOnAdFailedToLoad;
-        // Called when an ad is shown.
-        this.interstitial.OnAdOpening += HandleOnAdOpened;
-        // Called when the ad is closed.
-        this.interstitial.OnAdClosed += HandleOnAdClosed;
-        // Called when the ad click caused the user to leave the application.
-        this.interstitial.OnAdLeavingApplication += HandleOnAdLeavingApplication;
+        // // Called when an ad request has successfully loaded.
+        // this.interstitial.OnAdLoaded += HandleOnAdLoaded;
+        // // Called when an ad request failed to load.
+        // this.interstitial.OnAdFailedToLoad += HandleOnAdFailedToLoad;
+        // // Called when an ad is shown.
+        // this.interstitial.OnAdOpening += HandleOnAdOpened;
+        // // Called when the ad is closed.
+        // this.interstitial.OnAdClosed += HandleOnAdClosed;
+        // // Called when the ad click caused the user to leave the application.
+        // this.interstitial.OnAdLeavingApplication += HandleOnAdLeavingApplication;
 
-        // Create an empty ad request.
-        AdRequest request = new AdRequest.Builder().Build();
-        // Load the interstitial with the request.
-        this.interstitial.LoadAd(request);
+        // // Create an empty ad request.
+        // AdRequest request = new AdRequest.Builder().Build();
+        // // Load the interstitial with the request.
+        // this.interstitial.LoadAd(request);
         
     }
 
@@ -83,10 +83,10 @@ public class AdsHandler : MonoBehaviour
         //ShowInterstitialAD();
     }
 
-    public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
-    {
-        RequestInterstitialAD();
-    }
+    // public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
+    // {
+    //     RequestInterstitialAD();
+    // }
 
     public void HandleOnAdOpened(object sender, EventArgs args)
     {
@@ -98,7 +98,7 @@ public class AdsHandler : MonoBehaviour
     {
         MonoBehaviour.print("HandleAdClosed event received");
         RequestInterstitialAD();
-        this.interstitial.Destroy();
+        // this.interstitial.Destroy();
     }
 
     public void HandleOnAdLeavingApplication(object sender, EventArgs args)
@@ -150,14 +150,14 @@ public class AdsHandler : MonoBehaviour
 
     public void ShowInterstitialAD()
     {
-        if (this.interstitial.IsLoaded() && GameData.Instance.interstitialAdsCounter < 1)
-        {
-            this.interstitial.Show();
-            GameData.Instance.interstitialAdsCounter = 3;
-        }
-        else
-        {
-            Debug.Log("Interstitial Ad is not loaded.");
-        }
+        // if (this.interstitial.IsLoaded() && GameData.Instance.interstitialAdsCounter < 1)
+        // {
+        //     this.interstitial.Show();
+        //     GameData.Instance.interstitialAdsCounter = 3;
+        // }
+        // else
+        // {
+        //     Debug.Log("Interstitial Ad is not loaded.");
+        // }
     }
 }
